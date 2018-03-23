@@ -117,6 +117,12 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="historyPmb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="historyPmb.Designer.cs">
+      <DependentUpon>historyPmb.cs</DependentUpon>
+    </Compile>
     <Compile Include="kasir.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,9 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="historyPmb.resx">
+      <DependentUpon>historyPmb.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="kasir.resx">
       <DependentUpon>kasir.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,6 +227,7 @@
     <None Include="Resources\plus.svg" />
     <None Include="Resources\stock.svg" />
     <None Include="Resources\supplier.svg" />
+    <None Include="Resources\time-passing.svg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\kas.png" />

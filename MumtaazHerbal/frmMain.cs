@@ -121,5 +121,20 @@ namespace MumtaazHerbal
         
         }
 
+        private void barButtonItem2_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach(Form form in Application.OpenForms)
+            {
+                if(form.GetType() == typeof(historyPmb))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            historyPmb pmb = new historyPmb();
+            pmb.MdiParent = this;
+            pmb.Show();
+        }
     }
 }
