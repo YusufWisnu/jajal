@@ -41,6 +41,7 @@
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.btnDftrSupp = new DevExpress.XtraBars.BarButtonItem();
             this.btnDftrPel = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPembelian = new DevExpress.XtraBars.BarButtonItem();
             this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -50,7 +51,6 @@
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
@@ -72,7 +72,7 @@
             this.barButtonItem8,
             this.btnDftrSupp,
             this.btnDftrPel,
-            this.barButtonItem2});
+            this.btnPembelian});
             this.ribbonControl1.LargeImages = this.imageCollection1;
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.MaxItemId = 18;
@@ -162,6 +162,14 @@
             this.btnDftrPel.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btnDftrPel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDftrPel_ItemClick);
             // 
+            // btnPembelian
+            // 
+            this.btnPembelian.Caption = "Daftar Pembelian";
+            this.btnPembelian.Id = 17;
+            this.btnPembelian.ImageOptions.SvgImage = global::MumtaazHerbal.Properties.Resources.coins__1_;
+            this.btnPembelian.Name = "btnPembelian";
+            this.btnPembelian.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            // 
             // imageCollection1
             // 
             this.imageCollection1.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollection1.ImageStream")));
@@ -208,7 +216,7 @@
             // 
             // ribbonPageGroup2
             // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem2);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnPembelian);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "ribbonPageGroup2";
             // 
@@ -219,12 +227,6 @@
             this.documentManager1.View = this.tabbedView1;
             this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.tabbedView1});
-            // 
-            // barButtonItem2
-            // 
-            this.barButtonItem2.Caption = "Daftar Pembelian";
-            this.barButtonItem2.Id = 17;
-            this.barButtonItem2.Name = "barButtonItem2";
             // 
             // frmMain
             // 
@@ -267,6 +269,6 @@
         private DevExpress.XtraBars.BarButtonItem btnDftrPel;
         private DevExpress.XtraBars.Docking2010.DocumentManager documentManager1;
         private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem btnPembelian;
     }
 }

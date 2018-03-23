@@ -42,5 +42,10 @@ namespace MumtaazHerbal
         {
             this.Close();
         }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -93,6 +93,12 @@
     <Compile Include="dftrPending.Designer.cs">
       <DependentUpon>dftrPending.cs</DependentUpon>
     </Compile>
+    <Compile Include="dftrPmb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dftrPmb.Designer.cs">
+      <DependentUpon>dftrPmb.cs</DependentUpon>
+    </Compile>
     <Compile Include="dtrSupp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     <EmbeddedResource Include="dftrPending.resx">
       <DependentUpon>dftrPending.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="dftrPmb.resx">
+      <DependentUpon>dftrPmb.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="dtrSupp.resx">
       <DependentUpon>dtrSupp.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,6 +210,7 @@
     <None Include="Resources\685389.svg" />
     <None Include="Resources\add.svg" />
     <None Include="Resources\box.svg" />
+    <None Include="Resources\coins %281%29.svg" />
     <None Include="Resources\kasir.svg" />
     <None Include="Resources\kasir1.svg" />
     <None Include="Resources\kasir2.svg" />

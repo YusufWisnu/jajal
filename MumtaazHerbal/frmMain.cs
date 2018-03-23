@@ -103,5 +103,23 @@ namespace MumtaazHerbal
             ksr.MdiParent = this;
             ksr.Show();
         }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(dftrPmb))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            dftrPmb pmb = new dftrPmb();
+            pmb.MdiParent = this;
+            pmb.Show();
+        
+        }
+
     }
 }

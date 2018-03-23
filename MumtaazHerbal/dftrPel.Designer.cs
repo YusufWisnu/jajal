@@ -151,7 +151,7 @@
             this.btnHapus.Name = "btnHapus";
             this.btnHapus.Size = new System.Drawing.Size(82, 26);
             this.btnHapus.TabIndex = 28;
-            this.btnHapus.Text = "Hapus Item";
+            this.btnHapus.Text = "&Hapus";
             // 
             // btnEdit
             // 
@@ -161,7 +161,8 @@
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(82, 26);
             this.btnEdit.TabIndex = 27;
-            this.btnEdit.Text = "Edit Item";
+            this.btnEdit.Text = "&Edit";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
@@ -171,7 +172,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(82, 26);
             this.btnAdd.TabIndex = 26;
-            this.btnAdd.Text = "Item Baru";
+            this.btnAdd.Text = "&Tambah";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnSearch
@@ -192,7 +193,7 @@
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(82, 26);
             this.simpleButton1.TabIndex = 30;
-            this.simpleButton1.Text = "Cancel";
+            this.simpleButton1.Text = "&Tutup";
             // 
             // dftrPel
             // 
