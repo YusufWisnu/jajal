@@ -141,6 +141,7 @@
             // 
             // btnHapus
             // 
+            this.btnHapus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnHapus.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.substract__1_;
             this.btnHapus.Location = new System.Drawing.Point(188, 499);
             this.btnHapus.Name = "btnHapus";
@@ -150,6 +151,7 @@
             // 
             // btnEdit
             // 
+            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnEdit.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.edit;
             this.btnEdit.Location = new System.Drawing.Point(100, 499);
             this.btnEdit.Name = "btnEdit";
@@ -159,6 +161,7 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAdd.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.plus__1_;
             this.btnAdd.Location = new System.Drawing.Point(12, 499);
             this.btnAdd.Name = "btnAdd";

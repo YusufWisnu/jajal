@@ -36,7 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(374, 297);
             this.Name = "historyPmb";
-            this.Text = "historyPmb";
+            this.Text = "History Pembelian";
             this.ResumeLayout(false);
 
         }
