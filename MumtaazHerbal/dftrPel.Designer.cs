@@ -64,7 +64,7 @@
             this.gridControl1.Location = new System.Drawing.Point(12, 47);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(913, 446);
+            this.gridControl1.Size = new System.Drawing.Size(713, 446);
             this.gridControl1.TabIndex = 25;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -189,7 +189,7 @@
             // 
             this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton1.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.reload;
-            this.simpleButton1.Location = new System.Drawing.Point(843, 501);
+            this.simpleButton1.Location = new System.Drawing.Point(643, 501);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(82, 26);
             this.simpleButton1.TabIndex = 30;
@@ -199,7 +199,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(937, 539);
+            this.ClientSize = new System.Drawing.Size(737, 539);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.btnHapus);
             this.Controls.Add(this.btnEdit);
