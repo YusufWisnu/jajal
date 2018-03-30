@@ -10,22 +10,11 @@ using DevExpress.XtraEditors;
 
 namespace MumtaazHerbal
 {
-    public partial class dftrPmb : DevExpress.XtraEditors.XtraForm
+    public partial class pembelian : DevExpress.XtraEditors.XtraForm
     {
-        public dftrPmb()
+        public pembelian()
         {
             InitializeComponent();
-        }
-
-        private void dftrPmb_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-
-
         }
     }
 }

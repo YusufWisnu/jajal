@@ -71,7 +71,7 @@
             this.gridControl1.Location = new System.Drawing.Point(12, 69);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(913, 410);
+            this.gridControl1.Size = new System.Drawing.Size(913, 424);
             this.gridControl1.TabIndex = 34;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -136,7 +136,7 @@
             // btnTutup
             // 
             this.btnTutup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTutup.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.reload;
+            this.btnTutup.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.back;
             this.btnTutup.Location = new System.Drawing.Point(843, 499);
             this.btnTutup.Name = "btnTutup";
             this.btnTutup.Size = new System.Drawing.Size(82, 26);
@@ -182,6 +182,7 @@
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(46, 20);
             this.btnSearch.TabIndex = 32;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // labelControl1
             // 

@@ -16,5 +16,11 @@ namespace MumtaazHerbal
         {
             InitializeComponent();
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            dftrSupp supp = new dftrSupp();
+            supp.ShowDialog();
+        }
     }
 }

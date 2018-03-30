@@ -42,6 +42,7 @@
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnTutup = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -80,7 +81,7 @@
             this.gridControl1.Location = new System.Drawing.Point(12, 47);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1326, 446);
+            this.gridControl1.Size = new System.Drawing.Size(713, 446);
             this.gridControl1.TabIndex = 18;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -173,11 +174,22 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Width = 141;
             // 
+            // btnTutup
+            // 
+            this.btnTutup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTutup.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.back;
+            this.btnTutup.Location = new System.Drawing.Point(643, 501);
+            this.btnTutup.Name = "btnTutup";
+            this.btnTutup.Size = new System.Drawing.Size(82, 26);
+            this.btnTutup.TabIndex = 39;
+            this.btnTutup.Text = "&Tutup";
+            // 
             // dftrSupp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1350, 539);
+            this.ClientSize = new System.Drawing.Size(737, 539);
+            this.Controls.Add(this.btnTutup);
             this.Controls.Add(this.btnHapus);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
@@ -186,6 +198,7 @@
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.labelControl1);
             this.Name = "dftrSupp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Daftar Supplier";
             this.Load += new System.EventHandler(this.dftrSupp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).EndInit();
@@ -212,6 +225,6 @@
         private DevExpress.XtraEditors.SimpleButton btnEdit;
         private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-
+        private DevExpress.XtraEditors.SimpleButton btnTutup;
     }
 }

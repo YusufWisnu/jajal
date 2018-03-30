@@ -324,3 +324,4 @@ C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.dft
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.historyPmb.resources
 C:\Users\YUSUF WISNU P\source\repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.dftrPmb.resources
 C:\Users\YUSUF WISNU P\source\repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.historyPmb.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.pembelian.resources

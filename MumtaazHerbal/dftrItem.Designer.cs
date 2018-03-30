@@ -44,6 +44,7 @@
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.txtSearch = new DevExpress.XtraEditors.TextEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnTutup = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).BeginInit();
@@ -197,11 +198,22 @@
             this.simpleButton1.TabIndex = 31;
             this.simpleButton1.Text = "&Tutup";
             // 
+            // btnTutup
+            // 
+            this.btnTutup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTutup.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.back;
+            this.btnTutup.Location = new System.Drawing.Point(830, 499);
+            this.btnTutup.Name = "btnTutup";
+            this.btnTutup.Size = new System.Drawing.Size(82, 26);
+            this.btnTutup.TabIndex = 39;
+            this.btnTutup.Text = "&Tutup";
+            // 
             // dftrItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(919, 539);
+            this.Controls.Add(this.btnTutup);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnHapus);
@@ -239,5 +251,6 @@
         private DevExpress.XtraEditors.TextEdit txtSearch;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraEditors.SimpleButton btnTutup;
     }
 }
