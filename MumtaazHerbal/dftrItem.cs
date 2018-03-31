@@ -13,7 +13,7 @@ namespace MumtaazHerbal
 {
     public partial class dftrItem : DevExpress.XtraEditors.XtraForm
     {
-        SQLiteConnection con = new SQLiteConnection(@"Data Source = C:\user\YUSUF WISNU P\source\repos\jajal; Initial Catalog=MumtaazDB; Version = 3;");  
+        SQLiteConnection con = new SQLiteConnection(@"Data Source = C:\Users\YUSUF WISNU P\Source\Repos\jajal\MumtaazDB.db; Version = 3;");  
         public dftrItem()
         {
             InitializeComponent();

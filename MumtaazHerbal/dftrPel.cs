@@ -7,11 +7,13 @@ using System.Text;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using System.Data.SQLite;
 
 namespace MumtaazHerbal
 {
     public partial class dftrPel : DevExpress.XtraEditors.XtraForm
     {
+        SQLiteConnection con = new SQLiteConnection(@"Data Source = C:\Users\YUSUF WISNU P\Source\Repos\jajal\MumtaazDB.db; Version = 3;");
         public dftrPel()
         {
             InitializeComponent();
@@ -35,7 +37,10 @@ namespace MumtaazHerbal
 
         private void dftrPel_Load(object sender, EventArgs e)
         {
-
+            SQLiteDataAdapter sda = new SQLiteDataAdapter("SELECT * FROm [tb_daftar_pelanggan]", con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            gridControl1.DataSource = dt;
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)

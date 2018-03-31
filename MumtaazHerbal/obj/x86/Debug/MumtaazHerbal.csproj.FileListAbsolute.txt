@@ -333,3 +333,4 @@ C:\Users\YUSUF WISNU P\Source\Repos\jajal\MumtaazHerbal\bin\Debug\EntityFramewor
 C:\Users\YUSUF WISNU P\Source\Repos\jajal\MumtaazHerbal\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\YUSUF WISNU P\Source\Repos\jajal\MumtaazHerbal\bin\Debug\System.Data.SQLite.xml
 C:\Users\YUSUF WISNU P\Source\Repos\jajal\MumtaazHerbal\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\YUSUF WISNU P\Source\Repos\jajal\MumtaazHerbal\bin\Debug\MumtaazHerbal.exe.config

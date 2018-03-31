@@ -85,6 +85,7 @@
             // Nama
             // 
             this.Nama.Caption = "Kode Item";
+            this.Nama.FieldName = "kode_item";
             this.Nama.Name = "Nama";
             this.Nama.Visible = true;
             this.Nama.VisibleIndex = 0;
@@ -93,6 +94,7 @@
             // gridColumn2
             // 
             this.gridColumn2.Caption = "Nama Item";
+            this.gridColumn2.FieldName = "nama_item";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
@@ -101,6 +103,7 @@
             // gridColumn3
             // 
             this.gridColumn3.Caption = "Stok";
+            this.gridColumn3.FieldName = "stok";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
@@ -109,6 +112,7 @@
             // gridColumn1
             // 
             this.gridColumn1.Caption = "Harga Grosir";
+            this.gridColumn1.FieldName = "harga_grosir";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 3;
@@ -117,6 +121,7 @@
             // gridColumn6
             // 
             this.gridColumn6.Caption = "Harga Eceran";
+            this.gridColumn6.FieldName = "harga_eceran";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 4;
@@ -125,6 +130,7 @@
             // gridColumn4
             // 
             this.gridColumn4.Caption = "Harga Jual";
+            this.gridColumn4.FieldName = "harga_jual";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 5;
@@ -133,6 +139,7 @@
             // gridColumn5
             // 
             this.gridColumn5.Caption = "Supplier";
+            this.gridColumn5.FieldName = "supplier";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 6;
