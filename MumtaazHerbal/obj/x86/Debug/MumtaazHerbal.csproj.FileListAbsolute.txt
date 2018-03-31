@@ -324,3 +324,12 @@ C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.dft
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.historyPmb.resources
 C:\Users\YUSUF WISNU P\source\repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.dftrPmb.resources
 C:\Users\YUSUF WISNU P\source\repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.historyPmb.resources
+C:\Users\YUSUF WISNU P\Source\Repos\jajal\MumtaazHerbal\bin\Debug\EntityFramework.dll
+C:\Users\YUSUF WISNU P\Source\Repos\jajal\MumtaazHerbal\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\YUSUF WISNU P\Source\Repos\jajal\MumtaazHerbal\bin\Debug\System.Data.SQLite.dll
+C:\Users\YUSUF WISNU P\Source\Repos\jajal\MumtaazHerbal\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\YUSUF WISNU P\Source\Repos\jajal\MumtaazHerbal\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\YUSUF WISNU P\Source\Repos\jajal\MumtaazHerbal\bin\Debug\EntityFramework.xml
+C:\Users\YUSUF WISNU P\Source\Repos\jajal\MumtaazHerbal\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\YUSUF WISNU P\Source\Repos\jajal\MumtaazHerbal\bin\Debug\System.Data.SQLite.xml
+C:\Users\YUSUF WISNU P\Source\Repos\jajal\MumtaazHerbal\bin\Debug\System.Data.SQLite.dll.config
