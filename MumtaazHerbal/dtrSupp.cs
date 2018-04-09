@@ -13,7 +13,7 @@ namespace MumtaazHerbal
 {
     public partial class dftrSupp : DevExpress.XtraEditors.XtraForm
     {
-        SQLiteConnection con = new SQLiteConnection(@"Data Source = C:\Users\YUSUF WISNU P\Source\Repos\jajal\MumtaazDB.db; Version = 3;");
+        SQLiteConnection con = new SQLiteConnection(@"Data Source =MumtaazDB.db; Version = 3;");
         public dftrSupp()
         {
             InitializeComponent();
@@ -40,6 +40,11 @@ namespace MumtaazHerbal
             tmbhSupp supp = new tmbhSupp();
             supp.MdiParent = this.ParentForm;
             supp.Show();
+        }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
