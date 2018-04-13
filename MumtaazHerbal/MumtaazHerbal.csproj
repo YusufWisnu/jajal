@@ -123,6 +123,7 @@
     <Compile Include="dtrSupp.Designer.cs">
       <DependentUpon>dtrSupp.cs</DependentUpon>
     </Compile>
+    <Compile Include="FileManager.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

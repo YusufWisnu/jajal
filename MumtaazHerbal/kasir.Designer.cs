@@ -74,70 +74,78 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(24, 21);
+            this.labelControl1.Location = new System.Drawing.Point(28, 26);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(68, 13);
+            this.labelControl1.Size = new System.Drawing.Size(83, 16);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "No Transaksi :";
             // 
             // txtTransaksi
             // 
-            this.txtTransaksi.Location = new System.Drawing.Point(95, 18);
+            this.txtTransaksi.Location = new System.Drawing.Point(111, 22);
+            this.txtTransaksi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTransaksi.Name = "txtTransaksi";
-            this.txtTransaksi.Size = new System.Drawing.Size(134, 20);
+            this.txtTransaksi.Size = new System.Drawing.Size(156, 22);
             this.txtTransaksi.TabIndex = 1;
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(47, 44);
+            this.labelControl2.Location = new System.Drawing.Point(55, 54);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(45, 13);
+            this.labelControl2.Size = new System.Drawing.Size(55, 16);
             this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "Tanggal :";
             // 
             // dateEdit1
             // 
             this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(95, 41);
+            this.dateEdit1.Location = new System.Drawing.Point(111, 50);
+            this.dateEdit1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateEdit1.Name = "dateEdit1";
             this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Size = new System.Drawing.Size(134, 20);
+            this.dateEdit1.Size = new System.Drawing.Size(156, 22);
             this.dateEdit1.TabIndex = 4;
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(35, 68);
+            this.labelControl3.Location = new System.Drawing.Point(41, 84);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(57, 13);
+            this.labelControl3.Size = new System.Drawing.Size(68, 16);
             this.labelControl3.TabIndex = 5;
             this.labelControl3.Text = "Pelanggan :";
             // 
             // comboBoxEdit1
             // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(95, 65);
+            this.comboBoxEdit1.Location = new System.Drawing.Point(111, 80);
+            this.comboBoxEdit1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBoxEdit1.Name = "comboBoxEdit1";
             this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(134, 20);
+            this.comboBoxEdit1.Size = new System.Drawing.Size(156, 22);
             this.comboBoxEdit1.TabIndex = 6;
             // 
             // txtuser
             // 
             this.txtuser.EditValue = "";
             this.txtuser.Enabled = false;
-            this.txtuser.Location = new System.Drawing.Point(235, 18);
+            this.txtuser.Location = new System.Drawing.Point(274, 22);
+            this.txtuser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtuser.Name = "txtuser";
-            this.txtuser.Size = new System.Drawing.Size(71, 20);
+            this.txtuser.Size = new System.Drawing.Size(83, 22);
             this.txtuser.TabIndex = 7;
             // 
             // textEdit2
             // 
-            this.textEdit2.Location = new System.Drawing.Point(235, 41);
+            this.textEdit2.Location = new System.Drawing.Point(274, 50);
+            this.textEdit2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(71, 20);
+            this.textEdit2.Size = new System.Drawing.Size(83, 22);
             this.textEdit2.TabIndex = 8;
             // 
             // btnSearch
@@ -145,60 +153,67 @@
             this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSearch.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.search11;
             this.btnSearch.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnSearch.Location = new System.Drawing.Point(235, 65);
+            this.btnSearch.Location = new System.Drawing.Point(274, 80);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(46, 20);
+            this.btnSearch.Size = new System.Drawing.Size(54, 25);
             this.btnSearch.TabIndex = 24;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // textEdit3
             // 
-            this.textEdit3.Location = new System.Drawing.Point(312, 18);
+            this.textEdit3.Location = new System.Drawing.Point(364, 22);
+            this.textEdit3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(0, 20);
+            this.textEdit3.Size = new System.Drawing.Size(0, 22);
             this.textEdit3.TabIndex = 25;
             // 
             // textEdit4
             // 
             this.textEdit4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit4.Location = new System.Drawing.Point(345, 18);
+            this.textEdit4.Location = new System.Drawing.Point(402, 22);
+            this.textEdit4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEdit4.Name = "textEdit4";
             this.textEdit4.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit4.Properties.Appearance.Options.UseFont = true;
             this.textEdit4.Properties.AutoHeight = false;
             this.textEdit4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textEdit4.Size = new System.Drawing.Size(993, 95);
+            this.textEdit4.Size = new System.Drawing.Size(1158, 95);
             this.textEdit4.TabIndex = 26;
             // 
             // textEdit5
             // 
-            this.textEdit5.Location = new System.Drawing.Point(95, 128);
+            this.textEdit5.Location = new System.Drawing.Point(111, 158);
+            this.textEdit5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEdit5.Name = "textEdit5";
-            this.textEdit5.Size = new System.Drawing.Size(100, 20);
+            this.textEdit5.Size = new System.Drawing.Size(117, 22);
             this.textEdit5.TabIndex = 28;
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(52, 131);
+            this.labelControl4.Location = new System.Drawing.Point(61, 161);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(40, 13);
+            this.labelControl4.Size = new System.Drawing.Size(49, 16);
             this.labelControl4.TabIndex = 29;
             this.labelControl4.Text = "Jumlah :";
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(206, 131);
+            this.labelControl5.Location = new System.Drawing.Point(240, 161);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(56, 13);
+            this.labelControl5.Size = new System.Drawing.Size(67, 16);
             this.labelControl5.TabIndex = 31;
             this.labelControl5.Text = "Kode Item :";
             // 
             // textEdit6
             // 
-            this.textEdit6.Location = new System.Drawing.Point(268, 128);
+            this.textEdit6.Location = new System.Drawing.Point(313, 158);
+            this.textEdit6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEdit6.Name = "textEdit6";
-            this.textEdit6.Size = new System.Drawing.Size(197, 20);
+            this.textEdit6.Size = new System.Drawing.Size(230, 22);
             this.textEdit6.TabIndex = 30;
             // 
             // simpleButton1
@@ -206,9 +221,10 @@
             this.simpleButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.simpleButton1.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.search11;
             this.simpleButton1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(471, 128);
+            this.simpleButton1.Location = new System.Drawing.Point(549, 158);
+            this.simpleButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(46, 20);
+            this.simpleButton1.Size = new System.Drawing.Size(54, 25);
             this.simpleButton1.TabIndex = 32;
             // 
             // gridControl1
@@ -216,10 +232,12 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(12, 154);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gridControl1.Location = new System.Drawing.Point(14, 190);
             this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1326, 347);
+            this.gridControl1.Size = new System.Drawing.Size(1547, 427);
             this.gridControl1.TabIndex = 33;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -252,6 +270,7 @@
             this.gridColumn2.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn2.Caption = "Kode Item";
+            this.gridColumn2.FieldName = "kode_item";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
@@ -262,6 +281,7 @@
             this.gridColumn3.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn3.Caption = "Nama Item";
+            this.gridColumn3.FieldName = "nama_item";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
@@ -272,6 +292,7 @@
             this.gridColumn4.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn4.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn4.Caption = "Jumlah";
+            this.gridColumn4.FieldName = "jumlah";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
@@ -282,6 +303,7 @@
             this.gridColumn5.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn5.Caption = "Satuan";
+            this.gridColumn5.FieldName = "satuan";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 4;
@@ -292,6 +314,7 @@
             this.gridColumn6.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn6.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn6.Caption = "Harga";
+            this.gridColumn6.FieldName = "harga";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 5;
@@ -302,6 +325,7 @@
             this.gridColumn7.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn7.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn7.Caption = "Total";
+            this.gridColumn7.FieldName = "total";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 6;
@@ -311,9 +335,10 @@
             // 
             this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.simpleButton2.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.reload;
-            this.simpleButton2.Location = new System.Drawing.Point(10, 507);
+            this.simpleButton2.Location = new System.Drawing.Point(12, 624);
+            this.simpleButton2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(79, 25);
+            this.simpleButton2.Size = new System.Drawing.Size(92, 31);
             this.simpleButton2.TabIndex = 36;
             this.simpleButton2.Text = "Batal";
             // 
@@ -321,9 +346,10 @@
             // 
             this.simpleButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.simpleButton4.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.coins;
-            this.simpleButton4.Location = new System.Drawing.Point(186, 507);
+            this.simpleButton4.Location = new System.Drawing.Point(217, 624);
+            this.simpleButton4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(76, 25);
+            this.simpleButton4.Size = new System.Drawing.Size(89, 31);
             this.simpleButton4.TabIndex = 38;
             this.simpleButton4.Text = "Bayar";
             this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
@@ -332,9 +358,10 @@
             // 
             this.btnHapus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnHapus.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.substract__1_;
-            this.btnHapus.Location = new System.Drawing.Point(95, 507);
+            this.btnHapus.Location = new System.Drawing.Point(111, 624);
+            this.btnHapus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnHapus.Name = "btnHapus";
-            this.btnHapus.Size = new System.Drawing.Size(85, 25);
+            this.btnHapus.Size = new System.Drawing.Size(99, 31);
             this.btnHapus.TabIndex = 39;
             this.btnHapus.Text = "Hapus Item";
             // 
@@ -342,9 +369,10 @@
             // 
             this.simpleButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.simpleButton5.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.stopwatch;
-            this.simpleButton5.Location = new System.Drawing.Point(268, 507);
+            this.simpleButton5.Location = new System.Drawing.Point(313, 624);
+            this.simpleButton5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(76, 25);
+            this.simpleButton5.Size = new System.Drawing.Size(89, 31);
             this.simpleButton5.TabIndex = 40;
             this.simpleButton5.Text = "Pending";
             // 
@@ -352,18 +380,19 @@
             // 
             this.simpleButton6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.simpleButton6.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.stopwatch__1_;
-            this.simpleButton6.Location = new System.Drawing.Point(350, 507);
+            this.simpleButton6.Location = new System.Drawing.Point(408, 624);
+            this.simpleButton6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.simpleButton6.Name = "simpleButton6";
-            this.simpleButton6.Size = new System.Drawing.Size(104, 25);
+            this.simpleButton6.Size = new System.Drawing.Size(121, 31);
             this.simpleButton6.TabIndex = 41;
             this.simpleButton6.Text = "Dft. Pending";
             this.simpleButton6.Click += new System.EventHandler(this.simpleButton6_Click);
             // 
             // kasir
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1350, 539);
+            this.ClientSize = new System.Drawing.Size(1575, 663);
             this.Controls.Add(this.simpleButton6);
             this.Controls.Add(this.simpleButton5);
             this.Controls.Add(this.btnHapus);
@@ -386,6 +415,7 @@
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.txtTransaksi);
             this.Controls.Add(this.labelControl1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "kasir";
             this.Text = "Kasir";
             ((System.ComponentModel.ISupportInitialize)(this.txtTransaksi.Properties)).EndInit();

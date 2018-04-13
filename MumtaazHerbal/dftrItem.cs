@@ -13,7 +13,8 @@ namespace MumtaazHerbal
 {
     public partial class dftrItem : DevExpress.XtraEditors.XtraForm
     {
-        SQLiteConnection con = new SQLiteConnection(@"Data Source = MumtaazDB.db; Version = 3;");  
+        DatabaseHelper myDb;
+        
         public dftrItem()
         {
             InitializeComponent();
@@ -21,6 +22,15 @@ namespace MumtaazHerbal
 
         private void dftrItem_Load(object sender, EventArgs e)
         {
+            SQLiteConnection con = new SQLiteConnection(myDb.GetConnection());
+            myDb = new DatabaseHelper();
+            FileManager myFile = new FileManager(myDb.DatabaseName);
+
+            //Pengecekan file database tersedia
+            if (!myFile.isFileExists())
+            {
+                myDb.CreateDatabase();
+            }
             con.Open();
             SQLiteDataAdapter sda = new SQLiteDataAdapter("SELECT * FROM [tb_daftar_item]", con);
             DataTable dt = new DataTable();
