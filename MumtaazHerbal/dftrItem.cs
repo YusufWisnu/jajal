@@ -22,7 +22,6 @@ namespace MumtaazHerbal
 
         private void dftrItem_Load(object sender, EventArgs e)
         {
-            SQLiteConnection con = new SQLiteConnection(myDb.GetConnection());
             myDb = new DatabaseHelper();
             FileManager myFile = new FileManager(myDb.DatabaseName);
 
@@ -31,6 +30,8 @@ namespace MumtaazHerbal
             {
                 myDb.CreateDatabase();
             }
+
+            SQLiteConnection con = new SQLiteConnection(myDb.GetConnection());
             con.Open();
             SQLiteDataAdapter sda = new SQLiteDataAdapter("SELECT * FROM [tb_daftar_item]", con);
             DataTable dt = new DataTable();
