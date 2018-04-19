@@ -7,13 +7,13 @@ using System.Text;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using System.Data.SQLite;
+using System.Data.SqlClient;
 
 namespace MumtaazHerbal
 {
     public partial class dftrItem : DevExpress.XtraEditors.XtraForm
     {
-        DatabaseHelper myDb;
+        
         
         public dftrItem()
         {
@@ -22,18 +22,9 @@ namespace MumtaazHerbal
 
         private void dftrItem_Load(object sender, EventArgs e)
         {
-            myDb = new DatabaseHelper();
-            FileManager myFile = new FileManager(myDb.DatabaseName);
-
-            //Pengecekan file database tersedia
-            if (!myFile.isFileExists())
-            {
-                myDb.CreateDatabase();
-            }
-
-            SQLiteConnection con = new SQLiteConnection(myDb.GetConnection());
+            SqlConnection con = new SqlConnection(@"Data Source= DESKTOP-J5QHE7L\SQLEXPRESS;Initial Catalog = MumtaazDB; Integrated Security = True;");
             con.Open();
-            SQLiteDataAdapter sda = new SQLiteDataAdapter("SELECT * FROM [tb_daftar_item]", con);
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM [tb_daftar_item]", con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             gridControl1.DataSource = dt;

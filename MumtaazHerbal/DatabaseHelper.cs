@@ -9,13 +9,13 @@ namespace MumtaazHerbal
     class DatabaseHelper
     {
         //Database File name
-        public string DatabaseName = "Mumtaaz1db.db";
+        //public string DatabaseName = "MumtaazDB.mdf";
 
         public string GetConnection()
         {
-            return @"Data Source=" + DatabaseName + "; Version=3";
+            return @"Data Source= DESKTOP-J5QHE7L\SQLEXPRESS;Initial Catalog = MumtaazDB; Integrated Security = True;";
         }
-
+        /*
 
         // membuat database beserta tabel, kolom, dan relasi terhadap tabel lain
         public void CreateDatabase()
@@ -64,7 +64,8 @@ namespace MumtaazHerbal
 
                 con.Close();
                 
+                
             }
-        }
+        }*/
     }
 }

@@ -419,82 +419,81 @@
         </member>
         <member name="P:DevExpress.Pdf.PdfDocument.AllowAccessibility">
             <summary>
-                <para>Indicates whether copying or extracting text and graphics from the document is allowed (in support of accessibility for users with disabilities or for other purposes).
-
+                <para>Enables copying or otherwise extracting text and graphics from the document (in support of accessibility to users with disabilities or for other purposes).
 </para>
             </summary>
-            <value><b>true</b>, if copying or extracting text and graphics from the document is allowed; otherwise <b>false</b>.
+            <value><b>true</b> to support PDF accessibility; otherwise <b>false</b>.
 </value>
 
 
         </member>
         <member name="P:DevExpress.Pdf.PdfDocument.AllowAnnotationsAndFormsModifying">
             <summary>
-                <para>Indicates whether adding and modifying text annotations and interactive form fields is allowed.
+                <para>Enables adding and modifying text annotations and interactive form fields in the PDF.
 </para>
             </summary>
-            <value><b>true</b>, if adding and modifying text annotations and interactive form fields is allowed; otherwise <b>false</b>.
+            <value><b>true</b> to allow making changes to the PDF annotations and form fields; otherwise <b>false</b>.
 </value>
 
 
         </member>
         <member name="P:DevExpress.Pdf.PdfDocument.AllowDataExtraction">
             <summary>
-                <para>Indicates whether data extraction is allowed.
+                <para>Enables extracting data from the PDF.
 </para>
             </summary>
-            <value><b>true</b>, if data extraction is allowed; otherwise <b>false</b>.
+            <value><b>true</b> to allow extracting the PDF data; otherwise <b>false</b>.
 </value>
 
 
         </member>
         <member name="P:DevExpress.Pdf.PdfDocument.AllowDocumentAssembling">
             <summary>
-                <para>Indicates whether inserting, rotating, or deleting pages and creating navigation elements such as bookmarks is allowed.
+                <para>Enables inserting, rotating, or deleting PDF pages and creating navigation elements such as bookmarks or thumbnail images.
 </para>
             </summary>
-            <value><b>true</b>, if inserting, rotating, or deleting pages and creating navigation elements such as bookmarks is allowed; otherwise <b>false</b>.
+            <value><b>true</b> to allow assembling the document; otherwise <b>false</b>.
 </value>
 
 
         </member>
         <member name="P:DevExpress.Pdf.PdfDocument.AllowFormsFilling">
             <summary>
-                <para>Indicates whether interactive form fields filling is allowed.
+                <para>Enables filling in interactive form fields of the PDF file, as well as signing the document (which amounts to filling in existing signature fields, a type of interactive form field).
 </para>
             </summary>
-            <value><b>true</b>, if  interactive form fields filling is allowed; otherwise <b>false</b>.
+            <value><b>true</b> to allow filling in interactive form fields in the PDF; otherwise <b>false</b>.
 </value>
 
 
         </member>
         <member name="P:DevExpress.Pdf.PdfDocument.AllowHighQualityPrinting">
             <summary>
-                <para>Indicates whether document printing in high resolution is allowed. 
+                <para>Enables printing the PDF in high resolution, so that a faithful digital copy of the PDF content is generated. 
 
 </para>
             </summary>
-            <value><b>true</b>, if  document printing in high resolution is allowed; otherwise <b>false</b>.
+            <value><b>true</b> to high quality printing; otherwise <b>false</b>.
 </value>
 
 
         </member>
         <member name="P:DevExpress.Pdf.PdfDocument.AllowModifying">
             <summary>
-                <para>Indicates whether document modification and assembling is allowed.
+                <para>Enables modifying the PDF.
 </para>
             </summary>
-            <value><b>true</b>, if document modification and assembling is allowed; otherwise <b>false</b>.
+            <value><b>true</b> to allow modifying the PDF; otherwise <b>false</b>.
 </value>
 
 
         </member>
         <member name="P:DevExpress.Pdf.PdfDocument.AllowPrinting">
             <summary>
-                <para>Indicates whether document printing is allowed.
+                <para>Enables printing the PDF.
 </para>
             </summary>
-            <value><b>true</b>, if document printing is allowed; otherwise <b>false</b>.
+            <value><b>true</b> to allow printing the PDF; otherwise <b>false</b>.
 </value>
 
 
@@ -521,10 +520,10 @@
         </member>
         <member name="P:DevExpress.Pdf.PdfDocument.CreationDate">
             <summary>
-                <para>Gets the date and time when the document was created.
+                <para>The date and time the document was created, in human-readable form.
 </para>
             </summary>
-            <value>A nullable <see cref="T:System.DateTimeOffset"/> structure that is a valid date-time offset.
+            <value>A <see cref="T:System.DateTimeOffset"/> structure.
 </value>
 
 
@@ -562,7 +561,7 @@
         </member>
         <member name="P:DevExpress.Pdf.PdfDocument.Keywords">
             <summary>
-                <para>Gets or sets the keywords associated with the document. 
+                <para>Returns the keywords associated with the document. 
 </para>
             </summary>
             <value>A <see cref="T:System.String"/> value.
@@ -612,10 +611,10 @@
         </member>
         <member name="P:DevExpress.Pdf.PdfDocument.ModDate">
             <summary>
-                <para>Gets the date and time the document was modified.
+                <para>The date and time the document was most recently modified, in human-readable form.
 </para>
             </summary>
-            <value>A nullable <see cref="T:System.DateTimeOffset"/> value that is the date and time of the file's modification. 
+            <value>A <see cref="T:System.DateTimeOffset"/> structure.
 </value>
 
 
@@ -642,10 +641,10 @@
         </member>
         <member name="P:DevExpress.Pdf.PdfDocument.OpenAction">
             <summary>
-                <para>Indicates an action to be performed when a document is opened.
+                <para>Indicates an action that shall be performed when the document is opened.
 </para>
             </summary>
-            <value>A <see cref="T:DevExpress.Pdf.PdfAction"/> object that represents an action to be performed when a document is opened.
+            <value>A DevExpress.Pdf.PdfAction object.
 </value>
 
 
@@ -742,7 +741,7 @@
         </member>
         <member name="P:DevExpress.Pdf.PdfDocument.Producer">
             <summary>
-                <para>Gets or sets the name of the conforming product that converted the original document to PDF from another format. 
+                <para>If the document was converted to PDF from another format, the name of the conforming product that converted it to PDF.
 </para>
             </summary>
             <value>A <see cref="T:System.String"/> value.
@@ -752,7 +751,7 @@
         </member>
         <member name="P:DevExpress.Pdf.PdfDocument.Subject">
             <summary>
-                <para>Gets or sets the subject of a document.
+                <para>Returns the subject of the document.
 </para>
             </summary>
             <value>A <see cref="T:System.String"/> value.
@@ -772,7 +771,7 @@
         </member>
         <member name="P:DevExpress.Pdf.PdfDocument.Title">
             <summary>
-                <para>Gets or sets the document's title.
+                <para>Returns the document's title.
 </para>
             </summary>
             <value>A <see cref="T:System.String"/> value.
@@ -782,7 +781,7 @@
         </member>
         <member name="P:DevExpress.Pdf.PdfDocument.Trapped">
             <summary>
-                <para>Gets or sets a value that specifies whether the document has been modified to include trapping information.
+                <para>A name object indicating whether the document has been modified to include trapping information.
 </para>
             </summary>
             <value>A <see cref="T:DevExpress.Utils.DefaultBoolean"/> enumeration value.

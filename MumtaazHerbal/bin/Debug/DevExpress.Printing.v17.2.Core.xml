@@ -1352,11 +1352,9 @@ The displayed error message corresponds to the <see cref="F:DevExpress.XtraPrint
         </member>
         <member name="P:DevExpress.ReportServer.ServiceModel.DataContracts.ScheduledJobDto.OptimisticLock">
             <summary>
-                <para>Identifies the scheduled job version used for optimistic locking.
-</para>
+                <para> </para>
             </summary>
-            <value>A nullable integer value that specifies the scheduled job version. 
-</value>
+            <value> </value>
 
 
         </member>
@@ -4202,22 +4200,21 @@ The displayed error message corresponds to the <see cref="F:DevExpress.XtraPrint
 </para>
             </summary>
             <param name="id">
-		An integer value identifying the report category.
+		An integer value, identifying the report category.
 
             </param>
             <param name="name">
-		A <see cref="T:System.String"/> value specifying the report category name.
+		A <see cref="T:System.String"/> value, specifying the report category name.
 
             </param>
             <param name="optimisticLock">
-		A nullable integer value specifying a category version used for optimistic locking.
-
+		 
             </param>
             <param name="asyncState">
-		A <see cref="T:System.Object"/> value containing information about the asynchronous operation.
+		A <see cref="T:System.Object"/> value, containing information about the asynchronous operation.
 
             </param>
-            <returns>A <see cref="T:System.Threading.Tasks.Task"/> specifying an asynchronous operation.
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/>, specifying an asynchronous operation.
 </returns>
 
 
@@ -4300,11 +4297,10 @@ The displayed error message corresponds to the <see cref="F:DevExpress.XtraPrint
 
             </param>
             <param name="optimisticLock">
-		A nullable integer value specifying a category version used for optimistic locking.
-
+		 
             </param>
             <param name="asyncState">
-		A <see cref="T:System.Object"/> value containing information about the asynchronous operation.
+		A <see cref="T:System.Object"/> value, containing information about the asynchronous operation.
 
             </param>
             <param name="onCompleted">
@@ -19582,11 +19578,9 @@ The default is <b><see cref="PdfAttachmentRelationship"/>.Alternative</b>.
         </member>
         <member name="P:DevExpress.ReportServer.ServiceModel.DataContracts.ReportCatalogItemDto.OptimisticLock">
             <summary>
-                <para>Identifies the report catalog version used for optimistic locking.
-</para>
+                <para> </para>
             </summary>
-            <value>A nullable integer value that specifies the report catalog version. 
-</value>
+            <value> </value>
 
 
         </member>
@@ -19697,11 +19691,9 @@ The default is <b><see cref="PdfAttachmentRelationship"/>.Alternative</b>.
         </member>
         <member name="P:DevExpress.ReportServer.ServiceModel.DataContracts.CategoryDto.OptimisticLock">
             <summary>
-                <para>Identifies the category version used for optimistic locking.
-</para>
+                <para> </para>
             </summary>
-            <value>A nullable integer value that specifies the category version.
-</value>
+            <value> </value>
 
 
         </member>
@@ -19723,11 +19715,9 @@ The default is <b><see cref="PdfAttachmentRelationship"/>.Alternative</b>.
         </member>
         <member name="P:DevExpress.ReportServer.ServiceModel.DataContracts.CreateReportResult.OptimisticLock">
             <summary>
-                <para>Identifies the report version used for optimistic locking.
-</para>
+                <para> </para>
             </summary>
-            <value>A nullable integer value that specifies the report version. 
-</value>
+            <value> </value>
 
 
         </member>
@@ -19829,11 +19819,9 @@ The default is <b><see cref="PdfAttachmentRelationship"/>.Alternative</b>.
         </member>
         <member name="P:DevExpress.ReportServer.ServiceModel.DataContracts.ReportDto.OptimisticLock">
             <summary>
-                <para>Identifies the report version used for optimistic locking.
-</para>
+                <para> </para>
             </summary>
-            <value>A nullable integer value that specifies the report version. 
-</value>
+            <value> </value>
 
 
         </member>
@@ -20814,23 +20802,22 @@ The default is <b><see cref="PdfAttachmentRelationship"/>.Alternative</b>.
 </para>
             </summary>
             <param name="categoryId">
-		An integer value specifying the report category ID.
+		An integer value, specifying the report category ID.
 
             </param>
             <param name="name">
-		A <see cref="T:System.String"/> value specifying the new category name.
+		A <see cref="T:System.String"/> value, specifying the new category name.
 
             </param>
             <param name="optimisticLock">
-		A nullable integer value specifying a report category version used for optimistic locking.
-
+		 
             </param>
             <param name="callback">
 		References a method to be called when a corresponding asynchronous operation is completed.
 
             </param>
             <param name="asyncState">
-		A <see cref="T:System.Object"/> value containing information about the asynchronous operation.
+		A <see cref="T:System.Object"/> value, containing information about the asynchronous operation.
 
             </param>
             <returns>An object containing information about the status of an asynchronous operation.
@@ -23008,11 +22995,9 @@ The default is <b><see cref="PdfAttachmentRelationship"/>.Alternative</b>.
         </member>
         <member name="P:DevExpress.ReportServer.ServiceModel.DataContracts.DataModelDto.OptimisticLock">
             <summary>
-                <para>Identifies the data model version used for optimistic locking.
-</para>
+                <para> </para>
             </summary>
-            <value>A nullable integer value that specifies the data model version. 
-</value>
+            <value> </value>
 
 
         </member>
@@ -30012,22 +29997,21 @@ A <b>System.Action</b> delegate to be called when the operation is complete.
 </para>
             </summary>
             <param name="id">
-		An integer value identifying the report category.
+		An integer value, identifying the report category.
 
             </param>
             <param name="name">
-		A <see cref="T:System.String"/> value specifying the report category name.
+		A <see cref="T:System.String"/> value, specifying the report category name.
 
             </param>
             <param name="optimisticLock">
-		A nullable integer value specifying a category version used for optimistic locking.
-
+		 
             </param>
             <param name="asyncState">
-		A <see cref="T:System.Object"/> value containing information about the asynchronous operation.
+		A <see cref="T:System.Object"/> value, containing information about the asynchronous operation.
 
             </param>
-            <returns>A <see cref="T:System.Threading.Tasks.Task"/> specifying an asynchronous operation.
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/>, specifying an asynchronous operation.
 </returns>
 
 
@@ -30110,11 +30094,10 @@ A <b>System.Action</b> delegate to be called when the operation is complete.
 
             </param>
             <param name="optimisticLock">
-		A nullable integer value specifying a report category version used for optimistic locking.
-
+		 
             </param>
             <param name="asyncState">
-		A <see cref="T:System.Object"/> value containing information about the asynchronous operation.
+		A <see cref="T:System.Object"/> value, containing information about the asynchronous operation.
 
             </param>
             <param name="onCompleted">
@@ -37047,12 +37030,18 @@ This method is equivalent to the <see cref="M:DevExpress.Export.Xl.XlBorder.Outl
 
 
         </member>
-        <member name="M:DevExpress.XtraPrinting.Export.BrickViewData.ApplyClipping(System.Drawing.RectangleF)">
+        <member name="M:DevExpress.XtraPrinting.Export.BrickViewData.ApplyClipping(System.Drawing.RectangleF,System.Boolean)">
             <summary>
-                <para> </para>
+                <para>For internal use.
+</para>
             </summary>
             <param name="clipBounds">
 		 
+
+            </param>
+            <param name="round">
+		 
+
             </param>
 
 

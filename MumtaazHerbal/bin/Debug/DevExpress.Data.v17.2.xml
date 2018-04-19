@@ -9022,7 +9022,7 @@ To create the <b>logical OR</b> operator using the <see cref="M:DevExpress.Data.
         </member>
         <member name="F:DevExpress.XtraReports.UI.FieldType.Boolean">
             <summary>
-                <para>Indicates that the field returns a Boolean (<b>true</b> or <b>false</b>) value (the <see cref="T:System.Boolean"/> type).
+                <para>Indicates that the field returns a Boolean value (the <see cref="T:System.Boolean"/> type).
 </para>
             </summary>
 
@@ -9030,7 +9030,7 @@ To create the <b>logical OR</b> operator using the <see cref="M:DevExpress.Data.
         </member>
         <member name="F:DevExpress.XtraReports.UI.FieldType.Byte">
             <summary>
-                <para>Indicates that the field returns an 8-bit unsigned integer value (the <see cref="T:System.Byte"/> type).
+                <para>Indicates that the field returns a byte value (the <see cref="T:System.Byte"/> type).
 </para>
             </summary>
 
@@ -9038,7 +9038,7 @@ To create the <b>logical OR</b> operator using the <see cref="M:DevExpress.Data.
         </member>
         <member name="F:DevExpress.XtraReports.UI.FieldType.DateTime">
             <summary>
-                <para>Indicates that the field returns a value expressed as a date and time of day (the <see cref="T:System.DateTime"/> type).
+                <para>Indicates that the field returns a date-time value (the <see cref="T:System.DateTime"/> type).
 </para>
             </summary>
 
@@ -9054,7 +9054,7 @@ To create the <b>logical OR</b> operator using the <see cref="M:DevExpress.Data.
         </member>
         <member name="F:DevExpress.XtraReports.UI.FieldType.Double">
             <summary>
-                <para>Indicates that the field returns a double-precision floating-point value (the <see cref="T:System.Double"/> type).
+                <para>Indicates that the field returns a double value (the <see cref="T:System.Double"/> type).
 </para>
             </summary>
 
@@ -9062,7 +9062,7 @@ To create the <b>logical OR</b> operator using the <see cref="M:DevExpress.Data.
         </member>
         <member name="F:DevExpress.XtraReports.UI.FieldType.Float">
             <summary>
-                <para>Indicates that the field returns a single-precision floating-point value (the <see cref="T:System.Single"/> type).
+                <para>Indicates that the field returns a float value (the <see cref="T:System.Single"/> type).
 </para>
             </summary>
 
@@ -9070,7 +9070,7 @@ To create the <b>logical OR</b> operator using the <see cref="M:DevExpress.Data.
         </member>
         <member name="F:DevExpress.XtraReports.UI.FieldType.Guid">
             <summary>
-                <para>Indicates that the field returns a globally unique identifier value (the System.Guid type).
+                <para>Indicates that the field returns a GUID value (the System.Guid type)
 </para>
             </summary>
 
@@ -9078,7 +9078,7 @@ To create the <b>logical OR</b> operator using the <see cref="M:DevExpress.Data.
         </member>
         <member name="F:DevExpress.XtraReports.UI.FieldType.Int16">
             <summary>
-                <para>Indicates that the field returns a 16-bit signed integer value (the <see cref="T:System.Int16"/> type).
+                <para>Indicates that the field returns an integer value (the <see cref="T:System.Int16"/> type).
 </para>
             </summary>
 
@@ -9086,7 +9086,7 @@ To create the <b>logical OR</b> operator using the <see cref="M:DevExpress.Data.
         </member>
         <member name="F:DevExpress.XtraReports.UI.FieldType.Int32">
             <summary>
-                <para>Indicates that the field returns a 32-bit signed integer value (the <see cref="T:System.Int32"/> type).
+                <para>Indicates that the field returns an integer value (the <see cref="T:System.Int32"/> type).
 </para>
             </summary>
 
@@ -9094,7 +9094,7 @@ To create the <b>logical OR</b> operator using the <see cref="M:DevExpress.Data.
         </member>
         <member name="F:DevExpress.XtraReports.UI.FieldType.None">
             <summary>
-                <para>Indicates that the field's type is undefined and determined by evaluating the actually returned object during report generation.
+                <para>Indicates that the field's type is undefined, and it determined by evaluating the actually returned object when it is used during report generation.
 
 </para>
             </summary>
@@ -9103,7 +9103,7 @@ To create the <b>logical OR</b> operator using the <see cref="M:DevExpress.Data.
         </member>
         <member name="F:DevExpress.XtraReports.UI.FieldType.String">
             <summary>
-                <para>Indicates that the field returns a string value as a sequence of UTF-16 code units (the <see cref="T:System.String"/> type).
+                <para>Indicates that the field returns a string value (the <see cref="T:System.String"/> type).
 </para>
             </summary>
 
@@ -9111,7 +9111,7 @@ To create the <b>logical OR</b> operator using the <see cref="M:DevExpress.Data.
         </member>
         <member name="F:DevExpress.XtraReports.UI.FieldType.TimeSpan">
             <summary>
-                <para>Indicates that the field returns a value as a time interval (the <see cref="T:System.TimeSpan"/> type).
+                <para>Indicates that the field returns a time span value (the <see cref="T:System.TimeSpan"/> type).
 </para>
             </summary>
 
@@ -9484,8 +9484,7 @@ To create the <b>logical OR</b> operator using the <see cref="M:DevExpress.Data.
         <member name="T:DevExpress.Data.Controls.ExpressionEditor.ExpressionEditorPresenter">
 
             <summary>
-                <para>Provides the Presenter functionality to an Expression Editor.
-</para>
+                <para> </para>
             </summary>
 
         </member>
@@ -9550,8 +9549,7 @@ To create the <b>logical OR</b> operator using the <see cref="M:DevExpress.Data.
         <member name="T:DevExpress.Data.Controls.ExpressionEditor.ExpressionEditorModel">
 
             <summary>
-                <para>The Expression Editor model.
-</para>
+                <para> </para>
             </summary>
 
         </member>
@@ -29593,13 +29591,6 @@ Otherwise, the closest matching image side (height or width) will be sized to th
 
 
         </member>
-        <member name="F:DevExpress.Data.Browsing.Design.TypeSpecifics.Enum">
-            <summary>
-                <para> </para>
-            </summary>
-
-
-        </member>
         <member name="F:DevExpress.Data.Browsing.Design.TypeSpecifics.Float">
             <summary>
                 <para>The floating point number column type.
@@ -33728,13 +33719,6 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to an empty
             <summary>
                 <para>"<b>The path is too long.\r\nTry a shorter name.</b>"
 </para>
-            </summary>
-
-
-        </member>
-        <member name="F:DevExpress.XtraPrinting.Localization.PreviewStringId.Msg_Search_Caption">
-            <summary>
-                <para> </para>
             </summary>
 
 
