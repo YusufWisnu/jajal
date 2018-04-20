@@ -7,13 +7,15 @@ using System.Text;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using System.Data.SQLite;
+
+using System.Data.SqlClient;
 
 namespace MumtaazHerbal
 {
     public partial class dftrSupp : DevExpress.XtraEditors.XtraForm
     {
-        SQLiteConnection con = new SQLiteConnection(@"Data Source =MumtaazDB.db; Version = 3;");
+        static string lokasiDB = @"Data Source=DESKTOP-J5QHE7L\SQLEXPRESS;Initial Catalog=MumtaazDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        SqlConnection con = new SqlConnection(lokasiDB);
         public dftrSupp()
         {
             InitializeComponent();
@@ -21,7 +23,7 @@ namespace MumtaazHerbal
 
         private void dftrSupp_Load(object sender, EventArgs e)
         {
-            SQLiteDataAdapter sda = new SQLiteDataAdapter("SELECT * FROM [tb_daftar_supplier]", con);
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM [tb_daftar_supplier]", con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             gridControl1.DataSource = dt;

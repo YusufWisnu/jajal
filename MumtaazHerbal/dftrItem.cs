@@ -14,8 +14,9 @@ namespace MumtaazHerbal
 {
     public partial class dftrItem : DevExpress.XtraEditors.XtraForm
     {
-        string path = Path.GetFullPath(Environment.CurrentDirectory);
-        string databaseName = "MumtaazDB.mdf";
+        //string path = Path.GetFullPath(Environment.CurrentDirectory);
+        //string databaseName = "MumtaazDB.mdf";
+        
 
         public dftrItem()
         {
@@ -24,9 +25,10 @@ namespace MumtaazHerbal
 
         private void dftrItem_Load(object sender, EventArgs e)
         {
-
-        SqlConnection con = new SqlConnection(@"Data Source=(localdb)\v11.0;AttachDbFilename=" + path + @"\" + databaseName + ";Integrated Security=True");
-        con.Open();
+            string lokasiDB = @"Data Source=DESKTOP-J5QHE7L\SQLEXPRESS;Initial Catalog=MumtaazDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            //SqlConnection con = new SqlConnection(@"Data Source=(localdb)\v11.0;AttachDbFilename=" + path + @"\" + databaseName + ";Integrated Security=True");
+            SqlConnection con = new SqlConnection(lokasiDB);
+            con.Open();
             SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM [tb_daftar_item]", con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
