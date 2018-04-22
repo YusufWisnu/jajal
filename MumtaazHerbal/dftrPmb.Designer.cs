@@ -103,7 +103,7 @@
             // gridColumn2
             // 
             this.gridColumn2.Caption = "Tanggal";
-            this.gridColumn2.FieldName = "tgl_pemb";
+            this.gridColumn2.FieldName = "tgl_pem";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;

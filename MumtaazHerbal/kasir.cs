@@ -8,10 +8,12 @@ using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 
+
 namespace MumtaazHerbal
 {
     public partial class kasir : DevExpress.XtraEditors.XtraForm
     {
+
         public kasir()
         {
             InitializeComponent();
@@ -33,6 +35,11 @@ namespace MumtaazHerbal
         {
             dftrPel pel = new dftrPel();
             pel.ShowDialog();
+        }
+
+        private void kasir_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

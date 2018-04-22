@@ -2,18 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Data.SQLite;
+using System.IO;
 
 namespace MumtaazHerbal
 {
     class DatabaseHelper
     {
-        //Database File name
-        //public string DatabaseName = "MumtaazDB.mdf";
+        /*Database File name*/
+        //public string databaseName = "MumtaazDB.mdf";
+        //string path = Path.GetFullPath(Environment.CurrentDirectory);
 
         public string GetConnection()
         {
-            return @"Data Source= DESKTOP-J5QHE7L\SQLEXPRESS;Initial Catalog = MumtaazDB; Integrated Security = True;";
+            return @"Data Source=DESKTOP-J5QHE7L\SQLEXPRESS;Initial Catalog=MumtaazDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            //return @"Data Source=(localdb)\v11.0;AttachDbFilename=" + path + @"\" + databaseName + ";Integrated Security=True";
         }
         /*
 

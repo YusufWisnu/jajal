@@ -418,6 +418,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "kasir";
             this.Text = "Kasir";
+            this.Load += new System.EventHandler(this.kasir_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtTransaksi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();

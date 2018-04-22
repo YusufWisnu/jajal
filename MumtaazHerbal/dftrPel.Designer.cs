@@ -88,7 +88,7 @@
             // Nama
             // 
             this.Nama.Caption = "Kode";
-            this.Nama.FieldName = "kode_pelanggan";
+            this.Nama.FieldName = "kode_pel";
             this.Nama.Name = "Nama";
             this.Nama.Visible = true;
             this.Nama.VisibleIndex = 0;

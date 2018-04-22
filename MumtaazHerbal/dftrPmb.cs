@@ -7,13 +7,13 @@ using System.Text;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using System.Data.SQLite;
+using System.Data.SqlClient;
 
 namespace MumtaazHerbal
 {
     public partial class dftrPmb : DevExpress.XtraEditors.XtraForm
     {
-        SQLiteConnection con = new SQLiteConnection(@"Data Source = MumtaazDB.db; Version = 3;");
+        DatabaseHelper myDB = new DatabaseHelper();
         public dftrPmb()
         {
             InitializeComponent();
@@ -21,7 +21,9 @@ namespace MumtaazHerbal
 
         private void dftrPmb_Load(object sender, EventArgs e)
         {
-            SQLiteDataAdapter sda = new SQLiteDataAdapter("SELECT * FROM [tb_daftar_pembelian]", con);
+            
+            SqlConnection con = new SqlConnection(myDB.GetConnection()); 
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM [tb_daftar_pembelian]", con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             gridControl1.DataSource = dt;
