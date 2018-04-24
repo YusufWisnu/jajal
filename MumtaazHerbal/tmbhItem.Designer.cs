@@ -121,12 +121,12 @@
             // 
             this.labelControl5.AppearanceDisabled.Options.UseTextOptions = true;
             this.labelControl5.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl5.Location = new System.Drawing.Point(27, 190);
+            this.labelControl5.Location = new System.Drawing.Point(36, 190);
             this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(80, 16);
+            this.labelControl5.Size = new System.Drawing.Size(69, 16);
             this.labelControl5.TabIndex = 12;
-            this.labelControl5.Text = "Harga Pokok :";
+            this.labelControl5.Text = "Harga Jual :";
             // 
             // textEdit4
             // 

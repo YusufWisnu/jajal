@@ -36,16 +36,11 @@ namespace MumtaazHerbal
 
         }
 
+        // Untuk AutoFill kode Supplier
         private void comboBoxEdit2_SelectedIndexChanged(object sender, EventArgs e)
-        { 
-
-        }
-
-        //untuk menampilkan nama supplier di comboBox
-        void fillCombo()
         {
             SqlConnection con = new SqlConnection(myDB.GetConnection());
-            SqlCommand cmd = new SqlCommand("SELECT * FROM tb_daftar_supplier", con);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM [tb_daftar_supplier] where [nama_supp] ='"+comboBoxEdit2.Text+"'", con);
             try
             {
                 con.Open();
@@ -53,22 +48,58 @@ namespace MumtaazHerbal
 
                 while (sdr.Read())
                 {
-                    string temp_supp;
-                    temp_supp = sdr.GetString(sdr.GetOrdinal("nama_supp"));
-                    comboBoxEdit2.Properties.Items.Add(temp_supp);
+                    string temp_kode;
+                    temp_kode = sdr.GetString(sdr.GetOrdinal("kode_supp"));
+                    textEdit8.Text = temp_kode;
                 }
-                con.Close();
+
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
+        //untuk menampilkan nama supplier di comboBox
+        void fillCombo()
+        {
+            SqlConnection con = new SqlConnection(myDB.GetConnection());
+            SqlCommand cmd = new SqlCommand("SELECT * FROM [tb_daftar_supplier]", con);
+            try
+            {
+                con.Open();
+                SqlDataReader sdr = cmd.ExecuteReader();
+
+                while (sdr.Read())
+                {
+                    string temp_supp, temp_kode;
+                    temp_supp = sdr.GetString(sdr.GetOrdinal("nama_supp"));
+                    temp_kode = sdr.GetString(sdr.GetOrdinal("kode_supp"));  
+                    comboBoxEdit2.Properties.Items.Add(temp_supp);
+                    
+
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(myDB.GetConnection());
-            //SqlCommand cmd = new SqlCommand("INSERT INTO [tb_daftar_item] (kode_item, nama_item, stok, jenis_stok)")
+            SqlCommand cmd = new SqlCommand("INSERT INTO [tb_daftar_item] ([kode_item], [nama_item], [stok], [satuan], [harga_grosir], [harga_eceran], [harga_jual], [kode_supp], [nama_supp]) VALUES ('"+this.textEdit1.Text+ "','"+this.textEdit2.Text+ "','"+this.textEdit3.Text+ "','"+this.textEdit6.Text+ "','"+this.textEdit7.Text+"','" + this.textEdit5.Text+ "','"+this.textEdit4.Text+ "','"+this.textEdit8.Text+ "','"+this.comboBoxEdit2.Text+"')");
+            
+            try
+            {
+                
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
@@ -78,7 +109,7 @@ namespace MumtaazHerbal
 
         private void textEdit8_EditValueChanged(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
