@@ -90,16 +90,31 @@ namespace MumtaazHerbal
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(myDB.GetConnection());
-            SqlCommand cmd = new SqlCommand("INSERT INTO [tb_daftar_item] ([kode_item], [nama_item], [stok], [satuan], [harga_grosir], [harga_eceran], [harga_jual], [kode_supp], [nama_supp]) VALUES ('"+this.textEdit1.Text+ "','"+this.textEdit2.Text+ "','"+this.textEdit3.Text+ "','"+this.textEdit6.Text+ "','"+this.textEdit7.Text+"','" + this.textEdit5.Text+ "','"+this.textEdit4.Text+ "','"+this.textEdit8.Text+ "','"+this.comboBoxEdit2.Text+"')");
-            
+           
             try
             {
-                
-            }
-            catch(Exception ex)
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("INSERT INTO tb_daftar_item (kode_item, nama_item, stok, satuan, harga_grosir, harga_eceran, harga_jual, kode_supp, nama_supp) VALUES (@kode_item, @nama_item, @stok, @satuan, @harga_grosir, @harga_eceran, @harga_jual, @kode_supp, @nama_supp)", con);
+                    cmd.Parameters.AddWithValue("@kode_item", textEdit1.Text.Trim());
+                    cmd.Parameters.AddWithValue("@nama_item", textEdit2.Text.Trim());
+                    cmd.Parameters.AddWithValue("@stok", textEdit3.Text.Trim());
+                    cmd.Parameters.AddWithValue("@satuan", textEdit7.Text.Trim());
+                    cmd.Parameters.AddWithValue("@harga_grosir", textEdit6.Text.Trim());
+                    cmd.Parameters.AddWithValue("@harga_eceran", textEdit5.Text.Trim());
+                    cmd.Parameters.AddWithValue("@harga_jual", textEdit4.Text.Trim());
+                    cmd.Parameters.AddWithValue("@kode_supp", textEdit8.Text.Trim());
+                    cmd.Parameters.AddWithValue("@nama_supp", comboBoxEdit2.Text.Trim());
+                    cmd.ExecuteNonQuery();
+                    if (cmd.ExecuteNonQuery() == 1)
+                    {
+                        MessageBox.Show("Barang Berhasil Ditambahkan", "Mumtaaz Herbal", MessageBoxButtons.OK);
+                    }
+                }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+       // }
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
