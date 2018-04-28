@@ -16,10 +16,12 @@ namespace MumtaazHerbal
         {
             InitializeComponent();
         }
+        MumtaazContext mumtaaz;
 
         private void dftrSupp_Load(object sender, EventArgs e)
         {
-
+            mumtaaz = new MumtaazContext();
+            supplierBindingSource.DataSource = mumtaaz.Suppliers.ToList();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

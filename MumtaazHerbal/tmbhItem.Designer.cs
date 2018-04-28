@@ -28,47 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.components = new System.ComponentModel.Container();
+            this.txtKodeItem = new DevExpress.XtraEditors.TextEdit();
+            this.txtNamaItem = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
+            this.txtStok = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
+            this.txtHargaPokok = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
-            this.comboBoxEdit2 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.txtHargaRetail = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
+            this.txtHargaGrosir = new DevExpress.XtraEditors.TextEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit7 = new DevExpress.XtraEditors.TextEdit();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).BeginInit();
+            this.txtSatuan = new DevExpress.XtraEditors.TextEdit();
+            this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSave = new DevExpress.XtraEditors.SimpleButton();
+            this.lookSupplier = new DevExpress.XtraEditors.LookUpEdit();
+            this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.txtKodeItem.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNamaItem.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStok.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHargaPokok.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHargaRetail.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHargaGrosir.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSatuan.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookSupplier.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // textEdit1
+            // txtKodeItem
             // 
-            this.textEdit1.Location = new System.Drawing.Point(99, 24);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(147, 20);
-            this.textEdit1.TabIndex = 1;
+            this.txtKodeItem.Location = new System.Drawing.Point(99, 24);
+            this.txtKodeItem.Name = "txtKodeItem";
+            this.txtKodeItem.Size = new System.Drawing.Size(147, 20);
+            this.txtKodeItem.TabIndex = 1;
             // 
-            // textEdit2
+            // txtNamaItem
             // 
-            this.textEdit2.Location = new System.Drawing.Point(99, 50);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(327, 20);
-            this.textEdit2.TabIndex = 3;
+            this.txtNamaItem.Location = new System.Drawing.Point(99, 50);
+            this.txtNamaItem.Name = "txtNamaItem";
+            this.txtNamaItem.Size = new System.Drawing.Size(327, 20);
+            this.txtNamaItem.TabIndex = 3;
             // 
             // labelControl1
             // 
@@ -100,12 +103,12 @@
             this.labelControl3.TabIndex = 7;
             this.labelControl3.Text = "Stok :";
             // 
-            // textEdit3
+            // txtStok
             // 
-            this.textEdit3.Location = new System.Drawing.Point(99, 102);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(63, 20);
-            this.textEdit3.TabIndex = 6;
+            this.txtStok.Location = new System.Drawing.Point(99, 102);
+            this.txtStok.Name = "txtStok";
+            this.txtStok.Size = new System.Drawing.Size(63, 20);
+            this.txtStok.TabIndex = 6;
             // 
             // labelControl5
             // 
@@ -117,12 +120,12 @@
             this.labelControl5.TabIndex = 12;
             this.labelControl5.Text = "Harga Pokok :";
             // 
-            // textEdit4
+            // txtHargaPokok
             // 
-            this.textEdit4.Location = new System.Drawing.Point(99, 128);
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Size = new System.Drawing.Size(147, 20);
-            this.textEdit4.TabIndex = 11;
+            this.txtHargaPokok.Location = new System.Drawing.Point(99, 128);
+            this.txtHargaPokok.Name = "txtHargaPokok";
+            this.txtHargaPokok.Size = new System.Drawing.Size(147, 20);
+            this.txtHargaPokok.TabIndex = 11;
             // 
             // labelControl6
             // 
@@ -134,27 +137,12 @@
             this.labelControl6.TabIndex = 14;
             this.labelControl6.Text = "Harga Retail :";
             // 
-            // textEdit5
+            // txtHargaRetail
             // 
-            this.textEdit5.Location = new System.Drawing.Point(99, 154);
-            this.textEdit5.Name = "textEdit5";
-            this.textEdit5.Size = new System.Drawing.Size(147, 20);
-            this.textEdit5.TabIndex = 13;
-            // 
-            // comboBoxEdit2
-            // 
-            this.comboBoxEdit2.Location = new System.Drawing.Point(99, 76);
-            this.comboBoxEdit2.Name = "comboBoxEdit2";
-            this.comboBoxEdit2.Properties.Appearance.BackColor = System.Drawing.SystemColors.Window;
-            this.comboBoxEdit2.Properties.Appearance.Options.UseBackColor = true;
-            this.comboBoxEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit2.Properties.DropDownRows = 2;
-            this.comboBoxEdit2.Properties.Items.AddRange(new object[] {
-            "PCS",
-            "DUS"});
-            this.comboBoxEdit2.Size = new System.Drawing.Size(168, 20);
-            this.comboBoxEdit2.TabIndex = 16;
+            this.txtHargaRetail.Location = new System.Drawing.Point(99, 154);
+            this.txtHargaRetail.Name = "txtHargaRetail";
+            this.txtHargaRetail.Size = new System.Drawing.Size(147, 20);
+            this.txtHargaRetail.TabIndex = 13;
             // 
             // labelControl7
             // 
@@ -176,12 +164,12 @@
             this.labelControl4.TabIndex = 17;
             this.labelControl4.Text = "Satuan :";
             // 
-            // textEdit6
+            // txtHargaGrosir
             // 
-            this.textEdit6.Location = new System.Drawing.Point(99, 180);
-            this.textEdit6.Name = "textEdit6";
-            this.textEdit6.Size = new System.Drawing.Size(147, 20);
-            this.textEdit6.TabIndex = 15;
+            this.txtHargaGrosir.Location = new System.Drawing.Point(99, 180);
+            this.txtHargaGrosir.Name = "txtHargaGrosir";
+            this.txtHargaGrosir.Size = new System.Drawing.Size(147, 20);
+            this.txtHargaGrosir.TabIndex = 15;
             // 
             // labelControl8
             // 
@@ -193,32 +181,54 @@
             this.labelControl8.TabIndex = 16;
             this.labelControl8.Text = "Harga Grosir :";
             // 
-            // textEdit7
+            // txtSatuan
             // 
-            this.textEdit7.EditValue = "PCS";
-            this.textEdit7.Enabled = false;
-            this.textEdit7.Location = new System.Drawing.Point(215, 102);
-            this.textEdit7.Name = "textEdit7";
-            this.textEdit7.Size = new System.Drawing.Size(32, 20);
-            this.textEdit7.TabIndex = 18;
+            this.txtSatuan.EditValue = "PCS";
+            this.txtSatuan.Enabled = false;
+            this.txtSatuan.Location = new System.Drawing.Point(215, 102);
+            this.txtSatuan.Name = "txtSatuan";
+            this.txtSatuan.Size = new System.Drawing.Size(32, 20);
+            this.txtSatuan.TabIndex = 18;
             // 
-            // simpleButton2
+            // btnCancel
             // 
-            this.simpleButton2.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.reload;
-            this.simpleButton2.Location = new System.Drawing.Point(161, 247);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(79, 25);
-            this.simpleButton2.TabIndex = 20;
-            this.simpleButton2.Text = "Cancel";
+            this.btnCancel.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.reload;
+            this.btnCancel.Location = new System.Drawing.Point(161, 247);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(79, 25);
+            this.btnCancel.TabIndex = 20;
+            this.btnCancel.Text = "Cancel";
             // 
-            // simpleButton1
+            // btnSave
             // 
-            this.simpleButton1.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.diskette__1_;
-            this.simpleButton1.Location = new System.Drawing.Point(62, 247);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(79, 25);
-            this.simpleButton1.TabIndex = 19;
-            this.simpleButton1.Text = "Simpan";
+            this.btnSave.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.diskette__1_;
+            this.btnSave.Location = new System.Drawing.Point(62, 247);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(79, 25);
+            this.btnSave.TabIndex = 19;
+            this.btnSave.Text = "Simpan";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // lookSupplier
+            // 
+            this.lookSupplier.Location = new System.Drawing.Point(99, 76);
+            this.lookSupplier.Name = "lookSupplier";
+            this.lookSupplier.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookSupplier.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("KodeSupplier", "Kode Supplier", 75, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("NamaSupplier", "Nama Supplier", 78, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.lookSupplier.Properties.DataSource = this.supplierBindingSource;
+            this.lookSupplier.Properties.DisplayMember = "NamaSupplier";
+            this.lookSupplier.Properties.DropDownRows = 5;
+            this.lookSupplier.Properties.NullText = "";
+            this.lookSupplier.Properties.ValueMember = "Id";
+            this.lookSupplier.Size = new System.Drawing.Size(148, 20);
+            this.lookSupplier.TabIndex = 21;
+            // 
+            // supplierBindingSource
+            // 
+            this.supplierBindingSource.DataSource = typeof(MumtaazHerbal.Supplier);
             // 
             // tmbhItem
             // 
@@ -227,36 +237,37 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(888, 444);
-            this.Controls.Add(this.simpleButton2);
-            this.Controls.Add(this.simpleButton1);
-            this.Controls.Add(this.textEdit7);
-            this.Controls.Add(this.textEdit6);
+            this.Controls.Add(this.lookSupplier);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.txtSatuan);
+            this.Controls.Add(this.txtHargaGrosir);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.labelControl8);
-            this.Controls.Add(this.textEdit4);
-            this.Controls.Add(this.textEdit5);
+            this.Controls.Add(this.txtHargaPokok);
+            this.Controls.Add(this.txtHargaRetail);
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.labelControl6);
-            this.Controls.Add(this.textEdit3);
-            this.Controls.Add(this.textEdit1);
+            this.Controls.Add(this.txtStok);
+            this.Controls.Add(this.txtKodeItem);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
-            this.Controls.Add(this.textEdit2);
+            this.Controls.Add(this.txtNamaItem);
             this.Controls.Add(this.labelControl7);
             this.Controls.Add(this.labelControl1);
-            this.Controls.Add(this.comboBoxEdit2);
             this.Name = "tmbhItem";
             this.ShowMdiChildCaptionInParentTitle = true;
             this.Text = "Tambah Item";
             this.Load += new System.EventHandler(this.tmbhItem_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKodeItem.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNamaItem.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStok.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHargaPokok.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHargaRetail.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHargaGrosir.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSatuan.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookSupplier.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,23 +275,24 @@
 
         #endregion
 
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.TextEdit txtKodeItem;
+        private DevExpress.XtraEditors.TextEdit txtNamaItem;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
+        private DevExpress.XtraEditors.TextEdit txtStok;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
+        private DevExpress.XtraEditors.TextEdit txtHargaPokok;
         private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.TextEdit textEdit5;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit2;
+        private DevExpress.XtraEditors.TextEdit txtHargaRetail;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.TextEdit textEdit6;
+        private DevExpress.XtraEditors.TextEdit txtHargaGrosir;
         private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.TextEdit textEdit7;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.TextEdit txtSatuan;
+        private DevExpress.XtraEditors.SimpleButton btnSave;
+        private DevExpress.XtraEditors.SimpleButton btnCancel;
+        private DevExpress.XtraEditors.LookUpEdit lookSupplier;
+        private System.Windows.Forms.BindingSource supplierBindingSource;
     }
 }
