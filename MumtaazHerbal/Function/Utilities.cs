@@ -8,6 +8,9 @@ namespace MumtaazHerbal.Function
 {
    public class Utilities
     {
+        tmbhItem item = new tmbhItem();
+
+
         //KodeItem = txtKodeItem.Text,
         //        NamaItem = txtNamaItem.Text,
         //        SupplierId = Convert.ToInt32(lookSupplier.EditValue),
@@ -16,7 +19,7 @@ namespace MumtaazHerbal.Function
         //        HargaEceran = Convert.ToInt32(txtHargaRetail.Text),
         //        HargaGrosir = Convert.ToInt32(txtHargaGrosir.Text),
         //        HargaJual = Convert.ToInt32(txtHargaPokok)
-        public void ClearText(string kodeItem,string namaItem, string supplier, string stok, string satuan, string hargaEceran, string hargaGrosir, string hargaJual)
+        public void ClearText(string kodeItem, string namaItem, string supplier, string stok, string satuan, string hargaEceran, string hargaGrosir, string hargaJual)
         {
             kodeItem = string.Empty;
             supplier = string.Empty;
@@ -28,6 +31,15 @@ namespace MumtaazHerbal.Function
             namaItem = string.Empty;
         }
 
-       
+        public void ClearEditors()
+        {
+            foreach (Control ctrl in item.Controls)
+            {
+                if (ctrl is DevExpress.XtraEditors.BaseEdit)
+                    (ctrl as DevExpress.XtraEditors.BaseEdit).EditValue = null;
+            }
+        }
+
+
     }
 }
