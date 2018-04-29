@@ -15,14 +15,15 @@ namespace MumtaazHerbal
         public dftrItem()
         {
             InitializeComponent();
-
+       
             //faisalllll
             //pust test
         }
-
+        MumtaazContext mumtaaz;
         private void dftrItem_Load(object sender, EventArgs e)
         {
-
+            mumtaaz = new MumtaazContext();
+            itemBindingSource.DataSource = mumtaaz.Items.ToList();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

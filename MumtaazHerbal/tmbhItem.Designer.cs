@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.txtKodeItem = new DevExpress.XtraEditors.TextEdit();
             this.txtNamaItem = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -43,20 +42,20 @@
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.txtHargaGrosir = new DevExpress.XtraEditors.TextEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.txtSatuan = new DevExpress.XtraEditors.TextEdit();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.lookSupplier = new DevExpress.XtraEditors.LookUpEdit();
-            this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.supplierBindingSource = new System.Windows.Forms.BindingSource();
+            this.txtSatuan = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKodeItem.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNamaItem.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStok.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHargaPokok.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHargaRetail.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHargaGrosir.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSatuan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookSupplier.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSatuan.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // txtKodeItem
@@ -107,7 +106,7 @@
             // 
             this.txtStok.Location = new System.Drawing.Point(99, 102);
             this.txtStok.Name = "txtStok";
-            this.txtStok.Size = new System.Drawing.Size(63, 20);
+            this.txtStok.Size = new System.Drawing.Size(42, 20);
             this.txtStok.TabIndex = 6;
             // 
             // labelControl5
@@ -158,7 +157,7 @@
             // 
             this.labelControl4.AppearanceDisabled.Options.UseTextOptions = true;
             this.labelControl4.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl4.Location = new System.Drawing.Point(168, 105);
+            this.labelControl4.Location = new System.Drawing.Point(147, 105);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(41, 13);
             this.labelControl4.TabIndex = 17;
@@ -181,15 +180,6 @@
             this.labelControl8.TabIndex = 16;
             this.labelControl8.Text = "Harga Grosir :";
             // 
-            // txtSatuan
-            // 
-            this.txtSatuan.EditValue = "PCS";
-            this.txtSatuan.Enabled = false;
-            this.txtSatuan.Location = new System.Drawing.Point(215, 102);
-            this.txtSatuan.Name = "txtSatuan";
-            this.txtSatuan.Size = new System.Drawing.Size(32, 20);
-            this.txtSatuan.TabIndex = 18;
-            // 
             // btnCancel
             // 
             this.btnCancel.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.reload;
@@ -198,6 +188,7 @@
             this.btnCancel.Size = new System.Drawing.Size(79, 25);
             this.btnCancel.TabIndex = 20;
             this.btnCancel.Text = "Cancel";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -230,6 +221,18 @@
             // 
             this.supplierBindingSource.DataSource = typeof(MumtaazHerbal.Supplier);
             // 
+            // txtSatuan
+            // 
+            this.txtSatuan.Location = new System.Drawing.Point(194, 102);
+            this.txtSatuan.Name = "txtSatuan";
+            this.txtSatuan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtSatuan.Properties.Items.AddRange(new object[] {
+            "PCS",
+            "DUS"});
+            this.txtSatuan.Size = new System.Drawing.Size(53, 20);
+            this.txtSatuan.TabIndex = 22;
+            // 
             // tmbhItem
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -237,10 +240,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(888, 444);
+            this.Controls.Add(this.txtSatuan);
             this.Controls.Add(this.lookSupplier);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.txtSatuan);
             this.Controls.Add(this.txtHargaGrosir);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.labelControl8);
@@ -265,9 +268,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtHargaPokok.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHargaRetail.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHargaGrosir.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSatuan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookSupplier.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSatuan.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,10 +292,10 @@
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.TextEdit txtHargaGrosir;
         private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.TextEdit txtSatuan;
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraEditors.SimpleButton btnCancel;
         private DevExpress.XtraEditors.LookUpEdit lookSupplier;
         private System.Windows.Forms.BindingSource supplierBindingSource;
+        private DevExpress.XtraEditors.ComboBoxEdit txtSatuan;
     }
 }

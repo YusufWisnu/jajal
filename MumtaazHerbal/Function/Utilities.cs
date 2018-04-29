@@ -31,7 +31,7 @@ namespace MumtaazHerbal.Function
             namaItem = string.Empty;
         }
 
-        public void ClearEditors()
+        public void ClearEditors(tmbhItem item)
         {
             foreach (Control ctrl in item.Controls)
             {

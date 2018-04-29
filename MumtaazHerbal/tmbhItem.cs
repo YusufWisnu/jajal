@@ -65,8 +65,7 @@ namespace MumtaazHerbal
                 mumtaaz.Items.Add(item);
                 mumtaaz.SaveChanges();
                 XtraMessageBox.Show("Berhasil Menambah Item", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //util.ClearText(txtKodeItem.Text, txtNamaItem.Text, lookSupplier.Text, txtStok.Text, txtSatuan.Text, txtHargaGrosir.Text, txtHargaPokok.Text, txtHargaRetail.Text);
-                ClearEditors();
+                util.ClearEditors(this);
             }
             catch(Exception ee)
             {
@@ -75,14 +74,10 @@ namespace MumtaazHerbal
             
         }
 
-        void ClearEditors()
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-            foreach (Control ctrl in this.Controls)
-            {
-                if (ctrl is BaseEdit)
-                    (ctrl as BaseEdit).EditValue = null;
-            }
+            util = new Utilities();
+            util.ClearEditors(this);
         }
-
     }
 }
