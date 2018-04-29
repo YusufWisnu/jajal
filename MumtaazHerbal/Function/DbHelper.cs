@@ -7,7 +7,7 @@ namespace MumtaazHerbal.Function
 {
     public class DbHelper
     {
-        MumtaazContext mumtaaz;
+        //MumtaazContext mumtaaz;
         
     }
 }
