@@ -36,22 +36,9 @@
             this.txtSearch = new DevExpress.XtraEditors.TextEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnTutup = new DevExpress.XtraEditors.SimpleButton();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNamaItem = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colKodeItem = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colStok = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSatuan = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colHargaGrosir = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colHargaEceran = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colHargaJual = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSupplierId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.itemBindingSource = new System.Windows.Forms.BindingSource();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSearch
@@ -130,108 +117,20 @@
             this.btnTutup.TabIndex = 39;
             this.btnTutup.Text = "&Tutup";
             // 
-            // gridControl1
+            // dataGridView1
             // 
-            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.DataSource = this.itemBindingSource;
-            this.gridControl1.Location = new System.Drawing.Point(12, 43);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(895, 450);
-            this.gridControl1.TabIndex = 40;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colId,
-            this.colNamaItem,
-            this.colKodeItem,
-            this.colStok,
-            this.colSatuan,
-            this.colHargaGrosir,
-            this.colHargaEceran,
-            this.colHargaJual,
-            this.colSupplierId});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            // 
-            // colId
-            // 
-            this.colId.FieldName = "Id";
-            this.colId.Name = "colId";
-            this.colId.Visible = true;
-            this.colId.VisibleIndex = 0;
-            // 
-            // colNamaItem
-            // 
-            this.colNamaItem.FieldName = "NamaItem";
-            this.colNamaItem.Name = "colNamaItem";
-            this.colNamaItem.Visible = true;
-            this.colNamaItem.VisibleIndex = 1;
-            // 
-            // colKodeItem
-            // 
-            this.colKodeItem.FieldName = "KodeItem";
-            this.colKodeItem.Name = "colKodeItem";
-            this.colKodeItem.Visible = true;
-            this.colKodeItem.VisibleIndex = 2;
-            // 
-            // colStok
-            // 
-            this.colStok.FieldName = "Stok";
-            this.colStok.Name = "colStok";
-            this.colStok.Visible = true;
-            this.colStok.VisibleIndex = 3;
-            // 
-            // colSatuan
-            // 
-            this.colSatuan.FieldName = "Satuan";
-            this.colSatuan.Name = "colSatuan";
-            this.colSatuan.Visible = true;
-            this.colSatuan.VisibleIndex = 4;
-            // 
-            // colHargaGrosir
-            // 
-            this.colHargaGrosir.FieldName = "HargaGrosir";
-            this.colHargaGrosir.Name = "colHargaGrosir";
-            this.colHargaGrosir.Visible = true;
-            this.colHargaGrosir.VisibleIndex = 5;
-            // 
-            // colHargaEceran
-            // 
-            this.colHargaEceran.FieldName = "HargaEceran";
-            this.colHargaEceran.Name = "colHargaEceran";
-            this.colHargaEceran.Visible = true;
-            this.colHargaEceran.VisibleIndex = 6;
-            // 
-            // colHargaJual
-            // 
-            this.colHargaJual.FieldName = "HargaJual";
-            this.colHargaJual.Name = "colHargaJual";
-            this.colHargaJual.Visible = true;
-            this.colHargaJual.VisibleIndex = 7;
-            // 
-            // colSupplierId
-            // 
-            this.colSupplierId.FieldName = "SupplierId";
-            this.colSupplierId.Name = "colSupplierId";
-            this.colSupplierId.Visible = true;
-            this.colSupplierId.VisibleIndex = 8;
-            // 
-            // itemBindingSource
-            // 
-            this.itemBindingSource.DataSource = typeof(MumtaazHerbal.Item);
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 43);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(895, 450);
+            this.dataGridView1.TabIndex = 41;
             // 
             // dftrItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(919, 539);
-            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnTutup);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.txtSearch);
@@ -244,9 +143,7 @@
             this.Text = " Daftar Item";
             this.Load += new System.EventHandler(this.dftrItem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -262,17 +159,6 @@
         private DevExpress.XtraEditors.TextEdit txtSearch;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton btnTutup;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn colId;
-        private DevExpress.XtraGrid.Columns.GridColumn colNamaItem;
-        private DevExpress.XtraGrid.Columns.GridColumn colKodeItem;
-        private DevExpress.XtraGrid.Columns.GridColumn colStok;
-        private DevExpress.XtraGrid.Columns.GridColumn colSatuan;
-        private DevExpress.XtraGrid.Columns.GridColumn colHargaGrosir;
-        private DevExpress.XtraGrid.Columns.GridColumn colHargaEceran;
-        private DevExpress.XtraGrid.Columns.GridColumn colHargaJual;
-        private DevExpress.XtraGrid.Columns.GridColumn colSupplierId;
-        private System.Windows.Forms.BindingSource itemBindingSource;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
