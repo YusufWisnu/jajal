@@ -7,6 +7,7 @@ using System.Text;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Extensions;
 
 namespace MumtaazHerbal
 {
@@ -61,13 +62,36 @@ namespace MumtaazHerbal
                             o.KodeItem,
                             o.Stok,
                             o.Satuan,
-                            o.HargaGrosir,  
+                            o.HargaGrosir,
                             o.HargaEceran,
                             o.HargaJual,
                             a.NamaSupplier
                         };
+           
+            //gridView1.With<Item>(item => {
+            //    item.Columns
+            //    .Add(c => c.NamaItem, col =>
+            //      {
+            //          col.Caption = "Nama Item";
+            //          col.Width = 150;
 
-            dataGridView1.DataSource = query.ToList();
+            //      })
+            //      .Add((c => c.KodeItem), c => 
+            //      {
+            //          c.Caption = "Kode Item";
+            //      });
+                
+            //});
+            //gridView1.With<Supplier>(supplier => {
+            //    supplier.Columns
+            //    .Add(c => c.NamaSupplier, col =>
+            //    {
+            //        col.Name = "Nama Supplier";
+            //        col.Width = 300;
+            //    });
+            //});
+            gridControl1.DataSource = query.ToList();
+
             
         }
     }

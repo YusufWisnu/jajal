@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnHapus = new DevExpress.XtraEditors.SimpleButton();
@@ -36,9 +37,21 @@
             this.txtSearch = new DevExpress.XtraEditors.TextEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnTutup = new DevExpress.XtraEditors.SimpleButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.NamaItem = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.KodeItem = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Stok = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Satuan = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.HargaGrosir = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.HargaEceran = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.HargaJual = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NamaSupplier = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSearch
@@ -117,20 +130,112 @@
             this.btnTutup.TabIndex = 39;
             this.btnTutup.Text = "&Tutup";
             // 
-            // dataGridView1
+            // gridControl1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 43);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(895, 450);
-            this.dataGridView1.TabIndex = 41;
+            this.gridControl1.Location = new System.Drawing.Point(12, 39);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(895, 454);
+            this.gridControl1.TabIndex = 40;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.NamaItem,
+            this.KodeItem,
+            this.Stok,
+            this.Satuan,
+            this.HargaGrosir,
+            this.HargaEceran,
+            this.HargaJual,
+            this.NamaSupplier});
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            // 
+            // NamaItem
+            // 
+            this.NamaItem.Caption = "Nama Item";
+            this.NamaItem.FieldName = "NamaItem";
+            this.NamaItem.Name = "NamaItem";
+            this.NamaItem.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.NamaItem.Visible = true;
+            this.NamaItem.VisibleIndex = 0;
+            // 
+            // KodeItem
+            // 
+            this.KodeItem.Caption = "Kode Item";
+            this.KodeItem.FieldName = "KodeItem";
+            this.KodeItem.Name = "KodeItem";
+            this.KodeItem.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.KodeItem.Visible = true;
+            this.KodeItem.VisibleIndex = 1;
+            // 
+            // Stok
+            // 
+            this.Stok.Caption = "Stok";
+            this.Stok.FieldName = "Stok";
+            this.Stok.Name = "Stok";
+            this.Stok.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.Stok.Visible = true;
+            this.Stok.VisibleIndex = 2;
+            // 
+            // Satuan
+            // 
+            this.Satuan.Caption = "Satuan";
+            this.Satuan.FieldName = "Satuan";
+            this.Satuan.Name = "Satuan";
+            this.Satuan.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.Satuan.Visible = true;
+            this.Satuan.VisibleIndex = 3;
+            // 
+            // HargaGrosir
+            // 
+            this.HargaGrosir.Caption = "Harga Grosir";
+            this.HargaGrosir.FieldName = "HargaGrosir";
+            this.HargaGrosir.Name = "HargaGrosir";
+            this.HargaGrosir.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.HargaGrosir.Visible = true;
+            this.HargaGrosir.VisibleIndex = 4;
+            // 
+            // HargaEceran
+            // 
+            this.HargaEceran.Caption = "Harga Eceran";
+            this.HargaEceran.FieldName = "HargaEceran";
+            this.HargaEceran.Name = "HargaEceran";
+            this.HargaEceran.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.HargaEceran.Visible = true;
+            this.HargaEceran.VisibleIndex = 5;
+            // 
+            // HargaJual
+            // 
+            this.HargaJual.Caption = "Harga Jual";
+            this.HargaJual.FieldName = "HargaJual";
+            this.HargaJual.Name = "HargaJual";
+            this.HargaJual.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.HargaJual.Visible = true;
+            this.HargaJual.VisibleIndex = 6;
+            // 
+            // NamaSupplier
+            // 
+            this.NamaSupplier.Caption = "Nama Supplier";
+            this.NamaSupplier.FieldName = "NamaSupplier";
+            this.NamaSupplier.Name = "NamaSupplier";
+            this.NamaSupplier.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.NamaSupplier.Visible = true;
+            this.NamaSupplier.VisibleIndex = 7;
+            // 
+            // itemBindingSource
+            // 
+            this.itemBindingSource.DataSource = typeof(MumtaazHerbal.Item);
             // 
             // dftrItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(919, 539);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.btnTutup);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.txtSearch);
@@ -143,7 +248,9 @@
             this.Text = " Daftar Item";
             this.Load += new System.EventHandler(this.dftrItem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,6 +266,16 @@
         private DevExpress.XtraEditors.TextEdit txtSearch;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton btnTutup;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.BindingSource itemBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn NamaItem;
+        private DevExpress.XtraGrid.Columns.GridColumn KodeItem;
+        private DevExpress.XtraGrid.Columns.GridColumn Stok;
+        private DevExpress.XtraGrid.Columns.GridColumn Satuan;
+        private DevExpress.XtraGrid.Columns.GridColumn HargaGrosir;
+        private DevExpress.XtraGrid.Columns.GridColumn HargaEceran;
+        private DevExpress.XtraGrid.Columns.GridColumn HargaJual;
+        private DevExpress.XtraGrid.Columns.GridColumn NamaSupplier;
     }
 }

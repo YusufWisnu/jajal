@@ -332,3 +332,4 @@ C:\Users\faisal\source\repos\jajal\MumtaazHerbal\bin\Debug\EntityFramework.SqlSe
 C:\Users\faisal\source\repos\jajal\MumtaazHerbal\bin\Debug\MumtaazHerbal.exe.config
 C:\Users\faisal\source\repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.InitialModel.resources
 C:\Users\faisal\source\repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.ChangeDataTypeOfSatuanInItemsTable.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\bin\Debug\MetroFramework.dll
