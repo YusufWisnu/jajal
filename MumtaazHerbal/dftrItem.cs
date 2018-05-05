@@ -16,9 +16,6 @@ namespace MumtaazHerbal
         public dftrItem()
         {
             InitializeComponent();
-       
-            //faisalllll
-            //pust test
         }
 
         Supplier supp;
@@ -52,7 +49,6 @@ namespace MumtaazHerbal
         {
             supp = new Supplier();
             item = new Item();
-            var i = 0;
 
             var query = from o in mumtaaz.Items
                         join a in mumtaaz.Suppliers on o.SupplierId equals a.Id
@@ -67,31 +63,12 @@ namespace MumtaazHerbal
                             o.HargaJual,
                             a.NamaSupplier
                         };
-           
-            //gridView1.With<Item>(item => {
-            //    item.Columns
-            //    .Add(c => c.NamaItem, col =>
-            //      {
-            //          col.Caption = "Nama Item";
-            //          col.Width = 150;
-
-            //      })
-            //      .Add((c => c.KodeItem), c => 
-            //      {
-            //          c.Caption = "Kode Item";
-            //      });
-                
-            //});
-            //gridView1.With<Supplier>(supplier => {
-            //    supplier.Columns
-            //    .Add(c => c.NamaSupplier, col =>
-            //    {
-            //        col.Name = "Nama Supplier";
-            //        col.Width = 300;
-            //    });
-            //});
             gridControl1.DataSource = query.ToList();
 
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
             
         }
     }

@@ -48,6 +48,7 @@
             this.HargaJual = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NamaSupplier = new DevExpress.XtraGrid.Columns.GridColumn();
             this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -132,6 +133,9 @@
             // 
             // gridControl1
             // 
+            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl1.Location = new System.Drawing.Point(12, 39);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
@@ -156,85 +160,127 @@
             // 
             // NamaItem
             // 
+            this.NamaItem.AppearanceHeader.Options.UseTextOptions = true;
+            this.NamaItem.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.NamaItem.Caption = "Nama Item";
             this.NamaItem.FieldName = "NamaItem";
             this.NamaItem.Name = "NamaItem";
             this.NamaItem.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.NamaItem.Visible = true;
             this.NamaItem.VisibleIndex = 0;
+            this.NamaItem.Width = 236;
             // 
             // KodeItem
             // 
+            this.KodeItem.AppearanceHeader.Options.UseTextOptions = true;
+            this.KodeItem.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.KodeItem.Caption = "Kode Item";
             this.KodeItem.FieldName = "KodeItem";
             this.KodeItem.Name = "KodeItem";
             this.KodeItem.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.KodeItem.Visible = true;
             this.KodeItem.VisibleIndex = 1;
+            this.KodeItem.Width = 83;
             // 
             // Stok
             // 
+            this.Stok.AppearanceCell.Options.UseTextOptions = true;
+            this.Stok.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.Stok.AppearanceHeader.Options.UseTextOptions = true;
+            this.Stok.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Stok.Caption = "Stok";
             this.Stok.FieldName = "Stok";
             this.Stok.Name = "Stok";
             this.Stok.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.Stok.Visible = true;
             this.Stok.VisibleIndex = 2;
+            this.Stok.Width = 83;
             // 
             // Satuan
             // 
+            this.Satuan.AppearanceHeader.Options.UseTextOptions = true;
+            this.Satuan.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Satuan.Caption = "Satuan";
             this.Satuan.FieldName = "Satuan";
             this.Satuan.Name = "Satuan";
             this.Satuan.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Satuan.Visible = true;
             this.Satuan.VisibleIndex = 3;
+            this.Satuan.Width = 83;
             // 
             // HargaGrosir
             // 
+            this.HargaGrosir.AppearanceCell.Options.UseTextOptions = true;
+            this.HargaGrosir.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.HargaGrosir.AppearanceHeader.Options.UseTextOptions = true;
+            this.HargaGrosir.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.HargaGrosir.Caption = "Harga Grosir";
             this.HargaGrosir.FieldName = "HargaGrosir";
             this.HargaGrosir.Name = "HargaGrosir";
             this.HargaGrosir.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.HargaGrosir.Visible = true;
             this.HargaGrosir.VisibleIndex = 4;
+            this.HargaGrosir.Width = 50;
             // 
             // HargaEceran
             // 
+            this.HargaEceran.AppearanceCell.Options.UseTextOptions = true;
+            this.HargaEceran.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.HargaEceran.AppearanceHeader.Options.UseTextOptions = true;
+            this.HargaEceran.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.HargaEceran.Caption = "Harga Eceran";
             this.HargaEceran.FieldName = "HargaEceran";
             this.HargaEceran.Name = "HargaEceran";
             this.HargaEceran.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.HargaEceran.Visible = true;
             this.HargaEceran.VisibleIndex = 5;
+            this.HargaEceran.Width = 50;
             // 
             // HargaJual
             // 
+            this.HargaJual.AppearanceCell.Options.UseTextOptions = true;
+            this.HargaJual.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.HargaJual.AppearanceHeader.Options.UseTextOptions = true;
+            this.HargaJual.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.HargaJual.Caption = "Harga Jual";
             this.HargaJual.FieldName = "HargaJual";
             this.HargaJual.Name = "HargaJual";
             this.HargaJual.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.HargaJual.Visible = true;
             this.HargaJual.VisibleIndex = 6;
+            this.HargaJual.Width = 63;
             // 
             // NamaSupplier
             // 
+            this.NamaSupplier.AppearanceHeader.Options.UseTextOptions = true;
+            this.NamaSupplier.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.NamaSupplier.Caption = "Nama Supplier";
             this.NamaSupplier.FieldName = "NamaSupplier";
             this.NamaSupplier.Name = "NamaSupplier";
             this.NamaSupplier.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.NamaSupplier.Visible = true;
             this.NamaSupplier.VisibleIndex = 7;
+            this.NamaSupplier.Width = 229;
             // 
             // itemBindingSource
             // 
             this.itemBindingSource.DataSource = typeof(MumtaazHerbal.Item);
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Location = new System.Drawing.Point(276, 500);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton2.TabIndex = 41;
+            this.simpleButton2.Text = "Refresh";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // dftrItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(919, 539);
+            this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.btnTutup);
             this.Controls.Add(this.simpleButton1);
@@ -277,5 +323,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn HargaEceran;
         private DevExpress.XtraGrid.Columns.GridColumn HargaJual;
         private DevExpress.XtraGrid.Columns.GridColumn NamaSupplier;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
     }
 }

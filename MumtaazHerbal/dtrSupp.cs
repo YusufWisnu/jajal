@@ -38,5 +38,10 @@ namespace MumtaazHerbal
             supp.MdiParent = this.ParentForm;
             supp.Show();
         }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

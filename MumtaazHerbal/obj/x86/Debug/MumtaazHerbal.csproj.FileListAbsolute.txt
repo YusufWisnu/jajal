@@ -333,3 +333,4 @@ C:\Users\faisal\source\repos\jajal\MumtaazHerbal\bin\Debug\MumtaazHerbal.exe.con
 C:\Users\faisal\source\repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.InitialModel.resources
 C:\Users\faisal\source\repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.ChangeDataTypeOfSatuanInItemsTable.resources
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\bin\Debug\MetroFramework.dll
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.AddTablePelanggan.resources

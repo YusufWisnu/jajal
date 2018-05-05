@@ -149,6 +149,10 @@
     <Compile Include="historyPmb.Designer.cs">
       <DependentUpon>historyPmb.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805040304110_AddTablePelanggan.cs" />
+    <Compile Include="Migrations\201805040304110_AddTablePelanggan.Designer.cs">
+      <DependentUpon>201805040304110_AddTablePelanggan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Table\item.cs" />
     <Compile Include="kasir.cs">
       <SubType>Form</SubType>
@@ -178,6 +182,7 @@
     <Compile Include="pembelian.Designer.cs">
       <DependentUpon>pembelian.cs</DependentUpon>
     </Compile>
+    <Compile Include="Table\Pelanggan.cs" />
     <Compile Include="Table\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Table\supplier.cs" />
@@ -231,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804281055058_ChangeDataTypeOfSatuanInItemsTable.resx">
       <DependentUpon>201804281055058_ChangeDataTypeOfSatuanInItemsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805040304110_AddTablePelanggan.resx">
+      <DependentUpon>201805040304110_AddTablePelanggan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pembayaran.resx">
       <DependentUpon>pembayaran.cs</DependentUpon>

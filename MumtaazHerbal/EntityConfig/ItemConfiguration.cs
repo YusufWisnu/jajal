@@ -33,7 +33,8 @@ namespace MumtaazHerbal.EntityConfig
             Property(c => c.NamaItem)
                 .HasColumnType("varchar")
                 .IsRequired()
-                .HasMaxLength(255);
+                .HasMaxLength(255);                
+
         }
     }
 }
