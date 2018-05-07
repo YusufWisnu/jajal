@@ -81,6 +81,7 @@
             this.btnHapus.Size = new System.Drawing.Size(82, 26);
             this.btnHapus.TabIndex = 12;
             this.btnHapus.Text = "Hapus Item";
+            this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click);
             // 
             // btnEdit
             // 
@@ -302,7 +303,6 @@
         private DevExpress.XtraEditors.TextEdit txtSearch;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton btnTutup;
-        private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.BindingSource itemBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn NamaItem;
@@ -313,5 +313,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn HargaEceran;
         private DevExpress.XtraGrid.Columns.GridColumn HargaJual;
         private DevExpress.XtraGrid.Columns.GridColumn NamaSupplier;
+        private DevExpress.XtraGrid.GridControl gridControl1;
     }
 }

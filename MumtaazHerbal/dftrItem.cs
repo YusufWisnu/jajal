@@ -45,7 +45,7 @@ namespace MumtaazHerbal
                     return;
                 }
             }
-            tmbhItem item = new tmbhItem();
+            tmbhItem item = new tmbhItem(gridControl1);
             item.MdiParent = this.ParentForm;
             item.Show();
         }
@@ -70,7 +70,31 @@ namespace MumtaazHerbal
             item.Show();
         }
 
-       
-        
+        private void btnHapus_Click(object sender, EventArgs e)
+        {
+            if (gridView1.SelectedRowsCount == 0)
+                return;
+
+
+            using (var mumtaaz = new MumtaazContext())
+            {
+                if (XtraMessageBox.Show("Hapus item ini ?.", "Hapus", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    var rowHandle = gridView1.FocusedRowHandle;
+                    var kodeItem = gridView1.GetRowCellValue(rowHandle, "KodeItem").ToString();
+                    var query = mumtaaz.Items.FirstOrDefault(i => i.KodeItem == kodeItem);
+                    mumtaaz.Items.Remove(query);
+                    mumtaaz.SaveChanges();
+                    XtraMessageBox.Show("Berhasil menghapus item.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+            }
+
+            query.DisplayDaftarItem(gridControl1);
+
+        }
+
+
+
     }
 }

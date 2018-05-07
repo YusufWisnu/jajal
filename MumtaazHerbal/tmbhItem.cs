@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Data.Entity;
 using MumtaazHerbal.Function;
+using DevExpress.XtraGrid;
 
 namespace MumtaazHerbal
 {
@@ -16,6 +17,8 @@ namespace MumtaazHerbal
     {
         private Query query;
         private bool edit;
+        private GridControl gridControl1;
+
         public tmbhItem()
         {
             InitializeComponent();
@@ -28,9 +31,16 @@ namespace MumtaazHerbal
             this.edit = edit;
         }
 
+        public tmbhItem(GridControl gridControl1)
+            :this()
+        {
+            this.gridControl1 = gridControl1;
+        }
+
         MumtaazContext mumtaaz;
         Utilities util;
-        
+        Item item;
+
 
         private void tmbhItem_Load(object sender, EventArgs e)
         {
@@ -57,31 +67,43 @@ namespace MumtaazHerbal
             {
                 try
                 {
-                    var result = (from i in mumtaaz.Items
-                                  where i.KodeItem == txtKodeItem.Text
-                                  select i).Single();
+                    using (var mumtaaz = new MumtaazContext())
+                    {
 
-                    result.KodeItem = txtKodeItem.Text;
-                    result.NamaItem = txtNamaItem.Text;
-                    result.SupplierId = Convert.ToInt32(lookSupplier.EditValue);
-                    result.Stok = Convert.ToInt32(txtStok.Text);
-                    result.Satuan = txtSatuan.Text;
-                    result.HargaEceran = Convert.ToInt32(txtHargaRetail.Text);
-                    result.HargaGrosir = Convert.ToInt32(txtHargaGrosir.Text);
-                    result.HargaJual = Convert.ToInt32(txtHargaPokok.Text);
-                    edit = false;
+                        if (txtKodeItem.Text != query.KodeItem)
+                        {
+                            if(mumtaaz.Items.Any(o => o.KodeItem == txtKodeItem.Text))
+                            {
+                                return;
+                            }
+                        }
 
-                    //if (que.CheckIfEdit(txtKodeItem.Text))
-                    //    return;
+                        var result = (from i in mumtaaz.Items
+                                      where i.Id == query.Id
+                                      select i).Single();
 
-                    XtraMessageBox.Show("Berhasil Merubah Item", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    mumtaaz.SaveChanges();
-                    util.ClearEditors(this);
+                        result.KodeItem = txtKodeItem.Text;
+                        result.NamaItem = txtNamaItem.Text;
+                        result.SupplierId = Convert.ToInt32(lookSupplier.EditValue);
+                        result.Stok = Convert.ToInt32(txtStok.Text);
+                        result.Satuan = txtSatuan.Text;
+                        result.HargaEceran = Convert.ToInt32(txtHargaRetail.Text);
+                        result.HargaGrosir = Convert.ToInt32(txtHargaGrosir.Text);
+                        result.HargaJual = Convert.ToInt32(txtHargaPokok.Text);
+
+                        mumtaaz.Entry(result).State = System.Data.Entity.EntityState.Modified;
+                        mumtaaz.SaveChanges();
+                        XtraMessageBox.Show("Berhasil Merubah Item", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        edit = false;
+                        util.ClearEditors(this);
+                       // que.DisplayDaftarItem(gridControl1);
+                    }
+                        
                 }
 
                 catch (Exception ee)
                 {
-                    XtraMessageBox.Show("Mohon periksa kembali fieldnya", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    XtraMessageBox.Show(ee.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
             }
@@ -109,6 +131,7 @@ namespace MumtaazHerbal
                     mumtaaz.SaveChanges();
                     XtraMessageBox.Show("Berhasil Menambah Item", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     util.ClearEditors(this);
+                    dftrItem dftr = new dftrItem();
                 }
 
                 catch (Exception ee)
@@ -136,6 +159,7 @@ namespace MumtaazHerbal
             txtHargaRetail.Text = query.HargaEceran;
             txtHargaGrosir.Text = query.HargaGrosir;
             txtHargaPokok.Text = query.HargaJual;
+            
         }
     }
 }
