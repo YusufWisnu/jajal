@@ -26,8 +26,7 @@ namespace MumtaazHerbal.EntityConfig
             Property(c => c.KodeSupplier)
                 .HasColumnType("varchar")
                 .IsRequired()
-                .HasMaxLength(20)
-                .HasColumnAnnotation(IndexAnnotation.AnnotationName, new IndexAnnotation(new IndexAttribute()));
+                .HasMaxLength(20);
 
             Property(c => c.Alamat)
                 .HasColumnType("varchar")

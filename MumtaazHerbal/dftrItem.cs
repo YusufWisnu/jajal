@@ -8,6 +8,8 @@ using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Extensions;
+using MumtaazHerbal.Function;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace MumtaazHerbal
 {
@@ -18,15 +20,18 @@ namespace MumtaazHerbal
             InitializeComponent();
         }
 
-        Supplier supp;
-        Item item;
-
+        Query query;
         MumtaazContext mumtaaz;
+        Utilities util;
+
+
         private void dftrItem_Load(object sender, EventArgs e)
         {
+            query = new Query();
             mumtaaz = new MumtaazContext();
-           // itemBindingSource.DataSource = mumtaaz.Items.ToList();
-            DisplayData();
+
+            query.DisplayDaftarItem(gridControl1);
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -35,6 +40,7 @@ namespace MumtaazHerbal
             {
                 if (form.GetType() == typeof(tmbhItem))
                 {
+
                     form.Activate();
                     return;
                 }
@@ -44,32 +50,27 @@ namespace MumtaazHerbal
             item.Show();
         }
 
-
-        public void DisplayData()
+        private void btnEdit_Click(object sender, EventArgs e)
         {
-            supp = new Supplier();
-            item = new Item();
+            bool edit = true;
+            util = new Utilities();
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(tmbhItem))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+            // Ambil data dari gridview
+            query.GetData(gridView1);
 
-            var query = from o in mumtaaz.Items
-                        join a in mumtaaz.Suppliers on o.SupplierId equals a.Id
-                        select new
-                        {
-                            o.NamaItem,
-                            o.KodeItem,
-                            o.Stok,
-                            o.Satuan,
-                            o.HargaGrosir,
-                            o.HargaEceran,
-                            o.HargaJual,
-                            a.NamaSupplier
-                        };
-            gridControl1.DataSource = query.ToList();
-
+            tmbhItem item = new tmbhItem(query, edit);
+            item.MdiParent = this.ParentForm;
+            item.Show();
         }
 
-        private void simpleButton2_Click(object sender, EventArgs e)
-        {
-            
-        }
+       
+        
     }
 }

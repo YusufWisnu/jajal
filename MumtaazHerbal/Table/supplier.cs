@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MumtaazHerbal
 {
@@ -7,6 +8,7 @@ namespace MumtaazHerbal
     {
         public int Id { get; set; }
 
+        [Index(IsUnique =true)]
         public string KodeSupplier { get; set; }
 
         public string NamaSupplier { get; set; }

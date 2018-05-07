@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtKodeItem = new DevExpress.XtraEditors.TextEdit();
             this.txtNamaItem = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -45,8 +46,8 @@
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.lookSupplier = new DevExpress.XtraEditors.LookUpEdit();
-            this.supplierBindingSource = new System.Windows.Forms.BindingSource();
             this.txtSatuan = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.txtKodeItem.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNamaItem.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStok.Properties)).BeginInit();
@@ -54,8 +55,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtHargaRetail.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHargaGrosir.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookSupplier.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSatuan.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // txtKodeItem
@@ -217,10 +218,6 @@
             this.lookSupplier.Size = new System.Drawing.Size(148, 20);
             this.lookSupplier.TabIndex = 21;
             // 
-            // supplierBindingSource
-            // 
-            this.supplierBindingSource.DataSource = typeof(MumtaazHerbal.Supplier);
-            // 
             // txtSatuan
             // 
             this.txtSatuan.Location = new System.Drawing.Point(194, 102);
@@ -232,6 +229,10 @@
             "DUS"});
             this.txtSatuan.Size = new System.Drawing.Size(53, 20);
             this.txtSatuan.TabIndex = 22;
+            // 
+            // supplierBindingSource
+            // 
+            this.supplierBindingSource.DataSource = typeof(MumtaazHerbal.Supplier);
             // 
             // tmbhItem
             // 
@@ -269,8 +270,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtHargaRetail.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHargaGrosir.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookSupplier.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSatuan.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,7 +296,7 @@
         private DevExpress.XtraEditors.SimpleButton btnSave;
         private DevExpress.XtraEditors.SimpleButton btnCancel;
         private DevExpress.XtraEditors.LookUpEdit lookSupplier;
-        private System.Windows.Forms.BindingSource supplierBindingSource;
         private DevExpress.XtraEditors.ComboBoxEdit txtSatuan;
+        private System.Windows.Forms.BindingSource supplierBindingSource;
     }
 }

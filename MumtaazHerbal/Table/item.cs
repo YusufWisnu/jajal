@@ -1,11 +1,15 @@
-﻿namespace MumtaazHerbal
+﻿
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace MumtaazHerbal
 {
     public class Item
     {
         public int Id { get; set; }
 
         public string NamaItem { get; set; }
-
+        
+        [Index(IsUnique =true)]
         public string KodeItem { get; set; }
 
         public int Stok { get; set; }

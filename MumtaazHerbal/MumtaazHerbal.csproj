@@ -142,6 +142,7 @@
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Function\DbHelper.cs" />
+    <Compile Include="Function\Query.cs" />
     <Compile Include="Function\Utilities.cs" />
     <Compile Include="historyPmb.cs">
       <SubType>Form</SubType>
@@ -152,6 +153,10 @@
     <Compile Include="Migrations\201805040304110_AddTablePelanggan.cs" />
     <Compile Include="Migrations\201805040304110_AddTablePelanggan.Designer.cs">
       <DependentUpon>201805040304110_AddTablePelanggan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805060433004_AddUniquePropertyFromItemsAndSuppliersTable.cs" />
+    <Compile Include="Migrations\201805060433004_AddUniquePropertyFromItemsAndSuppliersTable.Designer.cs">
+      <DependentUpon>201805060433004_AddUniquePropertyFromItemsAndSuppliersTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Table\item.cs" />
     <Compile Include="kasir.cs">
@@ -239,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805040304110_AddTablePelanggan.resx">
       <DependentUpon>201805040304110_AddTablePelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805060433004_AddUniquePropertyFromItemsAndSuppliersTable.resx">
+      <DependentUpon>201805060433004_AddUniquePropertyFromItemsAndSuppliersTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pembayaran.resx">
       <DependentUpon>pembayaran.cs</DependentUpon>

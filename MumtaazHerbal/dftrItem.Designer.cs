@@ -48,7 +48,6 @@
             this.HargaJual = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NamaSupplier = new DevExpress.XtraGrid.Columns.GridColumn();
             this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -92,6 +91,7 @@
             this.btnEdit.Size = new System.Drawing.Size(82, 26);
             this.btnEdit.TabIndex = 11;
             this.btnEdit.Text = "Edit Item";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
@@ -266,21 +266,11 @@
             // 
             this.itemBindingSource.DataSource = typeof(MumtaazHerbal.Item);
             // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Location = new System.Drawing.Point(276, 500);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton2.TabIndex = 41;
-            this.simpleButton2.Text = "Refresh";
-            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
-            // 
             // dftrItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(919, 539);
-            this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.btnTutup);
             this.Controls.Add(this.simpleButton1);
@@ -323,6 +313,5 @@
         private DevExpress.XtraGrid.Columns.GridColumn HargaEceran;
         private DevExpress.XtraGrid.Columns.GridColumn HargaJual;
         private DevExpress.XtraGrid.Columns.GridColumn NamaSupplier;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
     }
 }
