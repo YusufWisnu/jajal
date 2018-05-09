@@ -17,7 +17,8 @@ namespace MumtaazHerbal
     {
         private Query query;
         private bool edit;
-        private GridControl gridControl1;
+        private GridControl gridControl1 = new GridControl();
+
 
         public tmbhItem()
         {
@@ -96,7 +97,7 @@ namespace MumtaazHerbal
                         XtraMessageBox.Show("Berhasil Merubah Item", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         edit = false;
                         util.ClearEditors(this);
-                       // que.DisplayDaftarItem(gridControl1);
+                        que.DisplayDaftarItem(gridControl1);
                     }
                         
                 }
@@ -107,7 +108,7 @@ namespace MumtaazHerbal
                 }
 
             }
-
+            // end ifs
             else
             {
                 try
