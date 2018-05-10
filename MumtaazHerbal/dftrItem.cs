@@ -19,21 +19,23 @@ namespace MumtaazHerbal
         public dftrItem()
         {
             InitializeComponent();
+            //DisplayDaftarItem();
         }
 
         
 
         Query query;
-        MumtaazContext mumtaaz;
+        //MumtaazContext mumtaaz;
         Utilities util;
 
 
         private void dftrItem_Load(object sender, EventArgs e)
         {
-            query = new Query();
-            mumtaaz = new MumtaazContext();
+            //query = new Query();
+            //mumtaaz = new MumtaazContext();
 
-            query.DisplayDaftarItem(gridControl1);
+            //query.DisplayDaftarItem(gridControl1);
+            
 
         }
 
@@ -94,6 +96,31 @@ namespace MumtaazHerbal
             }
 
             query.DisplayDaftarItem(gridControl1);
+
+        }
+
+        private void DisplayDaftarItem()
+        {
+            using (var mumtaaz = new MumtaazContext())
+            {
+                var supp = new Supplier();
+                var item = new Item();
+
+                var query = from o in mumtaaz.Items
+                            join a in mumtaaz.Suppliers on o.SupplierId equals a.Id
+                            select new
+                            {
+                                o.NamaItem,
+                                o.KodeItem,
+                                o.Stok,
+                                o.Satuan,
+                                o.HargaGrosir,
+                                o.HargaEceran,
+                                o.HargaJual,
+                                a.NamaSupplier
+                            };
+                gridControl1.DataSource = query.ToList();
+            }
 
         }
 
