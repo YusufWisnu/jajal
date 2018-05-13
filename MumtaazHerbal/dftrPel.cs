@@ -47,5 +47,10 @@ namespace MumtaazHerbal
         {
 
         }
+        
+        private void LoadData()
+        {
+
+        }
     }
 }

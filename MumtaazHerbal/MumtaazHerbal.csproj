@@ -159,9 +159,9 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Table\item.cs" />
-    <Compile Include="Table\MumtaazContext.cs" />
+    <Compile Include="MumtaazContext.cs" />
     <Compile Include="Table\Pelanggan.cs" />
-    <Compile Include="Table\Program.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Table\supplier.cs" />
     <Compile Include="tmbhItem.cs">
       <SubType>Form</SubType>
