@@ -46,6 +46,32 @@ namespace MumtaazHerbal.Function
             return false;
         }
 
+        public bool CheckIfNull(tmbhPel item)
+        {
+
+            foreach (Control c in item.Controls)
+            {
+                if (c is TextEdit)
+                {
+                    if (string.IsNullOrEmpty(c.Text))
+                    {
+                        XtraMessageBox.Show("Mohon isi semua field yang ada", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        public void ClearEditors(tmbhPel pel)
+        {
+            foreach (Control ctrl in pel.Controls)
+            {
+                if (ctrl is BaseEdit)
+                    (ctrl as BaseEdit).EditValue = null;
+            }
+        }
+
 
     }
 }

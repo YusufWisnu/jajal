@@ -22,12 +22,22 @@ namespace MumtaazHerbal.Function
         public string NamaSupplier;
         //public string TempId;
 
+        //data pelanggan
+        public int IdPelanggan;
+        public string NamaPel;
+        public string KodePel;
+        public string AlamatPel;
+        public string EmailPel;
+        public string TeleponPel;
+    
+
         Supplier supp;
         Item item;
         MumtaazContext mumtaaz;
 
         // ------------------------------------   dftrItem   -----------------------------------------------\\
 
+        //ambil data dari gridView
         public void GetData(GridView grid)
         {
             var rowHandle = grid.FocusedRowHandle;
@@ -86,7 +96,18 @@ namespace MumtaazHerbal.Function
 
         // ------------------------------------   dftrPelanggan   -----------------------------------------------\\
 
-
+        public bool CheckKodePelanggan(string kodePelanggan)
+        {
+            using (var mumtaaz = new MumtaazContext())
+            {
+                if (mumtaaz.Pelanggans.Any(o => o.KodePelanggan == kodePelanggan))
+                {
+                    XtraMessageBox.Show("Kode Pelanggan sudah digunakan.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return true;
+                }
+            }
+            return false;
+        }
 
 
     }

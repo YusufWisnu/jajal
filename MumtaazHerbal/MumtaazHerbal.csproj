@@ -112,6 +112,7 @@
       <DependentUpon>dtrSupp.cs</DependentUpon>
     </Compile>
     <Compile Include="EntityConfig\ItemConfiguration.cs" />
+    <Compile Include="EntityConfig\PelangganConfiguration.cs" />
     <Compile Include="EntityConfig\SupplierConfiguration.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -143,6 +144,10 @@
     <Compile Include="Migrations\201805130628163_InitialModel.cs" />
     <Compile Include="Migrations\201805130628163_InitialModel.Designer.cs">
       <DependentUpon>201805130628163_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805130821511_AddUniqueInKodePelangganFromTablePelanggan.cs" />
+    <Compile Include="Migrations\201805130821511_AddUniqueInKodePelangganFromTablePelanggan.Designer.cs">
+      <DependentUpon>201805130821511_AddUniqueInKodePelangganFromTablePelanggan.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="pembayaran.cs">
@@ -211,6 +216,9 @@
     <EmbeddedResource Include="Migrations\201805130628163_InitialModel.resx">
       <DependentUpon>201805130628163_InitialModel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805130821511_AddUniqueInKodePelangganFromTablePelanggan.resx">
+      <DependentUpon>201805130821511_AddUniqueInKodePelangganFromTablePelanggan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="pembayaran.resx">
       <DependentUpon>pembayaran.cs</DependentUpon>
     </EmbeddedResource>
@@ -239,6 +247,7 @@
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Pelanggan.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -1,4 +1,6 @@
-﻿namespace MumtaazHerbal
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace MumtaazHerbal
 {
     public class Pelanggan
     {
@@ -6,6 +8,7 @@
 
         public string Nama { get; set; }
 
+        [Index(IsUnique = true)]
         public string KodePelanggan { get; set; }
 
         public string NoHp { get; set; }

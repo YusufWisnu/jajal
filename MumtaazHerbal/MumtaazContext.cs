@@ -10,7 +10,7 @@ namespace MumtaazHerbal
 
         public virtual DbSet<Item> Items { get; set; }
         public virtual DbSet<Supplier> Suppliers { get; set; }
-        public DbSet<Pelanggan> Pelanggans { get; set; }
+        public virtual DbSet<Pelanggan> Pelanggans { get; set; }
 
         public MumtaazContext()
             :base("name=MumtaazFix")
@@ -22,6 +22,7 @@ namespace MumtaazHerbal
         {
             modelBuilder.Configurations.Add(new ItemConfiguration());
             modelBuilder.Configurations.Add(new SupplierConfiguration());
+            modelBuilder.Configurations.Add(new PelangganConfiguration());
         }
 
     }

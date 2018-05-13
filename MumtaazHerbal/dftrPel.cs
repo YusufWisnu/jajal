@@ -7,6 +7,7 @@ using System.Text;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using MumtaazHerbal.Function;
 
 namespace MumtaazHerbal
 {
@@ -16,6 +17,8 @@ namespace MumtaazHerbal
         {
             InitializeComponent();
         }
+
+        Query query;
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -28,14 +31,37 @@ namespace MumtaazHerbal
                 }
             }
 
-            tmbhPel tmbh = new tmbhPel();
+            tmbhPel tmbh = new tmbhPel(pelangganBindingSource);
+            tmbh.MdiParent = this.ParentForm;
+            tmbh.Show();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            bool edit = true;
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(tmbhPel))
+                {
+
+                    form.Activate();
+                    return;
+                }
+            }
+            GetData();
+            tmbhPel tmbh = new tmbhPel(this, edit, query,pelangganBindingSource);
             tmbh.MdiParent = this.ParentForm;
             tmbh.Show();
         }
 
         private void dftrPel_Load(object sender, EventArgs e)
         {
+            query = new Query();
 
+            using (var mumtaaz = new MumtaazContext())
+            {
+                pelangganBindingSource.DataSource = mumtaaz.Pelanggans.ToList();
+            }
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -43,13 +69,22 @@ namespace MumtaazHerbal
             this.Close();
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
+       
 
-        }
-        
-        private void LoadData()
+        public void GetData()
         {
+            var rowHandle = gridView1.FocusedRowHandle;
+            query.NamaPel= gridView1.GetRowCellValue(rowHandle, "Nama").ToString();
+            query.AlamatPel= gridView1.GetRowCellValue(rowHandle, "Alamat").ToString();
+            query.EmailPel= gridView1.GetRowCellValue(rowHandle, "Email").ToString();
+            query.TeleponPel= gridView1.GetRowCellValue(rowHandle, "NoHp").ToString();
+            query.KodePel= gridView1.GetRowCellValue(rowHandle, "KodePelanggan").ToString();
+            using (var mumtaaz = new MumtaazContext())
+            {
+                query.IdPelanggan = Convert.ToInt32(mumtaaz.Pelanggans.Where(c => c.KodePelanggan == query.KodePel).SingleOrDefault()?.Id);
+
+            }
+
 
         }
     }
