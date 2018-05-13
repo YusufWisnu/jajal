@@ -331,3 +331,10 @@ C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.exe
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.pdb
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\bin\Debug\MumtaazHerbal.exe.config
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.InitialModel.resources
+C:\Users\YUSUF WISNU P\Source\Repos\jajal\MumtaazHerbal\bin\Debug\MumtaazHerbal.exe.config
+C:\Users\YUSUF WISNU P\Source\Repos\jajal\MumtaazHerbal\bin\Debug\EntityFramework.dll
+C:\Users\YUSUF WISNU P\Source\Repos\jajal\MumtaazHerbal\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\YUSUF WISNU P\Source\Repos\jajal\MumtaazHerbal\bin\Debug\EntityFramework.xml
+C:\Users\YUSUF WISNU P\Source\Repos\jajal\MumtaazHerbal\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\YUSUF WISNU P\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.InitialModel.resources
+C:\Users\YUSUF WISNU P\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.pembelian.resources
