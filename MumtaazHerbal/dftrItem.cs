@@ -34,7 +34,7 @@ namespace MumtaazHerbal
             //query = new Query();
             //mumtaaz = new MumtaazContext();
 
-            //query.DisplayDaftarItem(gridControl1);
+            query.DisplayDaftarItem(gridControl1);
             
 
         }
