@@ -31,7 +31,7 @@ namespace MumtaazHerbal
 
         private void dftrItem_Load(object sender, EventArgs e)
         {
-            //query = new Query();
+            query = new Query();
             //mumtaaz = new MumtaazContext();
 
             query.DisplayDaftarItem(gridControl1);

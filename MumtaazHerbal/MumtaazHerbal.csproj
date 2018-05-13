@@ -63,10 +63,10 @@
     <Reference Include="DevExpress.XtraPrinting.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net40\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -140,6 +140,11 @@
     <Compile Include="kasir.Designer.cs">
       <DependentUpon>kasir.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805130628163_InitialModel.cs" />
+    <Compile Include="Migrations\201805130628163_InitialModel.Designer.cs">
+      <DependentUpon>201805130628163_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="pembayaran.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +208,9 @@
     <EmbeddedResource Include="kasir.resx">
       <DependentUpon>kasir.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805130628163_InitialModel.resx">
+      <DependentUpon>201805130628163_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="pembayaran.resx">
       <DependentUpon>pembayaran.cs</DependentUpon>
     </EmbeddedResource>
@@ -229,7 +237,7 @@
     <EmbeddedResource Include="tmbhSupp.resx">
       <DependentUpon>tmbhSupp.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="App1.config" />
+    <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
