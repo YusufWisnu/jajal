@@ -40,7 +40,7 @@ namespace MumtaazHerbal
 
         MumtaazContext mumtaaz;
         Utilities util;
-        Item item;
+        //Item item;
 
 
         private void tmbhItem_Load(object sender, EventArgs e)
