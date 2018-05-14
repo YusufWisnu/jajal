@@ -49,7 +49,7 @@ namespace MumtaazHerbal
                 }
             }
             GetData();
-            tmbhPel tmbh = new tmbhPel(this, edit, query,pelangganBindingSource);
+            tmbhPel tmbh = new tmbhPel(this, edit, query, pelangganBindingSource);
             tmbh.MdiParent = this.ParentForm;
             tmbh.Show();
         }
@@ -86,6 +86,26 @@ namespace MumtaazHerbal
             }
 
 
+        }
+
+        private void btnHapus_Click(object sender, EventArgs e)
+        {
+            if(pelangganBindingSource.Current != null)
+            {
+                if(XtraMessageBox.Show("Hapus data ini ?.", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    using (var mumtaaz = new MumtaazContext())
+                    {
+                        Pelanggan obj = pelangganBindingSource.Current as Pelanggan;
+                        if (mumtaaz.Entry<Pelanggan>(obj).State == System.Data.Entity.EntityState.Detached)
+                            mumtaaz.Set<Pelanggan>().Attach(obj);
+                        mumtaaz.Entry<Pelanggan>(obj).State = System.Data.Entity.EntityState.Deleted;
+                        pelangganBindingSource.RemoveCurrent();
+                        mumtaaz.SaveChanges();
+                        XtraMessageBox.Show("Berhasil menghapus data ini.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
         }
     }
 }

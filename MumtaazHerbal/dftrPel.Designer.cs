@@ -40,8 +40,8 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.pelangganBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colNama = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKodePelanggan = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNama = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNoHp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAlamat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEmail = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -81,6 +81,7 @@
             this.btnHapus.Size = new System.Drawing.Size(82, 26);
             this.btnHapus.TabIndex = 28;
             this.btnHapus.Text = "&Hapus";
+            this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click);
             // 
             // btnEdit
             // 
@@ -153,19 +154,19 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
-            // colNama
-            // 
-            this.colNama.FieldName = "Nama";
-            this.colNama.Name = "colNama";
-            this.colNama.Visible = true;
-            this.colNama.VisibleIndex = 0;
-            // 
             // colKodePelanggan
             // 
             this.colKodePelanggan.FieldName = "KodePelanggan";
             this.colKodePelanggan.Name = "colKodePelanggan";
             this.colKodePelanggan.Visible = true;
             this.colKodePelanggan.VisibleIndex = 1;
+            // 
+            // colNama
+            // 
+            this.colNama.FieldName = "Nama";
+            this.colNama.Name = "colNama";
+            this.colNama.Visible = true;
+            this.colNama.VisibleIndex = 0;
             // 
             // colNoHp
             // 

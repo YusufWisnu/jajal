@@ -167,6 +167,8 @@
             this.textEdit4.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit4.Properties.Appearance.Options.UseFont = true;
             this.textEdit4.Properties.AutoHeight = false;
+            this.textEdit4.Properties.Mask.EditMask = "Rp##########,00.00";
+            this.textEdit4.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textEdit4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.textEdit4.Size = new System.Drawing.Size(993, 95);
             this.textEdit4.TabIndex = 26;
