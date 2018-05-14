@@ -83,23 +83,24 @@
             // 
             this.btnHapus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnHapus.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.substract__1_;
-            this.btnHapus.Location = new System.Drawing.Point(219, 614);
+            this.btnHapus.Location = new System.Drawing.Point(243, 614);
             this.btnHapus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnHapus.Name = "btnHapus";
-            this.btnHapus.Size = new System.Drawing.Size(96, 32);
+            this.btnHapus.Size = new System.Drawing.Size(102, 32);
             this.btnHapus.TabIndex = 21;
-            this.btnHapus.Text = "Hapus Item";
+            this.btnHapus.Text = "Hapus Supp";
             // 
             // btnEdit
             // 
             this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnEdit.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.edit;
-            this.btnEdit.Location = new System.Drawing.Point(117, 614);
+            this.btnEdit.Location = new System.Drawing.Point(141, 614);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(96, 32);
             this.btnEdit.TabIndex = 20;
-            this.btnEdit.Text = "Edit Item";
+            this.btnEdit.Text = "Edit Supp";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
@@ -108,9 +109,9 @@
             this.btnAdd.Location = new System.Drawing.Point(14, 614);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(96, 32);
+            this.btnAdd.Size = new System.Drawing.Size(121, 32);
             this.btnAdd.TabIndex = 19;
-            this.btnAdd.Text = "Item Baru";
+            this.btnAdd.Text = "Tambah Supp";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // gridColumn5
@@ -168,7 +169,7 @@
             this.colKodeSupplier.FieldName = "KodeSupplier";
             this.colKodeSupplier.Name = "colKodeSupplier";
             this.colKodeSupplier.Visible = true;
-            this.colKodeSupplier.VisibleIndex = 1;
+            this.colKodeSupplier.VisibleIndex = 0;
             // 
             // colNamaSupplier
             // 
@@ -177,28 +178,28 @@
             this.colNamaSupplier.FieldName = "NamaSupplier";
             this.colNamaSupplier.Name = "colNamaSupplier";
             this.colNamaSupplier.Visible = true;
-            this.colNamaSupplier.VisibleIndex = 2;
+            this.colNamaSupplier.VisibleIndex = 1;
             // 
             // colAlamat
             // 
             this.colAlamat.FieldName = "Alamat";
             this.colAlamat.Name = "colAlamat";
             this.colAlamat.Visible = true;
-            this.colAlamat.VisibleIndex = 3;
+            this.colAlamat.VisibleIndex = 2;
             // 
             // colNoHP
             // 
             this.colNoHP.FieldName = "NoHP";
             this.colNoHP.Name = "colNoHP";
             this.colNoHP.Visible = true;
-            this.colNoHP.VisibleIndex = 4;
+            this.colNoHP.VisibleIndex = 3;
             // 
             // colEmail
             // 
             this.colEmail.FieldName = "Email";
             this.colEmail.Name = "colEmail";
             this.colEmail.Visible = true;
-            this.colEmail.VisibleIndex = 5;
+            this.colEmail.VisibleIndex = 4;
             // 
             // dftrSupp
             // 

@@ -30,7 +30,39 @@ namespace MumtaazHerbal
             SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM Suppliers where KodeSupplier = '" + textEdit1.Text + "'", con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
-            if()
+            if (textEdit1.Text == string.Empty && textEdit2.Text == string.Empty)
+            {
+                XtraMessageBox.Show("Kode Supplier Harus Diisi", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }else if(textEdit2.Text == string.Empty)
+            {
+                XtraMessageBox.Show("Nama Supplier Harus Diisi", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (dt.Rows.Count == 0)
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Suppliers (KodeSupplier, NamaSupplier, Alamat, NoHP, Email) VALUES (@KodeSupplier, @NamaSupplier, @Alamat, @NoHP, @Email)", con);
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@KodeSupplier", textEdit1.Text.Trim());
+                    cmd.Parameters.AddWithValue("@NamaSupplier", textEdit2.Text.Trim());
+                    cmd.Parameters.AddWithValue("@Alamat", memoEdit1.Text.Trim());
+                    cmd.Parameters.AddWithValue("@NoHP", textEdit3.Text.Trim());
+                    cmd.Parameters.AddWithValue("@Email", textEdit4.Text.Trim());
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    XtraMessageBox.Show("Supplier Berhasil Ditambahkan", "Success", MessageBoxButtons.OK);
+                    textEdit1.Text = textEdit2.Text = textEdit3.Text = textEdit4.Text = memoEdit1.Text = "";
+                }
+                catch (Exception ee)
+                {
+                    XtraMessageBox.Show(ee.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                
+            }
+            else
+            {
+                XtraMessageBox.Show("Maaf Supplier Sudah Ada", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
     }
