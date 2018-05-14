@@ -49,35 +49,39 @@
             // 
             // textEdit1
             // 
-            this.textEdit1.Location = new System.Drawing.Point(96, 24);
+            this.textEdit1.Location = new System.Drawing.Point(112, 30);
+            this.textEdit1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(160, 20);
+            this.textEdit1.Size = new System.Drawing.Size(187, 22);
             this.textEdit1.TabIndex = 5;
             // 
             // labelControl1
             // 
             this.labelControl1.AppearanceDisabled.Options.UseTextOptions = true;
             this.labelControl1.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl1.Location = new System.Drawing.Point(59, 27);
+            this.labelControl1.Location = new System.Drawing.Point(69, 33);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(31, 13);
+            this.labelControl1.Size = new System.Drawing.Size(37, 16);
             this.labelControl1.TabIndex = 6;
             this.labelControl1.Text = "Kode :";
             // 
             // textEdit2
             // 
-            this.textEdit2.Location = new System.Drawing.Point(96, 50);
+            this.textEdit2.Location = new System.Drawing.Point(112, 62);
+            this.textEdit2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(225, 20);
+            this.textEdit2.Size = new System.Drawing.Size(262, 22);
             this.textEdit2.TabIndex = 7;
             // 
             // labelControl2
             // 
             this.labelControl2.AppearanceDisabled.Options.UseTextOptions = true;
             this.labelControl2.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl2.Location = new System.Drawing.Point(56, 53);
+            this.labelControl2.Location = new System.Drawing.Point(65, 65);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(34, 13);
+            this.labelControl2.Size = new System.Drawing.Size(42, 16);
             this.labelControl2.TabIndex = 8;
             this.labelControl2.Text = "Nama :";
             // 
@@ -85,78 +89,87 @@
             // 
             this.labelControl3.AppearanceDisabled.Options.UseTextOptions = true;
             this.labelControl3.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl3.Location = new System.Drawing.Point(50, 78);
+            this.labelControl3.Location = new System.Drawing.Point(58, 96);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(40, 13);
+            this.labelControl3.Size = new System.Drawing.Size(49, 16);
             this.labelControl3.TabIndex = 10;
             this.labelControl3.Text = "Alamat :";
             // 
             // memoEdit1
             // 
-            this.memoEdit1.Location = new System.Drawing.Point(96, 76);
+            this.memoEdit1.Location = new System.Drawing.Point(112, 94);
+            this.memoEdit1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.memoEdit1.Name = "memoEdit1";
-            this.memoEdit1.Size = new System.Drawing.Size(294, 70);
+            this.memoEdit1.Size = new System.Drawing.Size(343, 86);
             this.memoEdit1.TabIndex = 11;
             // 
             // textEdit3
             // 
-            this.textEdit3.Location = new System.Drawing.Point(96, 152);
+            this.textEdit3.Location = new System.Drawing.Point(112, 187);
+            this.textEdit3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(160, 20);
+            this.textEdit3.Size = new System.Drawing.Size(187, 22);
             this.textEdit3.TabIndex = 12;
             // 
             // labelControl4
             // 
             this.labelControl4.AppearanceDisabled.Options.UseTextOptions = true;
             this.labelControl4.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl4.Location = new System.Drawing.Point(45, 155);
+            this.labelControl4.Location = new System.Drawing.Point(52, 191);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(45, 13);
+            this.labelControl4.Size = new System.Drawing.Size(55, 16);
             this.labelControl4.TabIndex = 13;
             this.labelControl4.Text = "Telepon :";
             // 
             // textEdit4
             // 
-            this.textEdit4.Location = new System.Drawing.Point(96, 178);
+            this.textEdit4.Location = new System.Drawing.Point(112, 219);
+            this.textEdit4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Size = new System.Drawing.Size(160, 20);
+            this.textEdit4.Size = new System.Drawing.Size(187, 22);
             this.textEdit4.TabIndex = 14;
             // 
             // labelControl5
             // 
             this.labelControl5.AppearanceDisabled.Options.UseTextOptions = true;
             this.labelControl5.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl5.Location = new System.Drawing.Point(59, 181);
+            this.labelControl5.Location = new System.Drawing.Point(69, 223);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(31, 13);
+            this.labelControl5.Size = new System.Drawing.Size(40, 16);
             this.labelControl5.TabIndex = 15;
             this.labelControl5.Text = "Email :";
             // 
             // simpleButton2
             // 
             this.simpleButton2.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.reload;
-            this.simpleButton2.Location = new System.Drawing.Point(195, 238);
+            this.simpleButton2.Location = new System.Drawing.Point(227, 293);
+            this.simpleButton2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(79, 25);
+            this.simpleButton2.Size = new System.Drawing.Size(92, 31);
             this.simpleButton2.TabIndex = 22;
             this.simpleButton2.Text = "Cancel";
             // 
             // simpleButton1
             // 
             this.simpleButton1.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.diskette__1_;
-            this.simpleButton1.Location = new System.Drawing.Point(96, 238);
+            this.simpleButton1.Location = new System.Drawing.Point(112, 293);
+            this.simpleButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(79, 25);
+            this.simpleButton1.Size = new System.Drawing.Size(92, 31);
             this.simpleButton1.TabIndex = 21;
             this.simpleButton1.Text = "Simpan";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // tmbhSupp
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
             this.Appearance.Options.UseBackColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(645, 354);
+            this.ClientSize = new System.Drawing.Size(752, 436);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.textEdit4);
@@ -169,6 +182,7 @@
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.textEdit1);
             this.Controls.Add(this.labelControl1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "tmbhSupp";
             this.Text = "Tambah Supplier";
             this.Load += new System.EventHandler(this.tmbhSupp_Load);
