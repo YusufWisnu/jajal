@@ -1,8 +1,9 @@
-﻿
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MumtaazHerbal
 {
+
     public class Item
     {
         public int Id { get; set; }
@@ -25,6 +26,8 @@ namespace MumtaazHerbal
         public int SupplierId { get; set; }
 
         public Supplier Supplier { get; set; }
+
+        public IList<Penjualan> Penjualans { get; set; }
 
     }
 }

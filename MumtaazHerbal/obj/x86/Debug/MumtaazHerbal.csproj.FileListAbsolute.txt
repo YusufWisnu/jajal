@@ -332,3 +332,4 @@ C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.pdb
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\bin\Debug\MumtaazHerbal.exe.config
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.InitialModel.resources
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.AddUniqueInKodePelangganFromTablePelanggan.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.AddPenjualanTableAndDoSomeChanges.resources

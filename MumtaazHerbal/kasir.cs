@@ -17,6 +17,8 @@ namespace MumtaazHerbal
             InitializeComponent();
         }
 
+        MumtaazContext mumtaaz;
+
         private void simpleButton4_Click(object sender, EventArgs e)
         {
             pembayaran bayar = new pembayaran();
@@ -33,6 +35,15 @@ namespace MumtaazHerbal
         {
             dftrPel pel = new dftrPel();
             pel.ShowDialog();
+        }
+
+        private void kasir_Load(object sender, EventArgs e)
+        {
+            mumtaaz = new MumtaazContext();
+
+            txtTanggal.EditValue = DateTime.Now;
+            pelangganBindingSource.DataSource = mumtaaz.Pelanggans.ToList();
+
         }
     }
 }

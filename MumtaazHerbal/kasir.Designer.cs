@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtTransaksi = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
+            this.txtTanggal = new DevExpress.XtraEditors.DateEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txtuser = new DevExpress.XtraEditors.TextEdit();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
@@ -58,10 +58,11 @@
             this.btnHapus = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
+            this.lookPelanggan = new DevExpress.XtraEditors.LookUpEdit();
+            this.pelangganBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.txtTransaksi.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTanggal.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTanggal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtuser.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
@@ -70,6 +71,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookPelanggan.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pelangganBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -95,17 +98,17 @@
             this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "Tanggal :";
             // 
-            // dateEdit1
+            // txtTanggal
             // 
-            this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(95, 41);
-            this.dateEdit1.Name = "dateEdit1";
-            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.txtTanggal.EditValue = null;
+            this.txtTanggal.Location = new System.Drawing.Point(95, 41);
+            this.txtTanggal.Name = "txtTanggal";
+            this.txtTanggal.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.txtTanggal.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Size = new System.Drawing.Size(134, 20);
-            this.dateEdit1.TabIndex = 4;
+            this.txtTanggal.Size = new System.Drawing.Size(134, 20);
+            this.txtTanggal.TabIndex = 4;
             // 
             // labelControl3
             // 
@@ -114,15 +117,6 @@
             this.labelControl3.Size = new System.Drawing.Size(57, 13);
             this.labelControl3.TabIndex = 5;
             this.labelControl3.Text = "Pelanggan :";
-            // 
-            // comboBoxEdit1
-            // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(95, 65);
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(134, 20);
-            this.comboBoxEdit1.TabIndex = 6;
             // 
             // txtuser
             // 
@@ -167,7 +161,7 @@
             this.textEdit4.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit4.Properties.Appearance.Options.UseFont = true;
             this.textEdit4.Properties.AutoHeight = false;
-            this.textEdit4.Properties.Mask.EditMask = "Rp##########,00.00";
+            this.textEdit4.Properties.Mask.EditMask = "n";
             this.textEdit4.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textEdit4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.textEdit4.Size = new System.Drawing.Size(993, 95);
@@ -361,11 +355,32 @@
             this.simpleButton6.Text = "Dft. Pending";
             this.simpleButton6.Click += new System.EventHandler(this.simpleButton6_Click);
             // 
+            // lookPelanggan
+            // 
+            this.lookPelanggan.Location = new System.Drawing.Point(95, 67);
+            this.lookPelanggan.Name = "lookPelanggan";
+            this.lookPelanggan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookPelanggan.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Nama", "Nama", 37, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("KodePelanggan", "Kode Pelanggan", 87, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.lookPelanggan.Properties.DataSource = this.pelangganBindingSource;
+            this.lookPelanggan.Properties.DisplayMember = "Nama";
+            this.lookPelanggan.Properties.NullText = "";
+            this.lookPelanggan.Properties.ValueMember = "Id";
+            this.lookPelanggan.Size = new System.Drawing.Size(134, 20);
+            this.lookPelanggan.TabIndex = 42;
+            // 
+            // pelangganBindingSource
+            // 
+            this.pelangganBindingSource.DataSource = typeof(MumtaazHerbal.Pelanggan);
+            // 
             // kasir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 539);
+            this.Controls.Add(this.lookPelanggan);
             this.Controls.Add(this.simpleButton6);
             this.Controls.Add(this.simpleButton5);
             this.Controls.Add(this.btnHapus);
@@ -382,18 +397,17 @@
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.textEdit2);
             this.Controls.Add(this.txtuser);
-            this.Controls.Add(this.comboBoxEdit1);
             this.Controls.Add(this.labelControl3);
-            this.Controls.Add(this.dateEdit1);
+            this.Controls.Add(this.txtTanggal);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.txtTransaksi);
             this.Controls.Add(this.labelControl1);
             this.Name = "kasir";
             this.Text = "Kasir";
+            this.Load += new System.EventHandler(this.kasir_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtTransaksi.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTanggal.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTanggal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtuser.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
@@ -402,6 +416,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookPelanggan.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pelangganBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -412,9 +428,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit txtTransaksi;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.DateEdit dateEdit1;
+        private DevExpress.XtraEditors.DateEdit txtTanggal;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
         private DevExpress.XtraEditors.TextEdit txtuser;
         private DevExpress.XtraEditors.TextEdit textEdit2;
         private DevExpress.XtraEditors.SimpleButton btnSearch;
@@ -439,5 +454,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraEditors.LookUpEdit lookPelanggan;
+        private System.Windows.Forms.BindingSource pelangganBindingSource;
     }
 }

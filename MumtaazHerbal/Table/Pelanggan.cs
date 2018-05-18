@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MumtaazHerbal
 {
@@ -16,6 +17,10 @@ namespace MumtaazHerbal
         public string Alamat { get; set; }
 
         public string Email { get; set; }
+
+        public IList<Penjualan> Penjualans { get; set; }
+
+
 
     }
 }
