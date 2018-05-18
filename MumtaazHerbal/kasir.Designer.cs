@@ -35,7 +35,7 @@
             this.txtTanggal = new DevExpress.XtraEditors.DateEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txtuser = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.txtTimer = new DevExpress.XtraEditors.TextEdit();
             this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
             this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
@@ -64,7 +64,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTanggal.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTanggal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtuser.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTimer.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
@@ -127,12 +127,14 @@
             this.txtuser.Size = new System.Drawing.Size(71, 20);
             this.txtuser.TabIndex = 7;
             // 
-            // textEdit2
+            // txtTimer
             // 
-            this.textEdit2.Location = new System.Drawing.Point(235, 41);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(71, 20);
-            this.textEdit2.TabIndex = 8;
+            this.txtTimer.Enabled = false;
+            this.txtTimer.Location = new System.Drawing.Point(235, 41);
+            this.txtTimer.Name = "txtTimer";
+            this.txtTimer.Properties.Mask.EditMask = "T";
+            this.txtTimer.Size = new System.Drawing.Size(71, 20);
+            this.txtTimer.TabIndex = 8;
             // 
             // btnSearch
             // 
@@ -395,7 +397,7 @@
             this.Controls.Add(this.textEdit4);
             this.Controls.Add(this.textEdit3);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.textEdit2);
+            this.Controls.Add(this.txtTimer);
             this.Controls.Add(this.txtuser);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.txtTanggal);
@@ -409,7 +411,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTanggal.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTanggal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtuser.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTimer.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
@@ -431,7 +433,7 @@
         private DevExpress.XtraEditors.DateEdit txtTanggal;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.TextEdit txtuser;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.TextEdit txtTimer;
         private DevExpress.XtraEditors.SimpleButton btnSearch;
         private DevExpress.XtraEditors.TextEdit textEdit3;
         private DevExpress.XtraEditors.TextEdit textEdit4;

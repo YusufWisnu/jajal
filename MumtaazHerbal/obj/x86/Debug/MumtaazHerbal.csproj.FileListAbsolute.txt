@@ -333,3 +333,11 @@ C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\bin\Debug\MumtaazHerbal.exe.con
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.InitialModel.resources
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.AddUniqueInKodePelangganFromTablePelanggan.resources
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.AddPenjualanTableAndDoSomeChanges.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\bin\Debug\DevExpress.XtraGauges.v17.2.Core.dll
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\bin\Debug\DevExpress.XtraGauges.v17.2.Win.dll
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\bin\Debug\DevExpress.XtraGauges.v17.2.Core.xml
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\bin\Debug\DevExpress.XtraGauges.v17.2.Win.xml
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\bin\Debug\de\DevExpress.XtraGauges.v17.2.Core.resources.dll
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\bin\Debug\es\DevExpress.XtraGauges.v17.2.Core.resources.dll
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\bin\Debug\ja\DevExpress.XtraGauges.v17.2.Core.resources.dll
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\bin\Debug\ru\DevExpress.XtraGauges.v17.2.Core.resources.dll
