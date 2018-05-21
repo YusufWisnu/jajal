@@ -16,10 +16,19 @@ namespace MumtaazHerbal
 {
     public partial class dftrItem : DevExpress.XtraEditors.XtraForm
     {
+        private kasir kasir;
+        private bool getItem;
         public dftrItem()
         {
             InitializeComponent();
             //DisplayDaftarItem();
+        }
+
+        public dftrItem(kasir kasir, bool getItem)
+            :this()
+        {
+            this.kasir = kasir;
+            this.getItem = getItem;
         }
 
         
@@ -27,11 +36,13 @@ namespace MumtaazHerbal
         Query query;
         //MumtaazContext mumtaaz;
         Utilities util;
+        MumtaazContext mumtaaz;
 
 
         private void dftrItem_Load(object sender, EventArgs e)
         {
             query = new Query();
+            mumtaaz = new MumtaazContext();
             //mumtaaz = new MumtaazContext();
 
             query.DisplayDaftarItem(gridControl1);
@@ -91,7 +102,6 @@ namespace MumtaazHerbal
                     mumtaaz.Items.Remove(query);
                     mumtaaz.SaveChanges();
                     XtraMessageBox.Show("Berhasil menghapus item.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 }
             }
 
@@ -124,7 +134,32 @@ namespace MumtaazHerbal
 
         }
 
+        public static int harga = 0;
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            if (getItem)
+            {
+                var rowHandle = gridView1.FocusedRowHandle;
 
 
+                string kodeItem = gridView1.GetRowCellValue(rowHandle, "KodeItem").ToString();
+                string namaItem = gridView1.GetRowCellValue(rowHandle, "NamaItem").ToString();
+                string satuan = gridView1.GetRowCellValue(rowHandle, "Satuan").ToString();
+
+                if (kasir.lookPelanggan.Text == "UMUM")
+                {
+                    harga = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "HargaEceran"));
+                }
+                else
+                {
+                    harga = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "HargaGrosir"));
+                }
+
+                kasir.CreateNewRow(kodeItem, namaItem, satuan, harga);
+                getItem = false;
+                this.Close();
+            }
+            
+        }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dftrItem));
             this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnHapus = new DevExpress.XtraEditors.SimpleButton();
@@ -57,7 +58,7 @@
             // btnSearch
             // 
             this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearch.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.search11;
+            this.btnSearch.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.ImageOptions.Image")));
             this.btnSearch.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btnSearch.Location = new System.Drawing.Point(379, 17);
             this.btnSearch.Name = "btnSearch";
@@ -75,7 +76,7 @@
             // btnHapus
             // 
             this.btnHapus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnHapus.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.substract__1_;
+            this.btnHapus.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHapus.ImageOptions.Image")));
             this.btnHapus.Location = new System.Drawing.Point(188, 499);
             this.btnHapus.Name = "btnHapus";
             this.btnHapus.Size = new System.Drawing.Size(82, 26);
@@ -86,7 +87,7 @@
             // btnEdit
             // 
             this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEdit.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.edit;
+            this.btnEdit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.ImageOptions.Image")));
             this.btnEdit.Location = new System.Drawing.Point(100, 499);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(82, 26);
@@ -97,7 +98,7 @@
             // btnAdd
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAdd.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.plus__1_;
+            this.btnAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.Image")));
             this.btnAdd.Location = new System.Drawing.Point(12, 499);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(82, 26);
@@ -115,7 +116,7 @@
             // simpleButton1
             // 
             this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton1.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.reload;
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
             this.simpleButton1.Location = new System.Drawing.Point(1001, 501);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(82, 26);
@@ -125,7 +126,7 @@
             // btnTutup
             // 
             this.btnTutup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTutup.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.back;
+            this.btnTutup.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTutup.ImageOptions.Image")));
             this.btnTutup.Location = new System.Drawing.Point(830, 499);
             this.btnTutup.Name = "btnTutup";
             this.btnTutup.Size = new System.Drawing.Size(82, 26);
@@ -158,6 +159,8 @@
             this.NamaSupplier});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
             // NamaItem
             // 
@@ -282,6 +285,7 @@
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.labelControl1);
             this.Name = "dftrItem";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " Daftar Item";
             this.Load += new System.EventHandler(this.dftrItem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).EndInit();
