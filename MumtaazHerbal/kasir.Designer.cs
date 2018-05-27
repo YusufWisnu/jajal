@@ -37,13 +37,12 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.txtuser = new DevExpress.XtraEditors.TextEdit();
             this.txtTimer = new DevExpress.XtraEditors.TextEdit();
-            this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
             this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
             this.txtTotal = new DevExpress.XtraEditors.TextEdit();
             this.txtJumlah = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
+            this.txtKodeItem = new DevExpress.XtraEditors.TextEdit();
             this.btnDaftarItem = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -70,7 +69,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtJumlah.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKodeItem.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
@@ -139,17 +138,6 @@
             this.txtTimer.Size = new System.Drawing.Size(71, 20);
             this.txtTimer.TabIndex = 8;
             // 
-            // btnSearch
-            // 
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearch.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.ImageOptions.Image")));
-            this.btnSearch.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnSearch.Location = new System.Drawing.Point(235, 65);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(46, 20);
-            this.btnSearch.TabIndex = 24;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
             // textEdit3
             // 
             this.textEdit3.Location = new System.Drawing.Point(312, 18);
@@ -167,7 +155,7 @@
             this.txtTotal.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.Properties.Appearance.Options.UseFont = true;
             this.txtTotal.Properties.AutoHeight = false;
-            this.txtTotal.Properties.Mask.EditMask = "n";
+            this.txtTotal.Properties.Mask.EditMask = "n0";
             this.txtTotal.Properties.Mask.IgnoreMaskBlank = false;
             this.txtTotal.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtTotal.Properties.Mask.UseMaskAsDisplayFormat = true;
@@ -204,12 +192,13 @@
             this.labelControl5.TabIndex = 31;
             this.labelControl5.Text = "Kode Item :";
             // 
-            // textEdit6
+            // txtKodeItem
             // 
-            this.textEdit6.Location = new System.Drawing.Point(268, 128);
-            this.textEdit6.Name = "textEdit6";
-            this.textEdit6.Size = new System.Drawing.Size(197, 20);
-            this.textEdit6.TabIndex = 30;
+            this.txtKodeItem.Location = new System.Drawing.Point(268, 128);
+            this.txtKodeItem.Name = "txtKodeItem";
+            this.txtKodeItem.Size = new System.Drawing.Size(197, 20);
+            this.txtKodeItem.TabIndex = 30;
+            this.txtKodeItem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textEdit6_KeyPress);
             // 
             // btnDaftarItem
             // 
@@ -227,7 +216,7 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(24, 154);
+            this.gridControl1.Location = new System.Drawing.Point(10, 154);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -249,8 +238,6 @@
             this.Total});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView1.OptionsSelection.EnableAppearanceFocusedRow = false;
             this.gridView1.OptionsView.ShowIndicator = false;
             this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
             this.gridView1.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.gridView1_CustomColumnDisplayText);
@@ -440,12 +427,11 @@
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.btnDaftarItem);
             this.Controls.Add(this.labelControl5);
-            this.Controls.Add(this.textEdit6);
+            this.Controls.Add(this.txtKodeItem);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.txtJumlah);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.textEdit3);
-            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtTimer);
             this.Controls.Add(this.txtuser);
             this.Controls.Add(this.labelControl3);
@@ -464,7 +450,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtJumlah.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKodeItem.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
@@ -478,19 +464,16 @@
         #endregion
 
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit txtTransaksi;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.DateEdit txtTanggal;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.TextEdit txtuser;
         private DevExpress.XtraEditors.TextEdit txtTimer;
-        private DevExpress.XtraEditors.SimpleButton btnSearch;
         private DevExpress.XtraEditors.TextEdit textEdit3;
-        private DevExpress.XtraEditors.TextEdit txtTotal;
         private DevExpress.XtraEditors.TextEdit txtJumlah;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.TextEdit textEdit6;
+        private DevExpress.XtraEditors.TextEdit txtKodeItem;
         private DevExpress.XtraEditors.SimpleButton btnDaftarItem;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
@@ -509,5 +492,7 @@
         private System.Windows.Forms.BindingSource pelangganBindingSource;
         public DevExpress.XtraEditors.LookUpEdit lookPelanggan;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
+        public DevExpress.XtraEditors.TextEdit txtTotal;
+        public DevExpress.XtraEditors.TextEdit txtTransaksi;
     }
 }

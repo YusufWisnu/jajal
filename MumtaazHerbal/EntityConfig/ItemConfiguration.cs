@@ -8,6 +8,7 @@ using System.Text;
 
 namespace MumtaazHerbal.EntityConfig
 {
+
     public class ItemConfiguration : EntityTypeConfiguration<Item>
     {
         public ItemConfiguration()

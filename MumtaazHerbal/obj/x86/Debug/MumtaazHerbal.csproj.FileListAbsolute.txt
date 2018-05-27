@@ -341,3 +341,6 @@ C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\bin\Debug\de\DevExpress.XtraGau
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\bin\Debug\es\DevExpress.XtraGauges.v17.2.Core.resources.dll
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\bin\Debug\ja\DevExpress.XtraGauges.v17.2.Core.resources.dll
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\bin\Debug\ru\DevExpress.XtraGauges.v17.2.Core.resources.dll
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.DeleteItemColumnFromTablePenjualan.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.addDetailPenjualanTable.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.DeleteJumlahBarangFromTablePenjualan.resources

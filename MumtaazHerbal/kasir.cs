@@ -30,9 +30,16 @@ namespace MumtaazHerbal
 
         private void simpleButton4_Click(object sender, EventArgs e)
         {
-            
-            pembayaran bayar = new pembayaran(this, gridView1);
-            bayar.ShowDialog();
+            if (gridView1.DataRowCount != 0)
+            {
+                pembayaran bayar = new pembayaran(this,txtTotal.Text, gridView1);
+                bayar.ShowDialog();
+            }
+            else
+            {
+                XtraMessageBox.Show("Mohon pilih item terlebih dahulu.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
         }
 
         private void simpleButton6_Click(object sender, EventArgs e)
@@ -40,13 +47,7 @@ namespace MumtaazHerbal
             dftrPending pending = new dftrPending();
             pending.ShowDialog();
         }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            dftrPel pel = new dftrPel();
-            pel.ShowDialog();
-        }
-
+        
         private void kasir_Load(object sender, EventArgs e)
         {
             mumtaaz = new MumtaazContext();
@@ -125,6 +126,7 @@ namespace MumtaazHerbal
                 
             }
             GetTotalHarga();
+            gridView1.MoveLast();
         }
 
         private void btnDaftarItem_Click(object sender, EventArgs e)
@@ -227,8 +229,23 @@ namespace MumtaazHerbal
 
         }
 
+        private void textEdit6_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)13)
+            {
+                bool getItem = true;
+                dftrItem daftarItem = new dftrItem(this, getItem, txtKodeItem.Text);
+                daftarItem.ShowDialog();
+            }
+        }
 
+        //public void GetKeranjangItem()
+        //{
+        //    for(int i = 0; i < gridView1.DataRowCount; i++)
+        //    {
 
+        //    }
+        //}
     }
 }
 

@@ -17,6 +17,7 @@ namespace MumtaazHerbal
     public partial class dftrItem : DevExpress.XtraEditors.XtraForm
     {
         private kasir kasir;
+        private string kodeItem;
         private bool getItem;
         public dftrItem()
         {
@@ -25,13 +26,19 @@ namespace MumtaazHerbal
         }
 
         public dftrItem(kasir kasir, bool getItem)
-            :this()
+            : this()
         {
             this.kasir = kasir;
             this.getItem = getItem;
         }
 
-        
+        public dftrItem(kasir kasir, bool getItem, string kodeItem)
+            :this(kasir, getItem)
+        {
+            this.kodeItem = kodeItem;
+        }
+
+
 
         Query query;
         //MumtaazContext mumtaaz;
@@ -46,8 +53,10 @@ namespace MumtaazHerbal
             //mumtaaz = new MumtaazContext();
 
             query.DisplayDaftarItem(gridControl1);
-            
 
+            //get text from keypress enter search
+            if (getItem)
+                txtSearch.Text = kodeItem;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -159,7 +168,26 @@ namespace MumtaazHerbal
                 getItem = false;
                 this.Close();
             }
-            
+
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            var query = from o in mumtaaz.Items
+                        join a in mumtaaz.Suppliers on o.SupplierId equals a.Id
+                        where o.NamaItem.Contains(txtSearch.Text)
+                         select new
+                         {
+                             o.NamaItem,
+                             o.KodeItem,
+                             o.Stok,
+                             o.Satuan,
+                             o.HargaGrosir,
+                             o.HargaEceran,
+                             o.HargaJual,
+                             a.NamaSupplier
+                         };
+            gridControl1.DataSource = query.ToList();
         }
     }
 }

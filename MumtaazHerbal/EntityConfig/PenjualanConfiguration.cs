@@ -14,10 +14,6 @@ namespace MumtaazHerbal.EntityConfig
 
             HasKey(p => p.Id);
 
-            HasRequired(p => p.Item)
-                .WithMany(c => c.Penjualans)
-                .HasForeignKey(p => p.ItemId);
-
             HasRequired(p => p.Pelanggan)
                 .WithMany(c => c.Penjualans)
                 .HasForeignKey(p => p.PelangganId);

@@ -119,6 +119,7 @@
     <Compile Include="dtrSupp.Designer.cs">
       <DependentUpon>dtrSupp.cs</DependentUpon>
     </Compile>
+    <Compile Include="EntityConfig\DetailPenjualanConfiguration.cs" />
     <Compile Include="EntityConfig\ItemConfiguration.cs" />
     <Compile Include="EntityConfig\PelangganConfiguration.cs" />
     <Compile Include="EntityConfig\PenjualanConfiguration.cs" />
@@ -162,6 +163,18 @@
     <Compile Include="Migrations\201805141624062_AddPenjualanTableAndDoSomeChanges.Designer.cs">
       <DependentUpon>201805141624062_AddPenjualanTableAndDoSomeChanges.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805260933476_DeleteItemColumnFromTablePenjualan.cs" />
+    <Compile Include="Migrations\201805260933476_DeleteItemColumnFromTablePenjualan.Designer.cs">
+      <DependentUpon>201805260933476_DeleteItemColumnFromTablePenjualan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805260942513_addDetailPenjualanTable.cs" />
+    <Compile Include="Migrations\201805260942513_addDetailPenjualanTable.Designer.cs">
+      <DependentUpon>201805260942513_addDetailPenjualanTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805270023216_DeleteJumlahBarangFromTablePenjualan.cs" />
+    <Compile Include="Migrations\201805270023216_DeleteJumlahBarangFromTablePenjualan.Designer.cs">
+      <DependentUpon>201805270023216_DeleteJumlahBarangFromTablePenjualan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="pembayaran.cs">
       <SubType>Form</SubType>
@@ -176,6 +189,7 @@
       <DependentUpon>pembelian.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Table\DetailPenjualan.cs" />
     <Compile Include="Table\item.cs" />
     <Compile Include="MumtaazContext.cs" />
     <Compile Include="Table\Pelanggan.cs" />
@@ -235,6 +249,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805141624062_AddPenjualanTableAndDoSomeChanges.resx">
       <DependentUpon>201805141624062_AddPenjualanTableAndDoSomeChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805260933476_DeleteItemColumnFromTablePenjualan.resx">
+      <DependentUpon>201805260933476_DeleteItemColumnFromTablePenjualan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805260942513_addDetailPenjualanTable.resx">
+      <DependentUpon>201805260942513_addDetailPenjualanTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805270023216_DeleteJumlahBarangFromTablePenjualan.resx">
+      <DependentUpon>201805270023216_DeleteJumlahBarangFromTablePenjualan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pembayaran.resx">
       <DependentUpon>pembayaran.cs</DependentUpon>

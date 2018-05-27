@@ -73,7 +73,7 @@ namespace MumtaazHerbal
 
                         var result = (from i in mumtaaz.Pelanggans
                                       where i.Id == query.IdPelanggan
-                                      select i).Single();
+                                      select i).Single();   
 
                         result.KodePelanggan = txtKode.Text;
                         result.Nama = txtNama.Text;
@@ -122,7 +122,7 @@ namespace MumtaazHerbal
                         XtraMessageBox.Show("Berhasil Menambah Pelanggan", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ClearText();
                     }
-                }
+                } 
 
                 catch (Exception ee)
                 {
