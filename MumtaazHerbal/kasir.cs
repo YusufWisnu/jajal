@@ -8,6 +8,7 @@ using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
+using MumtaazHerbal.Function;
 
 namespace MumtaazHerbal
 {
@@ -51,6 +52,7 @@ namespace MumtaazHerbal
         private void kasir_Load(object sender, EventArgs e)
         {
             mumtaaz = new MumtaazContext();
+
             txtTanggal.EditValue = DateTime.Now;
             txtuser.Text = "ADMIN";
             pelangganBindingSource.DataSource = mumtaaz.Pelanggans.ToList();
@@ -123,8 +125,9 @@ namespace MumtaazHerbal
 
                 total = harga * jumlah;
                 gridView1.SetRowCellValue(rowHandle, gridView1.Columns[6], total);
-                
+
             }
+
             GetTotalHarga();
             gridView1.MoveLast();
         }
@@ -239,13 +242,25 @@ namespace MumtaazHerbal
             }
         }
 
-        //public void GetKeranjangItem()
-        //{
-        //    for(int i = 0; i < gridView1.DataRowCount; i++)
-        //    {
+        List<Receipt> receipts;
+        public void GetKeranjangItem()
+        {
+            receipts = new List<Receipt>();
 
-        //    }
-        //}
+            for (int i = 0; i < gridView1.DataRowCount; i++)
+            {
+                int rowHandle = gridView1.GetRowHandle(i);
+                var receipt = new Receipt()
+                {
+                    NamaItem = gridView1.GetRowCellValue(rowHandle, "NamaItem").ToString(),
+                    Harga = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "Harga")),
+                    JumlahItem = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "Jumlah")),
+                    Total = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "Total"))
+                };
+
+                receipts.Add(receipt);
+            }
+        }
     }
 }
 

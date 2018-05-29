@@ -193,6 +193,8 @@ namespace MumtaazHerbal
             graphic.DrawString("Total : ".PadRight(38) + txtTotal.Text, font, new SolidBrush(Color.Black), startX, startY + offset);
 
         }
+
+        
     }
 }
        
