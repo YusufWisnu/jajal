@@ -8,17 +8,33 @@ using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Data.SqlClient;
+using MumtaazHerbal.Function;   //buat bisa manggil class dari Folder Function
+using DevExpress.XtraGrid;      //biar bisa make GridControl
 
 namespace MumtaazHerbal
 {
     public partial class tmbhSupp : DevExpress.XtraEditors.XtraForm
     {
-
+        private Query query;
+        private bool edit;
+        private GridControl gridControl1 = new GridControl();
         public tmbhSupp()
         {
             InitializeComponent();
         }
 
+        public tmbhSupp(Query query, bool edit)
+            : this()
+        {
+            this.query = query;
+            this.edit = edit;
+        }
+
+        public tmbhSupp(GridControl gridControl1)
+            : this()
+        {
+            this.gridControl1 = gridControl1;
+        }
         private void tmbhSupp_Load(object sender, EventArgs e)
         {
 

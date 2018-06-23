@@ -11,6 +11,7 @@ namespace MumtaazHerbal.Function
 {
     public class Query
     {
+        //var buat dftr Item
         public int Id;
         public string NamaItem;
         public string KodeItem;
@@ -21,6 +22,14 @@ namespace MumtaazHerbal.Function
         public string HargaJual;
         public string NamaSupplier;
         //public string TempId;
+
+        //var buat dftrSupp
+        public int idsupp;
+        public string KodeSupplier;
+        public string NamaSupplierMain;
+        public string NoHpSupp;
+        public string AlamatSupp;
+        public string EmailSupp;
 
         Supplier supp;
         Item item;
@@ -88,7 +97,18 @@ namespace MumtaazHerbal.Function
 
 
 
-
+        // ------------------------------------   dftrSupplier   -----------------------------------------------\\
+        public void GetSupp(GridView grid)
+        {
+            var rowHandle = grid.FocusedRowHandle;
+            
+            KodeSupplier = grid.GetRowCellValue(rowHandle, "KodeSupplier").ToString();
+            NamaSupplierMain = grid.GetRowCellValue(rowHandle, "NamaSupplier").ToString();
+            NoHpSupp = grid.GetRowCellValue(rowHandle, "NoHP").ToString();
+            AlamatSupp = grid.GetRowCellValue(rowHandle, "AlamatSupp").ToString();
+            EmailSupp = grid.GetRowCellValue(rowHandle, "Email").ToString();
+            
+        }
     }
 
 
