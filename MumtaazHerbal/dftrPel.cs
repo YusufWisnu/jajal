@@ -38,7 +38,7 @@ namespace MumtaazHerbal
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            bool edit = true;
+            bool edit = true; 
             foreach (Form form in Application.OpenForms)
             {
                 if (form.GetType() == typeof(tmbhPel))
@@ -70,7 +70,7 @@ namespace MumtaazHerbal
         }
 
        
-
+        //method untuk ambil data yang akan di edit
         public void GetData()
         {
             var rowHandle = gridView1.FocusedRowHandle;
@@ -90,16 +90,20 @@ namespace MumtaazHerbal
 
         private void btnHapus_Click(object sender, EventArgs e)
         {
+            //jika daftar pelanggan tidak kosong
             if(pelangganBindingSource.Current != null)
             {
                 if(XtraMessageBox.Show("Hapus data ini ?.", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     using (var mumtaaz = new MumtaazContext())
                     {
+                        //buat objek baru untuk daftar item
                         Pelanggan obj = pelangganBindingSource.Current as Pelanggan;
+
+                        //jika list yang akan di hapus dalam mode default maka tandakan dengan mode edit(karena akan di hapus)
                         if (mumtaaz.Entry<Pelanggan>(obj).State == System.Data.Entity.EntityState.Detached)
                             mumtaaz.Set<Pelanggan>().Attach(obj);
-                        mumtaaz.Entry<Pelanggan>(obj).State = System.Data.Entity.EntityState.Deleted;
+                        mumtaaz.Entry<Pelanggan>(obj).State = System.Data.Entity.EntityState.Deleted; // rubah mode edit dengan mode delete
                         pelangganBindingSource.RemoveCurrent();
                         mumtaaz.SaveChanges();
                         XtraMessageBox.Show("Berhasil menghapus data ini.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -39,7 +39,7 @@ namespace MumtaazHerbal
         private void tmbhPel_Load(object sender, EventArgs e)
         {
            
-
+            //jika user klik edit maka value nya akan di alokasikan ke textbox
             if (edit)
             {
                 RetrieveData();
@@ -56,13 +56,14 @@ namespace MumtaazHerbal
             if (util.CheckIfNull(this))
                 return;
 
+            //jika user klik edit pada daftar pelanggan
             if (edit)
             {
                 try
                 {
                     using (var mumtaaz = new MumtaazContext())
                     {
-
+                        //jika user merubah nama yang sudah ada
                         if (txtKode.Text != query.KodePel)
                         {
                             if (mumtaaz.Pelanggans.Any(o => o.KodePelanggan == txtKode.Text))
@@ -71,6 +72,7 @@ namespace MumtaazHerbal
                             }
                         }
 
+                        //query mencari pelanggan yang akan di edit dengan nomor Id
                         var result = (from i in mumtaaz.Pelanggans
                                       where i.Id == query.IdPelanggan
                                       select i).Single();   
@@ -81,7 +83,7 @@ namespace MumtaazHerbal
                         result.Email = txtEmail.Text;
                         result.NoHp = txtTelepon.Text;
 
-                        mumtaaz.Entry(result).State = System.Data.Entity.EntityState.Modified;
+                        mumtaaz.Entry(result).State = System.Data.Entity.EntityState.Modified;//tandai hasil query yang akan di edit
                         mumtaaz.SaveChanges();
                         pelangganSource.DataSource = mumtaaz.Pelanggans.ToList();
                         XtraMessageBox.Show("Berhasil Merubah Data Pelanggan", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -97,12 +99,14 @@ namespace MumtaazHerbal
                 }
             }
 
+            //jika user menambahkan pelanggan baru
             else
             {
                 try
                 {
                     using (var mumtaaz = new MumtaazContext())
                     {
+                        
                         var pelanggan = new Pelanggan()
                         {
                             Nama = txtNama.Text,
@@ -146,6 +150,7 @@ namespace MumtaazHerbal
             }
         }
 
+        //alokasikan value ke textbox
         public void RetrieveData()
         {
 

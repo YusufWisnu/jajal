@@ -97,6 +97,7 @@ namespace MumtaazHerbal
 
         private void btnHapus_Click(object sender, EventArgs e)
         {
+            //jika daftar tidak kosong
             if (gridView1.SelectedRowsCount == 0)
                 return;
 
