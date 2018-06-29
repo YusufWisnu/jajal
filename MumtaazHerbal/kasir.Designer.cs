@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(kasir));
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtTransaksi = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -54,13 +54,14 @@
             this.Harga = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.Total = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.btnHapus = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
             this.lookPelanggan = new DevExpress.XtraEditors.LookUpEdit();
-            this.pelangganBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pelangganBindingSource = new System.Windows.Forms.BindingSource();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtTransaksi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTanggal.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTanggal.Properties)).BeginInit();
@@ -150,10 +151,13 @@
             this.txtTotal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTotal.EditValue = "";
+            this.txtTotal.Enabled = false;
             this.txtTotal.Location = new System.Drawing.Point(345, 18);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.txtTotal.Properties.Appearance.Options.UseFont = true;
+            this.txtTotal.Properties.Appearance.Options.UseForeColor = true;
             this.txtTotal.Properties.AutoHeight = false;
             this.txtTotal.Properties.Mask.EditMask = "n0";
             this.txtTotal.Properties.Mask.IgnoreMaskBlank = false;
@@ -216,6 +220,9 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            gridLevelNode1.RelationName = "Level1";
+            this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
             this.gridControl1.Location = new System.Drawing.Point(10, 154);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
@@ -340,15 +347,16 @@
             this.Total.VisibleIndex = 6;
             this.Total.Width = 251;
             // 
-            // simpleButton2
+            // btnCancel
             // 
-            this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(10, 507);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(79, 25);
-            this.simpleButton2.TabIndex = 36;
-            this.simpleButton2.Text = "Batal";
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.ImageOptions.Image")));
+            this.btnCancel.Location = new System.Drawing.Point(10, 507);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(79, 25);
+            this.btnCancel.TabIndex = 36;
+            this.btnCancel.Text = "Batal";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // simpleButton4
             // 
@@ -413,17 +421,26 @@
             // 
             this.pelangganBindingSource.DataSource = typeof(MumtaazHerbal.Pelanggan);
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(551, 131);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.TabIndex = 43;
+            this.simpleButton1.Text = "simpleButton1";
+            // 
             // kasir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 539);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.lookPelanggan);
             this.Controls.Add(this.simpleButton6);
             this.Controls.Add(this.simpleButton5);
             this.Controls.Add(this.btnHapus);
             this.Controls.Add(this.simpleButton4);
-            this.Controls.Add(this.simpleButton2);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.btnDaftarItem);
             this.Controls.Add(this.labelControl5);
@@ -470,14 +487,13 @@
         private DevExpress.XtraEditors.TextEdit txtuser;
         private DevExpress.XtraEditors.TextEdit txtTimer;
         private DevExpress.XtraEditors.TextEdit textEdit3;
-        private DevExpress.XtraEditors.TextEdit txtJumlah;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.TextEdit txtKodeItem;
         private DevExpress.XtraEditors.SimpleButton btnDaftarItem;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton btnCancel;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private DevExpress.XtraEditors.SimpleButton btnHapus;
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
@@ -494,5 +510,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
         public DevExpress.XtraEditors.TextEdit txtTotal;
         public DevExpress.XtraEditors.TextEdit txtTransaksi;
+        public DevExpress.XtraEditors.TextEdit txtJumlah;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

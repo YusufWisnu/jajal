@@ -151,9 +151,26 @@ namespace MumtaazHerbal
                 var rowHandle = gridView1.FocusedRowHandle;
 
 
-                string kodeItem = gridView1.GetRowCellValue(rowHandle, "KodeItem").ToString();
-                string namaItem = gridView1.GetRowCellValue(rowHandle, "NamaItem").ToString();
-                string satuan = gridView1.GetRowCellValue(rowHandle, "Satuan").ToString();
+                var kodeItem = gridView1.GetRowCellValue(rowHandle, "KodeItem").ToString();
+
+                //cek jika item melebihi stok
+                var query = mumtaaz.Items
+                    .Where(x => x.KodeItem == kodeItem)
+                    .Select(x => x.Stok)
+                    .FirstOrDefault()
+                    .ToString();
+                            
+
+                if(int.Parse(query) < int.Parse(kasir.txtJumlah.Text))
+                {
+                    MessageBox.Show("Jumlah item melebihi stok", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                    
+
+
+                var namaItem = gridView1.GetRowCellValue(rowHandle, "NamaItem").ToString();
+                var satuan = gridView1.GetRowCellValue(rowHandle, "Satuan").ToString();
 
                 if (kasir.lookPelanggan.Text == "UMUM")
                 {

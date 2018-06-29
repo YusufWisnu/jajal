@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(pembayaran));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.btnBatal = new DevExpress.XtraEditors.SimpleButton();
             this.btnSimpan = new DevExpress.XtraEditors.SimpleButton();
             this.btnSimpanCetak = new DevExpress.XtraEditors.SimpleButton();
@@ -54,6 +55,7 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.labelControl4);
             this.groupControl1.Controls.Add(this.btnBatal);
             this.groupControl1.Controls.Add(this.btnSimpan);
             this.groupControl1.Controls.Add(this.btnSimpanCetak);
@@ -73,6 +75,16 @@
             this.groupControl1.Size = new System.Drawing.Size(745, 399);
             this.groupControl1.TabIndex = 0;
             // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Location = new System.Drawing.Point(162, 323);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(6, 19);
+            this.labelControl4.TabIndex = 13;
+            this.labelControl4.Text = ":";
+            // 
             // btnBatal
             // 
             this.btnBatal.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -83,6 +95,7 @@
             this.btnBatal.Size = new System.Drawing.Size(90, 33);
             this.btnBatal.TabIndex = 12;
             this.btnBatal.Text = "Batal";
+            this.btnBatal.Click += new System.EventHandler(this.btnBatal_Click);
             // 
             // btnSimpan
             // 
@@ -106,6 +119,7 @@
             this.btnSimpanCetak.Size = new System.Drawing.Size(220, 34);
             this.btnSimpanCetak.TabIndex = 10;
             this.btnSimpanCetak.Text = "Simpan + Cetak";
+            this.btnSimpanCetak.Click += new System.EventHandler(this.btnSimpanCetak_Click);
             // 
             // txtKekurangan
             // 
@@ -134,11 +148,11 @@
             // 
             this.lblKekurangan.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKekurangan.Appearance.Options.UseFont = true;
-            this.lblKekurangan.Location = new System.Drawing.Point(60, 314);
+            this.lblKekurangan.Location = new System.Drawing.Point(62, 323);
             this.lblKekurangan.Name = "lblKekurangan";
-            this.lblKekurangan.Size = new System.Drawing.Size(109, 19);
+            this.lblKekurangan.Size = new System.Drawing.Size(98, 19);
             this.lblKekurangan.TabIndex = 8;
-            this.lblKekurangan.Text = "Kekurangan :";
+            this.lblKekurangan.Text = "Kekurangan";
             // 
             // txtTotalBayar
             // 
@@ -269,6 +283,7 @@
             this.Name = "pembayaran";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pembayaran";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.pembayaran_FormClosing);
             this.Load += new System.EventHandler(this.pembayaran_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
@@ -285,18 +300,19 @@
         #endregion
 
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.TextEdit txtKekurangan;
-        private DevExpress.XtraEditors.LabelControl lblKekurangan;
-        private DevExpress.XtraEditors.TextEdit txtTotalBayar;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.TextEdit txtKredit;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.TextEdit txtTunai;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit txtTotal;
         private DevExpress.XtraEditors.SimpleButton btnBatal;
         private DevExpress.XtraEditors.SimpleButton btnSimpan;
         private DevExpress.XtraEditors.SimpleButton btnSimpanCetak;
+        public DevExpress.XtraEditors.LabelControl lblKekurangan;
+        public DevExpress.XtraEditors.TextEdit txtTotal;
+        public DevExpress.XtraEditors.TextEdit txtKekurangan;
+        public DevExpress.XtraEditors.LabelControl labelControl4;
+        public DevExpress.XtraEditors.TextEdit txtKredit;
+        public DevExpress.XtraEditors.TextEdit txtTunai;
+        public DevExpress.XtraEditors.TextEdit txtTotalBayar;
     }
 }

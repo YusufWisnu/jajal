@@ -33,7 +33,8 @@ namespace MumtaazHerbal
         {
             if (gridView1.DataRowCount != 0)
             {
-                pembayaran bayar = new pembayaran(this,txtTotal.Text, gridView1);
+                GetKeranjangItem();
+                pembayaran bayar = new pembayaran(this,txtTotal.Text, gridView1, receipts);
                 bayar.ShowDialog();
             }
             else
@@ -202,12 +203,71 @@ namespace MumtaazHerbal
 
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-            if (e.Column.FieldName == "Jumlah")
+            if(e.Column.FieldName == "Harga")
             {
+                var kodeItem = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "KodeItem");
+                int hargaColumn = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Harga"));
+                int jumlah = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Jumlah"));
+
+                var query = mumtaaz.Items
+                    .Where(x => x.KodeItem == kodeItem)
+                    .SingleOrDefault();
+
+                if (lookPelanggan.Text == "UMUM")
+                {
+                    if (query.HargaEceran > hargaColumn)
+                    {
+                        MessageBox.Show("Jumlah item melebihi stok.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "Harga", query.HargaEceran);
+                        return;
+                    }
+                }
+                else
+                {
+                    if (query.HargaGrosir > hargaColumn)
+                    {
+                        MessageBox.Show("Jumlah item melebihi stok.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "Harga", query.HargaGrosir);
+                        return;
+                    }
+                }
+
                 int total = 0;
                 int harga = 0;
 
+                if (gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Harga") != DBNull.Value)
+                {
+                    harga = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Harga"));
+                }
+
+                total = harga * jumlah;
+                gridView1.SetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[6], total);
+
+                GetTotalHarga();
+
+            }
+
+            if (e.Column.FieldName == "Jumlah")
+            {
+                //cek jika stok melebihi inputan
+
+                var kodeItem = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "KodeItem");
                 int jumlah = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Jumlah"));
+
+                var query = mumtaaz.Items
+                    .Where(x => x.KodeItem == kodeItem)
+                    .SingleOrDefault();
+                   
+                if(query.Stok < jumlah)
+                {
+                    MessageBox.Show("Jumlah item melebihi stok.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "Jumlah", query.Stok);
+                    return;
+                }
+
+                int total = 0;
+                int harga = 0;
+
                 if(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Harga") != DBNull.Value){
                      harga = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Harga"));
                 } 
@@ -242,25 +302,41 @@ namespace MumtaazHerbal
             }
         }
 
-        List<Receipt> receipts;
+        List<Receipt> receipts = new List<Receipt>();
         public void GetKeranjangItem()
         {
-            receipts = new List<Receipt>();
+            
 
             for (int i = 0; i < gridView1.DataRowCount; i++)
             {
                 int rowHandle = gridView1.GetRowHandle(i);
                 var receipt = new Receipt()
                 {
-                    NamaItem = gridView1.GetRowCellValue(rowHandle, "NamaItem").ToString(),
+                    NamaItem = gridView1.GetRowCellValue(rowHandle, "NamaItem").ToString().ToUpper(),
                     Harga = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "Harga")),
                     JumlahItem = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "Jumlah")),
-                    Total = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "Total"))
+                    Total = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "Total")),
+                    Tipe = gridView1.GetRowCellValue(rowHandle, "Satuan").ToString()
                 };
 
                 receipts.Add(receipt);
             }
         }
+
+        //Button Cancel
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Batalkan transaksi ini ?", "Batal Transaksi", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                RefreshPage();
+        }
+
+        public void RefreshPage()
+        {
+            kasir_Load(null, EventArgs.Empty);
+            txtTotal.Text = "0";
+        }
+
+
     }
 }
 

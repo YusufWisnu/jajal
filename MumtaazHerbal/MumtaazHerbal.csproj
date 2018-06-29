@@ -198,6 +198,12 @@
       <DependentUpon>201805270023216_DeleteJumlahBarangFromTablePenjualan.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Nota.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Nota.Designer.cs">
+      <DependentUpon>Nota.cs</DependentUpon>
+    </Compile>
     <Compile Include="NotaPenjualan.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -290,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805270023216_DeleteJumlahBarangFromTablePenjualan.resx">
       <DependentUpon>201805270023216_DeleteJumlahBarangFromTablePenjualan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nota.resx">
+      <DependentUpon>Nota.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NotaPenjualan.resx">
       <DependentUpon>NotaPenjualan.cs</DependentUpon>
