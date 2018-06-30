@@ -431,3 +431,13 @@ C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.csp
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.exe
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.pdb
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Nota.resources
+C:\Users\YUSUF WISNU P\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.frmPrint.resources
+C:\Users\YUSUF WISNU P\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.InitialModel.resources
+C:\Users\YUSUF WISNU P\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.AddUniqueInKodePelangganFromTablePelanggan.resources
+C:\Users\YUSUF WISNU P\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.AddPenjualanTableAndDoSomeChanges.resources
+C:\Users\YUSUF WISNU P\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.DeleteItemColumnFromTablePenjualan.resources
+C:\Users\YUSUF WISNU P\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.addDetailPenjualanTable.resources
+C:\Users\YUSUF WISNU P\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.DeleteJumlahBarangFromTablePenjualan.resources
+C:\Users\YUSUF WISNU P\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Nota.resources
+C:\Users\YUSUF WISNU P\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.NotaPenjualan.resources
+C:\Users\YUSUF WISNU P\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.pembelian.resources
