@@ -16,5 +16,10 @@ namespace MumtaazHerbal
         {
             InitializeComponent();
         }
+
+        private void tmbhPel_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
