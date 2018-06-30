@@ -336,7 +336,10 @@ namespace MumtaazHerbal
             txtTotal.Text = "0";
         }
 
+        private void txtTotal_EditValueChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }
 

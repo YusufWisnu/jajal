@@ -13,7 +13,7 @@ namespace MumtaazHerbal
 {
     public partial class dftrSupp : DevExpress.XtraEditors.XtraForm
     {
-        Query query;
+       
         public dftrSupp()
         {
             InitializeComponent();
@@ -36,7 +36,8 @@ namespace MumtaazHerbal
                     return;
                 }
             }
-            query.GetSupp(gridView1);
+            var query = new Query();
+            //query.GetSupp(gridView1);
             tmbhSupp supp = new tmbhSupp();
             supp.MdiParent = this.ParentForm;
             supp.Show();

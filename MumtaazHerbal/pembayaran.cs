@@ -179,6 +179,14 @@ namespace MumtaazHerbal
             this.Close();
         }
 
+        private void groupControl1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+
+
 
 
         ////cetak nota

@@ -81,10 +81,10 @@
     <Reference Include="DevExpress.XtraReports.v17.2.Extensions, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v17.2, Version=17.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
@@ -173,29 +173,9 @@
     <Compile Include="kasir.Designer.cs">
       <DependentUpon>kasir.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201805130628163_InitialModel.cs" />
-    <Compile Include="Migrations\201805130628163_InitialModel.Designer.cs">
-      <DependentUpon>201805130628163_InitialModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805130821511_AddUniqueInKodePelangganFromTablePelanggan.cs" />
-    <Compile Include="Migrations\201805130821511_AddUniqueInKodePelangganFromTablePelanggan.Designer.cs">
-      <DependentUpon>201805130821511_AddUniqueInKodePelangganFromTablePelanggan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805141624062_AddPenjualanTableAndDoSomeChanges.cs" />
-    <Compile Include="Migrations\201805141624062_AddPenjualanTableAndDoSomeChanges.Designer.cs">
-      <DependentUpon>201805141624062_AddPenjualanTableAndDoSomeChanges.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805260933476_DeleteItemColumnFromTablePenjualan.cs" />
-    <Compile Include="Migrations\201805260933476_DeleteItemColumnFromTablePenjualan.Designer.cs">
-      <DependentUpon>201805260933476_DeleteItemColumnFromTablePenjualan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805260942513_addDetailPenjualanTable.cs" />
-    <Compile Include="Migrations\201805260942513_addDetailPenjualanTable.Designer.cs">
-      <DependentUpon>201805260942513_addDetailPenjualanTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805270023216_DeleteJumlahBarangFromTablePenjualan.cs" />
-    <Compile Include="Migrations\201805270023216_DeleteJumlahBarangFromTablePenjualan.Designer.cs">
-      <DependentUpon>201805270023216_DeleteJumlahBarangFromTablePenjualan.cs</DependentUpon>
+    <Compile Include="Migrations\201806300712063_initialModel.cs" />
+    <Compile Include="Migrations\201806300712063_initialModel.Designer.cs">
+      <DependentUpon>201806300712063_initialModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Nota.cs">
@@ -279,23 +259,8 @@
     <EmbeddedResource Include="kasir.resx">
       <DependentUpon>kasir.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805130628163_InitialModel.resx">
-      <DependentUpon>201805130628163_InitialModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805130821511_AddUniqueInKodePelangganFromTablePelanggan.resx">
-      <DependentUpon>201805130821511_AddUniqueInKodePelangganFromTablePelanggan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805141624062_AddPenjualanTableAndDoSomeChanges.resx">
-      <DependentUpon>201805141624062_AddPenjualanTableAndDoSomeChanges.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805260933476_DeleteItemColumnFromTablePenjualan.resx">
-      <DependentUpon>201805260933476_DeleteItemColumnFromTablePenjualan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805260942513_addDetailPenjualanTable.resx">
-      <DependentUpon>201805260942513_addDetailPenjualanTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805270023216_DeleteJumlahBarangFromTablePenjualan.resx">
-      <DependentUpon>201805270023216_DeleteJumlahBarangFromTablePenjualan.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806300712063_initialModel.resx">
+      <DependentUpon>201806300712063_initialModel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nota.resx">
       <DependentUpon>Nota.cs</DependentUpon>
@@ -329,7 +294,9 @@
     <EmbeddedResource Include="tmbhSupp.resx">
       <DependentUpon>tmbhSupp.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Pelanggan.datasource" />
     <None Include="Properties\Settings.settings">
