@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(tmbhItem));
             this.txtKodeItem = new DevExpress.XtraEditors.TextEdit();
             this.txtNamaItem = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -46,8 +47,8 @@
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.lookSupplier = new DevExpress.XtraEditors.LookUpEdit();
-            this.txtSatuan = new DevExpress.XtraEditors.ComboBoxEdit();
             this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txtSatuan = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKodeItem.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNamaItem.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStok.Properties)).BeginInit();
@@ -55,8 +56,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtHargaRetail.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHargaGrosir.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookSupplier.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSatuan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSatuan.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // txtKodeItem
@@ -183,7 +184,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.reload;
+            this.btnCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.ImageOptions.Image")));
             this.btnCancel.Location = new System.Drawing.Point(161, 247);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(79, 25);
@@ -218,6 +219,10 @@
             this.lookSupplier.Size = new System.Drawing.Size(148, 20);
             this.lookSupplier.TabIndex = 21;
             // 
+            // supplierBindingSource
+            // 
+            this.supplierBindingSource.DataSource = typeof(MumtaazHerbal.Supplier);
+            // 
             // txtSatuan
             // 
             this.txtSatuan.Location = new System.Drawing.Point(194, 102);
@@ -229,10 +234,6 @@
             "DUS"});
             this.txtSatuan.Size = new System.Drawing.Size(53, 20);
             this.txtSatuan.TabIndex = 22;
-            // 
-            // supplierBindingSource
-            // 
-            this.supplierBindingSource.DataSource = typeof(MumtaazHerbal.Supplier);
             // 
             // tmbhItem
             // 
@@ -270,8 +271,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtHargaRetail.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHargaGrosir.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookSupplier.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSatuan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSatuan.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -28,48 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(kasir));
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtTransaksi = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
+            this.txtTanggal = new DevExpress.XtraEditors.DateEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txtuser = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
+            this.txtTimer = new DevExpress.XtraEditors.TextEdit();
             this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
+            this.txtTotal = new DevExpress.XtraEditors.TextEdit();
+            this.txtJumlah = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.txtKodeItem = new DevExpress.XtraEditors.TextEdit();
+            this.btnDaftarItem = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.No = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.KodeItem = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NamaItem = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Jumlah = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Satuan = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Harga = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.Total = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.btnHapus = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
+            this.lookPelanggan = new DevExpress.XtraEditors.LookUpEdit();
+            this.pelangganBindingSource = new System.Windows.Forms.BindingSource();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtTransaksi.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTanggal.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTanggal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtuser.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTimer.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTotal.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtJumlah.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKodeItem.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookPelanggan.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pelangganBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -95,17 +101,17 @@
             this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "Tanggal :";
             // 
-            // dateEdit1
+            // txtTanggal
             // 
-            this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(95, 41);
-            this.dateEdit1.Name = "dateEdit1";
-            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.txtTanggal.EditValue = null;
+            this.txtTanggal.Location = new System.Drawing.Point(95, 41);
+            this.txtTanggal.Name = "txtTanggal";
+            this.txtTanggal.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.txtTanggal.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Size = new System.Drawing.Size(134, 20);
-            this.dateEdit1.TabIndex = 4;
+            this.txtTanggal.Size = new System.Drawing.Size(134, 20);
+            this.txtTanggal.TabIndex = 4;
             // 
             // labelControl3
             // 
@@ -114,15 +120,6 @@
             this.labelControl3.Size = new System.Drawing.Size(57, 13);
             this.labelControl3.TabIndex = 5;
             this.labelControl3.Text = "Pelanggan :";
-            // 
-            // comboBoxEdit1
-            // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(95, 65);
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(134, 20);
-            this.comboBoxEdit1.TabIndex = 6;
             // 
             // txtuser
             // 
@@ -133,23 +130,14 @@
             this.txtuser.Size = new System.Drawing.Size(71, 20);
             this.txtuser.TabIndex = 7;
             // 
-            // textEdit2
+            // txtTimer
             // 
-            this.textEdit2.Location = new System.Drawing.Point(235, 41);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(71, 20);
-            this.textEdit2.TabIndex = 8;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearch.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.search11;
-            this.btnSearch.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnSearch.Location = new System.Drawing.Point(235, 65);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(46, 20);
-            this.btnSearch.TabIndex = 24;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.txtTimer.Enabled = false;
+            this.txtTimer.Location = new System.Drawing.Point(235, 41);
+            this.txtTimer.Name = "txtTimer";
+            this.txtTimer.Properties.Mask.EditMask = "T";
+            this.txtTimer.Size = new System.Drawing.Size(71, 20);
+            this.txtTimer.TabIndex = 8;
             // 
             // textEdit3
             // 
@@ -158,25 +146,39 @@
             this.textEdit3.Size = new System.Drawing.Size(0, 20);
             this.textEdit3.TabIndex = 25;
             // 
-            // textEdit4
+            // txtTotal
             // 
-            this.textEdit4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtTotal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit4.Location = new System.Drawing.Point(345, 18);
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEdit4.Properties.Appearance.Options.UseFont = true;
-            this.textEdit4.Properties.AutoHeight = false;
-            this.textEdit4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textEdit4.Size = new System.Drawing.Size(993, 95);
-            this.textEdit4.TabIndex = 26;
+            this.txtTotal.EditValue = "";
+            this.txtTotal.Enabled = false;
+            this.txtTotal.Location = new System.Drawing.Point(345, 18);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.txtTotal.Properties.Appearance.Options.UseFont = true;
+            this.txtTotal.Properties.Appearance.Options.UseForeColor = true;
+            this.txtTotal.Properties.AutoHeight = false;
+            this.txtTotal.Properties.Mask.EditMask = "n0";
+            this.txtTotal.Properties.Mask.IgnoreMaskBlank = false;
+            this.txtTotal.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtTotal.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.txtTotal.Properties.NullText = "0";
+            this.txtTotal.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtTotal.Size = new System.Drawing.Size(993, 95);
+            this.txtTotal.TabIndex = 26;
             // 
-            // textEdit5
+            // txtJumlah
             // 
-            this.textEdit5.Location = new System.Drawing.Point(95, 128);
-            this.textEdit5.Name = "textEdit5";
-            this.textEdit5.Size = new System.Drawing.Size(100, 20);
-            this.textEdit5.TabIndex = 28;
+            this.txtJumlah.EditValue = "1";
+            this.txtJumlah.Location = new System.Drawing.Point(95, 128);
+            this.txtJumlah.Name = "txtJumlah";
+            this.txtJumlah.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtJumlah.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txtJumlah.Properties.Mask.EditMask = "d";
+            this.txtJumlah.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtJumlah.Size = new System.Drawing.Size(100, 20);
+            this.txtJumlah.TabIndex = 28;
             // 
             // labelControl4
             // 
@@ -194,31 +196,38 @@
             this.labelControl5.TabIndex = 31;
             this.labelControl5.Text = "Kode Item :";
             // 
-            // textEdit6
+            // txtKodeItem
             // 
-            this.textEdit6.Location = new System.Drawing.Point(268, 128);
-            this.textEdit6.Name = "textEdit6";
-            this.textEdit6.Size = new System.Drawing.Size(197, 20);
-            this.textEdit6.TabIndex = 30;
+            this.txtKodeItem.Location = new System.Drawing.Point(268, 128);
+            this.txtKodeItem.Name = "txtKodeItem";
+            this.txtKodeItem.Size = new System.Drawing.Size(197, 20);
+            this.txtKodeItem.TabIndex = 30;
+            this.txtKodeItem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textEdit6_KeyPress);
             // 
-            // simpleButton1
+            // btnDaftarItem
             // 
-            this.simpleButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.simpleButton1.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.search11;
-            this.simpleButton1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(471, 128);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(46, 20);
-            this.simpleButton1.TabIndex = 32;
+            this.btnDaftarItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDaftarItem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDaftarItem.ImageOptions.Image")));
+            this.btnDaftarItem.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnDaftarItem.Location = new System.Drawing.Point(471, 128);
+            this.btnDaftarItem.Name = "btnDaftarItem";
+            this.btnDaftarItem.Size = new System.Drawing.Size(46, 20);
+            this.btnDaftarItem.TabIndex = 32;
+            this.btnDaftarItem.Click += new System.EventHandler(this.btnDaftarItem_Click);
             // 
             // gridControl1
             // 
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl1.Location = new System.Drawing.Point(12, 154);
+            gridLevelNode1.RelationName = "Level1";
+            this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
+            this.gridControl1.Location = new System.Drawing.Point(10, 154);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
+            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemTextEdit1});
             this.gridControl1.Size = new System.Drawing.Size(1326, 347);
             this.gridControl1.TabIndex = 33;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -227,100 +236,132 @@
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5,
-            this.gridColumn6,
-            this.gridColumn7});
+            this.No,
+            this.KodeItem,
+            this.NamaItem,
+            this.Jumlah,
+            this.Satuan,
+            this.Harga,
+            this.Total});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowIndicator = false;
+            this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
+            this.gridView1.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.gridView1_CustomColumnDisplayText);
             // 
-            // gridColumn1
+            // No
             // 
-            this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn1.Caption = "No";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 70;
+            this.No.AppearanceHeader.Options.UseTextOptions = true;
+            this.No.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.No.Caption = "No";
+            this.No.FieldName = "No";
+            this.No.Name = "No";
+            this.No.Visible = true;
+            this.No.VisibleIndex = 0;
+            this.No.Width = 70;
             // 
-            // gridColumn2
+            // KodeItem
             // 
-            this.gridColumn2.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn2.Caption = "Kode Item";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 124;
+            this.KodeItem.AppearanceHeader.Options.UseTextOptions = true;
+            this.KodeItem.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.KodeItem.Caption = "Kode Item";
+            this.KodeItem.FieldName = "KodeItem";
+            this.KodeItem.Name = "KodeItem";
+            this.KodeItem.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.KodeItem.Visible = true;
+            this.KodeItem.VisibleIndex = 1;
+            this.KodeItem.Width = 124;
             // 
-            // gridColumn3
+            // NamaItem
             // 
-            this.gridColumn3.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn3.Caption = "Nama Item";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
-            this.gridColumn3.Width = 453;
+            this.NamaItem.AppearanceHeader.Options.UseTextOptions = true;
+            this.NamaItem.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.NamaItem.Caption = "Nama Item";
+            this.NamaItem.FieldName = "NamaItem";
+            this.NamaItem.Name = "NamaItem";
+            this.NamaItem.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.NamaItem.Visible = true;
+            this.NamaItem.VisibleIndex = 2;
+            this.NamaItem.Width = 453;
             // 
-            // gridColumn4
+            // Jumlah
             // 
-            this.gridColumn4.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn4.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn4.Caption = "Jumlah";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
-            this.gridColumn4.Width = 96;
+            this.Jumlah.AppearanceHeader.Options.UseTextOptions = true;
+            this.Jumlah.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Jumlah.Caption = "Jumlah";
+            this.Jumlah.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.Jumlah.FieldName = "Jumlah";
+            this.Jumlah.Name = "Jumlah";
+            this.Jumlah.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.Jumlah.Visible = true;
+            this.Jumlah.VisibleIndex = 3;
+            this.Jumlah.Width = 96;
             // 
-            // gridColumn5
+            // Satuan
             // 
-            this.gridColumn5.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn5.Caption = "Satuan";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
-            this.gridColumn5.Width = 66;
+            this.Satuan.AppearanceHeader.Options.UseTextOptions = true;
+            this.Satuan.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Satuan.Caption = "Satuan";
+            this.Satuan.FieldName = "Satuan";
+            this.Satuan.Name = "Satuan";
+            this.Satuan.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.Satuan.Visible = true;
+            this.Satuan.VisibleIndex = 4;
+            this.Satuan.Width = 66;
             // 
-            // gridColumn6
+            // Harga
             // 
-            this.gridColumn6.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn6.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn6.Caption = "Harga";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 5;
-            this.gridColumn6.Width = 248;
+            this.Harga.AppearanceHeader.Options.UseTextOptions = true;
+            this.Harga.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Harga.Caption = "Harga";
+            this.Harga.ColumnEdit = this.repositoryItemTextEdit1;
+            this.Harga.FieldName = "Harga";
+            this.Harga.Name = "Harga";
+            this.Harga.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.Harga.Visible = true;
+            this.Harga.VisibleIndex = 5;
+            this.Harga.Width = 248;
             // 
-            // gridColumn7
+            // repositoryItemTextEdit1
             // 
-            this.gridColumn7.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn7.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn7.Caption = "Total";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 6;
-            this.gridColumn7.Width = 251;
+            this.repositoryItemTextEdit1.AutoHeight = false;
+            this.repositoryItemTextEdit1.Mask.EditMask = "n";
+            this.repositoryItemTextEdit1.Mask.IgnoreMaskBlank = false;
+            this.repositoryItemTextEdit1.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.repositoryItemTextEdit1.Mask.UseMaskAsDisplayFormat = true;
+            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
             // 
-            // simpleButton2
+            // Total
             // 
-            this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.simpleButton2.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.reload;
-            this.simpleButton2.Location = new System.Drawing.Point(10, 507);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(79, 25);
-            this.simpleButton2.TabIndex = 36;
-            this.simpleButton2.Text = "Batal";
+            this.Total.AppearanceHeader.Options.UseTextOptions = true;
+            this.Total.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Total.Caption = "Total";
+            this.Total.ColumnEdit = this.repositoryItemTextEdit1;
+            this.Total.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.Total.FieldName = "Total";
+            this.Total.Name = "Total";
+            this.Total.OptionsColumn.AllowEdit = false;
+            this.Total.UnboundExpression = "[Jumlah] * [Harga]";
+            this.Total.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.Total.Visible = true;
+            this.Total.VisibleIndex = 6;
+            this.Total.Width = 251;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.ImageOptions.Image")));
+            this.btnCancel.Location = new System.Drawing.Point(10, 507);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(79, 25);
+            this.btnCancel.TabIndex = 36;
+            this.btnCancel.Text = "Batal";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // simpleButton4
             // 
             this.simpleButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.simpleButton4.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.coins;
+            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
             this.simpleButton4.Location = new System.Drawing.Point(186, 507);
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(76, 25);
@@ -331,17 +372,18 @@
             // btnHapus
             // 
             this.btnHapus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnHapus.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.substract__1_;
+            this.btnHapus.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHapus.ImageOptions.Image")));
             this.btnHapus.Location = new System.Drawing.Point(95, 507);
             this.btnHapus.Name = "btnHapus";
             this.btnHapus.Size = new System.Drawing.Size(85, 25);
             this.btnHapus.TabIndex = 39;
             this.btnHapus.Text = "Hapus Item";
+            this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click);
             // 
             // simpleButton5
             // 
             this.simpleButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.simpleButton5.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.stopwatch;
+            this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
             this.simpleButton5.Location = new System.Drawing.Point(268, 507);
             this.simpleButton5.Name = "simpleButton5";
             this.simpleButton5.Size = new System.Drawing.Size(76, 25);
@@ -351,7 +393,7 @@
             // simpleButton6
             // 
             this.simpleButton6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.simpleButton6.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.stopwatch__1_;
+            this.simpleButton6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton6.ImageOptions.Image")));
             this.simpleButton6.Location = new System.Drawing.Point(350, 507);
             this.simpleButton6.Name = "simpleButton6";
             this.simpleButton6.Size = new System.Drawing.Size(104, 25);
@@ -359,47 +401,78 @@
             this.simpleButton6.Text = "Dft. Pending";
             this.simpleButton6.Click += new System.EventHandler(this.simpleButton6_Click);
             // 
+            // lookPelanggan
+            // 
+            this.lookPelanggan.Location = new System.Drawing.Point(95, 67);
+            this.lookPelanggan.Name = "lookPelanggan";
+            this.lookPelanggan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookPelanggan.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Nama", "Nama", 37, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("KodePelanggan", "Kode Pelanggan", 87, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.lookPelanggan.Properties.DataSource = this.pelangganBindingSource;
+            this.lookPelanggan.Properties.DisplayMember = "Nama";
+            this.lookPelanggan.Properties.NullText = "";
+            this.lookPelanggan.Properties.ValueMember = "Id";
+            this.lookPelanggan.Size = new System.Drawing.Size(134, 20);
+            this.lookPelanggan.TabIndex = 42;
+            // 
+            // pelangganBindingSource
+            // 
+            this.pelangganBindingSource.DataSource = typeof(MumtaazHerbal.Pelanggan);
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(551, 131);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.TabIndex = 43;
+            this.simpleButton1.Text = "simpleButton1";
+            // 
             // kasir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 539);
+            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.lookPelanggan);
             this.Controls.Add(this.simpleButton6);
             this.Controls.Add(this.simpleButton5);
             this.Controls.Add(this.btnHapus);
             this.Controls.Add(this.simpleButton4);
-            this.Controls.Add(this.simpleButton2);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.gridControl1);
-            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.btnDaftarItem);
             this.Controls.Add(this.labelControl5);
-            this.Controls.Add(this.textEdit6);
+            this.Controls.Add(this.txtKodeItem);
             this.Controls.Add(this.labelControl4);
-            this.Controls.Add(this.textEdit5);
-            this.Controls.Add(this.textEdit4);
+            this.Controls.Add(this.txtJumlah);
+            this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.textEdit3);
-            this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.textEdit2);
+            this.Controls.Add(this.txtTimer);
             this.Controls.Add(this.txtuser);
-            this.Controls.Add(this.comboBoxEdit1);
             this.Controls.Add(this.labelControl3);
-            this.Controls.Add(this.dateEdit1);
+            this.Controls.Add(this.txtTanggal);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.txtTransaksi);
             this.Controls.Add(this.labelControl1);
             this.Name = "kasir";
             this.Text = "Kasir";
+            this.Load += new System.EventHandler(this.kasir_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtTransaksi.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTanggal.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTanggal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtuser.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTimer.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTotal.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtJumlah.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKodeItem.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookPelanggan.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pelangganBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -408,34 +481,36 @@
         #endregion
 
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit txtTransaksi;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.DateEdit dateEdit1;
+        private DevExpress.XtraEditors.DateEdit txtTanggal;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
         private DevExpress.XtraEditors.TextEdit txtuser;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
-        private DevExpress.XtraEditors.SimpleButton btnSearch;
+        private DevExpress.XtraEditors.TextEdit txtTimer;
         private DevExpress.XtraEditors.TextEdit textEdit3;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
-        private DevExpress.XtraEditors.TextEdit textEdit5;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.TextEdit textEdit6;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.TextEdit txtKodeItem;
+        private DevExpress.XtraEditors.SimpleButton btnDaftarItem;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton btnCancel;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private DevExpress.XtraEditors.SimpleButton btnHapus;
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
         private DevExpress.XtraEditors.SimpleButton simpleButton6;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn No;
+        private DevExpress.XtraGrid.Columns.GridColumn KodeItem;
+        private DevExpress.XtraGrid.Columns.GridColumn NamaItem;
+        private DevExpress.XtraGrid.Columns.GridColumn Jumlah;
+        private DevExpress.XtraGrid.Columns.GridColumn Satuan;
+        private DevExpress.XtraGrid.Columns.GridColumn Harga;
+        private DevExpress.XtraGrid.Columns.GridColumn Total;
+        private System.Windows.Forms.BindingSource pelangganBindingSource;
+        public DevExpress.XtraEditors.LookUpEdit lookPelanggan;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
+        public DevExpress.XtraEditors.TextEdit txtTotal;
+        public DevExpress.XtraEditors.TextEdit txtTransaksi;
+        public DevExpress.XtraEditors.TextEdit txtJumlah;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

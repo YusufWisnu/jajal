@@ -11,7 +11,6 @@ namespace MumtaazHerbal.Function
 {
     public class Query
     {
-        //var buat dftr Item
         public int Id;
         public string NamaItem;
         public string KodeItem;
@@ -23,13 +22,14 @@ namespace MumtaazHerbal.Function
         public string NamaSupplier;
         //public string TempId;
 
-        //var buat dftrSupp
-        public int idsupp;
-        public string KodeSupplier;
-        public string NamaSupplierMain;
-        public string NoHpSupp;
-        public string AlamatSupp;
-        public string EmailSupp;
+        //data pelanggan
+        public int IdPelanggan;
+        public string NamaPel;
+        public string KodePel;
+        public string AlamatPel;
+        public string EmailPel;
+        public string TeleponPel;
+    
 
         Supplier supp;
         Item item;
@@ -37,6 +37,7 @@ namespace MumtaazHerbal.Function
 
         // ------------------------------------   dftrItem   -----------------------------------------------\\
 
+        //ambil data dari gridView
         public void GetData(GridView grid)
         {
             var rowHandle = grid.FocusedRowHandle;
@@ -95,20 +96,20 @@ namespace MumtaazHerbal.Function
 
         // ------------------------------------   dftrPelanggan   -----------------------------------------------\\
 
-
-
-        // ------------------------------------   dftrSupplier   -----------------------------------------------\\
-        public void GetSupp(GridView grid)
+        public bool CheckKodePelanggan(string kodePelanggan)
         {
-            var rowHandle = grid.FocusedRowHandle;
-            
-            KodeSupplier = grid.GetRowCellValue(rowHandle, "KodeSupplier").ToString();
-            NamaSupplierMain = grid.GetRowCellValue(rowHandle, "NamaSupplier").ToString();
-            NoHpSupp = grid.GetRowCellValue(rowHandle, "NoHP").ToString();
-            AlamatSupp = grid.GetRowCellValue(rowHandle, "AlamatSupp").ToString();
-            EmailSupp = grid.GetRowCellValue(rowHandle, "Email").ToString();
-            
+            using (var mumtaaz = new MumtaazContext())
+            {
+                if (mumtaaz.Pelanggans.Any(o => o.KodePelanggan == kodePelanggan))
+                {
+                    XtraMessageBox.Show("Kode Pelanggan sudah digunakan.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return true;
+                }
+            }
+            return false;
         }
+
+
     }
 
 
