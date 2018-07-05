@@ -16,5 +16,12 @@ namespace MumtaazHerbal
         {
             InitializeComponent();
         }
+
+        private void pembelian_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

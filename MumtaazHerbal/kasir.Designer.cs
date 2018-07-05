@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(kasir));
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -49,19 +50,18 @@
             this.No = new DevExpress.XtraGrid.Columns.GridColumn();
             this.KodeItem = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NamaItem = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Jumlah = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.JumlahBarang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Satuan = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Harga = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.HargaBarang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.Total = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.btnHapus = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnPending = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
             this.lookPelanggan = new DevExpress.XtraEditors.LookUpEdit();
-            this.pelangganBindingSource = new System.Windows.Forms.BindingSource();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.pelangganBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.txtTransaksi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTanggal.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTanggal.Properties)).BeginInit();
@@ -239,9 +239,9 @@
             this.No,
             this.KodeItem,
             this.NamaItem,
-            this.Jumlah,
+            this.JumlahBarang,
             this.Satuan,
-            this.Harga,
+            this.HargaBarang,
             this.Total});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
@@ -284,18 +284,18 @@
             this.NamaItem.VisibleIndex = 2;
             this.NamaItem.Width = 453;
             // 
-            // Jumlah
+            // JumlahBarang
             // 
-            this.Jumlah.AppearanceHeader.Options.UseTextOptions = true;
-            this.Jumlah.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.Jumlah.Caption = "Jumlah";
-            this.Jumlah.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.Jumlah.FieldName = "Jumlah";
-            this.Jumlah.Name = "Jumlah";
-            this.Jumlah.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            this.Jumlah.Visible = true;
-            this.Jumlah.VisibleIndex = 3;
-            this.Jumlah.Width = 96;
+            this.JumlahBarang.AppearanceHeader.Options.UseTextOptions = true;
+            this.JumlahBarang.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.JumlahBarang.Caption = "Jumlah";
+            this.JumlahBarang.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.JumlahBarang.FieldName = "JumlahBarang";
+            this.JumlahBarang.Name = "JumlahBarang";
+            this.JumlahBarang.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.JumlahBarang.Visible = true;
+            this.JumlahBarang.VisibleIndex = 3;
+            this.JumlahBarang.Width = 96;
             // 
             // Satuan
             // 
@@ -309,18 +309,18 @@
             this.Satuan.VisibleIndex = 4;
             this.Satuan.Width = 66;
             // 
-            // Harga
+            // HargaBarang
             // 
-            this.Harga.AppearanceHeader.Options.UseTextOptions = true;
-            this.Harga.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.Harga.Caption = "Harga";
-            this.Harga.ColumnEdit = this.repositoryItemTextEdit1;
-            this.Harga.FieldName = "Harga";
-            this.Harga.Name = "Harga";
-            this.Harga.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
-            this.Harga.Visible = true;
-            this.Harga.VisibleIndex = 5;
-            this.Harga.Width = 248;
+            this.HargaBarang.AppearanceHeader.Options.UseTextOptions = true;
+            this.HargaBarang.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.HargaBarang.Caption = "Harga";
+            this.HargaBarang.ColumnEdit = this.repositoryItemTextEdit1;
+            this.HargaBarang.FieldName = "HargaBarang";
+            this.HargaBarang.Name = "HargaBarang";
+            this.HargaBarang.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.HargaBarang.Visible = true;
+            this.HargaBarang.VisibleIndex = 5;
+            this.HargaBarang.Width = 248;
             // 
             // repositoryItemTextEdit1
             // 
@@ -380,15 +380,16 @@
             this.btnHapus.Text = "Hapus Item";
             this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click);
             // 
-            // simpleButton5
+            // btnPending
             // 
-            this.simpleButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.simpleButton5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.ImageOptions.Image")));
-            this.simpleButton5.Location = new System.Drawing.Point(268, 507);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(76, 25);
-            this.simpleButton5.TabIndex = 40;
-            this.simpleButton5.Text = "Pending";
+            this.btnPending.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnPending.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPending.ImageOptions.Image")));
+            this.btnPending.Location = new System.Drawing.Point(268, 507);
+            this.btnPending.Name = "btnPending";
+            this.btnPending.Size = new System.Drawing.Size(76, 25);
+            this.btnPending.TabIndex = 40;
+            this.btnPending.Text = "Pending";
+            this.btnPending.Click += new System.EventHandler(this.btnPending_Click);
             // 
             // simpleButton6
             // 
@@ -421,23 +422,14 @@
             // 
             this.pelangganBindingSource.DataSource = typeof(MumtaazHerbal.Pelanggan);
             // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Location = new System.Drawing.Point(551, 131);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 43;
-            this.simpleButton1.Text = "simpleButton1";
-            // 
             // kasir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 539);
-            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.lookPelanggan);
             this.Controls.Add(this.simpleButton6);
-            this.Controls.Add(this.simpleButton5);
+            this.Controls.Add(this.btnPending);
             this.Controls.Add(this.btnHapus);
             this.Controls.Add(this.simpleButton4);
             this.Controls.Add(this.btnCancel);
@@ -482,7 +474,6 @@
 
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.DateEdit txtTanggal;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.TextEdit txtuser;
         private DevExpress.XtraEditors.TextEdit txtTimer;
@@ -496,14 +487,14 @@
         private DevExpress.XtraEditors.SimpleButton btnCancel;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private DevExpress.XtraEditors.SimpleButton btnHapus;
-        private DevExpress.XtraEditors.SimpleButton simpleButton5;
+        private DevExpress.XtraEditors.SimpleButton btnPending;
         private DevExpress.XtraEditors.SimpleButton simpleButton6;
         private DevExpress.XtraGrid.Columns.GridColumn No;
         private DevExpress.XtraGrid.Columns.GridColumn KodeItem;
         private DevExpress.XtraGrid.Columns.GridColumn NamaItem;
-        private DevExpress.XtraGrid.Columns.GridColumn Jumlah;
+        private DevExpress.XtraGrid.Columns.GridColumn JumlahBarang;
         private DevExpress.XtraGrid.Columns.GridColumn Satuan;
-        private DevExpress.XtraGrid.Columns.GridColumn Harga;
+        private DevExpress.XtraGrid.Columns.GridColumn HargaBarang;
         private DevExpress.XtraGrid.Columns.GridColumn Total;
         private System.Windows.Forms.BindingSource pelangganBindingSource;
         public DevExpress.XtraEditors.LookUpEdit lookPelanggan;
@@ -511,6 +502,6 @@
         public DevExpress.XtraEditors.TextEdit txtTotal;
         public DevExpress.XtraEditors.TextEdit txtTransaksi;
         public DevExpress.XtraEditors.TextEdit txtJumlah;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        public DevExpress.XtraEditors.DateEdit txtTanggal;
     }
 }

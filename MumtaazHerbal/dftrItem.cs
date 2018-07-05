@@ -19,22 +19,26 @@ namespace MumtaazHerbal
         private kasir kasir;
         private string kodeItem;
         private bool getItem;
+        private GridView gridView;
+
         public dftrItem()
         {
             InitializeComponent();
             //DisplayDaftarItem();
         }
 
-        public dftrItem(kasir kasir, bool getItem)
+        public dftrItem(kasir kasir, bool getItem, GridView gridView)
             : this()
         {
             this.kasir = kasir;
             this.getItem = getItem;
+            this.gridView = gridView;
         }
 
-        public dftrItem(kasir kasir, bool getItem, string kodeItem)
-            :this(kasir, getItem)
+        public dftrItem(kasir kasir, bool getItem, string kodeItem, GridView gridView)
+            :this(kasir, getItem, gridView)
         {
+            
             this.kodeItem = kodeItem;
         }
 
@@ -118,7 +122,7 @@ namespace MumtaazHerbal
             query.DisplayDaftarItem(gridControl1);
 
         }
-
+    
         private void DisplayDaftarItem()
         {
             using (var mumtaaz = new MumtaazContext())
@@ -145,12 +149,13 @@ namespace MumtaazHerbal
         }
 
         public static int harga = 0;
+
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
             if (getItem)
             {
                 var rowHandle = gridView1.FocusedRowHandle;
-
+                    
 
                 var kodeItem = gridView1.GetRowCellValue(rowHandle, "KodeItem").ToString();
 
@@ -160,6 +165,8 @@ namespace MumtaazHerbal
                     .Select(x => x.Stok)
                     .FirstOrDefault()
                     .ToString();
+
+                //cek jika item sudah ada dikeranjang belanjaan
                             
 
                 if(int.Parse(query) < int.Parse(kasir.txtJumlah.Text))
@@ -168,6 +175,14 @@ namespace MumtaazHerbal
                     return;
                 }
                     
+                for(int i = 0; i < gridView.DataRowCount; i++)
+                {
+                    if(gridView.GetRowCellValue(i, "KodeItem").ToString() == gridView1.GetRowCellValue(rowHandle, "KodeItem").ToString())
+                    {
+                        MessageBox.Show("Item sudah ada di keranjang belanja.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
 
 
                 var namaItem = gridView1.GetRowCellValue(rowHandle, "NamaItem").ToString();

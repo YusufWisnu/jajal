@@ -8,6 +8,8 @@
 
         public int PenjualanId { get; set; }
 
+        public int HargaBarang { get; set; }
+
         public Penjualan Penjualan { get; set; }
 
         public int ItemId { get; set; }

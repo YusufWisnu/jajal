@@ -197,6 +197,7 @@
             this.barButtonItem7.Id = 20;
             this.barButtonItem7.ImageOptions.SvgImage = global::MumtaazHerbal.Properties.Resources.cart;
             this.barButtonItem7.Name = "barButtonItem7";
+            this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick);
             // 
             // imageCollection1
             // 

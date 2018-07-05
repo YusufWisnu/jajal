@@ -117,6 +117,7 @@ namespace MumtaazHerbal
         
         }
 
+        //history pembelian
         private void barButtonItem2_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             foreach(Form form in Application.OpenForms)
@@ -129,6 +130,23 @@ namespace MumtaazHerbal
             }
 
             historyPmb pmb = new historyPmb();
+            pmb.MdiParent = this;
+            pmb.Show();
+        }
+
+        //pembelian
+        private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(pembelian))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            pembelian pmb = new pembelian();
             pmb.MdiParent = this;
             pmb.Show();
         }

@@ -19,6 +19,7 @@ namespace MumtaazHerbal.EntityConfig
                 .WithMany(s => s.DetailPenjualans)
                 .HasForeignKey(c => c.ItemId)
                 .WillCascadeOnDelete(false);
+
             
         }
     }

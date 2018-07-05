@@ -197,6 +197,26 @@
     <Compile Include="Migrations\201805270023216_DeleteJumlahBarangFromTablePenjualan.Designer.cs">
       <DependentUpon>201805270023216_DeleteJumlahBarangFromTablePenjualan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807031323467_AddPendingInTableDetailPenjualan.cs" />
+    <Compile Include="Migrations\201807031323467_AddPendingInTableDetailPenjualan.Designer.cs">
+      <DependentUpon>201807031323467_AddPendingInTableDetailPenjualan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807031527029_AddPendingInTableDetailPenjualan1.cs" />
+    <Compile Include="Migrations\201807031527029_AddPendingInTableDetailPenjualan1.Designer.cs">
+      <DependentUpon>201807031527029_AddPendingInTableDetailPenjualan1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807031720595_addFKDetailPenjualanInTablePenjualan.cs" />
+    <Compile Include="Migrations\201807031720595_addFKDetailPenjualanInTablePenjualan.Designer.cs">
+      <DependentUpon>201807031720595_addFKDetailPenjualanInTablePenjualan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807040655520_AddHargaBarangFromTableDetailPenjualan.cs" />
+    <Compile Include="Migrations\201807040655520_AddHargaBarangFromTableDetailPenjualan.Designer.cs">
+      <DependentUpon>201807040655520_AddHargaBarangFromTableDetailPenjualan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807040920090_ChangeColumnIsPendingandKeteranganIntoTablePenjualan.cs" />
+    <Compile Include="Migrations\201807040920090_ChangeColumnIsPendingandKeteranganIntoTablePenjualan.Designer.cs">
+      <DependentUpon>201807040920090_ChangeColumnIsPendingandKeteranganIntoTablePenjualan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Nota.cs">
       <SubType>Component</SubType>
@@ -242,6 +262,12 @@
     </Compile>
     <Compile Include="tmbhPel.Designer.cs">
       <DependentUpon>tmbhPel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tmbhPending.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tmbhPending.Designer.cs">
+      <DependentUpon>tmbhPending.cs</DependentUpon>
     </Compile>
     <Compile Include="tmbhSupp.cs">
       <SubType>Form</SubType>
@@ -297,6 +323,21 @@
     <EmbeddedResource Include="Migrations\201805270023216_DeleteJumlahBarangFromTablePenjualan.resx">
       <DependentUpon>201805270023216_DeleteJumlahBarangFromTablePenjualan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807031323467_AddPendingInTableDetailPenjualan.resx">
+      <DependentUpon>201807031323467_AddPendingInTableDetailPenjualan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807031527029_AddPendingInTableDetailPenjualan1.resx">
+      <DependentUpon>201807031527029_AddPendingInTableDetailPenjualan1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807031720595_addFKDetailPenjualanInTablePenjualan.resx">
+      <DependentUpon>201807031720595_addFKDetailPenjualanInTablePenjualan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807040655520_AddHargaBarangFromTableDetailPenjualan.resx">
+      <DependentUpon>201807040655520_AddHargaBarangFromTableDetailPenjualan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807040920090_ChangeColumnIsPendingandKeteranganIntoTablePenjualan.resx">
+      <DependentUpon>201807040920090_ChangeColumnIsPendingandKeteranganIntoTablePenjualan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Nota.resx">
       <DependentUpon>Nota.cs</DependentUpon>
     </EmbeddedResource>
@@ -326,11 +367,15 @@
     <EmbeddedResource Include="tmbhPel.resx">
       <DependentUpon>tmbhPel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="tmbhPending.resx">
+      <DependentUpon>tmbhPending.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="tmbhSupp.resx">
       <DependentUpon>tmbhSupp.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\DetailPenjualan.datasource" />
     <None Include="Properties\DataSources\Pelanggan.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

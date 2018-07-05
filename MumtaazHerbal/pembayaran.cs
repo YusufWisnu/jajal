@@ -137,11 +137,12 @@ namespace MumtaazHerbal
                 penjualan.Tanggal = DateTime.Today;
                 penjualan.PelangganId = int.Parse(kasir.lookPelanggan.EditValue.ToString());
                 penjualan.TotalHarga = int.Parse(txtTotal.Text.Replace(",", ""));
+                penjualan.IsPending = false;
 
                 for (int i = 0; i < gridView.DataRowCount; i++)
                 {
                     var rowHandle = gridView.GetRowHandle(i);
-                    var kodeItem = gridView.GetRowCellValue(rowHandle, "KodeItem").ToString();
+                    var kodeItem = gridView.GetRowCellValue(rowHandle, gridView.Columns[1]).ToString();
 
                     var itemId = mumtaaz.Items
                         .Where(x => x.KodeItem == kodeItem)
@@ -150,15 +151,16 @@ namespace MumtaazHerbal
 
                     var detailPenjualan = new DetailPenjualan()
                     {
-                        JumlahBarang = Convert.ToInt32(gridView.GetRowCellValue(rowHandle, "Total")),
+                        HargaBarang = Convert.ToInt32(gridView.GetRowCellValue(rowHandle, gridView.Columns[5])),
+                        JumlahBarang = Convert.ToInt32(gridView.GetRowCellValue(rowHandle, gridView.Columns[3])),
                         Penjualan = penjualan,
-                        ItemId = itemId.Id
+                        ItemId = itemId.Id,
                     };
 
                     mumtaaz.DetailPenjualans.Add(detailPenjualan);
 
                     //update Jumlah Barang
-                    int jumlahBaru = itemId.Stok - Convert.ToInt32(gridView.GetRowCellValue(rowHandle, "Jumlah"));
+                    int jumlahBaru = itemId.Stok - Convert.ToInt32(gridView.GetRowCellValue(rowHandle, gridView.Columns[3]));
                     itemId.Stok = jumlahBaru;
                     mumtaaz.Entry(itemId).State = System.Data.Entity.EntityState.Modified;
                 }
