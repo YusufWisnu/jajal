@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(tmbhItem));
             this.txtKodeItem = new DevExpress.XtraEditors.TextEdit();
             this.txtNamaItem = new DevExpress.XtraEditors.TextEdit();
@@ -47,7 +46,7 @@
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.lookSupplier = new DevExpress.XtraEditors.LookUpEdit();
-            this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.supplierBindingSource = new System.Windows.Forms.BindingSource();
             this.txtSatuan = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKodeItem.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNamaItem.Properties)).BeginInit();
@@ -241,7 +240,7 @@
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(888, 444);
+            this.ClientSize = new System.Drawing.Size(440, 277);
             this.Controls.Add(this.txtSatuan);
             this.Controls.Add(this.lookSupplier);
             this.Controls.Add(this.btnCancel);

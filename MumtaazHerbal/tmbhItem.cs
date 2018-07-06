@@ -33,11 +33,11 @@ namespace MumtaazHerbal
         }
 
         public tmbhItem(GridControl gridControl1)
-            :this()
+            : this()
         {
             this.gridControl1 = gridControl1;
         }
-            
+
         MumtaazContext mumtaaz;
         Utilities util;
         Item item;
@@ -59,9 +59,15 @@ namespace MumtaazHerbal
             util = new Utilities();
             var que = new Query();
 
-            //if(txthar)
 
-            if (util.CheckIfNull(this))
+            if (int.Parse(txtHargaPokok.Text) > int.Parse(txtHargaGrosir.Text) || int.Parse(txtHargaPokok.Text) > int.Parse(txtHargaRetail.Text))
+            {
+                MessageBox.Show("Harga pokok tidak bisa lebih besar dari harga retail ataupun harga grosir", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+                
+
+                if (util.CheckIfNull(this))
             {
                 return;
             }

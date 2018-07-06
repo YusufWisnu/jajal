@@ -154,81 +154,57 @@ namespace MumtaazHerbal
 
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-        //    if (e.Column.FieldName == "HargaBarang")
-        //    {
-        //        var kodeItem = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "KodeItem").ToString();
-        //        int hargaColumn = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "HargaBarang"));
-        //        int jumlah = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "JumlahBarang"));
+            if (e.Column.FieldName == "HargaBarang")
+            {
+                int total = 0;
 
-        //        var query = mumtaaz.Items
-        //            .Where(x => x.KodeItem == kodeItem)
-        //            .SingleOrDefault();
+                var kodeItem = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "KodeItem").ToString();
+                int harga = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "HargaBarang"));
+                int jumlah = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "JumlahBarang"));
 
-        //        if (lookPelanggan.Text == "UMUM")
-        //        {
-        //            if (query.HargaEceran > hargaColumn)
-        //            {
-        //                MessageBox.Show("Jumlah item melebihi stok.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        //                gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "HargaBarang", query.HargaEceran);
-        //                return;
-        //            }
-        //        }
-        //        else
-        //        {
-        //            if (query.HargaGrosir > hargaColumn)
-        //            {
-        //                MessageBox.Show("Jumlah item melebihi stok.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        //                gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "HargaBarang", query.HargaGrosir);
-        //                return;
-        //            }
-        //        }
+                total = harga * jumlah;
+                gridView1.SetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[6], total);
 
-        //        int total = 0;
-        //        int harga = 0;
+                GetTotalHarga();
 
-        //        if (gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "HargaBarang") != DBNull.Value)
-        //        {
-        //            harga = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "HargaBarang"));
-        //        }
+                if(MessageBox.Show("Apakah Harga Pokok akan diubah di master data?","Ubah Harga Pokok", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
 
-        //        total = harga * jumlah;
-        //        gridView1.SetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[6], total);
+                }
 
-        //        GetTotalHarga();
+            }
 
-        //    }
+            if (e.Column.FieldName == "JumlahBarang")
+            {
+                //cek jika stok melebihi inputan
 
-        //    if (e.Column.FieldName == "JumlahBarang")
-        //    {
-        //        //cek jika stok melebihi inputan
+                var kodeItem = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "KodeItem").ToString();
+                int jumlah = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "JumlahBarang"));
 
-        //        var kodeItem = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "KodeItem").ToString();
-        //        int jumlah = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "JumlahBarang"));
+                var query = mumtaaz.Items
+                    .Where(x => x.KodeItem == kodeItem)
+                    .SingleOrDefault();
 
-        //        var query = mumtaaz.Items
-        //            .Where(x => x.KodeItem == kodeItem)
-        //            .SingleOrDefault();
+                if (query.Stok < jumlah)
+                {
+                    MessageBox.Show("Jumlah item melebihi stok.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "JumlahBarang", query.Stok);
+                    return;
+                }
 
-        //        if (query.Stok < jumlah)
-        //        {
-        //            MessageBox.Show("Jumlah item melebihi stok.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        //            gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "JumlahBarang", query.Stok);
-        //            return;
-        //        }
+                int total = 0;
+                int harga = 0;
 
-        //        int total = 0;
-        //        int harga = 0;
+                if (gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "HargaBarang") != DBNull.Value)
+                {
+                    harga = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "HargaBarang"));
+                }
 
-        //        if (gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "HargaBarang") != DBNull.Value)
-        //        {
-        //            harga = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "HargaBarang"));
-        //        }
+                total = harga * jumlah;
+                gridView1.SetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[6], total);
 
-        //        total = harga * jumlah;
-        //        gridView1.SetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[6], total);
-
-        //        GetTotalHarga();
-        //    }
+                GetTotalHarga();
+            }
         }
     }
 }

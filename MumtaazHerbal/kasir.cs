@@ -94,18 +94,14 @@ namespace MumtaazHerbal
             txtTransaksi.Text = noTransaksi.ToString().PadLeft(4, '0') + "/KSR/" + DateTime.Now.ToString("ddMM");
         }
 
-        
-
         public void GetPelangganUmum()
         {
-            //var query = from o in mumtaaz.Pelanggans
-            //            where o.KodePelanggan == "UMUM"
-
-            lookPelanggan.Text = mumtaaz.Pelanggans
+            var query = mumtaaz.Pelanggans
                 .Where(x => x.KodePelanggan == "UMUM")
-                .Select(x => x.KodePelanggan)
-                .FirstOrDefault()
-                .ToString();
+                .Select(x => x.Id)
+                .FirstOrDefault();
+
+            lookPelanggan.EditValue = query;
         }
 
         
@@ -321,11 +317,11 @@ namespace MumtaazHerbal
                 int rowHandle = gridView1.GetRowHandle(i);
                 var receipt = new Receipt()
                 {
-                    NamaItem = gridView1.GetRowCellValue(rowHandle, "NamaItem").ToString().ToUpper(),
-                    Harga = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "Harga")),
-                    JumlahItem = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "Jumlah")),
-                    Total = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "Total")),
-                    Tipe = gridView1.GetRowCellValue(rowHandle, "Satuan").ToString()
+                    NamaItem = gridView1.GetRowCellValue(rowHandle, gridView1.Columns[1]).ToString().ToUpper(),
+                    Harga = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, gridView1.Columns[5])),
+                    JumlahItem = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, gridView1.Columns[3])),
+                    Total = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, gridView1.Columns[6])),
+                    Tipe = gridView1.GetRowCellValue(rowHandle, gridView1.Columns[4]).ToString()
                 };
 
                 receipts.Add(receipt);
