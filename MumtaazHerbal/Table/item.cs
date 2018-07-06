@@ -9,8 +9,8 @@ namespace MumtaazHerbal
         public int Id { get; set; }
 
         public string NamaItem { get; set; }
-        
-        [Index(IsUnique =true)]
+
+        [Index(IsUnique = true)]
         public string KodeItem { get; set; }
 
         public int Stok { get; set; }
@@ -27,7 +27,9 @@ namespace MumtaazHerbal
 
         public Supplier Supplier { get; set; }
 
-        public IList<DetailPenjualan> DetailPenjualans{ get; set; }
+        public IList<DetailPenjualan> DetailPenjualans { get; set; }
+
+        public IList<DetailPembelian> DetailPembelians{ get; set; }
 
     }
 }

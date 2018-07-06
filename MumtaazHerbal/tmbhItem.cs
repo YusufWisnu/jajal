@@ -59,6 +59,8 @@ namespace MumtaazHerbal
             util = new Utilities();
             var que = new Query();
 
+            //if(txthar)
+
             if (util.CheckIfNull(this))
             {
                 return;

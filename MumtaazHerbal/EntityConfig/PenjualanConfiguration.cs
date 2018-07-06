@@ -27,4 +27,5 @@ namespace MumtaazHerbal.EntityConfig
 
         }
     }
+
 }

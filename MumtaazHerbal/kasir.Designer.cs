@@ -417,6 +417,7 @@
             this.lookPelanggan.Properties.ValueMember = "Id";
             this.lookPelanggan.Size = new System.Drawing.Size(134, 20);
             this.lookPelanggan.TabIndex = 42;
+            this.lookPelanggan.EditValueChanged += new System.EventHandler(this.lookPelanggan_EditValueChanged);
             // 
             // pelangganBindingSource
             // 

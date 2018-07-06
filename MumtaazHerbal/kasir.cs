@@ -29,6 +29,7 @@ namespace MumtaazHerbal
 
         MumtaazContext mumtaaz;
 
+        //pembayaran
         private void simpleButton4_Click(object sender, EventArgs e)
         {
             if (gridView1.DataRowCount != 0)
@@ -368,8 +369,68 @@ namespace MumtaazHerbal
 
         }
 
+        private void lookPelanggan_EditValueChanged(object sender, EventArgs e)
+        {
+            int total = 0;
+
+            //untuk umum
+            if (lookPelanggan.Text == "UMUM")
+            {
+                for(int i = 0; i < gridView1.DataRowCount; i++)
+                {
+                    var rowHandle = gridView1.GetRowHandle(i);
+                    var kodeItem = gridView1.GetRowCellValue(rowHandle, "KodeItem").ToString();
+
+                    var harga = mumtaaz.Items
+                        .Where(x => x.KodeItem == kodeItem)
+                        .Select(x => x.HargaEceran)
+                        .FirstOrDefault();
 
 
+                    gridView1.SetRowCellValue(rowHandle, gridView1.Columns[5], harga);
+
+                    var jumlah = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, gridView1.Columns[3]));
+                    //if (gridView1.GetRowCellValue(rowHandle, gridView1.Columns[5]) != DBNull.Value)
+                    //{
+                    //    harga = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[5]));
+                    //}
+
+                    total = harga * jumlah;
+                    gridView1.SetRowCellValue(rowHandle, gridView1.Columns[6], total);
+                }
+
+                GetTotalHarga();
+            }
+            //jika pembeli adlaah pelanggan
+            else
+            {
+                for (int i = 0; i < gridView1.DataRowCount; i++)
+                {
+                    var rowHandle = gridView1.GetRowHandle(i);
+                    var kodeItem = gridView1.GetRowCellValue(rowHandle, "KodeItem").ToString();
+
+                    var harga = mumtaaz.Items
+                        .Where(x => x.KodeItem == kodeItem)
+                        .Select(x => x.HargaGrosir)
+                        .FirstOrDefault();
+
+
+                    gridView1.SetRowCellValue(rowHandle, gridView1.Columns[5], harga);
+
+                    var jumlah = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, gridView1.Columns[3]));
+                    //if (gridView1.GetRowCellValue(rowHandle, gridView1.Columns[5]) != DBNull.Value)
+                    //{
+                    //    harga = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[5]));
+                    //}
+
+                    total = harga * jumlah;
+                    gridView1.SetRowCellValue(rowHandle, gridView1.Columns[6], total);
+                }
+
+                GetTotalHarga();
+            }
+                
+        }
     }
 }
 

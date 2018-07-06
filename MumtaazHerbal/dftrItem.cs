@@ -17,9 +17,15 @@ namespace MumtaazHerbal
     public partial class dftrItem : DevExpress.XtraEditors.XtraForm
     {
         private kasir kasir;
+        private pembelian pembelian;
         private string kodeItem;
+        private string kodeItemPembelian;
         private bool getItem;
+        private bool getItemPembelian;
         private GridView gridView;
+        private GridView gridViewPembelian;
+
+
 
         public dftrItem()
         {
@@ -42,6 +48,21 @@ namespace MumtaazHerbal
             this.kodeItem = kodeItem;
         }
 
+        public dftrItem(pembelian pembelian, bool getItemPembelian, GridView gridViewPembelian)
+            :this()
+        {
+            this.pembelian = pembelian;
+            this.gridViewPembelian = gridViewPembelian;
+            this.getItemPembelian = getItemPembelian;
+        }
+
+        public dftrItem(pembelian pembelian, bool getItemPembelian, string kodeItemPembelian, GridView gridViewPembelian)
+            : this(pembelian, getItemPembelian, gridViewPembelian)
+        {
+            this.kodeItemPembelian = kodeItemPembelian;
+        }
+
+
 
 
         Query query;
@@ -61,6 +82,8 @@ namespace MumtaazHerbal
             //get text from keypress enter search
             if (getItem)
                 txtSearch.Text = kodeItem;
+            else if (getItemPembelian)
+                txtSearch.Text = kodeItemPembelian;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -152,10 +175,11 @@ namespace MumtaazHerbal
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
+            //get Item dari form kasir
             if (getItem)
             {
                 var rowHandle = gridView1.FocusedRowHandle;
-                    
+
 
                 var kodeItem = gridView1.GetRowCellValue(rowHandle, "KodeItem").ToString();
 
@@ -167,17 +191,17 @@ namespace MumtaazHerbal
                     .ToString();
 
                 //cek jika item sudah ada dikeranjang belanjaan
-                            
 
-                if(int.Parse(query) < int.Parse(kasir.txtJumlah.Text))
+
+                if (int.Parse(query) < int.Parse(kasir.txtJumlah.Text))
                 {
                     MessageBox.Show("Jumlah item melebihi stok", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                    
-                for(int i = 0; i < gridView.DataRowCount; i++)
+
+                for (int i = 0; i < gridView.DataRowCount; i++)
                 {
-                    if(gridView.GetRowCellValue(i, "KodeItem").ToString() == gridView1.GetRowCellValue(rowHandle, "KodeItem").ToString())
+                    if (gridView.GetRowCellValue(i, "KodeItem").ToString() == gridView1.GetRowCellValue(rowHandle, "KodeItem").ToString())
                     {
                         MessageBox.Show("Item sudah ada di keranjang belanja.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
@@ -201,6 +225,50 @@ namespace MumtaazHerbal
                 getItem = false;
                 this.Close();
             }
+
+            //get item dari form pembelian
+            else if (getItemPembelian)
+            {
+                var rowHandle = gridView1.FocusedRowHandle;
+
+
+                var kodeItem = gridView1.GetRowCellValue(rowHandle, "KodeItem").ToString();
+
+                //cek jika item melebihi stok
+                var query = mumtaaz.Items
+                    .Where(x => x.KodeItem == kodeItem)
+                    .Select(x => x.Stok)
+                    .FirstOrDefault()
+                    .ToString();
+
+                //cek jika item sudah ada dikeranjang belanjaan
+
+
+                if (int.Parse(query) < int.Parse(pembelian.txtJumlah.Text))
+                {
+                    MessageBox.Show("Jumlah item melebihi stok", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                for (int i = 0; i < gridViewPembelian.DataRowCount; i++)
+                {
+                    if (gridViewPembelian.GetRowCellValue(i, "KodeItem").ToString() == gridView1.GetRowCellValue(rowHandle, "KodeItem").ToString())
+                    {
+                        MessageBox.Show("Item sudah ada di keranjang belanja.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
+
+                var namaItem = gridView1.GetRowCellValue(rowHandle, "NamaItem").ToString();
+                var satuan = gridView1.GetRowCellValue(rowHandle, "Satuan").ToString();
+                var harga = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "HargaJual"));
+
+                pembelian.CreateNewRow(kodeItem, namaItem, satuan, harga);
+                getItemPembelian = false;
+                this.Close();
+            }
+
+
 
         }
 

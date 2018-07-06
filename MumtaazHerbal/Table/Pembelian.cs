@@ -5,8 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MumtaazHerbal
 {
-
-    public class Penjualan
+    public class Pembelian
     {
         public int Id { get; set; }
 
@@ -15,20 +14,14 @@ namespace MumtaazHerbal
 
         public DateTime Tanggal { get; set; }
 
-        public int PelangganId { get; set; }
+        public int SupplierId { get; set; }
 
-        public Pelanggan Pelanggan { get; set; }
+        public Supplier Supplier { get; set; }
 
-        public IList<DetailPenjualan> DetailPenjualans { get; set; }
+        public IList<DetailPembelian> DetailPembelians{ get; set; }
 
         public int TotalHarga { get; set; }
 
-        public bool IsPending { get; set; }
-
-        public string Keterangan { get; set; }
-
     }
-
-
 
 }
