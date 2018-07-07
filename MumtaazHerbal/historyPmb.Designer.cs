@@ -44,7 +44,6 @@
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnTutup = new DevExpress.XtraEditors.SimpleButton();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
@@ -148,7 +147,7 @@
             this.gridControl1.Location = new System.Drawing.Point(16, 90);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(749, 233);
+            this.gridControl1.Size = new System.Drawing.Size(749, 262);
             this.gridControl1.TabIndex = 49;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -206,16 +205,6 @@
             this.gridColumn1.VisibleIndex = 4;
             this.gridColumn1.Width = 229;
             // 
-            // btnTutup
-            // 
-            this.btnTutup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTutup.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.back;
-            this.btnTutup.Location = new System.Drawing.Point(683, 329);
-            this.btnTutup.Name = "btnTutup";
-            this.btnTutup.Size = new System.Drawing.Size(82, 26);
-            this.btnTutup.TabIndex = 50;
-            this.btnTutup.Text = "&Tutup";
-            // 
             // gridColumn4
             // 
             this.gridColumn4.Caption = "Satuan";
@@ -249,7 +238,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(777, 364);
             this.Controls.Add(this.simpleButton1);
-            this.Controls.Add(this.btnTutup);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.comboBoxEdit1);
@@ -295,7 +283,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraEditors.SimpleButton btnTutup;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

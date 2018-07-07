@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(pembelian));
             this.txtTimer = new DevExpress.XtraEditors.TextEdit();
             this.txtuser = new DevExpress.XtraEditors.TextEdit();
@@ -44,6 +46,7 @@
             this.KodeItem = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NamaItem = new DevExpress.XtraGrid.Columns.GridColumn();
             this.JumlahBarang = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.Satuan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.HargaBarang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
@@ -55,12 +58,13 @@
             this.txtJumlah = new DevExpress.XtraEditors.TextEdit();
             this.txtTotal = new DevExpress.XtraEditors.TextEdit();
             this.btnHapus = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnBayar = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.lookSupplier = new DevExpress.XtraEditors.LookUpEdit();
             this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblAlamat = new DevExpress.XtraEditors.LabelControl();
             this.lblNo = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtTimer.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtuser.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTanggal.Properties.CalendarTimeProperties)).BeginInit();
@@ -68,6 +72,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTransaksi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKodeItem.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtJumlah.Properties)).BeginInit();
@@ -78,6 +83,7 @@
             // 
             // txtTimer
             // 
+            this.txtTimer.Enabled = false;
             this.txtTimer.Location = new System.Drawing.Point(235, 42);
             this.txtTimer.Name = "txtTimer";
             this.txtTimer.Size = new System.Drawing.Size(71, 20);
@@ -141,13 +147,18 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             gridLevelNode1.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level2";
+            gridLevelNode3.RelationName = "Level3";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode1,
+            gridLevelNode2,
+            gridLevelNode3});
             this.gridControl1.Location = new System.Drawing.Point(10, 154);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemTextEdit1});
+            this.repositoryItemTextEdit1,
+            this.repositoryItemTextEdit2});
             this.gridControl1.Size = new System.Drawing.Size(1326, 347);
             this.gridControl1.TabIndex = 34;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -176,6 +187,7 @@
             this.No.Caption = "No";
             this.No.FieldName = "No";
             this.No.Name = "No";
+            this.No.OptionsColumn.AllowEdit = false;
             this.No.Visible = true;
             this.No.VisibleIndex = 0;
             this.No.Width = 70;
@@ -187,6 +199,7 @@
             this.KodeItem.Caption = "Kode Item";
             this.KodeItem.FieldName = "KodeItem";
             this.KodeItem.Name = "KodeItem";
+            this.KodeItem.OptionsColumn.AllowEdit = false;
             this.KodeItem.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.KodeItem.Visible = true;
             this.KodeItem.VisibleIndex = 1;
@@ -199,6 +212,7 @@
             this.NamaItem.Caption = "Nama Item";
             this.NamaItem.FieldName = "NamaItem";
             this.NamaItem.Name = "NamaItem";
+            this.NamaItem.OptionsColumn.AllowEdit = false;
             this.NamaItem.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.NamaItem.Visible = true;
             this.NamaItem.VisibleIndex = 2;
@@ -209,6 +223,7 @@
             this.JumlahBarang.AppearanceHeader.Options.UseTextOptions = true;
             this.JumlahBarang.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.JumlahBarang.Caption = "Jumlah";
+            this.JumlahBarang.ColumnEdit = this.repositoryItemTextEdit2;
             this.JumlahBarang.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.JumlahBarang.FieldName = "JumlahBarang";
             this.JumlahBarang.Name = "JumlahBarang";
@@ -217,6 +232,18 @@
             this.JumlahBarang.VisibleIndex = 3;
             this.JumlahBarang.Width = 96;
             // 
+            // repositoryItemTextEdit2
+            // 
+            this.repositoryItemTextEdit2.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.repositoryItemTextEdit2.AutoHeight = false;
+            this.repositoryItemTextEdit2.DisplayFormat.FormatString = "n";
+            this.repositoryItemTextEdit2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.repositoryItemTextEdit2.Mask.EditMask = "n";
+            this.repositoryItemTextEdit2.Mask.IgnoreMaskBlank = false;
+            this.repositoryItemTextEdit2.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.repositoryItemTextEdit2.Mask.UseMaskAsDisplayFormat = true;
+            this.repositoryItemTextEdit2.Name = "repositoryItemTextEdit2";
+            // 
             // Satuan
             // 
             this.Satuan.AppearanceHeader.Options.UseTextOptions = true;
@@ -224,6 +251,7 @@
             this.Satuan.Caption = "Satuan";
             this.Satuan.FieldName = "Satuan";
             this.Satuan.Name = "Satuan";
+            this.Satuan.OptionsColumn.AllowEdit = false;
             this.Satuan.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Satuan.Visible = true;
             this.Satuan.VisibleIndex = 4;
@@ -244,6 +272,7 @@
             // 
             // repositoryItemTextEdit1
             // 
+            this.repositoryItemTextEdit1.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.repositoryItemTextEdit1.AutoHeight = false;
             this.repositoryItemTextEdit1.Mask.EditMask = "n";
             this.repositoryItemTextEdit1.Mask.IgnoreMaskBlank = false;
@@ -345,16 +374,18 @@
             this.btnHapus.Size = new System.Drawing.Size(85, 25);
             this.btnHapus.TabIndex = 44;
             this.btnHapus.Text = "Hapus Item";
+            this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click);
             // 
-            // simpleButton4
+            // btnBayar
             // 
-            this.simpleButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.simpleButton4.Location = new System.Drawing.Point(186, 507);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(76, 25);
-            this.simpleButton4.TabIndex = 43;
-            this.simpleButton4.Text = "Bayar";
+            this.btnBayar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnBayar.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.diskette__1_;
+            this.btnBayar.Location = new System.Drawing.Point(186, 507);
+            this.btnBayar.Name = "btnBayar";
+            this.btnBayar.Size = new System.Drawing.Size(76, 25);
+            this.btnBayar.TabIndex = 43;
+            this.btnBayar.Text = "Simpan";
+            this.btnBayar.Click += new System.EventHandler(this.btnBayar_Click);
             // 
             // btnCancel
             // 
@@ -365,6 +396,7 @@
             this.btnCancel.Size = new System.Drawing.Size(79, 25);
             this.btnCancel.TabIndex = 42;
             this.btnCancel.Text = "Batal";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // lookSupplier
             // 
@@ -403,16 +435,28 @@
             this.lblNo.TabIndex = 47;
             this.lblNo.Text = "lblNo";
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.simpleButton1.Location = new System.Drawing.Point(562, 131);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(46, 20);
+            this.simpleButton1.TabIndex = 48;
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // pembelian
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 539);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.lblNo);
             this.Controls.Add(this.lblAlamat);
             this.Controls.Add(this.lookSupplier);
             this.Controls.Add(this.btnHapus);
-            this.Controls.Add(this.simpleButton4);
+            this.Controls.Add(this.btnBayar);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.btnDaftarItem);
@@ -430,6 +474,7 @@
             this.Controls.Add(this.labelControl1);
             this.Name = "pembelian";
             this.Text = "Pembelian";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.pembelian_FormClosing);
             this.Load += new System.EventHandler(this.pembelian_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtTimer.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtuser.Properties)).EndInit();
@@ -438,6 +483,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTransaksi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKodeItem.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtJumlah.Properties)).EndInit();
@@ -455,7 +501,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.DateEdit txtTanggal;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit txtTransaksi;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
@@ -474,11 +519,14 @@
         public DevExpress.XtraEditors.TextEdit txtJumlah;
         public DevExpress.XtraEditors.TextEdit txtTotal;
         private DevExpress.XtraEditors.SimpleButton btnHapus;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton btnBayar;
         private DevExpress.XtraEditors.SimpleButton btnCancel;
         public DevExpress.XtraEditors.LookUpEdit lookSupplier;
         private System.Windows.Forms.BindingSource supplierBindingSource;
         private DevExpress.XtraEditors.LabelControl lblAlamat;
         private DevExpress.XtraEditors.LabelControl lblNo;
+        public DevExpress.XtraEditors.TextEdit txtTransaksi;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit2;
     }
 }

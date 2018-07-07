@@ -43,5 +43,23 @@ namespace MumtaazHerbal
             CreateDocument();
             this.Print();
         }
+
+        public void PrintInvoicePembelian(pembelian _pembelian, pembayaran _pembayaran, List<Receipt> receipt)
+        {
+            string kembali = "";
+
+            foreach (DevExpress.XtraReports.Parameters.Parameter p in this.Parameters)
+                p.Visible = false;
+
+            //Tunai atau Kredit
+            if (int.Parse(_pembayaran.txtKredit.Text.Replace(",", "")) > 0)
+                kembali = "Kekurangan";
+            else
+                kembali = "Kembalian";
+
+            InitData(_pembelian.txtTransaksi.Text, _pembelian.lookSupplier.Text, DateTime.Now, DateTime.Now.ToString("HH:mm:ss"), int.Parse(_pembayaran.txtTunai.Text.Replace(",", "")), kembali, receipt);
+            CreateDocument();
+            this.Print();
+        }
     }
 }

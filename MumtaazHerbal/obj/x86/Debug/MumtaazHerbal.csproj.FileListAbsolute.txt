@@ -439,3 +439,4 @@ C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Mig
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.ChangeColumnIsPendingandKeteranganIntoTablePenjualan.resources
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.addTablePembelianTableDetailPembelian.resources
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.cofigurationTablePembelianTableDetilPembelian.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.editHargaPembelian.resources

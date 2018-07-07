@@ -427,6 +427,19 @@ namespace MumtaazHerbal
             }
                 
         }
+
+        private void kasir_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (gridView1.DataRowCount != 0)
+            {
+                if (MessageBox.Show("Transaksi "+txtTransaksi.Text+" belum selesai, batalkan transaksi ?.", "Mumtaaz Herbal", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                {
+                    e.Cancel = true;
+                    return;
+                }
+
+            }
+        }
     }
 }
 

@@ -31,13 +31,14 @@
             this.txtSearch = new DevExpress.XtraEditors.TextEdit();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.Nama = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NoTransaksi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Tanggal = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.KodeSupplier = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NamaSupplier = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TotalHarga = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnTutup = new DevExpress.XtraEditors.SimpleButton();
             this.btnHapus = new DevExpress.XtraEditors.SimpleButton();
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
@@ -50,6 +51,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).BeginInit();
@@ -71,6 +75,9 @@
             this.gridControl1.Location = new System.Drawing.Point(12, 69);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
+            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemTextEdit1,
+            this.repositoryItemDateEdit1});
             this.gridControl1.Size = new System.Drawing.Size(913, 424);
             this.gridControl1.TabIndex = 34;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -79,69 +86,88 @@
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.Nama,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn6,
-            this.gridColumn1});
+            this.NoTransaksi,
+            this.Tanggal,
+            this.KodeSupplier,
+            this.NamaSupplier,
+            this.TotalHarga});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
             // 
-            // Nama
+            // NoTransaksi
             // 
-            this.Nama.Caption = "No Transaksi";
-            this.Nama.Name = "Nama";
-            this.Nama.Visible = true;
-            this.Nama.VisibleIndex = 0;
-            this.Nama.Width = 138;
+            this.NoTransaksi.Caption = "No Transaksi";
+            this.NoTransaksi.FieldName = "NoTransaksi";
+            this.NoTransaksi.Name = "NoTransaksi";
+            this.NoTransaksi.Visible = true;
+            this.NoTransaksi.VisibleIndex = 0;
+            this.NoTransaksi.Width = 138;
             // 
-            // gridColumn2
+            // Tanggal
             // 
-            this.gridColumn2.Caption = "Tanggal";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 138;
+            this.Tanggal.Caption = "Tanggal";
+            this.Tanggal.ColumnEdit = this.repositoryItemDateEdit1;
+            this.Tanggal.DisplayFormat.FormatString = "g";
+            this.Tanggal.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.Tanggal.FieldName = "Tanggal";
+            this.Tanggal.Name = "Tanggal";
+            this.Tanggal.Visible = true;
+            this.Tanggal.VisibleIndex = 1;
+            this.Tanggal.Width = 138;
             // 
-            // gridColumn3
+            // repositoryItemDateEdit1
             // 
-            this.gridColumn3.Caption = "Kd Supp.";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
-            this.gridColumn3.Width = 133;
+            this.repositoryItemDateEdit1.AutoHeight = false;
+            this.repositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.Mask.EditMask = "g";
+            this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
             // 
-            // gridColumn6
+            // KodeSupplier
             // 
-            this.gridColumn6.Caption = "Nama";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 3;
-            this.gridColumn6.Width = 363;
+            this.KodeSupplier.Caption = "Kd Supp.";
+            this.KodeSupplier.FieldName = "KodeSupplier";
+            this.KodeSupplier.Name = "KodeSupplier";
+            this.KodeSupplier.Visible = true;
+            this.KodeSupplier.VisibleIndex = 2;
+            this.KodeSupplier.Width = 133;
             // 
-            // gridColumn1
+            // NamaSupplier
             // 
-            this.gridColumn1.Caption = "Total";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 4;
-            this.gridColumn1.Width = 123;
+            this.NamaSupplier.Caption = "Nama";
+            this.NamaSupplier.FieldName = "NamaSupplier";
+            this.NamaSupplier.Name = "NamaSupplier";
+            this.NamaSupplier.Visible = true;
+            this.NamaSupplier.VisibleIndex = 3;
+            this.NamaSupplier.Width = 363;
+            // 
+            // TotalHarga
+            // 
+            this.TotalHarga.Caption = "Total";
+            this.TotalHarga.ColumnEdit = this.repositoryItemTextEdit1;
+            this.TotalHarga.DisplayFormat.FormatString = "n0";
+            this.TotalHarga.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.TotalHarga.FieldName = "TotalHarga";
+            this.TotalHarga.Name = "TotalHarga";
+            this.TotalHarga.Visible = true;
+            this.TotalHarga.VisibleIndex = 4;
+            this.TotalHarga.Width = 123;
+            // 
+            // repositoryItemTextEdit1
+            // 
+            this.repositoryItemTextEdit1.AutoHeight = false;
+            this.repositoryItemTextEdit1.Mask.EditMask = "n0";
+            this.repositoryItemTextEdit1.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
             // 
             // gridColumn5
             // 
             this.gridColumn5.Caption = "Supplier";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Width = 141;
-            // 
-            // btnTutup
-            // 
-            this.btnTutup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTutup.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.back;
-            this.btnTutup.Location = new System.Drawing.Point(843, 499);
-            this.btnTutup.Name = "btnTutup";
-            this.btnTutup.Size = new System.Drawing.Size(82, 26);
-            this.btnTutup.TabIndex = 38;
-            this.btnTutup.Text = "&Tutup";
             // 
             // btnHapus
             // 
@@ -162,6 +188,7 @@
             this.btnEdit.Size = new System.Drawing.Size(82, 26);
             this.btnEdit.TabIndex = 36;
             this.btnEdit.Text = "&Edit";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
@@ -243,7 +270,6 @@
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.gridControl1);
-            this.Controls.Add(this.btnTutup);
             this.Controls.Add(this.btnHapus);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
@@ -255,6 +281,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).EndInit();
@@ -269,13 +298,12 @@
         private DevExpress.XtraEditors.TextEdit txtSearch;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn Nama;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn NoTransaksi;
+        private DevExpress.XtraGrid.Columns.GridColumn Tanggal;
+        private DevExpress.XtraGrid.Columns.GridColumn KodeSupplier;
+        private DevExpress.XtraGrid.Columns.GridColumn NamaSupplier;
+        private DevExpress.XtraGrid.Columns.GridColumn TotalHarga;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraEditors.SimpleButton btnTutup;
         private DevExpress.XtraEditors.SimpleButton btnHapus;
         private DevExpress.XtraEditors.SimpleButton btnEdit;
         private DevExpress.XtraEditors.SimpleButton btnAdd;
@@ -285,5 +313,7 @@
         private DevExpress.XtraEditors.DateEdit dateEdit1;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.DateEdit dateEdit2;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
     }
 }

@@ -134,6 +134,12 @@
     <Compile Include="dtrSupp.Designer.cs">
       <DependentUpon>dtrSupp.cs</DependentUpon>
     </Compile>
+    <Compile Include="editHargaPembelian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editHargaPembelian.Designer.cs">
+      <DependentUpon>editHargaPembelian.cs</DependentUpon>
+    </Compile>
     <Compile Include="EntityConfig\DetailPenjualanConfiguration.cs" />
     <Compile Include="EntityConfig\ItemConfiguration.cs" />
     <Compile Include="EntityConfig\PelangganConfiguration.cs" />
@@ -300,6 +306,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="dtrSupp.resx">
       <DependentUpon>dtrSupp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editHargaPembelian.resx">
+      <DependentUpon>editHargaPembelian.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

@@ -51,6 +51,7 @@
             this.KodeItem = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NamaItem = new DevExpress.XtraGrid.Columns.GridColumn();
             this.JumlahBarang = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.Satuan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.HargaBarang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
@@ -73,6 +74,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtKodeItem.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookPelanggan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pelangganBindingSource)).BeginInit();
@@ -227,7 +229,8 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemTextEdit1});
+            this.repositoryItemTextEdit1,
+            this.repositoryItemTextEdit2});
             this.gridControl1.Size = new System.Drawing.Size(1326, 347);
             this.gridControl1.TabIndex = 33;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -256,6 +259,7 @@
             this.No.Caption = "No";
             this.No.FieldName = "No";
             this.No.Name = "No";
+            this.No.OptionsColumn.AllowEdit = false;
             this.No.Visible = true;
             this.No.VisibleIndex = 0;
             this.No.Width = 70;
@@ -267,6 +271,7 @@
             this.KodeItem.Caption = "Kode Item";
             this.KodeItem.FieldName = "KodeItem";
             this.KodeItem.Name = "KodeItem";
+            this.KodeItem.OptionsColumn.AllowEdit = false;
             this.KodeItem.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.KodeItem.Visible = true;
             this.KodeItem.VisibleIndex = 1;
@@ -279,6 +284,7 @@
             this.NamaItem.Caption = "Nama Item";
             this.NamaItem.FieldName = "NamaItem";
             this.NamaItem.Name = "NamaItem";
+            this.NamaItem.OptionsColumn.AllowEdit = false;
             this.NamaItem.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.NamaItem.Visible = true;
             this.NamaItem.VisibleIndex = 2;
@@ -289,6 +295,7 @@
             this.JumlahBarang.AppearanceHeader.Options.UseTextOptions = true;
             this.JumlahBarang.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.JumlahBarang.Caption = "Jumlah";
+            this.JumlahBarang.ColumnEdit = this.repositoryItemTextEdit2;
             this.JumlahBarang.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.JumlahBarang.FieldName = "JumlahBarang";
             this.JumlahBarang.Name = "JumlahBarang";
@@ -297,6 +304,15 @@
             this.JumlahBarang.VisibleIndex = 3;
             this.JumlahBarang.Width = 96;
             // 
+            // repositoryItemTextEdit2
+            // 
+            this.repositoryItemTextEdit2.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.repositoryItemTextEdit2.AutoHeight = false;
+            this.repositoryItemTextEdit2.Mask.EditMask = "n";
+            this.repositoryItemTextEdit2.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.repositoryItemTextEdit2.Mask.UseMaskAsDisplayFormat = true;
+            this.repositoryItemTextEdit2.Name = "repositoryItemTextEdit2";
+            // 
             // Satuan
             // 
             this.Satuan.AppearanceHeader.Options.UseTextOptions = true;
@@ -304,6 +320,7 @@
             this.Satuan.Caption = "Satuan";
             this.Satuan.FieldName = "Satuan";
             this.Satuan.Name = "Satuan";
+            this.Satuan.OptionsColumn.AllowEdit = false;
             this.Satuan.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Satuan.Visible = true;
             this.Satuan.VisibleIndex = 4;
@@ -324,6 +341,7 @@
             // 
             // repositoryItemTextEdit1
             // 
+            this.repositoryItemTextEdit1.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.repositoryItemTextEdit1.AutoHeight = false;
             this.repositoryItemTextEdit1.Mask.EditMask = "n";
             this.repositoryItemTextEdit1.Mask.IgnoreMaskBlank = false;
@@ -451,6 +469,7 @@
             this.Controls.Add(this.labelControl1);
             this.Name = "kasir";
             this.Text = "Kasir";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.kasir_FormClosing);
             this.Load += new System.EventHandler(this.kasir_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtTransaksi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTanggal.Properties.CalendarTimeProperties)).EndInit();
@@ -463,6 +482,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtKodeItem.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookPelanggan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pelangganBindingSource)).EndInit();
@@ -504,5 +524,6 @@
         public DevExpress.XtraEditors.TextEdit txtTransaksi;
         public DevExpress.XtraEditors.TextEdit txtJumlah;
         public DevExpress.XtraEditors.DateEdit txtTanggal;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit2;
     }
 }

@@ -234,7 +234,7 @@ namespace MumtaazHerbal
 
                 var kodeItem = gridView1.GetRowCellValue(rowHandle, "KodeItem").ToString();
 
-                //cek jika item melebihi stok
+                //cek jika item kekurangan stok
                 var query = mumtaaz.Items
                     .Where(x => x.KodeItem == kodeItem)
                     .Select(x => x.Stok)
@@ -244,11 +244,11 @@ namespace MumtaazHerbal
                 //cek jika item sudah ada dikeranjang belanjaan
 
 
-                if (int.Parse(query) < int.Parse(pembelian.txtJumlah.Text))
-                {
-                    MessageBox.Show("Jumlah item melebihi stok", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
+                //if (int.Parse(query) < int.Parse(pembelian.txtJumlah.Text))
+                //{
+                //    MessageBox.Show("Jumlah item melebihi stok", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //    return;
+                //}
 
                 for (int i = 0; i < gridViewPembelian.DataRowCount; i++)
                 {
