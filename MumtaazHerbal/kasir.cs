@@ -14,6 +14,11 @@ namespace MumtaazHerbal
 {
     public partial class kasir : DevExpress.XtraEditors.XtraForm
     {
+        private GridView gridView;
+        private bool edit;
+        private dftrPenjualan daftarPenjualan;
+        private string noTransaksi;
+
         public kasir()
         {
             InitializeComponent();
@@ -25,6 +30,15 @@ namespace MumtaazHerbal
             t.Tick += new EventHandler(this.t_Tick);
             t.Start();
 
+        }
+
+        public kasir(dftrPenjualan daftarPenjualan, GridView gridView, bool edit, string noTransaksi)
+            : this()
+        {
+            this.gridView = gridView;
+            this.edit = edit;
+            this.daftarPenjualan = daftarPenjualan;
+            this.noTransaksi = noTransaksi;
         }
 
         MumtaazContext mumtaaz;
@@ -78,6 +92,10 @@ namespace MumtaazHerbal
             dt.Columns.Add("Total", typeof(int));
 
             gridControl1.DataSource = dt;
+
+            //edit daftar pembelian
+            if (edit)
+                GetData();
         }
 
         public void GetNoTransaksi()
@@ -90,6 +108,8 @@ namespace MumtaazHerbal
 
             if (!mumtaaz.Penjualan.Any())
                 noTransaksi++;
+
+            noTransaksi++;
 
             txtTransaksi.Text = noTransaksi.ToString().PadLeft(4, '0') + "/KSR/" + DateTime.Now.ToString("ddMM");
         }
@@ -440,6 +460,72 @@ namespace MumtaazHerbal
 
             }
         }
+
+        //get data from item yang mau di edit
+        public void GetData()
+        {
+            var rowHandle = gridView.FocusedRowHandle;
+            var noTransaksi = gridView.GetRowCellValue(rowHandle, "NoTransaksi").ToString();
+
+            using (var mumtaaz = new MumtaazContext())
+            {
+                //Get Informasi Penjualan
+                var transaksi = mumtaaz.Penjualan
+                    .Where(x => x.NoTransaksi == noTransaksi)
+                    .FirstOrDefault();
+
+                txtTanggal.EditValue = transaksi.Tanggal;
+                txtTransaksi.Text = transaksi.NoTransaksi.ToString();
+                lookPelanggan.EditValue = transaksi.PelangganId;
+                txtTotal.Text = transaksi.TotalHarga.ToString();
+
+                //get list item
+                var listItem = from o in mumtaaz.DetailPenjualans
+                               join a in mumtaaz.Penjualan on o.PenjualanId equals a.Id
+                               join i in mumtaaz.Items on o.ItemId equals i.Id
+                               where a.NoTransaksi == noTransaksi
+                               select new
+                               {
+                                   i.NamaItem,
+                                   i.KodeItem,
+                                   o.JumlahBarang,
+                                   i.Satuan,
+                                   o.HargaBarang
+
+                               };
+
+                //get Item
+                int total = 0;
+                foreach (var i in listItem.ToList())
+                {
+                    gridView1.AddNewRow();
+                    var row = gridView1.GetRowHandle(gridView1.DataRowCount);
+
+                    if (gridView1.IsNewItemRow(row))
+                    {
+
+                        gridView1.SetRowCellValue(row, gridView1.Columns[1], i.KodeItem);
+                        gridView1.SetRowCellValue(row, gridView1.Columns[2], i.NamaItem);
+                        gridView1.SetRowCellValue(row, gridView1.Columns[3], i.JumlahBarang);
+                        gridView1.SetRowCellValue(row, gridView1.Columns[4], i.Satuan);
+                        gridView1.SetRowCellValue(row, gridView1.Columns[5], i.HargaBarang);
+
+                        int jumlah = Convert.ToInt32(gridView1.GetRowCellValue(row, gridView1.Columns[3]));
+                        int harga = Convert.ToInt32(gridView1.GetRowCellValue(row, gridView1.Columns[5]));
+
+                        total = jumlah * harga;
+                        gridView1.SetRowCellValue(row, gridView1.Columns[6], total);
+
+                    }
+
+                    GetTotalHarga();
+                    gridView1.MoveLast();
+                }
+
+            }
+        }
+
+
     }
 }
 

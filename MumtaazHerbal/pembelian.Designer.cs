@@ -64,7 +64,6 @@
             this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblAlamat = new DevExpress.XtraEditors.LabelControl();
             this.lblNo = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtTimer.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtuser.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTanggal.Properties.CalendarTimeProperties)).BeginInit();
@@ -435,23 +434,11 @@
             this.lblNo.TabIndex = 47;
             this.lblNo.Text = "lblNo";
             // 
-            // simpleButton1
-            // 
-            this.simpleButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(562, 131);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(46, 20);
-            this.simpleButton1.TabIndex = 48;
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
             // pembelian
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 539);
-            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.lblNo);
             this.Controls.Add(this.lblAlamat);
             this.Controls.Add(this.lookSupplier);
@@ -526,7 +513,6 @@
         private DevExpress.XtraEditors.LabelControl lblAlamat;
         private DevExpress.XtraEditors.LabelControl lblNo;
         public DevExpress.XtraEditors.TextEdit txtTransaksi;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit2;
     }
 }

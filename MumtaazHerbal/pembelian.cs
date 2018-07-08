@@ -71,16 +71,27 @@ namespace MumtaazHerbal
 
         public void GetNoTransaksi()
         {
+            ////get no transaksi
+            //var query = mumtaaz.Pembelians
+            //    .OrderByDescending(x => x.Id)
+            //    .FirstOrDefault();
+
+            ////ambil 4 kata pertama 
+            //var splitWord = query.NoTransaksi.Take(4).ToArray();
+
+            ////gabungkan kemudian increment
+            //var noTransaksi = int.Parse(new string(splitWord.Take(4).ToArray()));
+            //noTransaksi++;
+
             //get no transaksi
-            var query = mumtaaz.Pembelians
+            var noTransaksi = mumtaaz.Pembelians
                 .OrderByDescending(x => x.Id)
+                .Select(x => x.Id)
                 .FirstOrDefault();
 
-            //ambil 4 kata pertama 
-            var splitWord = query.NoTransaksi.Take(4).ToArray();
+            if (!mumtaaz.Pembelians.Any())
+                noTransaksi++;
 
-            //gabungkan kemudian increment
-            var noTransaksi = int.Parse(new string(splitWord.Take(4).ToArray()));
             noTransaksi++;
 
             txtTransaksi.Text = noTransaksi.ToString().PadLeft(4, '0') + "/BL/" + DateTime.Now.ToString("ddMM");
@@ -303,6 +314,7 @@ namespace MumtaazHerbal
 
         public void RefreshPage()
         {
+            edit = false;
             pembelian_Load(null, EventArgs.Empty);
             txtTotal.Text = "0";
         }
@@ -314,8 +326,33 @@ namespace MumtaazHerbal
 
             if (MessageBox.Show("Hapus item ini?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                gridView1.DeleteRow(gridView1.FocusedRowHandle);
-                GetTotalHarga();
+                if (edit)
+                {
+                    using (var mumtaaz = new MumtaazContext())
+                    {
+                        var rowHandle = gridView1.FocusedRowHandle;
+                        var kodeItem = gridView1.GetRowCellValue(rowHandle, gridView1.Columns[1]).ToString();
+
+                        var stok = (from o in mumtaaz.DetailPembelians
+                                    join a in mumtaaz.Pembelians on o.PembelianId equals a.Id
+                                    where a.NoTransaksi == noTransaksi
+                                    select o.JumlahBarang).FirstOrDefault();
+
+
+                        var itemList = mumtaaz.Items.Where(x => x.KodeItem == kodeItem).FirstOrDefault();
+
+                        itemList.Stok = itemList.Stok - stok;
+                        mumtaaz.Entry(itemList).State = System.Data.Entity.EntityState.Modified;
+                        gridView1.DeleteRow(rowHandle);
+                        GetTotalHarga();
+                    }
+                }
+                else
+                {
+                    gridView1.DeleteRow(gridView1.FocusedRowHandle);
+                    GetTotalHarga();
+                }
+                
             }
         }
 

@@ -150,5 +150,22 @@ namespace MumtaazHerbal
             pmb.MdiParent = this;
             pmb.Show();
         }
+
+        //daftar penjualan
+        private void barButtonItem11_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(dftrPenjualan))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            dftrPenjualan penjualan = new dftrPenjualan();
+            penjualan.MdiParent = this;
+            penjualan.Show();
+        }
     }
 }

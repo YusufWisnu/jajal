@@ -17,7 +17,7 @@ namespace MumtaazHerbal
 
         private kasir kasir;
         private  GridControl gridControl;
-        private GridView gridView;
+       private GridView gridView;
 
         public dftrPending()
         {
