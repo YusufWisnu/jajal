@@ -11,6 +11,7 @@ using DevExpress.XtraGrid.Extensions;
 using DevExpress.XtraGrid;
 using MumtaazHerbal.Function;
 using DevExpress.XtraGrid.Views.Grid;
+using System.Data.Entity;
 
 namespace MumtaazHerbal
 {

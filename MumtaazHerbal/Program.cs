@@ -9,7 +9,7 @@ namespace MumtaazHerbal
 
     static class Program
     {
-        /// <summary>
+        /// <summary>644f6
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
@@ -17,7 +17,7 @@ namespace MumtaazHerbal
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain());
+            Application.Run(new KoneksiDatabase());
         }
     }
 }

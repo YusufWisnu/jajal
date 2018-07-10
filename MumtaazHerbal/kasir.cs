@@ -19,11 +19,14 @@ namespace MumtaazHerbal
         private dftrPenjualan daftarPenjualan;
         private string noTransaksi;
 
+        public bool EditKasir { get; set; }
+
+
         public kasir()
         {
             InitializeComponent();
            // gridView1.IndicatorWidth = 30;
-
+           
             // start timer
             var t = new Timer();
             t.Interval = 1000;  // in miliseconds
@@ -46,10 +49,12 @@ namespace MumtaazHerbal
         //pembayaran
         private void simpleButton4_Click(object sender, EventArgs e)
         {
+            EditKasir = true;
+
             if (gridView1.DataRowCount != 0)
             {
                 GetKeranjangItem();
-                pembayaran bayar = new pembayaran(this,txtTotal.Text, gridView1, receipts);
+                pembayaran bayar = new pembayaran(this,daftarPenjualan, txtTotal.Text, gridView1, receipts, edit);
                 bayar.ShowDialog();
             }
             else
@@ -241,18 +246,18 @@ namespace MumtaazHerbal
                 {
                     if (query.HargaEceran > hargaColumn)
                     {
-                        MessageBox.Show("Jumlah item melebihi stok.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "HargaBarang", query.HargaEceran);
-                        return;
+                        MessageBox.Show("Harga jual lebih kecil dari harga pokok \n Mohon cek kembali untuk menghindari kerugian", "Mumtaaz Herbal", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        //gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "HargaBarang", query.HargaEceran);
+                       // return;
                     }
                 }
                 else
                 {
                     if (query.HargaGrosir > hargaColumn)
                     {
-                        MessageBox.Show("Jumlah item melebihi stok.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "HargaBarang", query.HargaGrosir);
-                        return;
+                        MessageBox.Show("Harga jual lebih kecil dari harga pokok \n Mohon cek kembali untuk menghindari kerugian", "Mumtaaz Herbal", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        //gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "HargaBarang", query.HargaGrosir);
+                        //return;
                     }
                 }
 
@@ -282,12 +287,12 @@ namespace MumtaazHerbal
                     .Where(x => x.KodeItem == kodeItem)
                     .SingleOrDefault();
                    
-                if(query.Stok < jumlah)
-                {
-                    MessageBox.Show("Jumlah item melebihi stok.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "JumlahBarang", query.Stok);
-                    return;
-                }
+                //if(query.Stok < jumlah)
+                //{
+                //    MessageBox.Show("Jumlah item melebihi stok.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //    gridView1.SetRowCellValue(gridView1.FocusedRowHandle, "JumlahBarang", query.Stok);
+                //    return;
+                //}
 
                 int total = 0;
                 int harga = 0;
@@ -330,8 +335,6 @@ namespace MumtaazHerbal
         List<Receipt> receipts = new List<Receipt>();
         public void GetKeranjangItem()
         {
-            
-
             for (int i = 0; i < gridView1.DataRowCount; i++)
             {
                 int rowHandle = gridView1.GetRowHandle(i);
@@ -357,6 +360,7 @@ namespace MumtaazHerbal
 
         public void RefreshPage()
         {
+            edit = false;
             kasir_Load(null, EventArgs.Empty);
             txtTotal.Text = "0";
         }
@@ -460,7 +464,7 @@ namespace MumtaazHerbal
 
             }
         }
-
+        //---------------------------------------------------------- EDIT PENJUALAN TRANSAKSI  ------------------------------
         //get data from item yang mau di edit
         public void GetData()
         {

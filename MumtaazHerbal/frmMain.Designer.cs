@@ -228,6 +228,7 @@
             this.barButtonItem12.Id = 24;
             this.barButtonItem12.ImageOptions.SvgImage = global::MumtaazHerbal.Properties.Resources.coin__1_;
             this.barButtonItem12.Name = "barButtonItem12";
+            this.barButtonItem12.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem12_ItemClick);
             // 
             // imageCollection1
             // 

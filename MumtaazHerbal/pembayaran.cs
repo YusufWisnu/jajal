@@ -21,6 +21,8 @@ namespace MumtaazHerbal
         public List<Receipt> receipt;
         private pembelian pembelian;
         private bool _pembelian;
+        private bool edit;
+        private dftrPenjualan daftarPenjualan;
 
         public pembayaran()
         {
@@ -28,14 +30,16 @@ namespace MumtaazHerbal
         }
 
         //constructor untuk pembayaran dari form kasir
-        public pembayaran(kasir kasir, string total, GridView gridView, List<Receipt
-            > receipt)
+        public pembayaran(kasir kasir,dftrPenjualan daftarPenjualan, string total, GridView gridView, List<Receipt
+            > receipt, bool edit)
             : this()
         {
             this.total = total;
             this.gridView = gridView;
             this.kasir = kasir;
             this.receipt = receipt;
+            this.edit = edit;
+            this.daftarPenjualan = daftarPenjualan;
         }
 
         //constructor untuk pembayaran dari form pembelian
@@ -49,8 +53,12 @@ namespace MumtaazHerbal
             this.receipt = receipt;
         }
 
+        MumtaazContext mumtaaz;
+
         private void pembayaran_Load(object sender, EventArgs e)
         {
+            mumtaaz = new MumtaazContext();
+
             txtTotal.Text = total;
             txtTunai.Focus();
         }
@@ -108,6 +116,11 @@ namespace MumtaazHerbal
         //Simpan Doang
         private void btnSimpan_Click(object sender, EventArgs e)
         {
+            if(kasir.EditKasir == true)
+            {
+
+            }
+
             //pembelian
             if (_pembelian)
             {
@@ -119,12 +132,14 @@ namespace MumtaazHerbal
             //penjualan kasir
             else
             {
+                if (CekStok())
+                    return;
+
                 Simpan();
-                kasir.RefreshPage();
+                
             }
             
-            receipt.Clear();
-            this.Close();
+            
 
         }
 
@@ -132,7 +147,7 @@ namespace MumtaazHerbal
         private void btnSimpanCetak_Click(object sender, EventArgs e)
         {
             var nota = new Nota();
-
+            
             //pembelian
             if (_pembelian)
             {
@@ -145,13 +160,13 @@ namespace MumtaazHerbal
             //penjualan kasir
             else
             {
+                if (CekStok())
+                    return;
+
                 Simpan();
-                kasir.RefreshPage();
                 nota.PrintInvoice(kasir, this, receipt);
             }
-
-            receipt.Clear();
-            this.Close();
+            
         }
 
         //select * from Penjualans where Tanggal between '2018/05/27' and '2018/05/27 23:59:59.999'
@@ -159,11 +174,17 @@ namespace MumtaazHerbal
         //simpan kasir
         public void Simpan()
         {
+            
+        
             if (int.Parse(txtKekurangan.Text.Replace(",", "")) < 0 || int.Parse(txtTunai.Text.Replace(",", "")) <= 0)
             {
                 XtraMessageBox.Show("Jumlah Pembayaran Belum Selesai.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+            //edit transaksi
+            if (edit)
+                DeleteEditTransaksi();
 
             Penjualan penjualan = new Penjualan();
             using (var mumtaaz = new MumtaazContext())
@@ -203,8 +224,22 @@ namespace MumtaazHerbal
                 mumtaaz.Penjualan.Add(penjualan);
                 mumtaaz.SaveChanges();
                 XtraMessageBox.Show("Transaksi Berhasil.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                kasir.RefreshPage();
+                receipt.Clear();
+                this.Close();
+
+                //load daftar penjualan setelah edit selesai
+                if (edit)
+                {
+                    daftarPenjualan.LoadData();
+                    edit = false;
+                }
+
+
             }
         }
+
+        
 
         //simpan pembelian
         public void SimpanPembelian()
@@ -256,6 +291,30 @@ namespace MumtaazHerbal
             }
         }
 
+        //cek jika jumlah stok kurang
+        public bool CekStok()
+        {
+            using (var mumtaaz = new MumtaazContext())
+            {
+                for (int i = 0; i < gridView.DataRowCount; i++)
+                {
+                    var rowHandle = gridView.GetRowHandle(i);
+                    var kodeItem = gridView.GetRowCellValue(rowHandle, gridView.Columns[1]).ToString();
+                    var stok = Convert.ToInt32(gridView.GetRowCellValue(rowHandle, gridView.Columns[3]));
+
+                    var query = mumtaaz.Items.Where(x => x.KodeItem == kodeItem).FirstOrDefault();
+
+                    if(query.Stok < stok)
+                    {
+                        MessageBox.Show("Maaf stok item untuk kode item : ["+query.KodeItem +"] tidak cukup", "Mumtaaz Herbal", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return true;
+                    }
+                       
+                }
+            }
+            return false;
+        }
+
         private void pembayaran_FormClosing(object sender, FormClosingEventArgs e)
         {
             receipt.Clear();
@@ -264,6 +323,51 @@ namespace MumtaazHerbal
         private void btnBatal_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        //delete transaksi yang ingin di update
+        public void DeleteEditTransaksi()
+        {
+            using (var mumtaaz = new MumtaazContext())
+            {
+                //find id yang di edit
+                var query = (from i in mumtaaz.Penjualan
+                             where i.NoTransaksi == kasir.txtTransaksi.Text
+                             select i).FirstOrDefault();
+
+                //get related pembelian (detail pembelian)
+                var query1 = (from o in mumtaaz.DetailPenjualans
+                              where o.PenjualanId == query.Id
+                              select o).ToList();
+
+
+                //update item
+                for (int i = 0; i < gridView.DataRowCount; i++)
+                {
+                    var rowHandle = gridView.GetRowHandle(i);
+                    var kodeItem = gridView.GetRowCellValue(rowHandle, gridView.Columns[1]).ToString();
+
+                    var stok = (from o in mumtaaz.DetailPenjualans
+                                join a in mumtaaz.Penjualan on o.PenjualanId equals a.Id
+                                where a.NoTransaksi == kasir.txtTransaksi.Text
+                                select o.JumlahBarang).ToList();
+
+
+                    var itemList = mumtaaz.Items.Where(x => x.KodeItem == kodeItem).FirstOrDefault();
+
+                    itemList.Stok = itemList.Stok + stok[i];
+                    mumtaaz.Entry(itemList).State = System.Data.Entity.EntityState.Modified;
+
+                }
+
+                //hapus related pembelian (detail pembelian)
+                foreach (var i in query1)
+                    mumtaaz.DetailPenjualans.Remove(i);
+
+
+                mumtaaz.Penjualan.Remove(query);
+                mumtaaz.SaveChanges();
+            }
         }
 
 
