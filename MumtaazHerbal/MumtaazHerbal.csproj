@@ -106,6 +106,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppSetting.cs" />
+    <Compile Include="connection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="connection.Designer.cs">
+      <DependentUpon>connection.cs</DependentUpon>
+    </Compile>
     <Compile Include="createDB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -319,6 +325,9 @@
     <Compile Include="tmbhSupp.Designer.cs">
       <DependentUpon>tmbhSupp.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="connection.resx">
+      <DependentUpon>connection.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="createDB.resx">
       <DependentUpon>createDB.cs</DependentUpon>
     </EmbeddedResource>

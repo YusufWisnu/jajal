@@ -17,7 +17,7 @@ namespace MumtaazHerbal
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new KoneksiDatabase());
+            Application.Run(new frmMain());
         }
     }
 }

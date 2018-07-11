@@ -73,7 +73,7 @@ namespace MumtaazHerbal
                             }
                         }
 
-                        //query mencari pelanggan yang akan di edit dengan nomor Id
+                        //query mencari pelanggan yang akan di edit dengan nomor Id 
                         var result = (from i in mumtaaz.Pelanggans
                                       where i.Id == query.IdPelanggan
                                       select i).Single();   
