@@ -54,10 +54,11 @@ namespace MumtaazHerbal
         }
 
         MumtaazContext mumtaaz;
+        DbHelper dbhelper = new DbHelper();
 
         private void pembayaran_Load(object sender, EventArgs e)
         {
-            mumtaaz = new MumtaazContext();
+            mumtaaz = new MumtaazContext(dbhelper.ConnectionString);
 
             txtTotal.Text = total;
             txtTunai.Focus();
@@ -187,7 +188,7 @@ namespace MumtaazHerbal
                 DeleteEditTransaksi();
 
             Penjualan penjualan = new Penjualan();
-            using (var mumtaaz = new MumtaazContext())
+            using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
             {
                 penjualan.NoTransaksi = kasir.txtTransaksi.Text;
                 penjualan.Tanggal = DateTime.Now;
@@ -251,7 +252,7 @@ namespace MumtaazHerbal
             }
 
             var tablePembelian = new Pembelian();
-            using (var mumtaaz = new MumtaazContext())
+            using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
             {
                 tablePembelian.NoTransaksi = pembelian.txtTransaksi.Text;
                 tablePembelian.Tanggal = DateTime.Now;
@@ -294,7 +295,7 @@ namespace MumtaazHerbal
         //cek jika jumlah stok kurang
         public bool CekStok()
         {
-            using (var mumtaaz = new MumtaazContext())
+            using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
             {
                 for (int i = 0; i < gridView.DataRowCount; i++)
                 {
@@ -328,7 +329,7 @@ namespace MumtaazHerbal
         //delete transaksi yang ingin di update
         public void DeleteEditTransaksi()
         {
-            using (var mumtaaz = new MumtaazContext())
+            using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
             {
                 //find id yang di edit
                 var query = (from i in mumtaaz.Penjualan

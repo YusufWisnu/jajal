@@ -7,6 +7,7 @@ using System.Text;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using MumtaazHerbal.Function;
 
 namespace MumtaazHerbal
 {
@@ -18,6 +19,7 @@ namespace MumtaazHerbal
         }
 
         MumtaazContext mumtaaz;
+        DbHelper dbhelper = new DbHelper();
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
@@ -27,7 +29,7 @@ namespace MumtaazHerbal
 
         private void historyPmb_Load(object sender, EventArgs e)
         {
-            mumtaaz = new MumtaazContext();
+            mumtaaz = new MumtaazContext(dbhelper.ConnectionString);
 
             supplierBindingSource.DataSource = mumtaaz.Suppliers.ToList();
 
@@ -38,7 +40,7 @@ namespace MumtaazHerbal
 
         public void LoadData()
         {
-            using (var mumtaaz = new MumtaazContext())
+            using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
             {
                 var query = from o in mumtaaz.DetailPembelians
                             join a in mumtaaz.Items on o.ItemId equals a.Id
@@ -78,7 +80,7 @@ namespace MumtaazHerbal
 
         public void ChangeDate()
         {
-            using (var mumtaaz = new MumtaazContext())
+            using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
             {
                 var query = from o in mumtaaz.DetailPembelians
                             join a in mumtaaz.Items on o.ItemId equals a.Id

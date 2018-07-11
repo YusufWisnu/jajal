@@ -7,6 +7,7 @@ using System.Text;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using MumtaazHerbal.Function;
 
 namespace MumtaazHerbal
 {
@@ -27,6 +28,8 @@ namespace MumtaazHerbal
             this.harga = harga;
         }
 
+        DbHelper dbhelper = new DbHelper();
+
 
         private void editHargaPembelian_Load(object sender, EventArgs e)
         {
@@ -36,7 +39,7 @@ namespace MumtaazHerbal
 
         public void getInformasiItem()
         {
-            using (var mumtaaz = new MumtaazContext())
+            using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
             {
                 var query = mumtaaz.Items
                     .Where(x => x.KodeItem == kodeItem)
@@ -52,7 +55,7 @@ namespace MumtaazHerbal
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            using (var mumtaaz = new MumtaazContext())
+            using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
             {
                 if (int.Parse(txtHargaPokok.Text) > int.Parse(txtHargaGrosir.Text) || int.Parse(txtHargaPokok.Text) > int.Parse(txtHargaRetail.Text))
                 {

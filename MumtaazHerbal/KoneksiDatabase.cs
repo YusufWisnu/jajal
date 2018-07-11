@@ -10,6 +10,7 @@ using DevExpress.XtraEditors;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Data.Linq.SqlClient;
+using MumtaazHerbal.Function;
 
 namespace MumtaazHerbal
 {
@@ -19,6 +20,8 @@ namespace MumtaazHerbal
         {
             InitializeComponent();
         }
+
+
 
         private void groupControl1_Paint(object sender, PaintEventArgs e)
         {
@@ -47,6 +50,7 @@ namespace MumtaazHerbal
             comboServer.Properties.Items.Add(@".\SQLEXPRESS");
             comboServer.Properties.Items.Add(string.Format(@"{0}\SQLEXPRESS", Environment.MachineName));
             comboServer.SelectedIndex = 0;
+            
 
         }
 
@@ -56,66 +60,32 @@ namespace MumtaazHerbal
 
         }
 
-        private void btnTestKoneksi_Click(object sender, EventArgs e)
-        {
-            string connectionString = string.Format("data source={0};initial catalog={1};integrated security=SSPI;", comboServer.Text, txtServer.Text);
-            try
-            {
-                var helper = new SqlHelper(connectionString);
-                if (helper.IsConnection)
-                    MessageBox.Show("Test Connection Succeeded", "MumtaazHerbal", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            }
-
-
-        }
-
-        private void simpleButton5_Click(object sender, EventArgs e)
-        {
-            string connectionString = string.Format("data source={0};initial catalog={1};integrated security=SSPI", comboServer.Text, listBoxDatabase.SelectedValue.ToString());
-            try
-            {
-                var helper = new SqlHelper(connectionString);
-                if (helper.IsConnection)
-                {
-                    AppSetting setting = new AppSetting();
-                    setting.SaveConnectionString("MumtaazFix", connectionString);
-                    //MessageBox.Show("Your Connectionstring has succesfully saved", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    frmMain main = new frmMain();
-                    main.Show();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-        }
-
+        //button pilih
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-            string connectionString = string.Format("data source={0};initial catalog={1};integrated security=SSPI", comboServer.Text, listBoxDatabase.SelectedValue.ToString());
-            try
+            if(string.IsNullOrEmpty(comboServer.Text) || string.IsNullOrEmpty(listBoxDatabase.Text))
             {
-                var helper = new SqlHelper(connectionString);
-                if (helper.IsConnection)
-                {
-                    AppSetting setting = new AppSetting();
-                    setting.SaveConnectionString("MumtaazFix", connectionString);
-                    MessageBox.Show("Your Connectionstring has succesfully saved", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    frmMain main = new frmMain();
-                    main.Show();
-                }
+                MessageBox.Show("Mohon isi server dan nama database", "Mumtaaz Herbal", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+
+            var dbhelper = new DbHelper();
+            Properties.Settings.Default.ConnectionString = string.Format("data source={0};initial catalog={1};integrated security=SSPI;", comboServer.Text, listBoxDatabase.SelectedValue.ToString());
+            var main = new frmMain();
+            main.Show();
+            this.Close();
+        }
+
+        //butto close
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            createDB create = new createDB();
+            create.ShowDialog();
         }
     }
 }

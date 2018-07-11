@@ -7,6 +7,7 @@ using System.Text;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using MumtaazHerbal.Function;
 
 namespace MumtaazHerbal
 {
@@ -17,10 +18,11 @@ namespace MumtaazHerbal
             InitializeComponent();
         }
         MumtaazContext mumtaaz;
+        DbHelper dbhelper = new DbHelper();
 
         private void dftrSupp_Load(object sender, EventArgs e)
         {
-            mumtaaz = new MumtaazContext();
+            mumtaaz = new MumtaazContext(dbhelper.ConnectionString);
             supplierBindingSource.DataSource = mumtaaz.Suppliers.ToList();
         }
 

@@ -45,6 +45,8 @@ namespace MumtaazHerbal
         }
 
         MumtaazContext mumtaaz;
+        DbHelper dbhelper = new DbHelper();
+
 
         //pembayaran
         private void simpleButton4_Click(object sender, EventArgs e)
@@ -78,7 +80,7 @@ namespace MumtaazHerbal
         
         private void kasir_Load(object sender, EventArgs e)
         {
-            mumtaaz = new MumtaazContext();
+            mumtaaz = new MumtaazContext(dbhelper.ConnectionString);
 
             txtTanggal.EditValue = DateTime.Now;
             txtuser.Text = "ADMIN";
@@ -471,7 +473,7 @@ namespace MumtaazHerbal
             var rowHandle = gridView.FocusedRowHandle;
             var noTransaksi = gridView.GetRowCellValue(rowHandle, "NoTransaksi").ToString();
 
-            using (var mumtaaz = new MumtaazContext())
+            using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
             {
                 //Get Informasi Penjualan
                 var transaksi = mumtaaz.Penjualan

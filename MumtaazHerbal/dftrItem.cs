@@ -67,16 +67,16 @@ namespace MumtaazHerbal
 
 
         Query query;
-        //MumtaazContext mumtaaz;
         Utilities util;
         MumtaazContext mumtaaz;
-
+        DbHelper dbhelper = new DbHelper();
 
         private void dftrItem_Load(object sender, EventArgs e)
         {
+
             query = new Query();
-            mumtaaz = new MumtaazContext();
-            //mumtaaz = new MumtaazContext();
+            mumtaaz = new MumtaazContext(dbhelper.ConnectionString);
+            //mumtaaz = new MumtaazContext(dbhelper.ConnectionString);
 
             query.DisplayDaftarItem(gridControl1);
 
@@ -130,7 +130,7 @@ namespace MumtaazHerbal
                 return;
 
 
-            using (var mumtaaz = new MumtaazContext())
+            using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
             {
                 if (XtraMessageBox.Show("Hapus item ini ?.", "Hapus", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
@@ -149,7 +149,7 @@ namespace MumtaazHerbal
     
         private void DisplayDaftarItem()
         {
-            using (var mumtaaz = new MumtaazContext())
+            using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
             {
                 var supp = new Supplier();
                 var item = new Item();
@@ -290,6 +290,13 @@ namespace MumtaazHerbal
                              a.NamaSupplier
                          };
             gridControl1.DataSource = query.ToList();
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            var dbhelper = new DbHelper();
+
+            MessageBox.Show(dbhelper.ConnectionString);
         }
     }
 }

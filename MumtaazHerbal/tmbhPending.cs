@@ -35,6 +35,9 @@ namespace MumtaazHerbal
             this.receipt = receipt;
         }
 
+        DbHelper dbhelper = new DbHelper();
+
+
         private void tmbhPending_Load(object sender, EventArgs e)
         {
             txtNoTransaksi.Text = kasir.txtTransaksi.Text;
@@ -53,7 +56,7 @@ namespace MumtaazHerbal
                 Penjualan penjualan = new Penjualan();
 
                 //cek jika transaksi sudah di pending
-                using (var mumtaaz = new MumtaazContext())
+                using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
                 {
                         penjualan.NoTransaksi = kasir.txtTransaksi.Text;
                         penjualan.Tanggal = DateTime.Today;

@@ -17,8 +17,8 @@ namespace MumtaazHerbal
         public virtual DbSet<DetailPembelian> DetailPembelians { get; set; }
 
 
-        public MumtaazContext()
-            :base("name=MumtaazFix")
+        public MumtaazContext(string _connectionString)
+            :base(_connectionString)
         {
 
         }

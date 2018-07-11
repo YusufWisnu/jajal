@@ -7,7 +7,29 @@ namespace MumtaazHerbal.Function
 {
     public class DbHelper
     {
-        //MumtaazContext mumtaaz;
-        
+        //get connectionstring
+        public string ConnectionString {
+            get
+            {
+                return Properties.Settings.Default.ConnectionString;
+            }
+            set
+            {
+                Properties.Settings.Default.ConnectionString = value;
+            }
+        }
+
+        public string Datasource
+        {
+            get
+            {
+                return Properties.Settings.Default.DataSource;
+            }
+            set
+            {
+                Properties.Settings.Default.DataSource = value;
+            }
+        }
+
     }
 }

@@ -41,11 +41,12 @@ namespace MumtaazHerbal
         MumtaazContext mumtaaz;
         Utilities util;
         Item item;
+        DbHelper dbhelper = new DbHelper();
 
 
         private void tmbhItem_Load(object sender, EventArgs e)
         {
-            mumtaaz = new MumtaazContext();
+            mumtaaz = new MumtaazContext(dbhelper.ConnectionString);
             supplierBindingSource.DataSource = mumtaaz.Suppliers.ToList();
             if (edit)
             {
@@ -76,7 +77,7 @@ namespace MumtaazHerbal
             {
                 try
                 {
-                    using (var mumtaaz = new MumtaazContext())
+                    using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
                     {
 
                         if (txtKodeItem.Text != query.KodeItem)

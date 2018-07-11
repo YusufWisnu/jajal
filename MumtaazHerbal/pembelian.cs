@@ -39,12 +39,13 @@ namespace MumtaazHerbal
             this.noTransaksi = noTransaksi;
         }
 
+        DbHelper dbhelper = new DbHelper();
         MumtaazContext mumtaaz;
 
 
         private void pembelian_Load(object sender, EventArgs e)
         {
-            mumtaaz = new MumtaazContext();
+            mumtaaz = new MumtaazContext(dbhelper.ConnectionString);
 
             txtTanggal.EditValue = DateTime.Now;
             txtuser.Text = "ADMIN";
@@ -328,7 +329,7 @@ namespace MumtaazHerbal
             {
                 if (edit)
                 {
-                    using (var mumtaaz = new MumtaazContext())
+                    using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
                     {
                         var rowHandle = gridView1.FocusedRowHandle;
                         var kodeItem = gridView1.GetRowCellValue(rowHandle, gridView1.Columns[1]).ToString();
@@ -407,7 +408,7 @@ namespace MumtaazHerbal
         {
             
             var tablePembelian = new Pembelian();
-            using (var mumtaaz = new MumtaazContext())
+            using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
             {
                 tablePembelian.NoTransaksi = txtTransaksi.Text;
                 tablePembelian.Tanggal = DateTime.Now;
@@ -473,7 +474,7 @@ namespace MumtaazHerbal
             var rowHandle = gridView.FocusedRowHandle;
             var noTransaksi = gridView.GetRowCellValue(rowHandle, "NoTransaksi").ToString();
 
-            using (var mumtaaz = new MumtaazContext())
+            using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
             {
                 //Get Informasi Penjualan
                 var transaksi = mumtaaz.Pembelians
@@ -534,7 +535,7 @@ namespace MumtaazHerbal
         //delete transaksi yang ingin di update
         public void DeleteEditTransaksi()
         {
-            using (var mumtaaz = new MumtaazContext())
+            using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
             {
                 //find id yang di edit
                 var query = (from i in mumtaaz.Pembelians

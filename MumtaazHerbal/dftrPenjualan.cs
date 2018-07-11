@@ -7,6 +7,7 @@ using System.Text;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using MumtaazHerbal.Function;
 
 namespace MumtaazHerbal
 {
@@ -24,9 +25,12 @@ namespace MumtaazHerbal
             LoadData();
         }
 
+        DbHelper dbhelper = new DbHelper();
+
+
         public void LoadData()
         {
-            using (var mumtaaz = new MumtaazContext())
+            using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
             {
                 var query = from i in mumtaaz.Penjualan
                             join a in mumtaaz.Pelanggans on i.PelangganId equals a.Id
@@ -62,7 +66,7 @@ namespace MumtaazHerbal
 
         public void ChangeDate()
         {
-            using (var mumtaaz = new MumtaazContext())
+            using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
             {
                 var query = from i in mumtaaz.Penjualan
                             join a in mumtaaz.Pelanggans on i.PelangganId equals a.Id

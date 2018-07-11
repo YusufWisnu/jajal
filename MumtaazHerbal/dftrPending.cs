@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid;
+using MumtaazHerbal.Function;
 
 namespace MumtaazHerbal
 {
@@ -32,6 +33,8 @@ namespace MumtaazHerbal
             this.gridView = gridView;
         }
 
+        DbHelper dbhelper = new DbHelper();
+
 
         private void dftrPending_Load(object sender, EventArgs e)
         {
@@ -42,7 +45,7 @@ namespace MumtaazHerbal
         
         public void DisplayData()
         {
-            using (var mumtaaz = new MumtaazContext())
+            using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
             {
                 //var query = from o in mumtaaz.DetailPenjualans
                 //            join a in mumtaaz.Penjualan on o.PenjualanId equals a.Id
@@ -91,7 +94,7 @@ namespace MumtaazHerbal
             var rowHandle = gridView1.FocusedRowHandle;
             var noTransaksi = gridView1.GetRowCellValue(rowHandle, "NoTransaksi").ToString();
 
-            using (var mumtaaz = new MumtaazContext())
+            using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
             {
                 //Get Informasi Penjualan
                 var transaksi = mumtaaz.Penjualan
@@ -153,7 +156,7 @@ namespace MumtaazHerbal
         //hapus pending
         public void removePending()
         {
-            using (var mumtaaz = new MumtaazContext())
+            using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
             {
                 var rowHandle = gridView1.FocusedRowHandle;
                 var noTransaksi = gridView1.GetRowCellValue(rowHandle, gridView1.Columns[0]).ToString();

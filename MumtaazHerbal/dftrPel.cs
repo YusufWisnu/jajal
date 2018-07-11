@@ -19,6 +19,8 @@ namespace MumtaazHerbal
         }
 
         Query query;
+        DbHelper dbhelper = new DbHelper();
+
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -58,7 +60,7 @@ namespace MumtaazHerbal
         {
             query = new Query();
 
-            using (var mumtaaz = new MumtaazContext())
+            using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
             {
                 pelangganBindingSource.DataSource = mumtaaz.Pelanggans.ToList();
             }
@@ -79,7 +81,7 @@ namespace MumtaazHerbal
             query.EmailPel= gridView1.GetRowCellValue(rowHandle, "Email").ToString();
             query.TeleponPel= gridView1.GetRowCellValue(rowHandle, "NoHp").ToString();
             query.KodePel= gridView1.GetRowCellValue(rowHandle, "KodePelanggan").ToString();
-            using (var mumtaaz = new MumtaazContext())
+            using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
             {
                 query.IdPelanggan = Convert.ToInt32(mumtaaz.Pelanggans.Where(c => c.KodePelanggan == query.KodePel).SingleOrDefault()?.Id);
 
@@ -95,7 +97,7 @@ namespace MumtaazHerbal
             {
                 if(XtraMessageBox.Show("Hapus data ini ?.", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    using (var mumtaaz = new MumtaazContext())
+                    using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
                     {
                         //buat objek baru untuk daftar item
                         Pelanggan obj = pelangganBindingSource.Current as Pelanggan;

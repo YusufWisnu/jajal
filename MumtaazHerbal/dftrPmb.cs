@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Data.Entity.Core.Objects;
 using System.Data.Entity;
+using MumtaazHerbal.Function;
 
 namespace MumtaazHerbal
 {
@@ -27,6 +28,8 @@ namespace MumtaazHerbal
             LoadData();
         }
 
+        DbHelper dbhelper = new DbHelper();
+
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -36,7 +39,7 @@ namespace MumtaazHerbal
 
         public void LoadData()
         {
-            using (var mumtaaz = new MumtaazContext())
+            using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
             {
                 var query = from o in mumtaaz.Pembelians
                             join a in mumtaaz.Suppliers on o.SupplierId equals a.Id
@@ -95,7 +98,7 @@ namespace MumtaazHerbal
         // list berdasarkan event changed date
         public void ChangeDate()
         {
-            using (var mumtaaz = new MumtaazContext())
+            using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
             {
                 var query = from o in mumtaaz.Pembelians
                             join a in mumtaaz.Suppliers on o.SupplierId equals a.Id
@@ -138,7 +141,7 @@ namespace MumtaazHerbal
         {
             if(MessageBox.Show("Hapus Laporan ini?", "Mumtaaz Herbal", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                using (var mumtaaz = new MumtaazContext())
+                using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
                 {
                     var noTransaksi = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "NoTransaksi").ToString();
                     //find id yang di edit

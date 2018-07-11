@@ -34,6 +34,7 @@ namespace MumtaazHerbal.Function
         Supplier supp;
         Item item;
         MumtaazContext mumtaaz;
+        DbHelper dbhelper = new DbHelper();
 
         // ------------------------------------   dftrItem   -----------------------------------------------\\
 
@@ -49,7 +50,7 @@ namespace MumtaazHerbal.Function
             HargaEceran = grid.GetRowCellValue(rowHandle, "HargaEceran").ToString();
             HargaJual = grid.GetRowCellValue(rowHandle, "HargaJual").ToString();
             NamaSupplier = grid.GetRowCellValue(rowHandle, "NamaSupplier").ToString();
-            using (var mumtaaz = new MumtaazContext())
+            using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
             {
                 Id = Convert.ToInt32(mumtaaz.Items.Where(c => c.KodeItem == KodeItem).SingleOrDefault()?.Id);
 
@@ -61,7 +62,7 @@ namespace MumtaazHerbal.Function
         // Load Data dftrItem
         public void DisplayDaftarItem(DevExpress.XtraGrid.GridControl grid)
         {
-            mumtaaz = new MumtaazContext();
+            mumtaaz = new MumtaazContext(dbhelper.ConnectionString);
             supp = new Supplier();
             item = new Item();
 
@@ -83,7 +84,7 @@ namespace MumtaazHerbal.Function
 
         public bool CheckIfAdd(string kodeItem)
         {
-            using (var mumtaaz = new MumtaazContext())
+            using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
             {
                 if(mumtaaz.Items.Any(o => o.KodeItem == kodeItem))
                 {
@@ -98,7 +99,7 @@ namespace MumtaazHerbal.Function
 
         public bool CheckKodePelanggan(string kodePelanggan)
         {
-            using (var mumtaaz = new MumtaazContext())
+            using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
             {
                 if (mumtaaz.Pelanggans.Any(o => o.KodePelanggan == kodePelanggan))
                 {

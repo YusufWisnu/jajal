@@ -36,22 +36,18 @@
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.listBoxDatabase = new DevExpress.XtraEditors.ListBoxControl();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.listBoxDatabase = new DevExpress.XtraEditors.ListBoxControl();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.btnTestKoneksi = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
-            this.txtServer = new DevExpress.XtraEditors.TextEdit();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.comboServer.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxDatabase)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtServer.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -111,9 +107,6 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.txtServer);
-            this.groupControl1.Controls.Add(this.simpleButton5);
-            this.groupControl1.Controls.Add(this.btnTestKoneksi);
             this.groupControl1.Controls.Add(this.simpleButton4);
             this.groupControl1.Controls.Add(this.simpleButton3);
             this.groupControl1.Controls.Add(this.listBoxDatabase);
@@ -136,28 +129,47 @@
             this.groupControl1.Text = "groupControl1";
             this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
-            // simpleButton1
+            // simpleButton4
             // 
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(36, 112);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(162, 36);
-            this.simpleButton1.TabIndex = 6;
-            this.simpleButton1.Text = "Cari Database";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.simpleButton4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton4.Appearance.Options.UseFont = true;
+            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.simpleButton4.Location = new System.Drawing.Point(272, 315);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(94, 36);
+            this.simpleButton4.TabIndex = 13;
+            this.simpleButton4.Text = "Tutup";
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
-            // simpleButton2
+            // simpleButton3
             // 
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(204, 112);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(162, 36);
-            this.simpleButton2.TabIndex = 7;
-            this.simpleButton2.Text = "Buat Database";
+            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton3.Appearance.Options.UseFont = true;
+            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.simpleButton3.Location = new System.Drawing.Point(162, 315);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(94, 36);
+            this.simpleButton3.TabIndex = 12;
+            this.simpleButton3.Text = "Pilih";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
+            // 
+            // listBoxDatabase
+            // 
+            this.listBoxDatabase.Cursor = System.Windows.Forms.Cursors.Default;
+            this.listBoxDatabase.Location = new System.Drawing.Point(113, 185);
+            this.listBoxDatabase.Name = "listBoxDatabase";
+            this.listBoxDatabase.Size = new System.Drawing.Size(253, 98);
+            this.listBoxDatabase.TabIndex = 11;
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Location = new System.Drawing.Point(36, 185);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(71, 16);
+            this.labelControl8.TabIndex = 10;
+            this.labelControl8.Text = "Database :";
             // 
             // labelControl6
             // 
@@ -177,71 +189,29 @@
             this.labelControl7.TabIndex = 9;
             this.labelControl7.Text = "3.";
             // 
-            // labelControl8
+            // simpleButton2
             // 
-            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(36, 185);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(71, 16);
-            this.labelControl8.TabIndex = 10;
-            this.labelControl8.Text = "Database :";
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton2.Appearance.Options.UseFont = true;
+            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.simpleButton2.Location = new System.Drawing.Point(204, 112);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(162, 36);
+            this.simpleButton2.TabIndex = 7;
+            this.simpleButton2.Text = "Buat Database";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
-            // listBoxDatabase
+            // simpleButton1
             // 
-            this.listBoxDatabase.Cursor = System.Windows.Forms.Cursors.Default;
-            this.listBoxDatabase.Location = new System.Drawing.Point(113, 185);
-            this.listBoxDatabase.Name = "listBoxDatabase";
-            this.listBoxDatabase.Size = new System.Drawing.Size(253, 98);
-            this.listBoxDatabase.TabIndex = 11;
-            // 
-            // simpleButton3
-            // 
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(162, 315);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(94, 36);
-            this.simpleButton3.TabIndex = 12;
-            this.simpleButton3.Text = "Pilih";
-            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
-            // 
-            // simpleButton4
-            // 
-            this.simpleButton4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton4.Appearance.Options.UseFont = true;
-            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.simpleButton4.Location = new System.Drawing.Point(272, 315);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(94, 36);
-            this.simpleButton4.TabIndex = 13;
-            this.simpleButton4.Text = "Tutup";
-            // 
-            // btnTestKoneksi
-            // 
-            this.btnTestKoneksi.Location = new System.Drawing.Point(5, 291);
-            this.btnTestKoneksi.Name = "btnTestKoneksi";
-            this.btnTestKoneksi.Size = new System.Drawing.Size(75, 23);
-            this.btnTestKoneksi.TabIndex = 14;
-            this.btnTestKoneksi.Text = "&Connect";
-            this.btnTestKoneksi.Click += new System.EventHandler(this.btnTestKoneksi_Click);
-            // 
-            // simpleButton5
-            // 
-            this.simpleButton5.Location = new System.Drawing.Point(90, 291);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton5.TabIndex = 15;
-            this.simpleButton5.Text = "&Save";
-            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
-            // 
-            // txtServer
-            // 
-            this.txtServer.Location = new System.Drawing.Point(181, 63);
-            this.txtServer.Name = "txtServer";
-            this.txtServer.Size = new System.Drawing.Size(100, 20);
-            this.txtServer.TabIndex = 16;
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(36, 112);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(162, 36);
+            this.simpleButton1.TabIndex = 6;
+            this.simpleButton1.Text = "Cari Database";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // KoneksiDatabase
             // 
@@ -259,7 +229,6 @@
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxDatabase)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtServer.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -281,8 +250,5 @@
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.SimpleButton btnTestKoneksi;
-        private DevExpress.XtraEditors.SimpleButton simpleButton5;
-        private DevExpress.XtraEditors.TextEdit txtServer;
     }
 }

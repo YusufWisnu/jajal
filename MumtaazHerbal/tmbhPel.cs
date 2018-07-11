@@ -21,6 +21,7 @@ namespace MumtaazHerbal
         {
             InitializeComponent();
         }
+        DbHelper dbhelper = new DbHelper();
 
         public tmbhPel(BindingSource pelangganSource)
             :this()
@@ -61,7 +62,7 @@ namespace MumtaazHerbal
             {
                 try
                 {
-                    using (var mumtaaz = new MumtaazContext())
+                    using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
                     {
                         //jika user merubah nama yang sudah ada
                         if (txtKode.Text != query.KodePel)
@@ -104,7 +105,7 @@ namespace MumtaazHerbal
             {
                 try
                 {
-                    using (var mumtaaz = new MumtaazContext())
+                    using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
                     {
                         
                         var pelanggan = new Pelanggan()
