@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using MumtaazHerbal.Function;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid;
 
 namespace MumtaazHerbal
 {
@@ -16,7 +17,7 @@ namespace MumtaazHerbal
     {
 
 
-        private BindingSource supplierSource;
+        private GridControl gridcontrol;
         private dftrSupp daftarSupplier;
         private GridView gridview;
         private Query query;
@@ -28,9 +29,14 @@ namespace MumtaazHerbal
             InitializeComponent();
         }
 
-        public tmbhSupp(dftrSupp daftarsupplier, bool edit, )
+        public tmbhSupp(dftrSupp daftarSupplier, bool edit, GridControl gridcontrol, GridView gridview, string kodeSupplier)
+            :this()
         {
-
+            this.gridcontrol = gridcontrol;
+            this.edit = edit;
+            this.daftarSupplier = daftarSupplier;
+            this.gridview = gridview;
+            this.kodeSupplier = kodeSupplier;
         }
 
         DbHelper dbhelper = new DbHelper();
@@ -56,32 +62,30 @@ namespace MumtaazHerbal
                     //jika user merubah nama yang sudah ada
                     if (txtKode.Text != kodeSupplier)
                     {
-                        if (mumtaaz.Pelanggans.Any(o => o.KodePelanggan == txtKode.Text))
+                        if (mumtaaz.Suppliers.Any(o => o.KodeSupplier == txtKode.Text))
                         {
                             return;
                         }
                     }
 
                     //query mencari pelanggan yang akan di edit dengan nomor Id 
-                    var result = (from i in mumtaaz.Pelanggans
-                                  where i.Id == query.IdPelanggan
-                                  select i).Single();
+                    var result = (from i in mumtaaz.Suppliers
+                                  where i.Id == mumtaaz.Suppliers.Where(x=>x.KodeSupplier == kodeSupplier).Select(x=>x.Id).FirstOrDefault()                                  select i).Single();
 
-                    result.KodePelanggan = txtKode.Text;
-                    result.Nama = txtNama.Text;
+                    result.KodeSupplier = txtKode.Text;
+                    result.NamaSupplier = txtNama.Text;
                     result.Alamat = txtAlamat.Text;
                     result.Email = txtEmail.Text;
-                    result.NoHp = txtTelepon.Text;
+                    result.NoHP = txtTelepon.Text;
 
                     mumtaaz.Entry(result).State = System.Data.Entity.EntityState.Modified;//tandai hasil query yang akan di edit
                     mumtaaz.SaveChanges();
-                    pelangganSource.DataSource = mumtaaz.Pelanggans.ToList();
+                    gridcontrol.DataSource = mumtaaz.Suppliers.ToList();
                     XtraMessageBox.Show("Berhasil Merubah Data Pelanggan", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     edit = false;
                     ClearText();
                 }
             }
-        }
             else
             {
                 using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
@@ -100,9 +104,8 @@ namespace MumtaazHerbal
                         return;
 
                     mumtaaz.Suppliers.Add(supplier);
-                    supplierSource.Add(supplier);
-                    supplierSource.MoveLast();
                     mumtaaz.SaveChanges();
+                    gridcontrol.DataSource = mumtaaz.Suppliers.ToList();
                     XtraMessageBox.Show("Berhasil Menambah Pelanggan", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearText();
                 }

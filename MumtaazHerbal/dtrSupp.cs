@@ -24,8 +24,8 @@ namespace MumtaazHerbal
         {
             mumtaaz = new MumtaazContext(dbhelper.ConnectionString);
 
-            var query = from o in mumtaaz.Suppliers
-                        select o;
+            var query = mumtaaz.Suppliers;
+            
 
             gridControl1.DataSource = query.ToList();
         }
@@ -65,27 +65,49 @@ namespace MumtaazHerbal
             var rowHandle = gridView1.FocusedRowHandle;
             var kodeSupplier = gridView1.GetRowCellValue(rowHandle, gridView1.Columns[1]).ToString();
 
-            tmbhSupp tmbh = new tmbhSupp(this, edit, supplierBindingSource, gridView1, kodeSupplier);
+            var tmbh = new tmbhSupp(this, edit, gridControl1, gridView1, kodeSupplier);
             tmbh.MdiParent = this.ParentForm;
             tmbh.Show();
         }
 
-        //method untuk ambil data yang akan di edit
-        public void GetData()
+        private void btnHapus_Click(object sender, EventArgs e)
         {
-            var rowHandle = gridView1.FocusedRowHandle;
-            var kodeSupplier = gridView1.GetRowCellValue(rowHandle, gridView1.Columns[1]).ToString();
+            try
+            {
+                using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
+                {
+                    var kodeSupplier = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[1]).ToString();
+                    var query = from o in mumtaaz.Suppliers
+                                where o.KodeSupplier == kodeSupplier
+                                select o;
 
-            var query = mumtaaz.Suppliers
-                .Where(x => x.KodeSupplier == kodeSupplier)
-                .FirstOrDefault();
-
-            query.NamaSupplier = gridView1.GetRowCellValue(rowHandle, "Nama").ToString();
-            query.Alamat = gridView1.GetRowCellValue(rowHandle, "Alamat").ToString();
-            query.Email = gridView1.GetRowCellValue(rowHandle, "Email").ToString();
-            query.NoHP = gridView1.GetRowCellValue(rowHandle, "NoHp").ToString();
-            query.KodeSupplier  = gridView1.GetRowCellValue(rowHandle, "KodePelanggan").ToString();
-
+                    mumtaaz.Suppliers.Remove(query.FirstOrDefault());
+                    mumtaaz.SaveChanges();
+                    MessageBox.Show("Berhasil menghapus data supplier", "Mumtaaz Herbal", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch(Exception ee)
+            {
+                MessageBox.Show(ee.Message);
+            }
         }
+
+        //method untuk ambil data yang akan di edit
+        //public void GetData()
+        //{
+        //    var rowHandle = gridView1.FocusedRowHandle;
+        //    var kodeSupplier = gridView1.GetRowCellValue(rowHandle, gridView1.Columns[1]).ToString();
+
+        //    var query = mumtaaz.Suppliers
+        //        .Where(x => x.KodeSupplier == kodeSupplier)
+        //        .FirstOrDefault();
+
+        //    query.NamaSupplier = gridView1.GetRowCellValue(rowHandle, "Nama").ToString();
+        //    query.Alamat = gridView1.GetRowCellValue(rowHandle, "Alamat").ToString();
+        //    query.Email = gridView1.GetRowCellValue(rowHandle, "Email").ToString();
+        //    query.NoHP = gridView1.GetRowCellValue(rowHandle, "NoHp").ToString();
+        //    query.KodeSupplier  = gridView1.GetRowCellValue(rowHandle, "KodePelanggan").ToString();
+
+        //}
     }
 }

@@ -134,12 +134,20 @@ namespace MumtaazHerbal
             {
                 if (XtraMessageBox.Show("Hapus item ini ?.", "Hapus", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    var rowHandle = gridView1.FocusedRowHandle;
-                    var kodeItem = gridView1.GetRowCellValue(rowHandle, "KodeItem").ToString();
-                    var query = mumtaaz.Items.FirstOrDefault(i => i.KodeItem == kodeItem);
-                    mumtaaz.Items.Remove(query);
-                    mumtaaz.SaveChanges();
-                    XtraMessageBox.Show("Berhasil menghapus item.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    try
+                    {
+                        var rowHandle = gridView1.FocusedRowHandle;
+                        var kodeItem = gridView1.GetRowCellValue(rowHandle, "KodeItem").ToString();
+                        var query = mumtaaz.Items.FirstOrDefault(i => i.KodeItem == kodeItem);
+                        mumtaaz.Items.Remove(query);
+                        mumtaaz.SaveChanges();
+                        XtraMessageBox.Show("Berhasil menghapus item.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch(Exception ee)
+                    {
+                        MessageBox.Show("Item sudah masuk dalam daftar transaksi\ntidak bisa dihapus", ee.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    
                 }
             }
 
