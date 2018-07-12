@@ -38,7 +38,6 @@
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnTutup = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKodeSupplier = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -46,11 +45,11 @@
             this.colAlamat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNoHP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEmail = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colItems = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // txtSearch
@@ -97,6 +96,7 @@
             this.btnEdit.Size = new System.Drawing.Size(82, 26);
             this.btnEdit.TabIndex = 20;
             this.btnEdit.Text = "Edit Item";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
@@ -140,10 +140,6 @@
             this.gridView1});
             this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             // 
-            // supplierBindingSource
-            // 
-            this.supplierBindingSource.DataSource = typeof(MumtaazHerbal.Supplier);
-            // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -152,8 +148,7 @@
             this.colNamaSupplier,
             this.colAlamat,
             this.colNoHP,
-            this.colEmail,
-            this.colItems});
+            this.colEmail});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -200,12 +195,9 @@
             this.colEmail.Visible = true;
             this.colEmail.VisibleIndex = 5;
             // 
-            // colItems
+            // supplierBindingSource
             // 
-            this.colItems.FieldName = "Items";
-            this.colItems.Name = "colItems";
-            this.colItems.Visible = true;
-            this.colItems.VisibleIndex = 6;
+            this.supplierBindingSource.DataSource = typeof(MumtaazHerbal.Supplier);
             // 
             // dftrSupp
             // 
@@ -226,8 +218,8 @@
             this.Load += new System.EventHandler(this.dftrSupp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,7 +243,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colAlamat;
         private DevExpress.XtraGrid.Columns.GridColumn colNoHP;
         private DevExpress.XtraGrid.Columns.GridColumn colEmail;
-        private DevExpress.XtraGrid.Columns.GridColumn colItems;
         private System.Windows.Forms.BindingSource supplierBindingSource;
     }
 }

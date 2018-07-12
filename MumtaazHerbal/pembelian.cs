@@ -92,8 +92,8 @@ namespace MumtaazHerbal
 
             if (!mumtaaz.Pembelians.Any())
                 noTransaksi++;
-
-            noTransaksi++;
+            else
+                noTransaksi++;
 
             txtTransaksi.Text = noTransaksi.ToString().PadLeft(4, '0') + "/BL/" + DateTime.Now.ToString("ddMM");
 
@@ -101,8 +101,12 @@ namespace MumtaazHerbal
 
         public void GetInformasiSupplier()
         {
+
             var query = mumtaaz.Suppliers
                 .FirstOrDefault();
+
+            if (!mumtaaz.Suppliers.Any())
+                return;
 
             lookSupplier.EditValue = query.Id;
 

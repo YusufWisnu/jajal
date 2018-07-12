@@ -71,8 +71,6 @@ namespace MumtaazHerbal
 
             var dbhelper = new DbHelper();
             Properties.Settings.Default.ConnectionString = string.Format("data source={0};initial catalog={1};integrated security=SSPI;", comboServer.Text, listBoxDatabase.SelectedValue.ToString());
-            var main = new frmMain();
-            main.Show();
             this.Close();
         }
 

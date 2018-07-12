@@ -25,6 +25,7 @@ namespace MumtaazHerbal
             var frm = new frmMain();
             frm.Show();
         }
+        DbHelper dbhelper;
 
         private void connection_Load(object sender, EventArgs e)
         {
@@ -32,42 +33,35 @@ namespace MumtaazHerbal
             comboServer.Properties.Items.Add("(local)");
             comboServer.Properties.Items.Add(@".\SQLEXPRESS");
             comboServer.Properties.Items.Add(string.Format(@"{0}\SQLEXPRESS", Environment.MachineName));
-            comboServer.SelectedIndex = 0;
+            comboServer.SelectedIndex = 3;
+
+            Properties.Settings.Default.ConnectionString = string.Format("data source={0};initial catalog=master;integrated security=SSPI;", comboServer.Text);
+            Properties.Settings.Default.DataSource = comboServer.Text;
         }
 
         //get list database
         public List<string> GetDatabasesList()
         {
             var list = new List<string>();
-            using (SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["MumtaazFix"].ConnectionString))
+            using (SqlConnection cn = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
                 cn.Open();
 
                 var cmd = new SqlCommand("SELECT name FROM sys.databases", cn);
                 var dr = cmd.ExecuteReader();
                 while (dr.Read())
+                {
+                    if (dr[0].ToString() == "master" || dr[0].ToString() == "model" || dr[0].ToString() == "tempdb" || dr[0].ToString() == "msdb")
+                        continue;
+
                     list.Add(dr[0].ToString());
+                }
 
             }
             return list;
         }
 
-        private void simpleButton3_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(comboServer.Text) || string.IsNullOrEmpty(listBoxDatabase.Text))
-            {
-                MessageBox.Show("Mohon isi server dan nama database", "Mumtaaz Herbal", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            var dbhelper = new DbHelper();
-            Properties.Settings.Default.ConnectionString = string.Format("data source={0};initial catalog={1};integrated security=SSPI;", comboServer.Text, listBoxDatabase.SelectedValue.ToString());
-            var main = new frmMain();
-            main.Show();
-            this.Close();
-        }
-
-        //cari database
+        //btn cari database
         private void simpleButton1_Click_1(object sender, EventArgs e)
         {
             listBoxDatabase.DataSource = GetDatabasesList();
@@ -81,6 +75,7 @@ namespace MumtaazHerbal
             create.ShowDialog();
         }
 
+        //btn pilih
         private void simpleButton5_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(comboServer.Text) || string.IsNullOrEmpty(listBoxDatabase.Text))
@@ -91,12 +86,51 @@ namespace MumtaazHerbal
 
             var dbhelper = new DbHelper();
             Properties.Settings.Default.ConnectionString = string.Format("data source={0};initial catalog={1};integrated security=SSPI;", comboServer.Text, listBoxDatabase.SelectedValue.ToString());
-            this.Close();
+            var main = new frmMain();
+            main.Show();
+            //this.Close();
         }
 
         private void simpleButton4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        //btn set koneksi
+        private void simpleButton3_Click_1(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(comboServer.Text))
+            {
+                MessageBox.Show("Pilih server terlebih dahulu");
+                return;
+            }
+
+            Properties.Settings.Default.ConnectionString = string.Format("data source={0};initial catalog=master;integrated security=SSPI;", comboServer.Text);
+            Properties.Settings.Default.DataSource = comboServer.Text;
+
+            if (isServerConnected(Properties.Settings.Default.ConnectionString))
+                MessageBox.Show("Set koneksi sukses", "Mumtaaz Herbal", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+
+        }
+
+        //test koneksi
+        private bool isServerConnected(string connectionString)
+        {
+            dbhelper = new DbHelper();
+            using (var sqlConnection = new SqlConnection(dbhelper.ConnectionString))
+            {
+                try
+                {
+                    sqlConnection.Open();
+                    return true;
+                }
+                catch (SqlException)
+                {
+                    return false;
+                }
+            }
         }
     }
 }

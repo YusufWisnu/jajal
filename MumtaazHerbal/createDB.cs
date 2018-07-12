@@ -40,7 +40,7 @@ namespace MumtaazHerbal
         DbHelper dbhelper;
         public void CreateDatabase()
         {
-            using (SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["MumtaazFix"].ConnectionString))
+            using (SqlConnection cn = new SqlConnection(Properties.Settings.Default.ConnectionString))
             {
                 cmd = new SqlCommand();
                 cn.Open();
@@ -64,6 +64,10 @@ namespace MumtaazHerbal
                 cmd = new SqlCommand();
                 cn.Open();
                 cmd.Connection = cn;
+
+                string dbName = string.Format("use {0}", txtnamaDB.Text);
+                cmd.CommandText = dbName;
+                cmd.ExecuteNonQuery();
 
                 string tableDetailPembelians = @"CREATE TABLE [dbo].[DetailPembelians](
 	                                                [Id] [int] IDENTITY(1,1) NOT NULL,

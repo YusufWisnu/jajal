@@ -192,8 +192,8 @@ namespace MumtaazHerbal
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            var connection = new connection();
-            connection.ShowDialog();
+            //var connection = new connection();
+            //connection.ShowDialog();
         }
     }
 }

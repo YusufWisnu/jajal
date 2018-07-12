@@ -422,17 +422,15 @@
             // 
             this.lblAlamat.Location = new System.Drawing.Point(95, 90);
             this.lblAlamat.Name = "lblAlamat";
-            this.lblAlamat.Size = new System.Drawing.Size(43, 13);
+            this.lblAlamat.Size = new System.Drawing.Size(0, 13);
             this.lblAlamat.TabIndex = 46;
-            this.lblAlamat.Text = "lblAlamat";
             // 
             // lblNo
             // 
             this.lblNo.Location = new System.Drawing.Point(95, 109);
             this.lblNo.Name = "lblNo";
-            this.lblNo.Size = new System.Drawing.Size(23, 13);
+            this.lblNo.Size = new System.Drawing.Size(0, 13);
             this.lblNo.TabIndex = 47;
-            this.lblNo.Text = "lblNo";
             // 
             // pembelian
             // 
