@@ -58,39 +58,40 @@ namespace MumtaazHerbal
                 //cek jika transaksi sudah di pending
                 using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
                 {
-                        penjualan.NoTransaksi = kasir.txtTransaksi.Text;
-                        penjualan.Tanggal = DateTime.Today;
-                        penjualan.PelangganId = int.Parse(kasir.lookPelanggan.EditValue.ToString());
-                        penjualan.TotalHarga = int.Parse(kasir.txtTotal.Text.Replace(",", ""));
-                        penjualan.IsPending = true;
-                        penjualan.Keterangan = txtKeterangan.Text;
+                    penjualan.NoTransaksi = kasir.txtTransaksi.Text;
+                    penjualan.Tanggal = DateTime.Today;
+                    penjualan.PelangganId = int.Parse(kasir.lookPelanggan.EditValue.ToString());
+                    penjualan.TotalHarga = int.Parse(kasir.txtTotal.Text.Replace(",", ""));
+                    penjualan.IsPending = true;
+                    penjualan.Keterangan = txtKeterangan.Text;
+                    penjualan.Sisa = 0;
 
-                        for (int i = 0; i < gridView.DataRowCount; i++)
+                    for (int i = 0; i < gridView.DataRowCount; i++)
+                    {
+                        var rowHandle = gridView.GetRowHandle(i);
+                        var kodeItem = gridView.GetRowCellValue(rowHandle, "KodeItem").ToString();
+
+                        var itemId = mumtaaz.Items
+                            .Where(x => x.KodeItem == kodeItem)
+                            .SingleOrDefault();
+
+                        var detailPenjualan = new DetailPenjualan()
                         {
-                            var rowHandle = gridView.GetRowHandle(i);
-                            var kodeItem = gridView.GetRowCellValue(rowHandle, "KodeItem").ToString();
+                            JumlahBarang = Convert.ToInt32(gridView.GetRowCellValue(rowHandle, gridView.Columns[3])),
+                            Penjualan = penjualan,
+                            ItemId = itemId.Id,
+                            HargaBarang = Convert.ToInt32(gridView.GetRowCellValue(rowHandle, gridView.Columns[5]))
 
-                            var itemId = mumtaaz.Items
-                                .Where(x => x.KodeItem == kodeItem)
-                                .SingleOrDefault();
+                        };
 
-                            var detailPenjualan = new DetailPenjualan()
-                            {
-                                JumlahBarang = Convert.ToInt32(gridView.GetRowCellValue(rowHandle, gridView.Columns[3])),
-                                Penjualan = penjualan,
-                                ItemId = itemId.Id,
-                                HargaBarang = Convert.ToInt32(gridView.GetRowCellValue(rowHandle, gridView.Columns[5]))
+                        mumtaaz.DetailPenjualans.Add(detailPenjualan);
 
-                            };
+                    }
 
-                            mumtaaz.DetailPenjualans.Add(detailPenjualan);
-
-                        }
-
-                        mumtaaz.Penjualan.Add(penjualan);
-                        mumtaaz.SaveChanges();
-                        this.Close();
-                        kasir.RefreshPage();
+                    mumtaaz.Penjualan.Add(penjualan);
+                    mumtaaz.SaveChanges();
+                    this.Close();
+                    kasir.RefreshPage();
                 }
             }
         }

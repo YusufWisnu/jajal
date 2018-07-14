@@ -48,6 +48,8 @@
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
             this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -57,6 +59,9 @@
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
@@ -87,20 +92,23 @@
             this.barButtonItem7,
             this.barButtonItem9,
             this.barButtonItem11,
-            this.barButtonItem12});
+            this.barButtonItem12,
+            this.barButtonItem13,
+            this.barButtonItem14});
             this.ribbonControl1.LargeImages = this.imageCollection1;
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 25;
+            this.ribbonControl1.MaxItemId = 27;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
-            this.ribbonPage2});
+            this.ribbonPage2,
+            this.ribbonPage3});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
             this.ribbonControl1.Size = new System.Drawing.Size(1350, 141);
             // 
             // btnMenu
             // 
-            this.btnMenu.Caption = "Menu Utama";
+            this.btnMenu.Caption = "Kasir";
             this.btnMenu.Id = 2;
             this.btnMenu.ImageOptions.SvgImage = global::MumtaazHerbal.Properties.Resources._138256;
             this.btnMenu.Name = "btnMenu";
@@ -189,7 +197,8 @@
             // 
             this.barButtonItem2.Caption = "History Pembelian";
             this.barButtonItem2.Id = 18;
-            this.barButtonItem2.ImageOptions.SvgImage = global::MumtaazHerbal.Properties.Resources.coins__2_;
+            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
             this.barButtonItem2.Name = "barButtonItem2";
             this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick_1);
             // 
@@ -218,7 +227,8 @@
             // 
             this.barButtonItem11.Caption = "Daftar Penjualan";
             this.barButtonItem11.Id = 23;
-            this.barButtonItem11.ImageOptions.SvgImage = global::MumtaazHerbal.Properties.Resources.coin;
+            this.barButtonItem11.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem11.ImageOptions.Image")));
+            this.barButtonItem11.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem11.ImageOptions.LargeImage")));
             this.barButtonItem11.Name = "barButtonItem11";
             this.barButtonItem11.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem11_ItemClick);
             // 
@@ -226,9 +236,26 @@
             // 
             this.barButtonItem12.Caption = "History Penjualan";
             this.barButtonItem12.Id = 24;
-            this.barButtonItem12.ImageOptions.SvgImage = global::MumtaazHerbal.Properties.Resources.coin__1_;
+            this.barButtonItem12.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem12.ImageOptions.Image")));
+            this.barButtonItem12.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem12.ImageOptions.LargeImage")));
             this.barButtonItem12.Name = "barButtonItem12";
             this.barButtonItem12.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem12_ItemClick);
+            // 
+            // barButtonItem13
+            // 
+            this.barButtonItem13.Caption = "Pembayaran Piutang";
+            this.barButtonItem13.Id = 25;
+            this.barButtonItem13.ImageOptions.SvgImage = global::MumtaazHerbal.Properties.Resources.coins__2_;
+            this.barButtonItem13.Name = "barButtonItem13";
+            this.barButtonItem13.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem13_ItemClick);
+            // 
+            // barButtonItem14
+            // 
+            this.barButtonItem14.Caption = "Daftar Pembayaran Piutang";
+            this.barButtonItem14.Id = 26;
+            this.barButtonItem14.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem14.ImageOptions.Image")));
+            this.barButtonItem14.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem14.ImageOptions.LargeImage")));
+            this.barButtonItem14.Name = "barButtonItem14";
             // 
             // imageCollection1
             // 
@@ -243,7 +270,7 @@
             this.ribbonPageGroup4,
             this.ribbonPageGroup6});
             this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Master Data";
+            this.ribbonPage1.Text = "Penjualan";
             // 
             // ribbonPageGroup1
             // 
@@ -296,6 +323,26 @@
             this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem2);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.Text = "Laporan Pembelian";
+            // 
+            // ribbonPage3
+            // 
+            this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup7,
+            this.ribbonPageGroup8});
+            this.ribbonPage3.Name = "ribbonPage3";
+            this.ribbonPage3.Text = "Laporan";
+            // 
+            // ribbonPageGroup7
+            // 
+            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem13);
+            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem14);
+            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
+            this.ribbonPageGroup7.Text = "Laporan Piutang";
+            // 
+            // ribbonPageGroup8
+            // 
+            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
+            this.ribbonPageGroup8.Text = "ribbonPageGroup8";
             // 
             // documentManager1
             // 
@@ -365,5 +412,10 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem10;
         private DevExpress.XtraBars.BarButtonItem barButtonItem11;
         private DevExpress.XtraBars.BarButtonItem barButtonItem12;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem13;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem14;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
     }
 }

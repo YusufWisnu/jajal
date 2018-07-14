@@ -195,6 +195,16 @@ namespace MumtaazHerbal
                 penjualan.PelangganId = int.Parse(kasir.lookPelanggan.EditValue.ToString());
                 penjualan.TotalHarga = int.Parse(txtTotal.Text.Replace(",", ""));
                 penjualan.IsPending = false;
+                //jika pelanggan hutang
+                if (int.Parse(txtKredit.Text.Replace(",", "")) > 0)
+                {
+                    penjualan.TanggalJT = DateTime.Now.AddDays(int.Parse(kasir.spinJT.Text));
+                    penjualan.Sisa = int.Parse(txtTunai.Text.Replace(",", ""));
+                }
+                else
+                {
+                    penjualan.Sisa = 0;
+                }
 
                 for (int i = 0; i < gridView.DataRowCount; i++)
                 {
@@ -210,6 +220,7 @@ namespace MumtaazHerbal
                     {
                         HargaBarang = Convert.ToInt32(gridView.GetRowCellValue(rowHandle, gridView.Columns[5])),
                         JumlahBarang = Convert.ToInt32(gridView.GetRowCellValue(rowHandle, gridView.Columns[3])),
+                        Untung = Convert.ToInt32(gridView.GetRowCellValue(rowHandle, gridView.Columns[3])) - itemId.HargaJual,
                         Penjualan = penjualan,
                         ItemId = itemId.Id
                     };
@@ -228,6 +239,7 @@ namespace MumtaazHerbal
                 kasir.RefreshPage();
                 receipt.Clear();
                 this.Close();
+
 
                 //load daftar penjualan setelah edit selesai
                 if (edit)

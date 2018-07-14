@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(tmbhItem));
             this.txtKodeItem = new DevExpress.XtraEditors.TextEdit();
             this.txtNamaItem = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.txtStok = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.txtHargaPokok = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
@@ -46,11 +45,10 @@
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.lookSupplier = new DevExpress.XtraEditors.LookUpEdit();
-            this.supplierBindingSource = new System.Windows.Forms.BindingSource();
+            this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtSatuan = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKodeItem.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNamaItem.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtStok.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHargaPokok.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHargaRetail.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHargaGrosir.Properties)).BeginInit();
@@ -92,23 +90,6 @@
             this.labelControl2.Size = new System.Drawing.Size(59, 13);
             this.labelControl2.TabIndex = 5;
             this.labelControl2.Text = "Nama Item :";
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.AppearanceDisabled.Options.UseTextOptions = true;
-            this.labelControl3.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl3.Location = new System.Drawing.Point(62, 105);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(28, 13);
-            this.labelControl3.TabIndex = 7;
-            this.labelControl3.Text = "Stok :";
-            // 
-            // txtStok
-            // 
-            this.txtStok.Location = new System.Drawing.Point(99, 102);
-            this.txtStok.Name = "txtStok";
-            this.txtStok.Size = new System.Drawing.Size(42, 20);
-            this.txtStok.TabIndex = 6;
             // 
             // labelControl5
             // 
@@ -158,7 +139,7 @@
             // 
             this.labelControl4.AppearanceDisabled.Options.UseTextOptions = true;
             this.labelControl4.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControl4.Location = new System.Drawing.Point(147, 105);
+            this.labelControl4.Location = new System.Drawing.Point(45, 105);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(41, 13);
             this.labelControl4.TabIndex = 17;
@@ -215,7 +196,7 @@
             this.lookSupplier.Properties.DropDownRows = 5;
             this.lookSupplier.Properties.NullText = "";
             this.lookSupplier.Properties.ValueMember = "Id";
-            this.lookSupplier.Size = new System.Drawing.Size(148, 20);
+            this.lookSupplier.Size = new System.Drawing.Size(147, 20);
             this.lookSupplier.TabIndex = 21;
             // 
             // supplierBindingSource
@@ -224,7 +205,7 @@
             // 
             // txtSatuan
             // 
-            this.txtSatuan.Location = new System.Drawing.Point(194, 102);
+            this.txtSatuan.Location = new System.Drawing.Point(99, 102);
             this.txtSatuan.Name = "txtSatuan";
             this.txtSatuan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -252,9 +233,7 @@
             this.Controls.Add(this.txtHargaRetail);
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.labelControl6);
-            this.Controls.Add(this.txtStok);
             this.Controls.Add(this.txtKodeItem);
-            this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.txtNamaItem);
             this.Controls.Add(this.labelControl7);
@@ -265,7 +244,6 @@
             this.Load += new System.EventHandler(this.tmbhItem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtKodeItem.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNamaItem.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtStok.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHargaPokok.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHargaRetail.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHargaGrosir.Properties)).EndInit();
@@ -283,8 +261,6 @@
         private DevExpress.XtraEditors.TextEdit txtNamaItem;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.TextEdit txtStok;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.TextEdit txtHargaPokok;
         private DevExpress.XtraEditors.LabelControl labelControl6;

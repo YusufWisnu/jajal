@@ -72,19 +72,7 @@ namespace MumtaazHerbal
 
         public void GetNoTransaksi()
         {
-            ////get no transaksi
-            //var query = mumtaaz.Pembelians
-            //    .OrderByDescending(x => x.Id)
-            //    .FirstOrDefault();
-
-            ////ambil 4 kata pertama 
-            //var splitWord = query.NoTransaksi.Take(4).ToArray();
-
-            ////gabungkan kemudian increment
-            //var noTransaksi = int.Parse(new string(splitWord.Take(4).ToArray()));
-            //noTransaksi++;
-
-            //get no transaksi
+            
             var noTransaksi = mumtaaz.Pembelians
                 .OrderByDescending(x => x.Id)
                 .Select(x => x.Id)

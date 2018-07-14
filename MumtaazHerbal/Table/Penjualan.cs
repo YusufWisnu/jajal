@@ -27,8 +27,17 @@ namespace MumtaazHerbal
 
         public string Keterangan { get; set; }
 
-    }
+        /* -----------JIKA PELANGGAN ADA HUTANG-------------*/
 
+        public int Sisa { get; set; }
+
+        public DateTime? TanggalJT { get; set; }
+
+        public int? PiutangId { get; set; }
+
+        public Piutang Piutang { get; set; }
+
+    }
 
 
 }

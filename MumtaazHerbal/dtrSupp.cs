@@ -23,10 +23,7 @@ namespace MumtaazHerbal
         private void dftrSupp_Load(object sender, EventArgs e)
         {
             mumtaaz = new MumtaazContext(dbhelper.ConnectionString);
-
             var query = mumtaaz.Suppliers;
-            
-
             gridControl1.DataSource = query.ToList();
         }
 
@@ -40,7 +37,7 @@ namespace MumtaazHerbal
                     return;
                 }
             }
-            tmbhSupp supp = new tmbhSupp();
+            tmbhSupp supp = new tmbhSupp(gridControl1);
             supp.MdiParent = this.ParentForm;
             supp.Show();
         }
@@ -63,7 +60,7 @@ namespace MumtaazHerbal
             }
             bool edit = true;
             var rowHandle = gridView1.FocusedRowHandle;
-            var kodeSupplier = gridView1.GetRowCellValue(rowHandle, gridView1.Columns[1]).ToString();
+            var kodeSupplier = gridView1.GetRowCellValue(rowHandle, gridView1.Columns[0]).ToString();
 
             var tmbh = new tmbhSupp(this, edit, gridControl1, gridView1, kodeSupplier);
             tmbh.MdiParent = this.ParentForm;
@@ -76,19 +73,22 @@ namespace MumtaazHerbal
             {
                 using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
                 {
-                    var kodeSupplier = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[1]).ToString();
-                    var query = from o in mumtaaz.Suppliers
-                                where o.KodeSupplier == kodeSupplier
-                                select o;
+                    if(MessageBox.Show("Hapus data ini ?.", "Mumtaaz Herbal", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                    {
+                        var kodeSupplier = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[0]).ToString();
+                        var query = from o in mumtaaz.Suppliers
+                                    where o.KodeSupplier == kodeSupplier
+                                    select o;
 
-                    mumtaaz.Suppliers.Remove(query.FirstOrDefault());
-                    mumtaaz.SaveChanges();
-                    MessageBox.Show("Berhasil menghapus data supplier", "Mumtaaz Herbal", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        mumtaaz.Suppliers.Remove(query.FirstOrDefault());
+                        mumtaaz.SaveChanges();
+                        MessageBox.Show("Berhasil menghapus data ini", "Mumtaaz Herbal", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
             catch(Exception ee)
             {
-                MessageBox.Show(ee.Message);
+                MessageBox.Show("Gagal menghapus data", "Mumtaaz Herbal", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

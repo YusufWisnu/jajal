@@ -36,7 +36,6 @@
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnTutup = new DevExpress.XtraEditors.SimpleButton();
             this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.colEmail = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNoHP = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -47,10 +46,10 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.KodeSupplier = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Nama = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.NoHP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NamaSupplier = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Alamat = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NoHP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Email = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -90,7 +89,7 @@
             this.btnHapus.Name = "btnHapus";
             this.btnHapus.Size = new System.Drawing.Size(82, 26);
             this.btnHapus.TabIndex = 21;
-            this.btnHapus.Text = "Hapus Item";
+            this.btnHapus.Text = "Hapus";
             this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click);
             // 
             // btnEdit
@@ -101,7 +100,7 @@
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(82, 26);
             this.btnEdit.TabIndex = 20;
-            this.btnEdit.Text = "Edit Item";
+            this.btnEdit.Text = "Edit";
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
@@ -112,7 +111,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(82, 26);
             this.btnAdd.TabIndex = 19;
-            this.btnAdd.Text = "Item Baru";
+            this.btnAdd.Text = "Tambah";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // gridColumn5
@@ -120,16 +119,6 @@
             this.gridColumn5.Caption = "Supplier";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Width = 141;
-            // 
-            // btnTutup
-            // 
-            this.btnTutup.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTutup.ImageOptions.Image = global::MumtaazHerbal.Properties.Resources.back;
-            this.btnTutup.Location = new System.Drawing.Point(643, 501);
-            this.btnTutup.Name = "btnTutup";
-            this.btnTutup.Size = new System.Drawing.Size(82, 26);
-            this.btnTutup.TabIndex = 39;
-            this.btnTutup.Text = "&Tutup";
             // 
             // supplierBindingSource
             // 
@@ -182,36 +171,28 @@
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.KodeSupplier,
-            this.Nama,
-            this.NoHP,
+            this.NamaSupplier,
             this.Alamat,
-            this.gridColumn3});
+            this.NoHP,
+            this.Email});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
             // KodeSupplier
             // 
-            this.KodeSupplier.Caption = "Kode Supplier";
+            this.KodeSupplier.Caption = "KodeSupplier";
             this.KodeSupplier.FieldName = "KodeSupplier";
             this.KodeSupplier.Name = "KodeSupplier";
             this.KodeSupplier.Visible = true;
-            this.KodeSupplier.VisibleIndex = 1;
+            this.KodeSupplier.VisibleIndex = 0;
             // 
-            // Nama
+            // NamaSupplier
             // 
-            this.Nama.Caption = "Nama";
-            this.Nama.FieldName = "NamaSupplier";
-            this.Nama.Name = "Nama";
-            this.Nama.Visible = true;
-            this.Nama.VisibleIndex = 0;
-            // 
-            // NoHP
-            // 
-            this.NoHP.Caption = "No.HP";
-            this.NoHP.FieldName = "NoHP";
-            this.NoHP.Name = "NoHP";
-            this.NoHP.Visible = true;
-            this.NoHP.VisibleIndex = 2;
+            this.NamaSupplier.Caption = "NamaSupplier";
+            this.NamaSupplier.FieldName = "NamaSupplier";
+            this.NamaSupplier.Name = "NamaSupplier";
+            this.NamaSupplier.Visible = true;
+            this.NamaSupplier.VisibleIndex = 1;
             // 
             // Alamat
             // 
@@ -219,14 +200,23 @@
             this.Alamat.FieldName = "Alamat";
             this.Alamat.Name = "Alamat";
             this.Alamat.Visible = true;
-            this.Alamat.VisibleIndex = 3;
+            this.Alamat.VisibleIndex = 2;
             // 
-            // gridColumn3
+            // NoHP
             // 
-            this.gridColumn3.FieldName = "Email";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 4;
+            this.NoHP.Caption = "No.Hp";
+            this.NoHP.FieldName = "NoHP";
+            this.NoHP.Name = "NoHP";
+            this.NoHP.Visible = true;
+            this.NoHP.VisibleIndex = 3;
+            // 
+            // Email
+            // 
+            this.Email.Caption = "Email";
+            this.Email.FieldName = "Email";
+            this.Email.Name = "Email";
+            this.Email.Visible = true;
+            this.Email.VisibleIndex = 4;
             // 
             // dftrSupp
             // 
@@ -234,7 +224,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(737, 539);
             this.Controls.Add(this.gridControl1);
-            this.Controls.Add(this.btnTutup);
             this.Controls.Add(this.btnHapus);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
@@ -263,7 +252,6 @@
         private DevExpress.XtraEditors.SimpleButton btnEdit;
         private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraEditors.SimpleButton btnTutup;
         private System.Windows.Forms.BindingSource supplierBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn colEmail;
         private DevExpress.XtraGrid.Columns.GridColumn colNoHP;
@@ -274,9 +262,9 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn KodeSupplier;
-        private DevExpress.XtraGrid.Columns.GridColumn Nama;
-        private DevExpress.XtraGrid.Columns.GridColumn NoHP;
+        private DevExpress.XtraGrid.Columns.GridColumn NamaSupplier;
         private DevExpress.XtraGrid.Columns.GridColumn Alamat;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn NoHP;
+        private DevExpress.XtraGrid.Columns.GridColumn Email;
     }
 }

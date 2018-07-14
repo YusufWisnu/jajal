@@ -29,6 +29,12 @@ namespace MumtaazHerbal
             InitializeComponent();
         }
 
+        public tmbhSupp(GridControl gridcontrol)
+            :this()
+        {
+            this.gridcontrol = gridcontrol;
+        }
+
         public tmbhSupp(dftrSupp daftarSupplier, bool edit, GridControl gridcontrol, GridView gridview, string kodeSupplier)
             :this()
         {
@@ -145,7 +151,7 @@ namespace MumtaazHerbal
         public void GetData()
         {
             var rowHandle = gridview.FocusedRowHandle;
-            var kodeSupplier = gridview.GetRowCellValue(rowHandle, gridview.Columns[1]).ToString();
+            var kodeSupplier = gridview.GetRowCellValue(rowHandle, gridview.Columns[0]).ToString();
 
             using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
             {

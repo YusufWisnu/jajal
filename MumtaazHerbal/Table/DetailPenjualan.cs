@@ -10,6 +10,8 @@
 
         public int HargaBarang { get; set; }
 
+        public int Untung { get; set; }
+
         public Penjualan Penjualan { get; set; }
 
         public int ItemId { get; set; }

@@ -184,6 +184,22 @@ namespace MumtaazHerbal
             hstPenjualan.Show();
         }
 
+        private void barButtonItem13_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(pembayaranPiutang))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            pembayaranPiutang piutang = new pembayaranPiutang();
+            piutang.MdiParent = this;
+            piutang.Show();
+        }
+
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             //Application.Exit();
@@ -195,5 +211,7 @@ namespace MumtaazHerbal
             Properties.Settings.Default.ConnectionString = string.Format("data source=.;initial catalog=MumtaazFixV1;integrated security=SSPI;");
 
         }
+
+        
     }
 }

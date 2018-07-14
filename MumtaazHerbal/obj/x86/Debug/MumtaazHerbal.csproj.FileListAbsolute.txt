@@ -445,3 +445,15 @@ C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.his
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.KoneksiDatabase.resources
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.createDB.resources
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.connection.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.addUntunginTableDetailPembelians.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.AddUntungindetailPenjualans.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.pembayaranPiutang.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.addTablePiutang.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.fixSomeRelationshipFromTablePenjualanAndTablePiutang.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.allowNullToTanggajJTFromTablePenjualan.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.notupdateatall.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.tryingFixingRelationship.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.changeDateTimeToDateTimeNullAbleFromTablePenjuaan.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.fixSomecolumnFromTablePiutang.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.fixingAnotherRelationship.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.fixingAnotherRelatedTable.resources

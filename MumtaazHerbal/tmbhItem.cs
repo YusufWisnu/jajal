@@ -95,7 +95,6 @@ namespace MumtaazHerbal
                         result.KodeItem = txtKodeItem.Text;
                         result.NamaItem = txtNamaItem.Text;
                         result.SupplierId = Convert.ToInt32(lookSupplier.EditValue);
-                        result.Stok = Convert.ToInt32(txtStok.Text);
                         result.Satuan = txtSatuan.Text;
                         result.HargaEceran = Convert.ToInt32(txtHargaRetail.Text);
                         result.HargaGrosir = Convert.ToInt32(txtHargaGrosir.Text);
@@ -127,7 +126,7 @@ namespace MumtaazHerbal
                         KodeItem = txtKodeItem.Text,
                         NamaItem = txtNamaItem.Text,
                         SupplierId = Convert.ToInt32(lookSupplier.EditValue),
-                        Stok = Convert.ToInt32(txtStok.Text),
+                        Stok = 0,
                         Satuan = txtSatuan.Text,
                         HargaEceran = Convert.ToInt32(txtHargaRetail.Text),
                         HargaGrosir = Convert.ToInt32(txtHargaGrosir.Text),
@@ -164,7 +163,6 @@ namespace MumtaazHerbal
             txtKodeItem.Text = query.KodeItem;
             txtNamaItem.Text = query.NamaItem;
             lookSupplier.Text = query.NamaSupplier;
-            txtStok.Text = query.Stok;
             txtSatuan.Text = query.Satuan;
             txtHargaRetail.Text = query.HargaEceran;
             txtHargaGrosir.Text = query.HargaGrosir;

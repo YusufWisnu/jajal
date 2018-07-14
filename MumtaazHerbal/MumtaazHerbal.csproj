@@ -165,6 +165,7 @@
     <Compile Include="EntityConfig\PelangganConfiguration.cs" />
     <Compile Include="EntityConfig\PembelianConfiguration.cs" />
     <Compile Include="EntityConfig\PenjualanConfiguration.cs" />
+    <Compile Include="EntityConfig\PiutangConfiguration.cs" />
     <Compile Include="EntityConfig\SupplierConfiguration.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -264,6 +265,50 @@
     <Compile Include="Migrations\201807060046398_cofigurationTablePembelianTableDetilPembelian.Designer.cs">
       <DependentUpon>201807060046398_cofigurationTablePembelianTableDetilPembelian.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807130027139_addUntunginTableDetailPembelians.cs" />
+    <Compile Include="Migrations\201807130027139_addUntunginTableDetailPembelians.Designer.cs">
+      <DependentUpon>201807130027139_addUntunginTableDetailPembelians.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807130030219_AddUntungindetailPenjualans.cs" />
+    <Compile Include="Migrations\201807130030219_AddUntungindetailPenjualans.Designer.cs">
+      <DependentUpon>201807130030219_AddUntungindetailPenjualans.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807130313569_addTablePiutang.cs" />
+    <Compile Include="Migrations\201807130313569_addTablePiutang.Designer.cs">
+      <DependentUpon>201807130313569_addTablePiutang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807130643571_fixSomeRelationshipFromTablePenjualanAndTablePiutang.cs" />
+    <Compile Include="Migrations\201807130643571_fixSomeRelationshipFromTablePenjualanAndTablePiutang.Designer.cs">
+      <DependentUpon>201807130643571_fixSomeRelationshipFromTablePenjualanAndTablePiutang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807130743309_allowNullToTanggajJTFromTablePenjualan.cs" />
+    <Compile Include="Migrations\201807130743309_allowNullToTanggajJTFromTablePenjualan.Designer.cs">
+      <DependentUpon>201807130743309_allowNullToTanggajJTFromTablePenjualan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807130943161_notupdateatall.cs" />
+    <Compile Include="Migrations\201807130943161_notupdateatall.Designer.cs">
+      <DependentUpon>201807130943161_notupdateatall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807131026377_tryingFixingRelationship.cs" />
+    <Compile Include="Migrations\201807131026377_tryingFixingRelationship.Designer.cs">
+      <DependentUpon>201807131026377_tryingFixingRelationship.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807131050170_changeDateTimeToDateTimeNullAbleFromTablePenjuaan.cs" />
+    <Compile Include="Migrations\201807131050170_changeDateTimeToDateTimeNullAbleFromTablePenjuaan.Designer.cs">
+      <DependentUpon>201807131050170_changeDateTimeToDateTimeNullAbleFromTablePenjuaan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807140903591_fixSomecolumnFromTablePiutang.cs" />
+    <Compile Include="Migrations\201807140903591_fixSomecolumnFromTablePiutang.Designer.cs">
+      <DependentUpon>201807140903591_fixSomecolumnFromTablePiutang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807141016123_fixingAnotherRelationship.cs" />
+    <Compile Include="Migrations\201807141016123_fixingAnotherRelationship.Designer.cs">
+      <DependentUpon>201807141016123_fixingAnotherRelationship.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807141047199_fixingAnotherRelatedTable.cs" />
+    <Compile Include="Migrations\201807141047199_fixingAnotherRelatedTable.Designer.cs">
+      <DependentUpon>201807141047199_fixingAnotherRelatedTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Nota.cs">
       <SubType>Component</SubType>
@@ -283,6 +328,12 @@
     <Compile Include="pembayaran.Designer.cs">
       <DependentUpon>pembayaran.cs</DependentUpon>
     </Compile>
+    <Compile Include="pembayaranPiutang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pembayaranPiutang.Designer.cs">
+      <DependentUpon>pembayaranPiutang.cs</DependentUpon>
+    </Compile>
     <Compile Include="pembelian.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -300,6 +351,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Table\Pembelian.cs" />
     <Compile Include="Table\Penjualan.cs" />
+    <Compile Include="Table\Piutang.cs" />
     <Compile Include="Table\supplier.cs" />
     <Compile Include="tmbhItem.cs">
       <SubType>Form</SubType>
@@ -412,6 +464,39 @@
     <EmbeddedResource Include="Migrations\201807060046398_cofigurationTablePembelianTableDetilPembelian.resx">
       <DependentUpon>201807060046398_cofigurationTablePembelianTableDetilPembelian.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807130027139_addUntunginTableDetailPembelians.resx">
+      <DependentUpon>201807130027139_addUntunginTableDetailPembelians.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807130030219_AddUntungindetailPenjualans.resx">
+      <DependentUpon>201807130030219_AddUntungindetailPenjualans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807130313569_addTablePiutang.resx">
+      <DependentUpon>201807130313569_addTablePiutang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807130643571_fixSomeRelationshipFromTablePenjualanAndTablePiutang.resx">
+      <DependentUpon>201807130643571_fixSomeRelationshipFromTablePenjualanAndTablePiutang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807130743309_allowNullToTanggajJTFromTablePenjualan.resx">
+      <DependentUpon>201807130743309_allowNullToTanggajJTFromTablePenjualan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807130943161_notupdateatall.resx">
+      <DependentUpon>201807130943161_notupdateatall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807131026377_tryingFixingRelationship.resx">
+      <DependentUpon>201807131026377_tryingFixingRelationship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807131050170_changeDateTimeToDateTimeNullAbleFromTablePenjuaan.resx">
+      <DependentUpon>201807131050170_changeDateTimeToDateTimeNullAbleFromTablePenjuaan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807140903591_fixSomecolumnFromTablePiutang.resx">
+      <DependentUpon>201807140903591_fixSomecolumnFromTablePiutang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807141016123_fixingAnotherRelationship.resx">
+      <DependentUpon>201807141016123_fixingAnotherRelationship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807141047199_fixingAnotherRelatedTable.resx">
+      <DependentUpon>201807141047199_fixingAnotherRelatedTable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Nota.resx">
       <DependentUpon>Nota.cs</DependentUpon>
     </EmbeddedResource>
@@ -420,6 +505,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="pembayaran.resx">
       <DependentUpon>pembayaran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pembayaranPiutang.resx">
+      <DependentUpon>pembayaranPiutang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pembelian.resx">
       <DependentUpon>pembelian.cs</DependentUpon>

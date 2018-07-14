@@ -25,6 +25,17 @@ namespace MumtaazHerbal.EntityConfig
                 .HasColumnType("varchar")
                 .HasMaxLength(255);
 
+            Property(p => p.TanggalJT)
+                .IsOptional();
+
+            Property(p => p.PiutangId)
+                .IsOptional();
+
+            HasRequired(p => p.Piutang)
+                .WithMany(c => c.Penjualans)
+                .HasForeignKey(p => p.PiutangId)
+                .WillCascadeOnDelete(false);
+
         }
     }
 

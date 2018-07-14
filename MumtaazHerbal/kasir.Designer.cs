@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(kasir));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtTransaksi = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -63,6 +63,8 @@
             this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
             this.lookPelanggan = new DevExpress.XtraEditors.LookUpEdit();
             this.pelangganBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.spinJT = new DevExpress.XtraEditors.SpinEdit();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtTransaksi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTanggal.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTanggal.Properties)).BeginInit();
@@ -78,6 +80,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookPelanggan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pelangganBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinJT.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -222,9 +225,9 @@
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level1";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode2});
             this.gridControl1.Location = new System.Drawing.Point(10, 154);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
@@ -441,11 +444,35 @@
             // 
             this.pelangganBindingSource.DataSource = typeof(MumtaazHerbal.Pelanggan);
             // 
+            // spinJT
+            // 
+            this.spinJT.EditValue = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.spinJT.Location = new System.Drawing.Point(95, 93);
+            this.spinJT.Name = "spinJT";
+            this.spinJT.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spinJT.Size = new System.Drawing.Size(42, 20);
+            this.spinJT.TabIndex = 43;
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Location = new System.Drawing.Point(23, 96);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(69, 13);
+            this.labelControl6.TabIndex = 44;
+            this.labelControl6.Text = "Jatuh Tempo :";
+            // 
             // kasir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 539);
+            this.Controls.Add(this.labelControl6);
+            this.Controls.Add(this.spinJT);
             this.Controls.Add(this.lookPelanggan);
             this.Controls.Add(this.simpleButton6);
             this.Controls.Add(this.btnPending);
@@ -486,6 +513,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookPelanggan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pelangganBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinJT.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -525,5 +553,7 @@
         public DevExpress.XtraEditors.TextEdit txtJumlah;
         public DevExpress.XtraEditors.DateEdit txtTanggal;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit2;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        public DevExpress.XtraEditors.SpinEdit spinJT;
     }
 }
