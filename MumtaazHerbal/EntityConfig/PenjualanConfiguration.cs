@@ -28,13 +28,13 @@ namespace MumtaazHerbal.EntityConfig
             Property(p => p.TanggalJT)
                 .IsOptional();
 
-            Property(p => p.PiutangId)
-                .IsOptional();
+            //Property(p => p.PiutangId)
+            //    .IsOptional();
 
-            HasRequired(p => p.Piutang)
-                .WithMany(c => c.Penjualans)
-                .HasForeignKey(p => p.PiutangId)
-                .WillCascadeOnDelete(false);
+            //HasRequired(p => p.Piutang)
+            //    .WithMany(c => c.Penjualans)
+            //    .HasForeignKey(p => p.PiutangId)
+            //    .WillCascadeOnDelete(false);
 
         }
     }

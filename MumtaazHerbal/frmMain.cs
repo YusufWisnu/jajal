@@ -200,6 +200,22 @@ namespace MumtaazHerbal
             piutang.Show();
         }
 
+        private void barButtonItem14_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(dftrPembayaranPiutang))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            dftrPembayaranPiutang dftrPiutang= new dftrPembayaranPiutang();
+            dftrPiutang.MdiParent = this;
+            dftrPiutang.Show();
+        }
+
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             //Application.Exit();

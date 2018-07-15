@@ -193,11 +193,11 @@ namespace MumtaazHerbal
                 {
                     NoTransaksi = txtTransaksi.Text,
                     Tanggal = DateTime.Now,
-                    Total = int.Parse(txtTotal.Text.Replace(",",""))
-
+                    Total = int.Parse(txtTotal.Text.Replace(",", "")),
+                    PelangganId = int.Parse(lookPelanggan.EditValue.ToString()),
                 };
 
-                for(int i = 0; i < gridView1.DataRowCount; i++)
+                for (int i = 0; i < gridView1.DataRowCount; i++)
                 {
                     var rowHandle = gridView1.GetRowHandle(i);
                     var jumlahBayar = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, gridView1.Columns[6]));
@@ -211,12 +211,20 @@ namespace MumtaazHerbal
                     .Where(x => x.NoTransaksi == noTransaksi)
                     .FirstOrDefault();
 
+                    var detailPiutang = new DetailPiutang()
+                    {
+                        JumlahBayar = jumlahBayar,
+                        Penjualan = penjualan,
+                        Piutang = piutang,
+                    };
+
                     penjualan.Sisa -= jumlahBayar;
-                    penjualan.Piutang = piutang;
+                    //penjualan.Piutang = piutang;
 
                     if (penjualan.Sisa == 0)
                         penjualan.TanggalJT = null;
 
+                    mumtaaz.DetailPiutangs.Add(detailPiutang);
                     mumtaaz.Entry(penjualan).State = System.Data.Entity.EntityState.Modified;
                     
                 }
@@ -271,6 +279,9 @@ namespace MumtaazHerbal
             txtTotal.Text = "0";
         }
 
-
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            RefreshPage();
+        }
     }
 }

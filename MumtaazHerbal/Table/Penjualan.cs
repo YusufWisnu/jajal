@@ -33,9 +33,11 @@ namespace MumtaazHerbal
 
         public DateTime? TanggalJT { get; set; }
 
-        public int? PiutangId { get; set; }
+        public IList<DetailPiutang> DetailPiutangs { get; set; }
 
-        public Piutang Piutang { get; set; }
+        //public int? PiutangId { get; set; }
+
+        //public Piutang Piutang { get; set; }
 
     }
 

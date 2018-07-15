@@ -19,5 +19,7 @@ namespace MumtaazHerbal
         public string Email { get; set; }
 
         public IList<Penjualan> Penjualans { get; set; }
+
+        public IList<Piutang> Piutangs { get; set; }
     }
 }

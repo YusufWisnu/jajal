@@ -341,6 +341,7 @@
             this.btnCancel.Size = new System.Drawing.Size(79, 25);
             this.btnCancel.TabIndex = 50;
             this.btnCancel.Text = "Batal";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // simpleButton1
             // 

@@ -154,6 +154,33 @@ namespace MumtaazHerbal
                                   where o.PembelianId == query.Id
                                   select o).ToList();
 
+                    //update stock
+                    var stok = (from o in mumtaaz.DetailPembelians
+                                join a in mumtaaz.Items on o.ItemId equals a.Id
+                                join b in mumtaaz.Pembelians on o.PembelianId equals b.Id
+                                where b.NoTransaksi == noTransaksi
+                                select new
+                                {
+                                    ItemId = a.Id,
+                                    jumlahBarang = o.JumlahBarang
+
+                                }).ToList();
+
+                    foreach (var i in stok)
+                    {
+                        var itemList = mumtaaz.Items.Where(x => x.Id == i.ItemId).FirstOrDefault();
+
+                        itemList.Stok -= i.jumlahBarang;
+
+                        if (itemList.Stok < 0)
+                        {
+                            MessageBox.Show("tidak bisa hapus transaksi ini\n" +
+                                            "item yang akan dihapus lebih besar dari jumlah stok item");
+                            return;
+                        }
+                        mumtaaz.Entry(itemList).State = System.Data.Entity.EntityState.Modified;
+                    }
+
                     //hapus related pembelian (detail pembelian)
                     foreach (var i in query1)
                         mumtaaz.DetailPembelians.Remove(i);
@@ -161,7 +188,7 @@ namespace MumtaazHerbal
 
                     mumtaaz.Pembelians.Remove(query);
                     mumtaaz.SaveChanges();
-
+                    MessageBox.Show("Berhasil menghapus data ini", "Mumtaaz Herbal", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             

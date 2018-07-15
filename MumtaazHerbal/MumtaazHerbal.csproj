@@ -130,6 +130,12 @@
     <Compile Include="dftrPel.Designer.cs">
       <DependentUpon>dftrPel.cs</DependentUpon>
     </Compile>
+    <Compile Include="dftrPembayaranPiutang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dftrPembayaranPiutang.Designer.cs">
+      <DependentUpon>dftrPembayaranPiutang.cs</DependentUpon>
+    </Compile>
     <Compile Include="dftrPending.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,7 +166,9 @@
     <Compile Include="editHargaPembelian.Designer.cs">
       <DependentUpon>editHargaPembelian.cs</DependentUpon>
     </Compile>
+    <Compile Include="EntityConfig\DetailPembelianConfiguration.cs" />
     <Compile Include="EntityConfig\DetailPenjualanConfiguration.cs" />
+    <Compile Include="EntityConfig\DetailPiutangConfiguration.cs" />
     <Compile Include="EntityConfig\ItemConfiguration.cs" />
     <Compile Include="EntityConfig\PelangganConfiguration.cs" />
     <Compile Include="EntityConfig\PembelianConfiguration.cs" />
@@ -309,6 +317,22 @@
     <Compile Include="Migrations\201807141047199_fixingAnotherRelatedTable.Designer.cs">
       <DependentUpon>201807141047199_fixingAnotherRelatedTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807150306556_stillConfuseOnRelatedTable.cs" />
+    <Compile Include="Migrations\201807150306556_stillConfuseOnRelatedTable.Designer.cs">
+      <DependentUpon>201807150306556_stillConfuseOnRelatedTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807150337156_FixingAnotherRelatedTablepls.cs" />
+    <Compile Include="Migrations\201807150337156_FixingAnotherRelatedTablepls.Designer.cs">
+      <DependentUpon>201807150337156_FixingAnotherRelatedTablepls.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807150713052_tryingCasCadeDelete.cs" />
+    <Compile Include="Migrations\201807150713052_tryingCasCadeDelete.Designer.cs">
+      <DependentUpon>201807150713052_tryingCasCadeDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807150717350_problemWithforeignKey.cs" />
+    <Compile Include="Migrations\201807150717350_problemWithforeignKey.Designer.cs">
+      <DependentUpon>201807150717350_problemWithforeignKey.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Nota.cs">
       <SubType>Component</SubType>
@@ -344,6 +368,7 @@
     <Compile Include="SqlHelper.cs" />
     <Compile Include="Table\DetailPembelian.cs" />
     <Compile Include="Table\DetailPenjualan.cs" />
+    <Compile Include="Table\DetailPiutang.cs" />
     <Compile Include="Table\item.cs" />
     <Compile Include="MumtaazContext.cs" />
     <Compile Include="Table\NotaPenjualan.cs" />
@@ -388,6 +413,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="dftrPel.resx">
       <DependentUpon>dftrPel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dftrPembayaranPiutang.resx">
+      <DependentUpon>dftrPembayaranPiutang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="dftrPending.resx">
       <DependentUpon>dftrPending.cs</DependentUpon>
@@ -496,6 +524,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807141047199_fixingAnotherRelatedTable.resx">
       <DependentUpon>201807141047199_fixingAnotherRelatedTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807150306556_stillConfuseOnRelatedTable.resx">
+      <DependentUpon>201807150306556_stillConfuseOnRelatedTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807150337156_FixingAnotherRelatedTablepls.resx">
+      <DependentUpon>201807150337156_FixingAnotherRelatedTablepls.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807150713052_tryingCasCadeDelete.resx">
+      <DependentUpon>201807150713052_tryingCasCadeDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807150717350_problemWithforeignKey.resx">
+      <DependentUpon>201807150717350_problemWithforeignKey.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nota.resx">
       <DependentUpon>Nota.cs</DependentUpon>

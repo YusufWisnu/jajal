@@ -15,11 +15,11 @@ namespace MumtaazHerbal
 
         public int Total { get; set; }
 
-        //public int Penjualan_Id { get; set; }
+        public int PelangganId { get; set; }
 
-        //public Penjualan Penjualan { get; set; }
+        public Pelanggan Pelanggan { get; set; }
 
-        public IList<Penjualan> Penjualans { get; set; }
+        public IList<DetailPiutang> DetailPiutangs { get; set; }
 
     }
 }

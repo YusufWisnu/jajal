@@ -199,7 +199,7 @@ namespace MumtaazHerbal
                 if (int.Parse(txtKredit.Text.Replace(",", "")) > 0)
                 {
                     penjualan.TanggalJT = DateTime.Now.AddDays(int.Parse(kasir.spinJT.Text));
-                    penjualan.Sisa = int.Parse(txtTunai.Text.Replace(",", ""));
+                    penjualan.Sisa = int.Parse(txtKredit.Text.Replace(",", ""));
                 }
                 else
                 {
