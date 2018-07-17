@@ -333,6 +333,10 @@
     <Compile Include="Migrations\201807150717350_problemWithforeignKey.Designer.cs">
       <DependentUpon>201807150717350_problemWithforeignKey.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807160045591_addColumnSisaFromTablePiutang.cs" />
+    <Compile Include="Migrations\201807160045591_addColumnSisaFromTablePiutang.Designer.cs">
+      <DependentUpon>201807160045591_addColumnSisaFromTablePiutang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Nota.cs">
       <SubType>Component</SubType>
@@ -536,6 +540,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807150717350_problemWithforeignKey.resx">
       <DependentUpon>201807150717350_problemWithforeignKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807160045591_addColumnSisaFromTablePiutang.resx">
+      <DependentUpon>201807160045591_addColumnSisaFromTablePiutang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nota.resx">
       <DependentUpon>Nota.cs</DependentUpon>

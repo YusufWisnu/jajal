@@ -153,7 +153,19 @@ namespace MumtaazHerbal
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(pembayaranPiutang))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+            bool edit = true;
+            var noTransaksi = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "NoTransaksi").ToString();
+            var pmb = new pembayaranPiutang(this, gridView1, edit, noTransaksi);
+            pmb.MdiParent = this.ParentForm;
+            pmb.Show();
         }
     }
 }

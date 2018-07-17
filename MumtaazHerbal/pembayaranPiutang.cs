@@ -9,19 +9,32 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using MumtaazHerbal.Function;
 using System.Data.SqlClient;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace MumtaazHerbal
 {
     public partial class pembayaranPiutang : DevExpress.XtraEditors.XtraForm
     {
         private DbHelper dbhelper;
-
+        private dftrPembayaranPiutang dftrPiutang;
+        private GridView gridView;
+        private bool edit;
+        private string noTransaksi;
 
 
         public pembayaranPiutang()
         {
             InitializeComponent();
             dbhelper = new DbHelper();
+        }
+
+        public pembayaranPiutang(dftrPembayaranPiutang dftrPiutang, GridView gridView, bool edit, string noTransaksi)
+            :this()
+        {
+            this.dftrPiutang = dftrPiutang;
+            this.gridView = gridView;
+            this.edit = edit;
+            this.noTransaksi = noTransaksi;
         }
 
         //public int FocusRowHandle { get { return gridView1.FocusedRowHandle; } }
@@ -39,6 +52,11 @@ namespace MumtaazHerbal
             pelangganBindingSource.DataSource = mumtaaz.Pelanggans.ToList();
 
             LoadData(lookPelanggan.Text);
+
+            //edit piutang
+            if (edit)
+                GetData();
+
         }
 
 
@@ -93,6 +111,7 @@ namespace MumtaazHerbal
             {
 
                 var JumlahBayar = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[6]));
+                var total = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[4]));
 
                 if (string.IsNullOrEmpty(lookPelanggan.Text) && JumlahBayar > 0)
                 {
@@ -107,13 +126,13 @@ namespace MumtaazHerbal
                     .Where(x => x.NoTransaksi == noTransaksi)
                     .FirstOrDefault();
 
-                if(JumlahBayar > query.Sisa)
+                if(JumlahBayar > total)
                 {
                     MessageBox.Show("Jumlah bayar yang diinput lebih besar dari Total.\n" +
-                                    "Jumlah Total = " + query.Sisa.ToString() + "\n" +
+                                    "Jumlah Total = " + total + "\n" +
                                     "Jumlah diketik = '" + JumlahBayar + "'" +
                                     "Jumlah bayar akan diotomatis dirubah sesuai jumlah total", "Mumtaaz Herbal", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    gridView1.SetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[6], query.Sisa);
+                    gridView1.SetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[6], total);
                 }
                 GetTotalHarga();
             }
@@ -181,6 +200,36 @@ namespace MumtaazHerbal
 
         private void btnBayar_Click(object sender, EventArgs e)
         {
+            if (edit)
+            {
+                DeleteEditTransaksi();
+                edit = false;
+                SimpanData();
+                dftrPiutang.LoadData();
+            }
+            else
+            {
+                SimpanData();
+
+            }
+        }
+
+        public void RefreshPage()
+        {
+            edit = false;
+            pembayaranPiutang_Load(null, EventArgs.Empty);
+            txtTotal.Text = "0";
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            RefreshPage();
+        }
+
+
+        //get informasi daftar pembelian
+        public void SimpanData()
+        {
             if (!IsJumlahBayarFill())
             {
                 MessageBox.Show("Jumlah bayar transaksi belum diisi.", "Mumtaaz Herbal", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -215,6 +264,7 @@ namespace MumtaazHerbal
                     {
                         JumlahBayar = jumlahBayar,
                         Penjualan = penjualan,
+                        Sisa = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "Sisa")),
                         Piutang = piutang,
                     };
 
@@ -226,62 +276,92 @@ namespace MumtaazHerbal
 
                     mumtaaz.DetailPiutangs.Add(detailPiutang);
                     mumtaaz.Entry(penjualan).State = System.Data.Entity.EntityState.Modified;
-                    
                 }
                 mumtaaz.Piutangs.Add(piutang);
                 mumtaaz.SaveChanges();
                 MessageBox.Show("Transaksi berhasil", "Mumtaaz Herbal", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 RefreshPage();
+            }
+        }
 
-                //Add Piutang
-                //for (int i = 0; i < gridView1.DataRowCount; i++)
-                //{
-                //    var rowHandle = gridView1.GetRowHandle(i);
-                //    var noTransaksi = gridView1.GetRowCellValue(rowHandle, gridView1.Columns[0]).ToString();
+        public void GetData()
+        {
+            var rowHandle = gridView.FocusedRowHandle;
+            var noTransaksi = gridView.GetRowCellValue(rowHandle, "NoTransaksi").ToString();
 
-                //    var penjualan = new Penjualan();
-                //    var piutang = new Piutang()
-                //    {
-                //        NoTransaksi = txtTransaksi.Text,
-                //        Penjualan = penjualan,
+            using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
+            {
+                //Get Informasi Penjualan
+                var transaksi = mumtaaz.Piutangs
+                    .Where(x => x.NoTransaksi == noTransaksi)
+                    .FirstOrDefault();
 
-                //    };
-                //}
+                txtTanggal.EditValue = transaksi.Tanggal;
+                txtTransaksi.Text = transaksi.NoTransaksi.ToString();
+                lookPelanggan.EditValue = transaksi.PelangganId;
+                txtTotal.Text = transaksi.Total.ToString();
+
+                //get list piutang
+                var cn = new SqlConnection(dbhelper.ConnectionString);
+                cn.Open();
+                var listTransaksi = @"SELECT Penjualans.NoTransaksi, Penjualans.Tanggal, Pelanggans.Nama, Penjualans.TanggalJT, DetailPiutangs.Sisa, DetailPiutangs.JumlahBayar
+                                    FROM DetailPiutangs
+                                    INNER JOIN Piutangs ON Piutangs.Id = DetailPiutangs.PiutangId
+                                    INNER JOIN Penjualans ON Penjualans.Id = DetailPiutangs.PenjualanId
+                                    INNER JOIN Pelanggans ON Pelanggans.Id = Penjualans.pelangganId
+                                    WHERE Piutangs.NoTransaksi = '"+noTransaksi+"'";
+
+                var cmd = new SqlCommand(listTransaksi, cn);
+                var ada = new SqlDataAdapter(cmd);
+                var dt = GetTable();
+                ada.Fill(dt);
+                gridControl1.DataSource = dt;
+                cn.Close();
 
             }
-
         }
 
-        //save transaksi piutang
-        public void AddPiutangTransaksi()
+        //delete transaksi yang ingin di update
+        public void DeleteEditTransaksi()
         {
-            //using(var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
-            //{
-            //    for(int i = 0; i < gridView1.DataRowCount; i++)
-            //    {
-            //        var rowHandle = gridView1.GetRowHandle(i);
-            //        var noTransaksi = gridView1.GetRowCellValue(rowHandle, gridView1.Columns[0]).ToString();
+            using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
+            {
+                //find id yang di edit
+                var query = (from i in mumtaaz.Piutangs
+                             where i.NoTransaksi == txtTransaksi.Text
+                             select i).FirstOrDefault();
 
+                //get related pembelian (detail pembelian)
+                var query1 = (from o in mumtaaz.DetailPiutangs
+                              where o.PiutangId == query.Id
+                              select o).ToList();
 
-            //        var piutang = new Piutang()
-            //        {
-            //            NoTransaksi = txtTransaksi.Text,
-                        
-            //        };
-            //    }
-            //}
+                //update item
+                for (int i = 0; i < gridView1.DataRowCount; i++)
+                {
+                    var rowHandle = gridView1.GetRowHandle(i);
+                    var noTransaksiPenjualan = gridView1.GetRowCellValue(rowHandle, gridView1.Columns[0]).ToString();
+
+                    var stok = (from o in mumtaaz.DetailPiutangs
+                                join a in mumtaaz.Penjualan on o.PenjualanId equals a.Id
+                                where a.NoTransaksi == noTransaksiPenjualan
+                                select o.JumlahBayar).ToList();
+
+                    var penjualanList = mumtaaz.Penjualan.Where(x => x.NoTransaksi == noTransaksiPenjualan).FirstOrDefault();
+
+                    penjualanList.Sisa += stok[i];
+                    mumtaaz.Entry(penjualanList).State = System.Data.Entity.EntityState.Modified;
+                }
+
+                //hapus related pembelian (detail pembelian)
+                foreach (var i in query1)
+                    mumtaaz.DetailPiutangs.Remove(i);
+
+                mumtaaz.Piutangs.Remove(query);
+                mumtaaz.SaveChanges();
+            }
         }
 
-        public void RefreshPage()
-        {
-            //edit = false;
-            pembayaranPiutang_Load(null, EventArgs.Empty);
-            txtTotal.Text = "0";
-        }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            RefreshPage();
-        }
     }
 }

@@ -281,7 +281,6 @@ namespace MumtaazHerbal
                         .Where(x => x.KodeItem == kodeItem)
                         .FirstOrDefault();
 
-
                     var detailPembelian = new DetailPembelian()
                     {
                         HargaBarang = Convert.ToInt32(gridView.GetRowCellValue(rowHandle, gridView.Columns[5])),

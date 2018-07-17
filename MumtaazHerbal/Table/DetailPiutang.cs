@@ -12,6 +12,9 @@
 
         public Penjualan Penjualan { get; set; }
 
+        public int Sisa { get; set; }
+
         public int JumlahBayar { get; set; }
+
     }
 }
