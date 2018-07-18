@@ -216,6 +216,21 @@ namespace MumtaazHerbal
             dftrPiutang.Show();
         }
 
+        private void barButtonItem15_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(dftrKasKeluar))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            dftrKasKeluar kaskeluar= new dftrKasKeluar();
+            kaskeluar.MdiParent = this;
+            kaskeluar.Show();
+        }
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             //Application.Exit();

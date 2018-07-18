@@ -16,10 +16,6 @@ namespace MumtaazHerbal.EntityConfig
                 .WithMany(c => c.Piutangs)
                 .HasForeignKey(p => p.PelangganId)
                 .WillCascadeOnDelete(false);
-
-
-
-
         }
     }
 

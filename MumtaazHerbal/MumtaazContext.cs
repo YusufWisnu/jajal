@@ -17,6 +17,7 @@ namespace MumtaazHerbal
         public virtual DbSet<DetailPembelian> DetailPembelians { get; set; }
         public virtual DbSet<Piutang> Piutangs { get; set; }
         public virtual DbSet<DetailPiutang> DetailPiutangs { get; set; }
+        public virtual DbSet<KasKeluar> KasKeluars { get; set; }
 
         public MumtaazContext(string _connectionString)
             :base(_connectionString)
@@ -41,6 +42,7 @@ namespace MumtaazHerbal
             modelBuilder.Configurations.Add(new DetailPembelianConfiguration());
             modelBuilder.Configurations.Add(new PiutangConfiguration());
             modelBuilder.Configurations.Add(new DetailPiutangConfiguration());
+            modelBuilder.Configurations.Add(new KasKeluarConfiguration());
 
         }
 

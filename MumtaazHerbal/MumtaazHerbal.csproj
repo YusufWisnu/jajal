@@ -170,6 +170,7 @@
     <Compile Include="EntityConfig\DetailPenjualanConfiguration.cs" />
     <Compile Include="EntityConfig\DetailPiutangConfiguration.cs" />
     <Compile Include="EntityConfig\ItemConfiguration.cs" />
+    <Compile Include="EntityConfig\KasKeluarConfiguration.cs" />
     <Compile Include="EntityConfig\PelangganConfiguration.cs" />
     <Compile Include="EntityConfig\PembelianConfiguration.cs" />
     <Compile Include="EntityConfig\PenjualanConfiguration.cs" />
@@ -194,6 +195,7 @@
       <DependentUpon>frmPrint.cs</DependentUpon>
     </Compile>
     <Compile Include="Function\DbHelper.cs" />
+    <Compile Include="Function\NotaPembayaranPiutang.cs" />
     <Compile Include="Function\Query.cs" />
     <Compile Include="Function\Receipt.cs" />
     <Compile Include="Function\Utilities.cs" />
@@ -214,6 +216,12 @@
     </Compile>
     <Compile Include="kasir.Designer.cs">
       <DependentUpon>kasir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dftrKasKeluar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dftrKasKeluar.Designer.cs">
+      <DependentUpon>dftrKasKeluar.cs</DependentUpon>
     </Compile>
     <Compile Include="KoneksiDatabase.cs">
       <SubType>Form</SubType>
@@ -337,6 +345,10 @@
     <Compile Include="Migrations\201807160045591_addColumnSisaFromTablePiutang.Designer.cs">
       <DependentUpon>201807160045591_addColumnSisaFromTablePiutang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807180029318_AddTableKasKeluar.cs" />
+    <Compile Include="Migrations\201807180029318_AddTableKasKeluar.Designer.cs">
+      <DependentUpon>201807180029318_AddTableKasKeluar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Nota.cs">
       <SubType>Component</SubType>
@@ -349,6 +361,18 @@
     </Compile>
     <Compile Include="NotaPenjualan.Designer.cs">
       <DependentUpon>NotaPenjualan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotaPiutang.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NotaPiutang.Designer.cs">
+      <DependentUpon>NotaPiutang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotaPiutangViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NotaPiutangViewer.Designer.cs">
+      <DependentUpon>NotaPiutangViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="pembayaran.cs">
       <SubType>Form</SubType>
@@ -375,6 +399,7 @@
     <Compile Include="Table\DetailPiutang.cs" />
     <Compile Include="Table\item.cs" />
     <Compile Include="MumtaazContext.cs" />
+    <Compile Include="Table\KasKeluar.cs" />
     <Compile Include="Table\NotaPenjualan.cs" />
     <Compile Include="Table\Pelanggan.cs" />
     <Compile Include="Program.cs" />
@@ -387,6 +412,10 @@
     </Compile>
     <Compile Include="tmbhItem.Designer.cs">
       <DependentUpon>tmbhItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tmbhKasKeluar.cs" />
+    <Compile Include="tmbhKasKeluar.Designer.cs">
+      <DependentUpon>tmbhKasKeluar.cs</DependentUpon>
     </Compile>
     <Compile Include="tmbhPel.cs">
       <SubType>Form</SubType>
@@ -453,6 +482,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="kasir.resx">
       <DependentUpon>kasir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dftrKasKeluar.resx">
+      <DependentUpon>dftrKasKeluar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KoneksiDatabase.resx">
       <DependentUpon>KoneksiDatabase.cs</DependentUpon>
@@ -544,11 +576,20 @@
     <EmbeddedResource Include="Migrations\201807160045591_addColumnSisaFromTablePiutang.resx">
       <DependentUpon>201807160045591_addColumnSisaFromTablePiutang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807180029318_AddTableKasKeluar.resx">
+      <DependentUpon>201807180029318_AddTableKasKeluar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Nota.resx">
       <DependentUpon>Nota.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NotaPenjualan.resx">
       <DependentUpon>NotaPenjualan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotaPiutang.resx">
+      <DependentUpon>NotaPiutang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotaPiutangViewer.resx">
+      <DependentUpon>NotaPiutangViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="pembayaran.resx">
       <DependentUpon>pembayaran.cs</DependentUpon>

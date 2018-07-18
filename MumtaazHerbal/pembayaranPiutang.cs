@@ -210,7 +210,7 @@ namespace MumtaazHerbal
             else
             {
                 SimpanData();
-
+                RefreshPage();
             }
         }
 
@@ -223,9 +223,12 @@ namespace MumtaazHerbal
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            RefreshPage();
+            if(gridView1.DataRowCount > 0)
+            {
+                MessageBox.Show("Batalkan transaksi ini ?", "Mumtaaz Herbal", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                RefreshPage();
+            }
         }
-
 
         //get informasi daftar pembelian
         public void SimpanData()
@@ -280,7 +283,10 @@ namespace MumtaazHerbal
                 mumtaaz.Piutangs.Add(piutang);
                 mumtaaz.SaveChanges();
                 MessageBox.Show("Transaksi berhasil", "Mumtaaz Herbal", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                RefreshPage();
+
+                if (checkPrint.Checked == true)
+                    CetakPiutang();
+                
             }
         }
 
@@ -363,5 +369,52 @@ namespace MumtaazHerbal
         }
 
 
+        //get informasi piutang untuk di pass ke nota
+        List<NotaPembayaranPiutang> piutangs = new List<NotaPembayaranPiutang>();
+        public void GetInformasiPiutang()
+        {
+            for (int i = 0; i < gridView1.DataRowCount; i++)
+            {
+                var rowHandle = gridView1.GetRowHandle(i);
+                var jumlahBayar = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "JumlahBayar"));
+
+                if (jumlahBayar <= 0)
+                    continue;
+                
+
+                var piutang = new NotaPembayaranPiutang()
+                {
+                    NoTransaksi = gridView1.GetRowCellValue(rowHandle, gridView1.Columns[0]).ToString().ToUpper(),
+                    TanggalTrs = gridView1.GetRowCellValue(rowHandle, gridView1.Columns[1]).ToString(),
+                    Jumlah = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, gridView1.Columns[4])),
+                    JumlahBayar = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, gridView1.Columns[6]))
+                };
+
+                piutangs.Add(piutang);
+            }
+        }
+
+        public void CetakPiutang()
+        {
+            using (var printPiutang = new NotaPiutangViewer())
+            {
+                GetInformasiPiutang();
+                printPiutang.PrintInvoicePiutang(this, piutangs);
+                printPiutang.ShowDialog();
+                piutangs.Clear();
+            }
+        }
+
+        private void pembayaranPiutang_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (gridView1.DataRowCount != 0)
+            {
+                if (MessageBox.Show("Transaksi " + txtTransaksi.Text + " belum selesai, batalkan transaksi ?.", "Mumtaaz Herbal", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                {
+                    e.Cancel = true;
+                    return;
+                }
+            }
+        }
     }
 }

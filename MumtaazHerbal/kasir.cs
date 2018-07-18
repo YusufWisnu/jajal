@@ -131,8 +131,6 @@ namespace MumtaazHerbal
             lookPelanggan.EditValue = query;
         }
 
-        
-
         public void CreateNewRow(string kodeItem, string namaItem,string satuan, int harga)
         {
             int total = 0;
@@ -348,7 +346,6 @@ namespace MumtaazHerbal
                     Total = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, gridView1.Columns[6])),
                     Tipe = gridView1.GetRowCellValue(rowHandle, gridView1.Columns[4]).ToString()
                 };
-
                 receipts.Add(receipt);
             }
         }
