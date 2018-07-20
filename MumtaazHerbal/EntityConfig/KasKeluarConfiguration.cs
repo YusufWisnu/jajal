@@ -12,8 +12,14 @@ namespace MumtaazHerbal.EntityConfig
 
             Property(p => p.NoTransaksi)
                 .HasColumnType("varchar")
-                .HasMaxLength(255);
-            
+                .HasMaxLength(255)
+                .IsRequired();
+
+            Property(p => p.Keterangan)
+                .HasColumnType("varchar")
+                .HasMaxLength(255)
+                .IsRequired();
+
         }
     }
 

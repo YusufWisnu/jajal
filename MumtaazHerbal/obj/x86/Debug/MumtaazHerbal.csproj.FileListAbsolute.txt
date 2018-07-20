@@ -467,3 +467,7 @@ C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Not
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.NotaPiutangViewer.resources
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.dftrKasKeluar.resources
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.AddTableKasKeluar.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.kas.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.FixingTableAndAddTableDetailKasKeluar.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.Migrations.DeleteSomeColumnInTableKasKeluarAndDetail.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Debug\MumtaazHerbal.cekHargaTerakhir.resources

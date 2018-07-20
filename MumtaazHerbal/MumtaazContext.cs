@@ -18,6 +18,7 @@ namespace MumtaazHerbal
         public virtual DbSet<Piutang> Piutangs { get; set; }
         public virtual DbSet<DetailPiutang> DetailPiutangs { get; set; }
         public virtual DbSet<KasKeluar> KasKeluars { get; set; }
+        public virtual DbSet<DetailKasKeluar> DetailKasKeluars { get; set; }
 
         public MumtaazContext(string _connectionString)
             :base(_connectionString)

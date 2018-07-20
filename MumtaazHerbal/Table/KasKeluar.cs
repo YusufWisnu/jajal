@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MumtaazHerbal
@@ -14,6 +15,9 @@ namespace MumtaazHerbal
 
         public string Keterangan { get; set; }
 
-        public int Jumlah { get; set; }
+        public int Total { get; set; }
+
+        public IList<DetailKasKeluar> DetailKasKeluars { get; set; } 
     }
+
 }

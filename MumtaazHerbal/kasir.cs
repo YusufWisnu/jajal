@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using MumtaazHerbal.Function;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 
 namespace MumtaazHerbal
 {
@@ -51,7 +52,7 @@ namespace MumtaazHerbal
         //pembayaran
         private void simpleButton4_Click(object sender, EventArgs e)
         {
-            EditKasir = true;
+            //EditKasir = true;
 
             if (gridView1.DataRowCount != 0)
             {
@@ -433,7 +434,6 @@ namespace MumtaazHerbal
                         .Select(x => x.HargaGrosir)
                         .FirstOrDefault();
 
-
                     gridView1.SetRowCellValue(rowHandle, gridView1.Columns[5], harga);
 
                     var jumlah = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, gridView1.Columns[3]));
@@ -528,6 +528,18 @@ namespace MumtaazHerbal
             }
         }
 
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            GridHitInfo hi = gridView1.CalcHitInfo(gridControl1.PointToClient(MousePosition));
+            var kodeItem = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "KodeItem").ToString();
+            var namaItem = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "NamaItem").ToString();
+
+            if (hi.InRowCell)
+            {
+                var hargaTerakhir = new cekHargaTerakhir(this, kodeItem, namaItem);
+                hargaTerakhir.ShowDialog();
+            }
+        }
     }
 }
 

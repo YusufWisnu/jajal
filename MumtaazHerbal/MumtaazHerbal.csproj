@@ -106,6 +106,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppSetting.cs" />
+    <Compile Include="cekHargaTerakhir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cekHargaTerakhir.Designer.cs">
+      <DependentUpon>cekHargaTerakhir.cs</DependentUpon>
+    </Compile>
     <Compile Include="connection.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,7 @@
     <Compile Include="editHargaPembelian.Designer.cs">
       <DependentUpon>editHargaPembelian.cs</DependentUpon>
     </Compile>
+    <Compile Include="EntityConfig\DetailKasKeluarConfiguration.cs" />
     <Compile Include="EntityConfig\DetailPembelianConfiguration.cs" />
     <Compile Include="EntityConfig\DetailPenjualanConfiguration.cs" />
     <Compile Include="EntityConfig\DetailPiutangConfiguration.cs" />
@@ -210,6 +217,12 @@
     </Compile>
     <Compile Include="historyPmb.Designer.cs">
       <DependentUpon>historyPmb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kas.Designer.cs">
+      <DependentUpon>kas.cs</DependentUpon>
     </Compile>
     <Compile Include="kasir.cs">
       <SubType>Form</SubType>
@@ -349,6 +362,14 @@
     <Compile Include="Migrations\201807180029318_AddTableKasKeluar.Designer.cs">
       <DependentUpon>201807180029318_AddTableKasKeluar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807190825441_FixingTableAndAddTableDetailKasKeluar.cs" />
+    <Compile Include="Migrations\201807190825441_FixingTableAndAddTableDetailKasKeluar.Designer.cs">
+      <DependentUpon>201807190825441_FixingTableAndAddTableDetailKasKeluar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807190834361_fixinganotherrelatedtabless.cs" />
+    <Compile Include="Migrations\201807190834361_fixinganotherrelatedtabless.Designer.cs">
+      <DependentUpon>201807190834361_fixinganotherrelatedtabless.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Nota.cs">
       <SubType>Component</SubType>
@@ -394,6 +415,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlHelper.cs" />
+    <Compile Include="Table\DetailKasKeluar.cs" />
     <Compile Include="Table\DetailPembelian.cs" />
     <Compile Include="Table\DetailPenjualan.cs" />
     <Compile Include="Table\DetailPiutang.cs" />
@@ -413,10 +435,6 @@
     <Compile Include="tmbhItem.Designer.cs">
       <DependentUpon>tmbhItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="tmbhKasKeluar.cs" />
-    <Compile Include="tmbhKasKeluar.Designer.cs">
-      <DependentUpon>tmbhKasKeluar.cs</DependentUpon>
-    </Compile>
     <Compile Include="tmbhPel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -435,6 +453,9 @@
     <Compile Include="tmbhSupp.Designer.cs">
       <DependentUpon>tmbhSupp.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="cekHargaTerakhir.resx">
+      <DependentUpon>cekHargaTerakhir.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="connection.resx">
       <DependentUpon>connection.cs</DependentUpon>
     </EmbeddedResource>
@@ -479,6 +500,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="historyPmb.resx">
       <DependentUpon>historyPmb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kas.resx">
+      <DependentUpon>kas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="kasir.resx">
       <DependentUpon>kasir.cs</DependentUpon>
@@ -578,6 +602,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807180029318_AddTableKasKeluar.resx">
       <DependentUpon>201807180029318_AddTableKasKeluar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807190825441_FixingTableAndAddTableDetailKasKeluar.resx">
+      <DependentUpon>201807190825441_FixingTableAndAddTableDetailKasKeluar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807190834361_fixinganotherrelatedtabless.resx">
+      <DependentUpon>201807190834361_fixinganotherrelatedtabless.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nota.resx">
       <DependentUpon>Nota.cs</DependentUpon>

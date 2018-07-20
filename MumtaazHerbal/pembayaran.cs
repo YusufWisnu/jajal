@@ -137,7 +137,8 @@ namespace MumtaazHerbal
                     return;
 
                 Simpan();
-                
+                kasir.RefreshPage();
+                this.Close();
             }
             
             
@@ -161,11 +162,12 @@ namespace MumtaazHerbal
             //penjualan kasir
             else
             {
-                if (CekStok())
-                    return;
+                if (CekStok()) return;
 
                 Simpan();
                 nota.PrintInvoice(kasir, this, receipt);
+                kasir.RefreshPage();
+                this.Close();
             }
             
         }
@@ -236,10 +238,6 @@ namespace MumtaazHerbal
                 mumtaaz.Penjualan.Add(penjualan);
                 mumtaaz.SaveChanges();
                 XtraMessageBox.Show("Transaksi Berhasil.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                kasir.RefreshPage();
-                receipt.Clear();
-                this.Close();
-
 
                 //load daftar penjualan setelah edit selesai
                 if (edit)

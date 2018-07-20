@@ -70,6 +70,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.tglSesudah.Size = new System.Drawing.Size(100, 20);
             this.tglSesudah.TabIndex = 52;
+            this.tglSesudah.EditValueChanged += new System.EventHandler(this.tglSesudah_EditValueChanged);
             // 
             // labelControl3
             // 
@@ -90,6 +91,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.tglSebelum.Size = new System.Drawing.Size(100, 20);
             this.tglSebelum.TabIndex = 50;
+            this.tglSebelum.EditValueChanged += new System.EventHandler(this.tglSebelum_EditValueChanged);
             // 
             // labelControl2
             // 
@@ -105,6 +107,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(301, 20);
             this.txtSearch.TabIndex = 44;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // gridControl1
             // 
@@ -178,7 +181,7 @@
             // 
             this.Jumlah.Caption = "Jumlah";
             this.Jumlah.ColumnEdit = this.repositoryItemTextEdit2;
-            this.Jumlah.FieldName = "Jumlah";
+            this.Jumlah.FieldName = "Total";
             this.Jumlah.Name = "Jumlah";
             this.Jumlah.OptionsColumn.AllowEdit = false;
             this.Jumlah.Visible = true;
@@ -209,6 +212,7 @@
             this.btnHapus.Size = new System.Drawing.Size(82, 26);
             this.btnHapus.TabIndex = 48;
             this.btnHapus.Text = "&Hapus";
+            this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click);
             // 
             // btnEdit
             // 
@@ -219,6 +223,7 @@
             this.btnEdit.Size = new System.Drawing.Size(82, 26);
             this.btnEdit.TabIndex = 47;
             this.btnEdit.Text = "&Edit";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
@@ -229,6 +234,7 @@
             this.btnAdd.Size = new System.Drawing.Size(82, 26);
             this.btnAdd.TabIndex = 46;
             this.btnAdd.Text = "&Tambah";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // labelControl1
             // 
@@ -254,7 +260,7 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.labelControl1);
             this.Name = "dftrKasKeluar";
-            this.Text = "Kas Keluar";
+            this.Text = "Daftar Kas Keluar";
             this.Load += new System.EventHandler(this.dftrKasKeluar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tglSesudah.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tglSesudah.Properties)).EndInit();

@@ -243,6 +243,20 @@ namespace MumtaazHerbal
 
         }
 
-        
+        private void barButtonItem16_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(kas))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            kas tmbhKas = new kas();
+            tmbhKas.MdiParent = this;
+            tmbhKas.Show();
+        }
     }
 }

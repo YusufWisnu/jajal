@@ -292,7 +292,7 @@ namespace MumtaazHerbal
 
         public void GetData()
         {
-            var rowHandle = gridView.FocusedRowHandle;
+               var rowHandle = gridView.FocusedRowHandle;
             var noTransaksi = gridView.GetRowCellValue(rowHandle, "NoTransaksi").ToString();
 
             using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
