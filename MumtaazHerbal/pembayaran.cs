@@ -133,8 +133,8 @@ namespace MumtaazHerbal
             //penjualan kasir
             else
             {
-                if (CekStok())
-                    return;
+                if (CekStok()) return;
+                if (CheckHarga()) return;
 
                 Simpan();
                 kasir.RefreshPage();
@@ -163,6 +163,7 @@ namespace MumtaazHerbal
             else
             {
                 if (CekStok()) return;
+                
 
                 Simpan();
                 nota.PrintInvoice(kasir, this, receipt);
@@ -174,16 +175,19 @@ namespace MumtaazHerbal
 
         //select * from Penjualans where Tanggal between '2018/05/27' and '2018/05/27 23:59:59.999'
 
-        //simpan kasir
-        public void Simpan()
+        public bool CheckHarga()
         {
-            
-        
             if (int.Parse(txtKekurangan.Text.Replace(",", "")) < 0 || int.Parse(txtTunai.Text.Replace(",", "")) <= 0)
             {
                 XtraMessageBox.Show("Jumlah Pembayaran Belum Selesai.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                return true;
             }
+            return false;
+        }
+
+        //simpan kasir
+        public void Simpan()
+        {
 
             //edit transaksi
             if (edit)

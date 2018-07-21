@@ -132,15 +132,16 @@ namespace MumtaazHerbal
             lookPelanggan.EditValue = query;
         }
 
+        //create new row untuk search di gridview kode item
         public void CreateNewRow(string kodeItem, string namaItem,string satuan, int harga)
         {
             int total = 0;
 
-            gridView1.AddNewRow();
+            //gridView1.AddNewRow();
             int rowHandle = gridView1.GetRowHandle(gridView1.DataRowCount);
-            
-            if (gridView1.IsNewItemRow(rowHandle))
-            {
+
+            //if (gridView1.IsNewItemRow(rowHandle))
+            //{
 
                 gridView1.SetRowCellValue(rowHandle, gridView1.Columns[1], kodeItem);
                 gridView1.SetRowCellValue(rowHandle, gridView1.Columns[2], namaItem);
@@ -152,6 +153,38 @@ namespace MumtaazHerbal
                 if(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[5]) != DBNull.Value){
                      harga = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[5]));
                 } 
+
+                total = harga * jumlah;
+                gridView1.SetRowCellValue(rowHandle, gridView1.Columns[6], total);
+
+            //}
+
+            GetTotalHarga();
+            //gridView1.MoveLast();
+        }
+
+        // CreateNewRow untuk search di txtkodeitem
+        public void CreateNewRowTxtSearch(string kodeItem, string namaItem, string satuan, int harga)
+        {
+            int total = 0;
+
+            gridView1.AddNewRow();
+            int rowHandle = gridView1.GetRowHandle(gridView1.DataRowCount);
+
+            if (gridView1.IsNewItemRow(rowHandle))
+            {
+
+                gridView1.SetRowCellValue(rowHandle, gridView1.Columns[1], kodeItem);
+                gridView1.SetRowCellValue(rowHandle, gridView1.Columns[2], namaItem);
+                gridView1.SetRowCellValue(rowHandle, gridView1.Columns[3], Convert.ToInt32(txtJumlah.Text));
+                gridView1.SetRowCellValue(rowHandle, gridView1.Columns[4], satuan);
+                gridView1.SetRowCellValue(rowHandle, gridView1.Columns[5], harga);
+
+                int jumlah = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[3]));
+                if (gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[5]) != DBNull.Value)
+                {
+                    harga = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[5]));
+                }
 
                 total = harga * jumlah;
                 gridView1.SetRowCellValue(rowHandle, gridView1.Columns[6], total);
@@ -218,6 +251,7 @@ namespace MumtaazHerbal
             if(XtraMessageBox.Show("Hapus item ini?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 gridView1.DeleteRow(gridView1.FocusedRowHandle);
+                GetNomor();
                 GetTotalHarga();
             }
         }
@@ -225,15 +259,25 @@ namespace MumtaazHerbal
         // Pemberian nomor otomatis
         private void gridView1_CustomColumnDisplayText(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e)
         {
-            if (e.Column.Caption == "No")
+            //    if (e.Column.Caption == "No")
+            //    {
+            //        e.DisplayText = (e.ListSourceRowIndex + 1).ToString();
+            //    }
+        }
+
+        public void GetNomor()
+        {
+            var b = 1;
+            for (int i = 0; i < gridView1.DataRowCount; i++)
             {
-                e.DisplayText = (e.ListSourceRowIndex + 1).ToString();
+                gridView1.SetRowCellValue(gridView1.GetRowHandle(i), "No", b++);
             }
         }
 
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-            if(e.Column.FieldName == "HargaBarang")
+
+            if (e.Column.FieldName == "HargaBarang")
             {
                 var kodeItem = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "KodeItem").ToString();
                 int hargaColumn = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "HargaBarang"));
@@ -280,14 +324,13 @@ namespace MumtaazHerbal
             if (e.Column.FieldName == "JumlahBarang")
             {
                 //cek jika stok melebihi inputan
-
                 var kodeItem = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "KodeItem").ToString();
                 int jumlah = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "JumlahBarang"));
 
                 var query = mumtaaz.Items
                     .Where(x => x.KodeItem == kodeItem)
                     .SingleOrDefault();
-                   
+
                 //if(query.Stok < jumlah)
                 //{
                 //    MessageBox.Show("Jumlah item melebihi stok.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -298,9 +341,10 @@ namespace MumtaazHerbal
                 int total = 0;
                 int harga = 0;
 
-                if(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "HargaBarang") != DBNull.Value){
-                     harga = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "HargaBarang"));
-                } 
+                if (gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "HargaBarang") != DBNull.Value)
+                {
+                    harga = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "HargaBarang"));
+                }
 
                 total = harga * jumlah;
                 gridView1.SetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[6], total);
@@ -315,7 +359,8 @@ namespace MumtaazHerbal
             for (int i = 0; i <= gridView1.DataRowCount; i++)
             {
                 int rowHandle = gridView1.GetRowHandle(i);
-                totalHarga += Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "Total"));
+                if (gridView1.GetRowCellValue(rowHandle, "Total") != DBNull.Value)
+                    totalHarga += Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "Total"));
             }
 
             txtTotal.Text = totalHarga.ToString();
@@ -328,8 +373,10 @@ namespace MumtaazHerbal
             if(e.KeyChar == (char)13)
             {
                 bool getItem = true;
+                bool txtSearch = true;
                 dftrItem daftarItem = new dftrItem(this, getItem, txtKodeItem.Text, gridView1);
                 daftarItem.ShowDialog();
+
             }
         }
 
@@ -522,6 +569,7 @@ namespace MumtaazHerbal
                     }
 
                     GetTotalHarga();
+                    GetNomor();
                     gridView1.MoveLast();
                 }
 
@@ -538,6 +586,45 @@ namespace MumtaazHerbal
             {
                 var hargaTerakhir = new cekHargaTerakhir(this, kodeItem, namaItem);
                 hargaTerakhir.ShowDialog();
+            }
+        }
+
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            GetNomor();
+            GetTotalHarga();
+        }
+
+        private void repoTxtKodeItem_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //if (e.KeyChar == (char)13)
+            //{
+            //    var text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "KodeItem").ToString();
+            //    bool getItem = true;
+            //    dftrItem daftarItem = new dftrItem(this, getItem, text, gridView1);
+            //    daftarItem.ShowDialog();
+            //}
+        }
+
+        private void repoTxtKodeItem_KeyDown(object sender, KeyEventArgs e)
+        {
+            if ((e.KeyCode == Keys.Return))
+            {
+                var text = (sender as TextEdit).Text;
+                bool getItem = true;
+                dftrItem daftarItem = new dftrItem(this, getItem, text, gridView1);
+                daftarItem.ShowDialog();
+            }
+            //MessageBox.Show((sender as TextEdit).Text);
+        }
+
+        private void gridView1_MouseLeave(object sender, EventArgs e)
+        {
+            GridHitInfo hInfo = gridView1.CalcHitInfo(gridControl1.PointToClient(Cursor.Position));
+            if (hInfo.HitTest == GridHitTest.None)
+            {
+                if (gridView1.IsNewItemRow(0))
+                    gridView1.AddNewRow();
             }
         }
     }

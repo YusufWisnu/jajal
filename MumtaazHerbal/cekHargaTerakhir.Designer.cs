@@ -40,16 +40,19 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(11, 68);
+            this.gridControl1.Location = new System.Drawing.Point(11, 88);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -107,7 +110,7 @@
             // 
             // lblKodePelanggan
             // 
-            this.lblKodePelanggan.Location = new System.Drawing.Point(101, 12);
+            this.lblKodePelanggan.Location = new System.Drawing.Point(95, 6);
             this.lblKodePelanggan.Name = "lblKodePelanggan";
             this.lblKodePelanggan.Size = new System.Drawing.Size(63, 13);
             this.lblKodePelanggan.TabIndex = 1;
@@ -115,7 +118,7 @@
             // 
             // lblNamaPelanggan
             // 
-            this.lblNamaPelanggan.Location = new System.Drawing.Point(101, 31);
+            this.lblNamaPelanggan.Location = new System.Drawing.Point(95, 25);
             this.lblNamaPelanggan.Name = "lblNamaPelanggan";
             this.lblNamaPelanggan.Size = new System.Drawing.Size(63, 13);
             this.lblNamaPelanggan.TabIndex = 2;
@@ -123,7 +126,7 @@
             // 
             // lblNamaItem
             // 
-            this.lblNamaItem.Location = new System.Drawing.Point(101, 50);
+            this.lblNamaItem.Location = new System.Drawing.Point(95, 44);
             this.lblNamaItem.Name = "lblNamaItem";
             this.lblNamaItem.Size = new System.Drawing.Size(56, 13);
             this.lblNamaItem.TabIndex = 3;
@@ -131,7 +134,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(11, 11);
+            this.labelControl1.Location = new System.Drawing.Point(5, 5);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(87, 13);
             this.labelControl1.TabIndex = 4;
@@ -139,7 +142,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(11, 30);
+            this.labelControl2.Location = new System.Drawing.Point(5, 24);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(87, 13);
             this.labelControl2.TabIndex = 5;
@@ -147,23 +150,33 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(39, 49);
+            this.labelControl3.Location = new System.Drawing.Point(33, 43);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(59, 13);
             this.labelControl3.TabIndex = 6;
             this.labelControl3.Text = "Nama Item :";
             // 
+            // groupControl1
+            // 
+            this.groupControl1.Controls.Add(this.labelControl1);
+            this.groupControl1.Controls.Add(this.labelControl3);
+            this.groupControl1.Controls.Add(this.lblKodePelanggan);
+            this.groupControl1.Controls.Add(this.labelControl2);
+            this.groupControl1.Controls.Add(this.lblNamaPelanggan);
+            this.groupControl1.Controls.Add(this.lblNamaItem);
+            this.groupControl1.Location = new System.Drawing.Point(11, 12);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.ShowCaption = false;
+            this.groupControl1.Size = new System.Drawing.Size(278, 70);
+            this.groupControl1.TabIndex = 7;
+            this.groupControl1.Text = "groupControl1";
+            // 
             // cekHargaTerakhir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(301, 412);
-            this.Controls.Add(this.labelControl3);
-            this.Controls.Add(this.labelControl2);
-            this.Controls.Add(this.labelControl1);
-            this.Controls.Add(this.lblNamaItem);
-            this.Controls.Add(this.lblNamaPelanggan);
-            this.Controls.Add(this.lblKodePelanggan);
+            this.ClientSize = new System.Drawing.Size(301, 428);
+            this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.gridControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "cekHargaTerakhir";
@@ -176,8 +189,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            this.groupControl1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -195,5 +210,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
     }
 }

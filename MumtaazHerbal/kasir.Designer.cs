@@ -48,8 +48,9 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.No = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemTextEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.repoTxtNo = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.KodeItem = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repoTxtKodeItem = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.NamaItem = new DevExpress.XtraGrid.Columns.GridColumn();
             this.JumlahBarang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
@@ -77,7 +78,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtKodeItem.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoTxtNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoTxtKodeItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookPelanggan.Properties)).BeginInit();
@@ -182,7 +184,7 @@
             this.txtJumlah.Name = "txtJumlah";
             this.txtJumlah.Properties.Appearance.Options.UseTextOptions = true;
             this.txtJumlah.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.txtJumlah.Properties.Mask.EditMask = "d";
+            this.txtJumlah.Properties.Mask.EditMask = "n0";
             this.txtJumlah.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtJumlah.Size = new System.Drawing.Size(100, 20);
             this.txtJumlah.TabIndex = 28;
@@ -208,7 +210,7 @@
             this.txtKodeItem.Location = new System.Drawing.Point(268, 128);
             this.txtKodeItem.Name = "txtKodeItem";
             this.txtKodeItem.Size = new System.Drawing.Size(197, 20);
-            this.txtKodeItem.TabIndex = 30;
+            this.txtKodeItem.TabIndex = 0;
             this.txtKodeItem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textEdit6_KeyPress);
             // 
             // btnDaftarItem
@@ -236,9 +238,10 @@
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1,
             this.repositoryItemTextEdit2,
-            this.repositoryItemTextEdit3});
+            this.repoTxtNo,
+            this.repoTxtKodeItem});
             this.gridControl1.Size = new System.Drawing.Size(1326, 347);
-            this.gridControl1.TabIndex = 33;
+            this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
@@ -254,9 +257,13 @@
             this.Total});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
+            this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gridView1.OptionsView.ShowIndicator = false;
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
             this.gridView1.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.gridView1_CustomColumnDisplayText);
+            this.gridView1.MouseLeave += new System.EventHandler(this.gridView1_MouseLeave);
             this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
             // No
@@ -264,7 +271,7 @@
             this.No.AppearanceHeader.Options.UseTextOptions = true;
             this.No.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.No.Caption = "No";
-            this.No.ColumnEdit = this.repositoryItemTextEdit3;
+            this.No.ColumnEdit = this.repoTxtNo;
             this.No.FieldName = "No";
             this.No.Name = "No";
             this.No.OptionsColumn.AllowEdit = false;
@@ -272,23 +279,35 @@
             this.No.VisibleIndex = 0;
             this.No.Width = 70;
             // 
-            // repositoryItemTextEdit3
+            // repoTxtNo
             // 
-            this.repositoryItemTextEdit3.AutoHeight = false;
-            this.repositoryItemTextEdit3.Name = "repositoryItemTextEdit3";
+            this.repoTxtNo.AllowFocused = false;
+            this.repoTxtNo.AutoHeight = false;
+            this.repoTxtNo.Mask.EditMask = "n0";
+            this.repoTxtNo.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.repoTxtNo.Mask.UseMaskAsDisplayFormat = true;
+            this.repoTxtNo.Name = "repoTxtNo";
+            this.repoTxtNo.ReadOnly = true;
             // 
             // KodeItem
             // 
             this.KodeItem.AppearanceHeader.Options.UseTextOptions = true;
             this.KodeItem.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.KodeItem.Caption = "Kode Item";
+            this.KodeItem.ColumnEdit = this.repoTxtKodeItem;
             this.KodeItem.FieldName = "KodeItem";
             this.KodeItem.Name = "KodeItem";
-            this.KodeItem.OptionsColumn.AllowEdit = false;
             this.KodeItem.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.KodeItem.Visible = true;
             this.KodeItem.VisibleIndex = 1;
             this.KodeItem.Width = 124;
+            // 
+            // repoTxtKodeItem
+            // 
+            this.repoTxtKodeItem.AutoHeight = false;
+            this.repoTxtKodeItem.Name = "repoTxtKodeItem";
+            this.repoTxtKodeItem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.repoTxtKodeItem_KeyDown);
+            this.repoTxtKodeItem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.repoTxtKodeItem_KeyPress);
             // 
             // NamaItem
             // 
@@ -298,6 +317,7 @@
             this.NamaItem.FieldName = "NamaItem";
             this.NamaItem.Name = "NamaItem";
             this.NamaItem.OptionsColumn.AllowEdit = false;
+            this.NamaItem.OptionsColumn.AllowFocus = false;
             this.NamaItem.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.NamaItem.Visible = true;
             this.NamaItem.VisibleIndex = 2;
@@ -334,6 +354,7 @@
             this.Satuan.FieldName = "Satuan";
             this.Satuan.Name = "Satuan";
             this.Satuan.OptionsColumn.AllowEdit = false;
+            this.Satuan.OptionsColumn.AllowFocus = false;
             this.Satuan.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.Satuan.Visible = true;
             this.Satuan.VisibleIndex = 4;
@@ -519,7 +540,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtKodeItem.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoTxtNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoTxtKodeItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookPelanggan.Properties)).EndInit();
@@ -566,6 +588,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit2;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         public DevExpress.XtraEditors.SpinEdit spinJT;
-        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit3;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repoTxtNo;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repoTxtKodeItem;
     }
 }
