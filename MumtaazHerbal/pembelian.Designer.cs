@@ -165,7 +165,7 @@
             this.repositoryItemTextEdit3,
             this.repoTxtKodeItem});
             this.gridControl1.Size = new System.Drawing.Size(1326, 347);
-            this.gridControl1.TabIndex = 34;
+            this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 

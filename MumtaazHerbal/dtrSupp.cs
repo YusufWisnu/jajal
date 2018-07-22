@@ -23,8 +23,17 @@ namespace MumtaazHerbal
         private void dftrSupp_Load(object sender, EventArgs e)
         {
             mumtaaz = new MumtaazContext(dbhelper.ConnectionString);
-            var query = mumtaaz.Suppliers;
-            gridControl1.DataSource = query.ToList();
+
+            LoadData();
+        }
+
+        public void LoadData()
+        {
+            using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
+            {
+                var query = mumtaaz.Suppliers;
+                gridControl1.DataSource = query.ToList();
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -83,6 +92,7 @@ namespace MumtaazHerbal
                         mumtaaz.Suppliers.Remove(query.FirstOrDefault());
                         mumtaaz.SaveChanges();
                         MessageBox.Show("Berhasil menghapus data ini", "Mumtaaz Herbal", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadData();
                     }
                 }
             }

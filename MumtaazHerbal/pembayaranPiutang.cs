@@ -417,8 +417,12 @@ namespace MumtaazHerbal
         //btn print
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            if (IsJumlahBayarFill())
-                CetakPiutang();
+            if (!IsJumlahBayarFill())
+            {
+                MessageBox.Show("Jumlah bayar transaksi belum diisi.", "Mumtaaz Herbal", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            CetakPiutang();
         }
     }
 }

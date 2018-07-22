@@ -60,6 +60,12 @@ namespace MumtaazHerbal
         {
             query = new Query();
 
+            LoadData();
+            
+        }
+
+        public void LoadData()
+        {
             using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
             {
                 pelangganBindingSource.DataSource = mumtaaz.Pelanggans.ToList();
@@ -97,18 +103,25 @@ namespace MumtaazHerbal
             {
                 if(XtraMessageBox.Show("Hapus data ini ?.", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
+                    try
                     {
-                        //buat objek baru untuk daftar item
-                        Pelanggan obj = pelangganBindingSource.Current as Pelanggan;
+                        using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
+                        {
+                            //buat objek baru untuk daftar item
+                            Pelanggan obj = pelangganBindingSource.Current as Pelanggan;
 
-                        //jika list yang akan di hapus dalam mode default maka tandakan dengan mode edit(karena akan di hapus)
-                        if (mumtaaz.Entry<Pelanggan>(obj).State == System.Data.Entity.EntityState.Detached)
-                            mumtaaz.Set<Pelanggan>().Attach(obj);
-                        mumtaaz.Entry<Pelanggan>(obj).State = System.Data.Entity.EntityState.Deleted; // rubah mode edit dengan mode delete
-                        pelangganBindingSource.RemoveCurrent();
-                        mumtaaz.SaveChanges();
-                        XtraMessageBox.Show("Berhasil menghapus data ini.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            //jika list yang akan di hapus dalam mode default maka tandakan dengan mode edit(karena akan di hapus)
+                            if (mumtaaz.Entry<Pelanggan>(obj).State == System.Data.Entity.EntityState.Detached)
+                                mumtaaz.Set<Pelanggan>().Attach(obj);
+                            mumtaaz.Entry<Pelanggan>(obj).State = System.Data.Entity.EntityState.Deleted; // rubah mode edit dengan mode delete
+                            mumtaaz.SaveChanges();
+                            XtraMessageBox.Show("Berhasil menghapus data ini.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoadData();
+                        }
+                    }
+                    catch(Exception ee)
+                    {
+                        MessageBox.Show("Gagal menghapus data", "Mumtaaz Herbal", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
