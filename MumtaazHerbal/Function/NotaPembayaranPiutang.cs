@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace MumtaazHerbal.Function
+﻿namespace MumtaazHerbal.Function
 {
     public class NotaPembayaranPiutang
     {
@@ -12,4 +10,5 @@ namespace MumtaazHerbal.Function
 
         public int JumlahBayar { get; set; }
     }
+
 }

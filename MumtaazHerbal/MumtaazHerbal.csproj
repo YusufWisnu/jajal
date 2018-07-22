@@ -202,6 +202,7 @@
       <DependentUpon>frmPrint.cs</DependentUpon>
     </Compile>
     <Compile Include="Function\DbHelper.cs" />
+    <Compile Include="Function\NotaLabaKotor.cs" />
     <Compile Include="Function\NotaPembayaranPiutang.cs" />
     <Compile Include="Function\Query.cs" />
     <Compile Include="Function\Receipt.cs" />
@@ -241,6 +242,18 @@
     </Compile>
     <Compile Include="KoneksiDatabase.Designer.cs">
       <DependentUpon>KoneksiDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lprLabaJual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lprLabaJual.Designer.cs">
+      <DependentUpon>lprLabaJual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lprLabaRugi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lprLabaRugi.Designer.cs">
+      <DependentUpon>lprLabaRugi.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201805130628163_InitialModel.cs" />
     <Compile Include="Migrations\201805130628163_InitialModel.Designer.cs">
@@ -370,12 +383,40 @@
     <Compile Include="Migrations\201807190834361_fixinganotherrelatedtabless.Designer.cs">
       <DependentUpon>201807190834361_fixinganotherrelatedtabless.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807220322560_AddSubTotalInTablePenjualans.cs" />
+    <Compile Include="Migrations\201807220322560_AddSubTotalInTablePenjualans.Designer.cs">
+      <DependentUpon>201807220322560_AddSubTotalInTablePenjualans.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Nota.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Nota.Designer.cs">
       <DependentUpon>Nota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotaLabaJual.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NotaLabaJual.Designer.cs">
+      <DependentUpon>NotaLabaJual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotaLabaKotorViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NotaLabaKotorViewer.Designer.cs">
+      <DependentUpon>NotaLabaKotorViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotaLabaRugi.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NotaLabaRugi.Designer.cs">
+      <DependentUpon>NotaLabaRugi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotaLabaRugiViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NotaLabaRugiViewer.Designer.cs">
+      <DependentUpon>NotaLabaRugiViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="NotaPenjualan.cs">
       <SubType>Component</SubType>
@@ -513,6 +554,12 @@
     <EmbeddedResource Include="KoneksiDatabase.resx">
       <DependentUpon>KoneksiDatabase.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="lprLabaJual.resx">
+      <DependentUpon>lprLabaJual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lprLabaRugi.resx">
+      <DependentUpon>lprLabaRugi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805130628163_InitialModel.resx">
       <DependentUpon>201805130628163_InitialModel.cs</DependentUpon>
     </EmbeddedResource>
@@ -609,8 +656,23 @@
     <EmbeddedResource Include="Migrations\201807190834361_fixinganotherrelatedtabless.resx">
       <DependentUpon>201807190834361_fixinganotherrelatedtabless.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807220322560_AddSubTotalInTablePenjualans.resx">
+      <DependentUpon>201807220322560_AddSubTotalInTablePenjualans.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Nota.resx">
       <DependentUpon>Nota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotaLabaJual.resx">
+      <DependentUpon>NotaLabaJual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotaLabaKotorViewer.resx">
+      <DependentUpon>NotaLabaKotorViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotaLabaRugi.resx">
+      <DependentUpon>NotaLabaRugi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotaLabaRugiViewer.resx">
+      <DependentUpon>NotaLabaRugiViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NotaPenjualan.resx">
       <DependentUpon>NotaPenjualan.cs</DependentUpon>

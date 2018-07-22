@@ -103,6 +103,15 @@ namespace MumtaazHerbal
             
         }
 
+        public void GetNomor()
+        {
+            var b = 1;
+            for (int i = 0; i < gridView1.DataRowCount; i++)
+            {
+                gridView1.SetRowCellValue(gridView1.GetRowHandle(i), "No", b++);
+            }
+        }
+
         private void btnDaftarItem_Click(object sender, EventArgs e)
         {
             bool getItem = true;
@@ -126,6 +135,38 @@ namespace MumtaazHerbal
         {
             int total = 0;
 
+            //gridView1.AddNewRow();
+            int rowHandle = gridView1.GetRowHandle(gridView1.DataRowCount);
+
+            //if (gridView1.IsNewItemRow(rowHandle))
+            //{
+
+            gridView1.SetRowCellValue(rowHandle, gridView1.Columns[1], kodeItem);
+            gridView1.SetRowCellValue(rowHandle, gridView1.Columns[2], namaItem);
+            gridView1.SetRowCellValue(rowHandle, gridView1.Columns[3], Convert.ToInt32(txtJumlah.Text));
+            gridView1.SetRowCellValue(rowHandle, gridView1.Columns[4], satuan);
+            gridView1.SetRowCellValue(rowHandle, gridView1.Columns[5], harga);
+
+            int jumlah = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[3]));
+            if (gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[5]) != DBNull.Value)
+            {
+                harga = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[5]));
+            }
+
+            total = harga * jumlah;
+            gridView1.SetRowCellValue(rowHandle, gridView1.Columns[6], total);
+
+            //}
+
+            GetTotalHarga();
+            //gridView1.MoveLast();
+        }
+
+        // CreateNewRow untuk search di txtkodeitem
+        public void CreateNewRowTxtSearch(string kodeItem, string namaItem, string satuan, int harga)
+        {
+            int total = 0;
+
             gridView1.AddNewRow();
             int rowHandle = gridView1.GetRowHandle(gridView1.DataRowCount);
 
@@ -134,7 +175,7 @@ namespace MumtaazHerbal
 
                 gridView1.SetRowCellValue(rowHandle, gridView1.Columns[1], kodeItem);
                 gridView1.SetRowCellValue(rowHandle, gridView1.Columns[2], namaItem);
-                gridView1.SetRowCellValue(rowHandle, gridView1.Columns[3], int.Parse(txtJumlah.Text));
+                gridView1.SetRowCellValue(rowHandle, gridView1.Columns[3], Convert.ToInt32(txtJumlah.Text));
                 gridView1.SetRowCellValue(rowHandle, gridView1.Columns[4], satuan);
                 gridView1.SetRowCellValue(rowHandle, gridView1.Columns[5], harga);
 
@@ -160,7 +201,8 @@ namespace MumtaazHerbal
             for (int i = 0; i <= gridView1.DataRowCount; i++)
             {
                 int rowHandle = gridView1.GetRowHandle(i);
-                totalHarga += Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "Total"));
+                if (gridView1.GetRowCellValue(rowHandle, "Total") != DBNull.Value)
+                    totalHarga += Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "Total"));
             }
 
             txtTotal.Text = totalHarga.ToString();
@@ -172,17 +214,9 @@ namespace MumtaazHerbal
             if (e.KeyChar == (char)13)
             {
                 bool getItem = true;
-                dftrItem daftarItem = new dftrItem(this, getItem, txtKodeItem.Text, gridView1);
+                bool txtSearch = true;
+                dftrItem daftarItem = new dftrItem(this, getItem, txtKodeItem.Text, gridView1, txtSearch);
                 daftarItem.ShowDialog();
-            }
-        }
-
-        // Pemberian nomor otomatis
-        private void gridView1_CustomColumnDisplayText(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e)
-        {
-            if (e.Column.Caption == "No")
-            {
-                e.DisplayText = (e.ListSourceRowIndex + 1).ToString();
             }
         }
 
@@ -337,12 +371,14 @@ namespace MumtaazHerbal
                         itemList.Stok = itemList.Stok - stok;
                         mumtaaz.Entry(itemList).State = System.Data.Entity.EntityState.Modified;
                         gridView1.DeleteRow(rowHandle);
+                        GetNomor();
                         GetTotalHarga();
                     }
                 }
                 else
                 {
                     gridView1.DeleteRow(gridView1.FocusedRowHandle);
+                    GetNomor();
                     GetTotalHarga();
                 }
                 
@@ -572,6 +608,23 @@ namespace MumtaazHerbal
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             DeleteEditTransaksi();
+        }
+
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            GetNomor();
+            GetTotalHarga();
+        }
+
+        private void repoTxtKodeItem_KeyDown(object sender, KeyEventArgs e)
+        {
+            if ((e.KeyCode == Keys.Return))
+            {
+                var text = (sender as TextEdit).Text;
+                bool getItem = true;
+                dftrItem daftarItem = new dftrItem(this, getItem, text, gridView1);
+                daftarItem.ShowDialog();
+            }
         }
     }
 }

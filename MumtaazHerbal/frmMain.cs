@@ -227,20 +227,9 @@ namespace MumtaazHerbal
                 }
             }
 
-            dftrKasKeluar kaskeluar= new dftrKasKeluar();
+            dftrKasKeluar kaskeluar = new dftrKasKeluar();
             kaskeluar.MdiParent = this;
             kaskeluar.Show();
-        }
-        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //Application.Exit();
-
-        }
-
-        private void frmMain_Load(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.ConnectionString = string.Format("data source=.;initial catalog=MumtaazFixV1;integrated security=SSPI;");
-
         }
 
         private void barButtonItem16_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -258,5 +247,51 @@ namespace MumtaazHerbal
             tmbhKas.MdiParent = this;
             tmbhKas.Show();
         }
+
+        private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(lprLabaJual))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            lprLabaJual labaJual = new lprLabaJual();
+            labaJual.MdiParent = this;
+            labaJual.Show();
+        }
+
+        private void barButtonItem18_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(lprLabaRugi))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            lprLabaRugi labaRugi = new lprLabaRugi();
+            labaRugi.MdiParent = this;
+            labaRugi.Show();
+        }
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //Application.Exit();
+
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.ConnectionString = string.Format("data source=.;initial catalog=MumtaazFixV1;integrated security=SSPI;");
+
+        }
+
+        
     }
 }

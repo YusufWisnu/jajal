@@ -117,11 +117,6 @@ namespace MumtaazHerbal
         //Simpan Doang
         private void btnSimpan_Click(object sender, EventArgs e)
         {
-            if(kasir.EditKasir == true)
-            {
-
-            }
-
             //pembelian
             if (_pembelian)
             {
@@ -185,6 +180,28 @@ namespace MumtaazHerbal
             return false;
         }
 
+        //hitung subtotal
+        public int SubTotal()
+        {
+            var total = 0;
+
+            using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
+            {
+                for(int i = 0; i < gridView.DataRowCount; i++)
+                {
+                    var rowHandle = gridView.GetRowHandle(i);
+                    var kodeItem = gridView.GetRowCellValue(rowHandle, "KodeItem").ToString();
+                    var jumlahBarang = Convert.ToInt32(gridView.GetRowCellValue(rowHandle, "JumlahBarang"));
+
+                    var query = mumtaaz.Items.Where(p => p.KodeItem == kodeItem).Select(p => p.HargaJual).FirstOrDefault();
+                    query *= jumlahBarang;
+
+                    total += query;
+                }
+            }
+            return total;
+        }
+
         //simpan kasir
         public void Simpan()
         {
@@ -201,6 +218,8 @@ namespace MumtaazHerbal
                 penjualan.PelangganId = int.Parse(kasir.lookPelanggan.EditValue.ToString());
                 penjualan.TotalHarga = int.Parse(txtTotal.Text.Replace(",", ""));
                 penjualan.IsPending = false;
+                penjualan.SubTotal = SubTotal();
+
                 //jika pelanggan hutang
                 if (int.Parse(txtKredit.Text.Replace(",", "")) > 0)
                 {

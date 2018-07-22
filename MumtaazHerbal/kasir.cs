@@ -20,7 +20,6 @@ namespace MumtaazHerbal
         private dftrPenjualan daftarPenjualan;
         private string noTransaksi;
 
-        public bool EditKasir { get; set; }
 
 
         public kasir()
@@ -48,6 +47,14 @@ namespace MumtaazHerbal
         MumtaazContext mumtaaz;
         DbHelper dbhelper = new DbHelper();
 
+        //hitung sub total
+        //public int SubTotal()
+        //{
+        //    for(var i = 0; i < gridView1.DataRowCount; i++)
+        //    {
+
+        //    }
+        //}
 
         //pembayaran
         private void simpleButton4_Click(object sender, EventArgs e)
@@ -374,9 +381,8 @@ namespace MumtaazHerbal
             {
                 bool getItem = true;
                 bool txtSearch = true;
-                dftrItem daftarItem = new dftrItem(this, getItem, txtKodeItem.Text, gridView1);
+                dftrItem daftarItem = new dftrItem(this, getItem, txtKodeItem.Text, gridView1, txtSearch);
                 daftarItem.ShowDialog();
-
             }
         }
 
@@ -386,12 +392,18 @@ namespace MumtaazHerbal
             for (int i = 0; i < gridView1.DataRowCount; i++)
             {
                 int rowHandle = gridView1.GetRowHandle(i);
+                var total = 0;
+                if (gridView1.GetRowCellValue(rowHandle, gridView1.Columns[6]) != DBNull.Value)
+                {
+                    total = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, gridView1.Columns[6]));
+                }
+
                 var receipt = new Receipt()
                 {
                     NamaItem = gridView1.GetRowCellValue(rowHandle, gridView1.Columns[1]).ToString().ToUpper(),
                     Harga = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, gridView1.Columns[5])),
                     JumlahItem = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, gridView1.Columns[3])),
-                    Total = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, gridView1.Columns[6])),
+                    Total = total,
                     Tipe = gridView1.GetRowCellValue(rowHandle, gridView1.Columns[4]).ToString()
                 };
                 receipts.Add(receipt);
@@ -627,6 +639,7 @@ namespace MumtaazHerbal
                     gridView1.AddNewRow();
             }
         }
+        
     }
 }
 

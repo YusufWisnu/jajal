@@ -58,7 +58,7 @@
             this.txtTimer = new DevExpress.XtraEditors.TextEdit();
             this.txtuser = new DevExpress.XtraEditors.TextEdit();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
-            this.checkPrint = new DevExpress.XtraEditors.CheckEdit();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.lookPelanggan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pelangganBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTransaksi.Properties)).BeginInit();
@@ -77,7 +77,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTimer.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtuser.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkPrint.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // lookPelanggan
@@ -381,21 +380,23 @@
             this.txtuser.Size = new System.Drawing.Size(71, 20);
             this.txtuser.TabIndex = 54;
             // 
-            // checkPrint
+            // simpleButton1
             // 
-            this.checkPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.checkPrint.Location = new System.Drawing.Point(179, 363);
-            this.checkPrint.Name = "checkPrint";
-            this.checkPrint.Properties.Caption = "Print";
-            this.checkPrint.Size = new System.Drawing.Size(75, 19);
-            this.checkPrint.TabIndex = 56;
+            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(179, 360);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(76, 25);
+            this.simpleButton1.TabIndex = 57;
+            this.simpleButton1.Text = "Print";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // pembayaranPiutang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(818, 388);
-            this.Controls.Add(this.checkPrint);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.txtTimer);
             this.Controls.Add(this.txtuser);
             this.Controls.Add(this.txtTanggal);
@@ -430,7 +431,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTimer.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtuser.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkPrint.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -466,6 +466,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit4;
         private DevExpress.XtraGrid.Columns.GridColumn JumlahBayar;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit5;
-        private DevExpress.XtraEditors.CheckEdit checkPrint;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

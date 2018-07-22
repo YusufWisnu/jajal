@@ -21,6 +21,9 @@ namespace MumtaazHerbal
 
         public IList<DetailPenjualan> DetailPenjualans { get; set; }
 
+        //total modal
+        public int SubTotal { get; set; }
+
         public int TotalHarga { get; set; }
 
         public bool IsPending { get; set; }

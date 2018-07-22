@@ -23,6 +23,7 @@ namespace MumtaazHerbal
         private string kodeItemPembelian;
         private bool getItem;
         private bool getItemPembelian;
+        private bool searchBar;
         private GridView gridView;
         private GridView gridViewPembelian;
 
@@ -49,6 +50,13 @@ namespace MumtaazHerbal
             this.kodeItem = kodeItem;
         }
 
+        //pass untuk searh menggunakan txtSearch.text
+        public dftrItem(kasir kasir, bool getItem, string kodeItem, GridView gridView, bool searchBar)
+            :this(kasir, getItem, kodeItem, gridView)
+        {
+            this.searchBar = searchBar;
+        }
+
         public dftrItem(pembelian pembelian, bool getItemPembelian, GridView gridViewPembelian)
             :this()
         {
@@ -63,8 +71,11 @@ namespace MumtaazHerbal
             this.kodeItemPembelian = kodeItemPembelian;
         }
 
-
-
+        public dftrItem(pembelian pembelian, bool getItemPembelian, string kodeItemPembelian, GridView gridViewPembelian, bool searchBar)
+            : this(pembelian, getItemPembelian,kodeItemPembelian, gridViewPembelian)
+        {
+            this.searchBar = searchBar;
+        }
 
         Query query;
         Utilities util;
@@ -184,98 +195,7 @@ namespace MumtaazHerbal
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
-            //get Item dari form kasir
-            if (getItem)
-            {
-                var rowHandle = gridView1.FocusedRowHandle;
-
-
-                var kodeItem = gridView1.GetRowCellValue(rowHandle, "KodeItem").ToString();
-
-                //cek jika item melebihi stok
-                var query = mumtaaz.Items
-                    .Where(x => x.KodeItem == kodeItem)
-                    .Select(x => x.Stok)
-                    .FirstOrDefault()
-                    .ToString();
-
-                //cek jika item sudah ada dikeranjang belanjaan
-
-
-                if (int.Parse(query) < int.Parse(kasir.txtJumlah.Text))
-                {
-                    MessageBox.Show("Jumlah item melebihi stok", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                for (int i = 0; i < gridView.DataRowCount; i++)
-                {
-                    if (gridView.GetRowCellValue(i, "KodeItem").ToString() == gridView1.GetRowCellValue(rowHandle, "KodeItem").ToString())
-                    {
-                        MessageBox.Show("Item sudah ada di keranjang belanja.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
-                }
-
-
-                var namaItem = gridView1.GetRowCellValue(rowHandle, "NamaItem").ToString();
-                var satuan = gridView1.GetRowCellValue(rowHandle, "Satuan").ToString();
-
-                if (kasir.lookPelanggan.Text == "UMUM")
-                {
-                    harga = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "HargaEceran"));
-                }
-                else
-                {
-                    harga = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "HargaGrosir"));
-                }
-
-                kasir.CreateNewRowTxtSearch(kodeItem, namaItem, satuan, harga);
-                getItem = false;
-                this.Close();
-            }
-
-            //get item dari form pembelian
-            else if (getItemPembelian)
-            {
-                var rowHandle = gridView1.FocusedRowHandle;
-
-
-                var kodeItem = gridView1.GetRowCellValue(rowHandle, "KodeItem").ToString();
-
-                //cek jika item kekurangan stok
-                var query = mumtaaz.Items
-                    .Where(x => x.KodeItem == kodeItem)
-                    .Select(x => x.Stok)
-                    .FirstOrDefault()
-                    .ToString();
-
-                //cek jika item sudah ada dikeranjang belanjaan
-
-
-                //if (int.Parse(query) < int.Parse(pembelian.txtJumlah.Text))
-                //{
-                //    MessageBox.Show("Jumlah item melebihi stok", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //    return;
-                //}
-
-                for (int i = 0; i < gridViewPembelian.DataRowCount; i++)
-                {
-                    if (gridViewPembelian.GetRowCellValue(i, "KodeItem").ToString() == gridView1.GetRowCellValue(rowHandle, "KodeItem").ToString())
-                    {
-                        MessageBox.Show("Item sudah ada di keranjang belanja.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
-                }
-
-                var namaItem = gridView1.GetRowCellValue(rowHandle, "NamaItem").ToString();
-                var satuan = gridView1.GetRowCellValue(rowHandle, "Satuan").ToString();
-                var harga = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "HargaJual"));
-
-                pembelian.CreateNewRow(kodeItem, namaItem, satuan, harga);
-                getItemPembelian = false;
-                this.Close();
-            }
+            GetItem();
 
         }
 
@@ -334,7 +254,14 @@ namespace MumtaazHerbal
                     harga = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "HargaGrosir"));
                 }
 
-                kasir.CreateNewRowTxtSearch(kodeItem, namaItem, satuan, harga);
+                if (searchBar)
+                {
+                    kasir.CreateNewRowTxtSearch(kodeItem, namaItem, satuan, harga);
+                    searchBar = false;
+                }
+                else
+                    kasir.CreateNewRow(kodeItem, namaItem, satuan, harga);
+
                 getItem = false;
                 this.Close();
             }
@@ -376,7 +303,14 @@ namespace MumtaazHerbal
                 var satuan = gridView1.GetRowCellValue(rowHandle, "Satuan").ToString();
                 var harga = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "HargaJual"));
 
-                pembelian.CreateNewRow(kodeItem, namaItem, satuan, harga);
+                if (searchBar)
+                {
+                    pembelian.CreateNewRowTxtSearch(kodeItem, namaItem, satuan, harga);
+                    searchBar = false;
+                }
+                else
+                    pembelian.CreateNewRow(kodeItem, namaItem, satuan, harga);
+
                 getItemPembelian = false;
                 this.Close();
             }

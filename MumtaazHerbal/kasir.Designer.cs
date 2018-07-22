@@ -275,6 +275,7 @@
             this.No.FieldName = "No";
             this.No.Name = "No";
             this.No.OptionsColumn.AllowEdit = false;
+            this.No.OptionsColumn.AllowFocus = false;
             this.No.Visible = true;
             this.No.VisibleIndex = 0;
             this.No.Width = 70;
@@ -393,6 +394,7 @@
             this.Total.FieldName = "Total";
             this.Total.Name = "Total";
             this.Total.OptionsColumn.AllowEdit = false;
+            this.Total.OptionsColumn.AllowFocus = false;
             this.Total.UnboundExpression = "[Jumlah] * [Harga]";
             this.Total.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.Total.Visible = true;

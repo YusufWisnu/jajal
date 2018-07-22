@@ -283,10 +283,6 @@ namespace MumtaazHerbal
                 mumtaaz.Piutangs.Add(piutang);
                 mumtaaz.SaveChanges();
                 MessageBox.Show("Transaksi berhasil", "Mumtaaz Herbal", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                if (checkPrint.Checked == true)
-                    CetakPiutang();
-                
             }
         }
 
@@ -398,6 +394,7 @@ namespace MumtaazHerbal
         {
             using (var printPiutang = new NotaPiutangViewer())
             {
+                
                 GetInformasiPiutang();
                 printPiutang.PrintInvoicePiutang(this, piutangs);
                 printPiutang.ShowDialog();
@@ -415,6 +412,13 @@ namespace MumtaazHerbal
                     return;
                 }
             }
+        }
+
+        //btn print
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            if (IsJumlahBayarFill())
+                CetakPiutang();
         }
     }
 }
