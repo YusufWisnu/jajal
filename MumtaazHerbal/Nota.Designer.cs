@@ -307,7 +307,7 @@
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel2.SizeF = new System.Drawing.SizeF(273.9583F, 50.08335F);
             this.xrLabel2.StylePriority.UseFont = false;
-            this.xrLabel2.Text = "JL RAYA SERANG KM 13,5 PASIR GADUNG,\r\nCIKUPA\r\nTANGERANG\r\nTelp : 0853-1325-5683";
+            this.xrLabel2.Text = "Jl. Padat Karya RT.06/03 \r\nDesa Cikamulya Kec. Cikupa\r\nTelp : 082310491816";
             // 
             // xrLabel1
             // 
@@ -318,7 +318,7 @@
             this.xrLabel1.SizeF = new System.Drawing.SizeF(273.9583F, 20.91669F);
             this.xrLabel1.StylePriority.UseFont = false;
             this.xrLabel1.StylePriority.UseTextAlignment = false;
-            this.xrLabel1.Text = "TOKO MUMTAZ HERBAL";
+            this.xrLabel1.Text = "TOKO CITRA HERBAL";
             this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
             // ReportFooter

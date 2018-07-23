@@ -110,7 +110,7 @@
             // 
             // lblKodePelanggan
             // 
-            this.lblKodePelanggan.Location = new System.Drawing.Point(95, 6);
+            this.lblKodePelanggan.Location = new System.Drawing.Point(96, 24);
             this.lblKodePelanggan.Name = "lblKodePelanggan";
             this.lblKodePelanggan.Size = new System.Drawing.Size(63, 13);
             this.lblKodePelanggan.TabIndex = 1;
@@ -118,7 +118,7 @@
             // 
             // lblNamaPelanggan
             // 
-            this.lblNamaPelanggan.Location = new System.Drawing.Point(95, 25);
+            this.lblNamaPelanggan.Location = new System.Drawing.Point(96, 43);
             this.lblNamaPelanggan.Name = "lblNamaPelanggan";
             this.lblNamaPelanggan.Size = new System.Drawing.Size(63, 13);
             this.lblNamaPelanggan.TabIndex = 2;
@@ -126,7 +126,7 @@
             // 
             // lblNamaItem
             // 
-            this.lblNamaItem.Location = new System.Drawing.Point(95, 44);
+            this.lblNamaItem.Location = new System.Drawing.Point(69, 5);
             this.lblNamaItem.Name = "lblNamaItem";
             this.lblNamaItem.Size = new System.Drawing.Size(56, 13);
             this.lblNamaItem.TabIndex = 3;
@@ -134,7 +134,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(5, 5);
+            this.labelControl1.Location = new System.Drawing.Point(6, 23);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(87, 13);
             this.labelControl1.TabIndex = 4;
@@ -142,7 +142,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(5, 24);
+            this.labelControl2.Location = new System.Drawing.Point(6, 42);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(87, 13);
             this.labelControl2.TabIndex = 5;
@@ -150,7 +150,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(33, 43);
+            this.labelControl3.Location = new System.Drawing.Point(7, 4);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(59, 13);
             this.labelControl3.TabIndex = 6;

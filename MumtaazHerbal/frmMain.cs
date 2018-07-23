@@ -288,7 +288,10 @@ namespace MumtaazHerbal
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            Properties.Settings.Default.ConnectionString = string.Format("data source=.;initial catalog=MumtaazFixV1;integrated security=SSPI;");
+            //Properties.Settings.Default.ConnectionString = string.Format("data source=.;initial catalog=MumtaazFixV1;integrated security=SSPI;");
+            connection cn = new connection();
+            cn.ShowDialog();
+
 
         }
 

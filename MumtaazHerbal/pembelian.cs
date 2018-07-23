@@ -621,6 +621,10 @@ namespace MumtaazHerbal
             if ((e.KeyCode == Keys.Return))
             {
                 var text = (sender as TextEdit).Text;
+
+                if (string.IsNullOrEmpty(text))
+                    (sender as TextEdit).Text = string.Empty;
+
                 bool getItem = true;
                 dftrItem daftarItem = new dftrItem(this, getItem, text, gridView1);
                 daftarItem.ShowDialog();

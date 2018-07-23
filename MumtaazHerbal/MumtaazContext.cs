@@ -26,11 +26,11 @@ namespace MumtaazHerbal
 
         }
 
-        public MumtaazContext()
-            : base("name=MumtaazFix")
-        {
+        //public MumtaazContext()
+        //    : base("name=MumtaazFix")
+        //{
 
-        }
+        //}
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

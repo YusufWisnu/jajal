@@ -123,8 +123,8 @@ namespace MumtaazHerbal
 
             if (!mumtaaz.Penjualan.Any())
                 noTransaksi++;
-
-            noTransaksi++;
+            else
+                noTransaksi++;
 
             txtTransaksi.Text = noTransaksi.ToString().PadLeft(4, '0') + "/KSR/" + DateTime.Now.ToString("ddMM");
         }
@@ -623,6 +623,10 @@ namespace MumtaazHerbal
             if ((e.KeyCode == Keys.Return))
             {
                 var text = (sender as TextEdit).Text;
+
+                if (string.IsNullOrEmpty(text))
+                    (sender as TextEdit).Text = string.Empty;
+
                 bool getItem = true;
                 dftrItem daftarItem = new dftrItem(this, getItem, text, gridView1);
                 daftarItem.ShowDialog();

@@ -86,9 +86,9 @@ namespace MumtaazHerbal
 
             var dbhelper = new DbHelper();
             Properties.Settings.Default.ConnectionString = string.Format("data source={0};initial catalog={1};integrated security=SSPI;", comboServer.Text, listBoxDatabase.SelectedValue.ToString());
-            var main = new frmMain();
-            main.Show();
-            //this.Close();
+            //var main = new frmMain();
+            //main.Show();
+            this.Hide();
         }
 
         private void simpleButton4_Click(object sender, EventArgs e)
@@ -110,9 +110,6 @@ namespace MumtaazHerbal
 
             if (isServerConnected(Properties.Settings.Default.ConnectionString))
                 MessageBox.Show("Set koneksi sukses", "Mumtaaz Herbal", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-
         }
 
         //test koneksi
@@ -131,6 +128,11 @@ namespace MumtaazHerbal
                     return false;
                 }
             }
+        }
+
+        private void connection_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

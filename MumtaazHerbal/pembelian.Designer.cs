@@ -483,6 +483,7 @@
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.txtTransaksi);
             this.Controls.Add(this.labelControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "pembelian";
             this.Text = "Pembelian";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.pembelian_FormClosing);

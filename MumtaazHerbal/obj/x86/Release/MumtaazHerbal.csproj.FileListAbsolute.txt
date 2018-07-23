@@ -223,7 +223,6 @@ C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Release\MumtaazHerbal.t
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Release\MumtaazHerbal.tmbhPending.resources
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Release\MumtaazHerbal.tmbhSupp.resources
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Release\MumtaazHerbal.csproj.GenerateResource.cache
-C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Release\MumtaazHerbal.exe.licenses
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Release\MumtaazHerbal.csproj.CoreCompileInputs.cache
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Release\MumtaazHerbal.csproj.CopyComplete
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Release\MumtaazHerbal.exe
@@ -254,3 +253,11 @@ C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Release\MumtaazHerbal.M
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Release\MumtaazHerbal.NotaPiutang.resources
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Release\MumtaazHerbal.NotaPiutangViewer.resources
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Release\MumtaazHerbal.pembayaranPiutang.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Release\MumtaazHerbal.lprLabaJual.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Release\MumtaazHerbal.lprLabaRugi.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Release\MumtaazHerbal.Migrations.AddSubTotalInTablePenjualans.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Release\MumtaazHerbal.NotaLabaJual.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Release\MumtaazHerbal.NotaLabaKotorViewer.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Release\MumtaazHerbal.NotaLabaRugi.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Release\MumtaazHerbal.NotaLabaRugiViewer.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Release\MumtaazHerbal.csprojResolveAssemblyReference.cache
