@@ -60,18 +60,25 @@ namespace MumtaazHerbal
         private void simpleButton4_Click(object sender, EventArgs e)
         {
             //EditKasir = true;
-
-            if (gridView1.DataRowCount != 0)
+            try
             {
-                GetKeranjangItem();
-                pembayaran bayar = new pembayaran(this,daftarPenjualan, txtTotal.Text, gridView1, receipts, edit);
-                bayar.ShowDialog();
+                if (gridView1.DataRowCount != 0)
+                {
+                    GetKeranjangItem();
+                    pembayaran bayar = new pembayaran(this, daftarPenjualan, txtTotal.Text, gridView1, receipts, edit);
+                    bayar.ShowDialog();
+                }
+                else
+                {
+                    XtraMessageBox.Show("Mohon pilih item terlebih dahulu.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
             }
-            else
+            catch (Exception ee)
             {
-                XtraMessageBox.Show("Mohon pilih item terlebih dahulu.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                MessageBox.Show("Mohon periksa keranjang belanja", "Mumtaaz Herbal", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            
         }
 
         //button daftar pending
@@ -603,19 +610,16 @@ namespace MumtaazHerbal
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
+            for (int i = 0; i < gridView1.DataRowCount; i++)
+            {
+                var rowHandle = gridView1.GetRowHandle(i);
+                var namaItem = gridView1.GetRowCellValue(rowHandle, "NamaItem").ToString();
+
+                if (string.IsNullOrEmpty(namaItem))
+                    gridView1.DeleteRow(rowHandle);
+            }
             GetNomor();
             GetTotalHarga();
-        }
-
-        private void repoTxtKodeItem_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //if (e.KeyChar == (char)13)
-            //{
-            //    var text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "KodeItem").ToString();
-            //    bool getItem = true;
-            //    dftrItem daftarItem = new dftrItem(this, getItem, text, gridView1);
-            //    daftarItem.ShowDialog();
-            //}
         }
 
         private void repoTxtKodeItem_KeyDown(object sender, KeyEventArgs e)
@@ -633,17 +637,12 @@ namespace MumtaazHerbal
             }
             //MessageBox.Show((sender as TextEdit).Text);
         }
-
-        private void gridView1_MouseLeave(object sender, EventArgs e)
-        {
-            GridHitInfo hInfo = gridView1.CalcHitInfo(gridControl1.PointToClient(Cursor.Position));
-            if (hInfo.HitTest == GridHitTest.None)
-            {
-                if (gridView1.IsNewItemRow(0))
-                    gridView1.AddNewRow();
-            }
-        }
         
+        private void gridView1_ShowingEditor(object sender, CancelEventArgs e)
+        {
+            if (gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "NamaItem") != null)
+                e.Cancel = gridView1.FocusedColumn.FieldName == "KodeItem";
+        }
     }
 }
 

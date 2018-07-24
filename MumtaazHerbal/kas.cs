@@ -105,6 +105,18 @@ namespace MumtaazHerbal
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
+            //for (int i = 0; i < gridView1.DataRowCount; i++)
+            //{
+            //    var namaItem = 0;
+
+            //    var rowHandle = gridView1.GetRowHandle(i);
+            //    if (gridView1.GetRowCellValue(rowHandle, "Total") != DBNull.Value)
+            //        namaItem = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "Total"));
+
+            //    if (namaItem <= 0)
+            //        gridView1.DeleteRow(rowHandle);
+            //}
+
             GetNomor();
             GetTotalHarga();
         }
@@ -278,5 +290,6 @@ namespace MumtaazHerbal
 
             }
         }
+        
     }
 }

@@ -202,6 +202,22 @@ namespace MumtaazHerbal
             return total;
         }
 
+        //hitung jumlah item
+        public int JumlahItem()
+        {
+            var total = 0;
+
+            for (int i = 0; i < gridView.DataRowCount; i++)
+            {
+                var rowHandle = gridView.GetRowHandle(i);
+                var jumlahBarang = Convert.ToInt32(gridView.GetRowCellValue(rowHandle, "JumlahBarang"));
+
+                total += jumlahBarang;
+            }
+
+            return total;
+        }
+
         //simpan kasir
         public void Simpan()
         {
@@ -219,6 +235,9 @@ namespace MumtaazHerbal
                 penjualan.TotalHarga = int.Parse(txtTotal.Text.Replace(",", ""));
                 penjualan.IsPending = false;
                 penjualan.SubTotal = SubTotal();
+                penjualan.JumlahItem = JumlahItem();
+                penjualan.BayarKredit = int.Parse(txtKredit.Text.Replace(",", ""));
+                penjualan.BayarTunai = int.Parse(txtTunai.Text.Replace(",", ""));
 
                 //jika pelanggan hutang
                 if (int.Parse(txtKredit.Text.Replace(",", "")) > 0)

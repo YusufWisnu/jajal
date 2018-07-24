@@ -346,6 +346,8 @@ namespace MumtaazHerbal
             txtTotal.Text = "0";
         }
 
+        
+
         private void btnHapus_Click(object sender, EventArgs e)
         {
             if (gridView1.DataRowCount == 0)
@@ -394,21 +396,29 @@ namespace MumtaazHerbal
                 return;
             }
 
-            if (edit)
+            try
             {
-                DeleteEditTransaksi();
-                SimpanPembelian();
-                edit = false;
-                daftarPembelian.LoadData();
-                RefreshPage();
+                if (edit)
+                {
+                    DeleteEditTransaksi();
+                    SimpanPembelian();
+                    edit = false;
+                    daftarPembelian.LoadData();
+                    RefreshPage();
+                }
+                else
+                {
+                    GetKeranjangItem();
+                    SimpanPembelian();
+                    receipts.Clear();
+                    RefreshPage();
+                }
             }
-            else
+            catch
             {
-                GetKeranjangItem();
-                SimpanPembelian();
-                receipts.Clear();
-                RefreshPage();
+                MessageBox.Show("Mohon periksa keranjang belanja", "Mumtaz Herbal", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            
         }
 
         List<Receipt> receipts = new List<Receipt>();
@@ -432,9 +442,24 @@ namespace MumtaazHerbal
             }
         }
 
+        //hitung jumlah item
+        public int JumlahItem()
+        {
+            var total = 0;
+
+            for (int i = 0; i < gridView1.DataRowCount; i++)
+            {
+                var rowHandle = gridView1.GetRowHandle(i);
+                var jumlahBarang = Convert.ToInt32(gridView1.GetRowCellValue(rowHandle, "JumlahBarang"));
+
+                total += jumlahBarang;
+            }
+
+            return total;
+        }
+
         public void SimpanPembelian()
         {
-            
             var tablePembelian = new Pembelian();
             using (var mumtaaz = new MumtaazContext(dbhelper.ConnectionString))
             {
@@ -442,7 +467,7 @@ namespace MumtaazHerbal
                 tablePembelian.Tanggal = DateTime.Now;
                 tablePembelian.SupplierId = int.Parse(lookSupplier.EditValue.ToString());
                 tablePembelian.TotalHarga = int.Parse(txtTotal.Text.Replace(",", ""));
-
+                tablePembelian.JumlahItem = JumlahItem();
 
                 for (int i = 0; i < gridView1.DataRowCount; i++)
                 {
@@ -612,9 +637,18 @@ namespace MumtaazHerbal
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
+            //for(int i = 0; i < gridView1.DataRowCount; i++)
+            //{
+            //    var rowHandle = gridView1.GetRowHandle(i);
+            //    var namaItem = gridView1.GetRowCellValue(rowHandle, "NamaItem").ToString();
+
+            //    if (string.IsNullOrEmpty(namaItem))
+            //        gridView1.DeleteRow(rowHandle);
+            //}
             GetNomor();
             GetTotalHarga();
         }
+
 
         private void repoTxtKodeItem_KeyDown(object sender, KeyEventArgs e)
         {

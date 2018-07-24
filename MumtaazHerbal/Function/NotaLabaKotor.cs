@@ -21,4 +21,5 @@ namespace MumtaazHerbal.Function
         public int LabaJual { get; set; }
     }
 
+
 }

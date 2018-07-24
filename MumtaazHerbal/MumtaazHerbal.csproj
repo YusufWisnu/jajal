@@ -202,6 +202,8 @@
       <DependentUpon>frmPrint.cs</DependentUpon>
     </Compile>
     <Compile Include="Function\DbHelper.cs" />
+    <Compile Include="Function\ListNotaPembelian.cs" />
+    <Compile Include="Function\ListNotaPenjualan.cs" />
     <Compile Include="Function\NotaLabaKotor.cs" />
     <Compile Include="Function\NotaPembayaranPiutang.cs" />
     <Compile Include="Function\Query.cs" />
@@ -254,6 +256,18 @@
     </Compile>
     <Compile Include="lprLabaRugi.Designer.cs">
       <DependentUpon>lprLabaRugi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lprPembelian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lprPembelian.Designer.cs">
+      <DependentUpon>lprPembelian.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lprPenjualan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lprPenjualan.Designer.cs">
+      <DependentUpon>lprPenjualan.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201805130628163_InitialModel.cs" />
     <Compile Include="Migrations\201805130628163_InitialModel.Designer.cs">
@@ -387,6 +401,14 @@
     <Compile Include="Migrations\201807220322560_AddSubTotalInTablePenjualans.Designer.cs">
       <DependentUpon>201807220322560_AddSubTotalInTablePenjualans.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807230446318_AddJumlahItemIntoTablePenjualanAndPembelian.cs" />
+    <Compile Include="Migrations\201807230446318_AddJumlahItemIntoTablePenjualanAndPembelian.Designer.cs">
+      <DependentUpon>201807230446318_AddJumlahItemIntoTablePenjualanAndPembelian.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807230526381_AddColumnBayarTunaiAndBayarKredit.cs" />
+    <Compile Include="Migrations\201807230526381_AddColumnBayarTunaiAndBayarKredit.Designer.cs">
+      <DependentUpon>201807230526381_AddColumnBayarTunaiAndBayarKredit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Nota.cs">
       <SubType>Component</SubType>
@@ -418,11 +440,29 @@
     <Compile Include="NotaLabaRugiViewer.Designer.cs">
       <DependentUpon>NotaLabaRugiViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="NotaPembelian.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NotaPembelian.Designer.cs">
+      <DependentUpon>NotaPembelian.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotaPembelianViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NotaPembelianViewer.Designer.cs">
+      <DependentUpon>NotaPembelianViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="NotaPenjualan.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="NotaPenjualan.Designer.cs">
       <DependentUpon>NotaPenjualan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotaPenjualanViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NotaPenjualanViewer.Designer.cs">
+      <DependentUpon>NotaPenjualanViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="NotaPiutang.cs">
       <SubType>Component</SubType>
@@ -560,6 +600,12 @@
     <EmbeddedResource Include="lprLabaRugi.resx">
       <DependentUpon>lprLabaRugi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="lprPembelian.resx">
+      <DependentUpon>lprPembelian.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lprPenjualan.resx">
+      <DependentUpon>lprPenjualan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805130628163_InitialModel.resx">
       <DependentUpon>201805130628163_InitialModel.cs</DependentUpon>
     </EmbeddedResource>
@@ -659,6 +705,12 @@
     <EmbeddedResource Include="Migrations\201807220322560_AddSubTotalInTablePenjualans.resx">
       <DependentUpon>201807220322560_AddSubTotalInTablePenjualans.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807230446318_AddJumlahItemIntoTablePenjualanAndPembelian.resx">
+      <DependentUpon>201807230446318_AddJumlahItemIntoTablePenjualanAndPembelian.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807230526381_AddColumnBayarTunaiAndBayarKredit.resx">
+      <DependentUpon>201807230526381_AddColumnBayarTunaiAndBayarKredit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Nota.resx">
       <DependentUpon>Nota.cs</DependentUpon>
     </EmbeddedResource>
@@ -674,8 +726,17 @@
     <EmbeddedResource Include="NotaLabaRugiViewer.resx">
       <DependentUpon>NotaLabaRugiViewer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NotaPembelian.resx">
+      <DependentUpon>NotaPembelian.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotaPembelianViewer.resx">
+      <DependentUpon>NotaPembelianViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NotaPenjualan.resx">
       <DependentUpon>NotaPenjualan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotaPenjualanViewer.resx">
+      <DependentUpon>NotaPenjualanViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NotaPiutang.resx">
       <DependentUpon>NotaPiutang.cs</DependentUpon>
@@ -692,6 +753,7 @@
     <EmbeddedResource Include="pembelian.resx">
       <DependentUpon>pembelian.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

@@ -261,3 +261,11 @@ C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Release\MumtaazHerbal.N
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Release\MumtaazHerbal.NotaLabaRugi.resources
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Release\MumtaazHerbal.NotaLabaRugiViewer.resources
 C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Release\MumtaazHerbal.csprojResolveAssemblyReference.cache
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Release\MumtaazHerbal.lprPembelian.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Release\MumtaazHerbal.lprPenjualan.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Release\MumtaazHerbal.NotaPembelian.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Release\MumtaazHerbal.NotaPembelianViewer.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Release\MumtaazHerbal.Migrations.AddJumlahItemIntoTablePenjualanAndPembelian.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Release\MumtaazHerbal.Migrations.AddColumnBayarTunaiAndBayarKredit.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Release\MumtaazHerbal.NotaPenjualanViewer.resources
+C:\Users\faisal\Source\Repos\jajal\MumtaazHerbal\obj\x86\Release\MumtaazHerbal.exe.licenses

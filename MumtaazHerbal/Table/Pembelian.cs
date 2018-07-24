@@ -18,7 +18,9 @@ namespace MumtaazHerbal
 
         public Supplier Supplier { get; set; }
 
-        public IList<DetailPembelian> DetailPembelians{ get; set; }
+        public IList<DetailPembelian> DetailPembelians { get; set; }
+
+        public int JumlahItem { get; set; }
 
         public int TotalHarga { get; set; }
 

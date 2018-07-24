@@ -289,6 +289,7 @@
             this.Name = "dftrItem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " Daftar Item";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.dftrItem_FormClosing);
             this.Load += new System.EventHandler(this.dftrItem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();

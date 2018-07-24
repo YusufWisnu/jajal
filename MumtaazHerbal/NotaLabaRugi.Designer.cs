@@ -478,8 +478,8 @@
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel3.SizeF = new System.Drawing.SizeF(208.3333F, 81.46509F);
             this.xrLabel3.StylePriority.UseFont = false;
-            this.xrLabel3.Text = "Jl. Padat Karya  RT.06/03 Desa Sukamulya Kec. Cikupa\r\n0823-1049-1816\r\n17600011436" +
-    "41(MANDIRI)/Hendra Abdia";
+            this.xrLabel3.Text = "Jl. Raya Serang KM 13,5 Pasir Gadung,  Cikupa\r\n0853-1235-5683\r\n3720041633(BCA)/YE" +
+    "NNY MEGAWARTY PANGKEY";
             // 
             // xrLabel2
             // 
@@ -491,7 +491,7 @@
             this.xrLabel2.SizeF = new System.Drawing.SizeF(208.3334F, 13.62502F);
             this.xrLabel2.StylePriority.UseFont = false;
             this.xrLabel2.StylePriority.UseTextAlignment = false;
-            this.xrLabel2.Text = "Toko Citra Herbal\r\n";
+            this.xrLabel2.Text = "Toko Mumtaz Herbal";
             this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // xrLabel1

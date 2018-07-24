@@ -224,6 +224,7 @@
             // 
             // repoTxtKodeItem
             // 
+            this.repoTxtKodeItem.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.repoTxtKodeItem.AutoHeight = false;
             this.repoTxtKodeItem.Name = "repoTxtKodeItem";
             this.repoTxtKodeItem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.repoTxtKodeItem_KeyDown);
@@ -542,6 +543,6 @@
         public DevExpress.XtraEditors.TextEdit txtTransaksi;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit2;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit3;
-        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repoTxtKodeItem;
+        public DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repoTxtKodeItem;
     }
 }

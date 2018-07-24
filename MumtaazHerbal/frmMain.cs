@@ -280,6 +280,38 @@ namespace MumtaazHerbal
             labaRugi.Show();
         }
 
+        private void barButtonItem19_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(lprPembelian))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            lprPembelian beli = new lprPembelian();
+            beli.MdiParent = this;
+            beli.Show();
+        }
+
+        private void barButtonItem20_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(lprPenjualan))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            lprPenjualan jual = new lprPenjualan();
+            jual.MdiParent = this;
+            jual.Show();
+        }
+
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             //Application.Exit();

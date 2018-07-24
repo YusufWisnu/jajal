@@ -342,5 +342,26 @@ namespace MumtaazHerbal
         {
             if (e.KeyChar == (char)13) GetItem();
         }
+
+        private void dftrItem_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //if (getItemPembelian)
+            //    DeleteAnonymousRow();
+            //if (getItem)
+            //    gridView.CancelUpdateCurrentRow();
+
+        }
+
+        public void DeleteAnonymousRow()
+        {
+            //for (int i = 0; i < gridView.DataRowCount; i++)
+            //{
+            //    var rowHandle = gridView.GetRowHandle(i);
+            //    var namaItem = gridView.GetRowCellValue(rowHandle, "NamaItem").ToString();
+
+            //    if (string.IsNullOrEmpty(namaItem))
+            //        gridView.DeleteRow(rowHandle);
+            //}
+        }
     }
 }

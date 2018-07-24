@@ -26,6 +26,12 @@ namespace MumtaazHerbal
 
         public int TotalHarga { get; set; }
 
+        public int BayarTunai { get; set; }
+
+        public int BayarKredit { get; set; }
+
+        public int JumlahItem { get; set; }
+
         public bool IsPending { get; set; }
 
         public string Keterangan { get; set; }

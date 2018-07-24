@@ -55,6 +55,7 @@
             this.JumlahBarang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.Satuan = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.HargaBarang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.Total = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -81,6 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repoTxtNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoTxtKodeItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookPelanggan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pelangganBindingSource)).BeginInit();
@@ -239,7 +241,8 @@
             this.repositoryItemTextEdit1,
             this.repositoryItemTextEdit2,
             this.repoTxtNo,
-            this.repoTxtKodeItem});
+            this.repoTxtKodeItem,
+            this.repositoryItemTextEdit3});
             this.gridControl1.Size = new System.Drawing.Size(1326, 347);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -260,10 +263,10 @@
             this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gridView1.OptionsView.ShowIndicator = false;
+            this.gridView1.ShowingEditor += new System.ComponentModel.CancelEventHandler(this.gridView1_ShowingEditor);
             this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
             this.gridView1.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.gridView1_CustomColumnDisplayText);
-            this.gridView1.MouseLeave += new System.EventHandler(this.gridView1_MouseLeave);
             this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
             // No
@@ -305,10 +308,11 @@
             // 
             // repoTxtKodeItem
             // 
+            this.repoTxtKodeItem.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.repoTxtKodeItem.AutoHeight = false;
             this.repoTxtKodeItem.Name = "repoTxtKodeItem";
+            this.repoTxtKodeItem.NullValuePromptShowForEmptyValue = true;
             this.repoTxtKodeItem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.repoTxtKodeItem_KeyDown);
-            this.repoTxtKodeItem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.repoTxtKodeItem_KeyPress);
             // 
             // NamaItem
             // 
@@ -352,6 +356,7 @@
             this.Satuan.AppearanceHeader.Options.UseTextOptions = true;
             this.Satuan.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Satuan.Caption = "Satuan";
+            this.Satuan.ColumnEdit = this.repositoryItemTextEdit3;
             this.Satuan.FieldName = "Satuan";
             this.Satuan.Name = "Satuan";
             this.Satuan.OptionsColumn.AllowEdit = false;
@@ -360,6 +365,15 @@
             this.Satuan.Visible = true;
             this.Satuan.VisibleIndex = 4;
             this.Satuan.Width = 66;
+            // 
+            // repositoryItemTextEdit3
+            // 
+            this.repositoryItemTextEdit3.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
+            this.repositoryItemTextEdit3.AutoHeight = false;
+            this.repositoryItemTextEdit3.Mask.IgnoreMaskBlank = false;
+            this.repositoryItemTextEdit3.Name = "repositoryItemTextEdit3";
+            this.repositoryItemTextEdit3.NullValuePromptShowForEmptyValue = true;
+            this.repositoryItemTextEdit3.ShowNullValuePromptWhenFocused = true;
             // 
             // HargaBarang
             // 
@@ -545,6 +559,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repoTxtNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoTxtKodeItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookPelanggan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pelangganBindingSource)).EndInit();
@@ -592,5 +607,6 @@
         public DevExpress.XtraEditors.SpinEdit spinJT;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repoTxtNo;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repoTxtKodeItem;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit3;
     }
 }

@@ -3,6 +3,8 @@ using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
 using DevExpress.XtraReports.UI;
+using System.Collections.Generic;
+using MumtaazHerbal.Function;
 
 namespace MumtaazHerbal
 {
@@ -14,11 +16,12 @@ namespace MumtaazHerbal
             
         }
 
-        public void InitData(string noTransaksi, string pel )
+        public void InitData(DateTime tglSebelum, DateTime tglSesudah, List<ListNotaPenjualan> listLaba)
         {
-
+            pTglSblm.Value = tglSebelum;
+            pTglSdh.Value = tglSesudah;
+            objectDataSource2.DataSource = listLaba;
         }
-        
 
     }
 }
